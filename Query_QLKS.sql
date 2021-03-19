@@ -1,6 +1,6 @@
 create table KHACHHANG
 (
-	KhachHangID int not null,
+	KhachHangID int not null identity(1,1),
 	Ten nvarchar(30) not null,
 	GioiTinh bit null,
 	CMND nvarchar(10) not null,
@@ -13,7 +13,7 @@ go
 
 create table CHUCVU
 (
-	ChucVuID int not null,
+	ChucVuID int not null identity(1,1),
 	TenChucVu nvarchar(30) not null,
 	MoTa ntext null,
 	QuyenHan int not null,
@@ -23,7 +23,7 @@ go
 
 create table NHANVIEN
 (
-	NhanVienID int not null,
+	NhanVienID int not null identity(1,1),
 	ChucVuID int not null,
 	Ten nvarchar(30) not null,
 	GioiTinh bit null,
@@ -39,7 +39,7 @@ go
 
 create table LOAIDICHVU
 (
-	DichVuID int not null,
+	DichVuID int not null identity(1,1),
 	TenDichVu nvarchar(50) not null,
 	Gia decimal not null,
 	GioMo time null, 
@@ -60,7 +60,7 @@ go
 
 create table LOAIPHONG
 (
-	LoaiPhongID int not null,
+	LoaiPhongID int not null identity(1,1),
 	TenLoaiPhong nvarchar(50) not null,
 	Gia decimal not null,
 	SoNguoi int not null,
@@ -70,7 +70,7 @@ go
 
 create table LOAIVATDUNG
 (
-	VatDungID int not null,
+	VatDungID int not null identity(1,1),
 	TenVatDung nvarchar(50) not null, 
 	Gia decimal not null,
 	ThietBiCoDinh bit,
@@ -102,7 +102,7 @@ go
 
 create table BOOK
 (
-	BookID int not null, 
+	BookID int not null identity(1,1), 
 	PhongID char(3) not null,
 	KhachHangID int not null, 
 	NhanVienID int not null,
@@ -120,7 +120,7 @@ go
 
 create table HOADON_DUNG_DICHVU
 (
-	ID int not null,
+	ID int not null identity(1,1),
 	BookID int not null,
 	DichVuID int not null,
 	Ngay date not null,

@@ -34,6 +34,9 @@ create table NHANVIEN
 	GhiChu ntext null,
 	constraint pk_nhanvien primary key (nhanvienid),
 	constraint fk_nhanvien_chucvuid foreign key (chucvuid) references chucvu(chucvuid)
+	on update cascade
+	on delete cascade,
+	constraint chk_ngaysinh check(NgaySinh <= getdate())
 )
 go
 
@@ -55,6 +58,8 @@ create table DANGNHAP
 	TrangThai bit not null,
 	constraint pk_dangnhap primary key (nhanvienid),
 	constraint fk_dangnhap_nhanvienid foreign key (nhanvienid) references nhanvien(nhanvienid)
+	on update cascade
+	on delete cascade
 )
 go
 
@@ -85,6 +90,8 @@ create table PHONG
 	TrangThai bit not null,
 	constraint pk_phong primary key (phongid),
 	constraint fk_phong_loaiphongid foreign key (loaiphongid) references loaiphong(loaiphongid)
+	on update cascade
+	on delete cascade
 )
 go
 
@@ -95,8 +102,12 @@ create table VATDUNGPHONG
 	SoLuong int not null,
 	TrangThai bit not null,
 	constraint pk_vatdungphong primary key (phongid, vatdungid),
-	constraint fk_vatdungphong_vatdungid foreign key (vatdungid) references loaivatdung(vatdungid),
+	constraint fk_vatdungphong_vatdungid foreign key (vatdungid) references loaivatdung(vatdungid)
+	on update cascade
+	on delete cascade,
 	constraint fk_vatdungphong_phongid foreign key (phongid) references phong(phongid)
+	on update cascade
+	on delete cascade
 )
 go
 
@@ -112,9 +123,18 @@ create table BOOK
 	XacNhan bit null,
 	ThanhToan decimal null,
 	constraint pk_book primary key (bookid),
-	constraint fk_book_phongid foreign key (phongid) references phong(phongid),
-	constraint fk_book_khachhangid foreign key (khachhangid) references khachhang(khachhangid),
+	constraint fk_book_phongid foreign key (phongid) references phong(phongid)
+	on update cascade
+	on delete cascade,
+	constraint fk_book_khachhangid foreign key (khachhangid) references khachhang(khachhangid)
+	on update cascade
+	on delete cascade,
 	constraint fk_book_nhanvienid foreign key (nhanvienid) references nhanvien(nhanvienid)
+	on update cascade
+	on delete cascade,
+	constraint chk_ngaydat check(NgayDat >= getdate()),
+	constraint chk_ngaycheckin check(NgayCheckIn >= NgayDat),
+	constraint chk_ngaycheckout check(NgayCheckOut >= NgayCheckIn)
 )
 go
 
@@ -127,7 +147,11 @@ create table HOADON_DUNG_DICHVU
 	SoLuong int not null,
 	ThanhTien decimal not null,
 	constraint pk_hoadon_dung_dichvu primary key (ID),
-	constraint fk_hoadon_bookid foreign key (bookid) references book(bookid),
+	constraint fk_hoadon_bookid foreign key (bookid) references book(bookid)
+	on update cascade
+	on delete cascade,
 	constraint fk_hoadon_dichvuid foreign key (dichvuid) references loaidichvu(dichvuid)
+	on update cascade
+	on delete cascade
 )
 go

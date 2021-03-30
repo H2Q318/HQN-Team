@@ -1,157 +1,4 @@
-﻿/*procedure của bảng BOOK*/
-create proc sp_Ins_Book(@phongid char(3), 
-						@khid int,
-						@nvid int,
-						@ngaydat date,
-						@ngaycheckin date,
-						@ngaycheckout date,
-						@xacnhan bit = 0,
-						@thanhtoan decimal)
-as
-	insert into BOOK(PhongID,
-					KhachHangID,
-					NhanVienID,
-					NgayDat,
-					NgayCheckIn,
-					NgayCheckOut,
-					XacNhan,
-					ThanhToan)
-	values (@phongid,
-			@khid,
-			@nvid,
-			@ngaydat,
-			@ngaycheckin,
-			@ngaycheckout,
-			@xacnhan,
-			@thanhtoan)
-go
-
-create proc sp_Up_Book(@bookid int,
-						@phongid char(3), 
-						@khid int,
-						@nvid int,
-						@ngaydat date,
-						@ngaycheckin date,
-						@ngaycheckout date,
-						@xacnhan bit = 0,
-						@thanhtoan decimal)
-as
-	update BOOK
-	set PhongID = @phongid,
-		KhachHangID = @khid,
-		NhanVienID = @nvid,
-		NgayDat = @ngaydat,
-		NgayCheckIn = @ngaycheckin,
-		NgayCheckOut = @ngaycheckout,
-		XacNhan = @xacnhan,
-		ThanhToan = @thanhtoan
-	where BookID = @bookid
-go
-
-create proc sp_Del_Book(@bookid int)
-as
-	delete from BOOK
-	where BookID = @bookid
-go
-
-/*procedure của bảng CHUCVU*/
-create proc sp_Ins_ChucVu(@tencv nvarchar(30),
-							@mota ntext,
-							@quyenhan int)
-as
-	insert into CHUCVU(TenChucVu,
-						MoTa,
-						QuyenHan)
-	values(@tencv, @mota, @quyenhan)
-go
-
-create proc sp_Up_ChucVu(@cvid int, 
-							@tencv nvarchar(30),
-							@mota ntext,
-							@quyenhan int)
-as
-	update CHUCVU
-	set TenChucVu = @tencv,
-		MoTa = @mota,
-		QuyenHan = @quyenhan
-	where ChucVuID = @cvid
-go
-
-create proc sp_Del_ChucVu(@cvid int)
-as
-	delete from CHUCVU	
-	where ChucVuID = @cvid
-go
-
-/*procedure của bảng DANGNHAP*/
-
-create proc sp_Ins_DangNhap(@nvid int,
-							@mk nvarchar(20),
-							@status bit)
-as
-	insert into DANGNHAP
-	values(@nvid, @mk, @status)
-go
-
-create proc sp_Up_DangNhap(@nvid int,
-							@mk nvarchar(20),
-							@status bit)
-as
-	update DANGNHAP
-	set MatKhau = @mk,
-		TrangThai = @status
-	where NhanVienID = @nvid
-go
-
-create proc sp_Del_DangNhap(@nvid int)
-as
-	delete from DANGNHAP
-	where NhanVienID = @nvid
-go
-
-/*procedure của bảng HOADON_DUNG_DICHVU*/
-
-create proc sp_Ins_HoaDon_Dung_DichVu(@bookid int,
-										@dvid int,
-										@ngay date,
-										@sl int,
-										@thanhtien decimal)
-as
-	insert into HOADON_DUNG_DICHVU(BookID,
-									DichVuID,
-									Ngay,
-									SoLuong,
-									ThanhTien)
-	values(@bookid,
-			@dvid,
-			@ngay,
-			@sl,
-			@thanhtien)
-go
-
-create proc sp_Up_HoaDon_Dung_DichVu(@id int,
-										@bookid int,
-										@dvid int,
-										@ngay date,
-										@sl int,
-										@thanhtien decimal)
-as
-	update HOADON_DUNG_DICHVU
-	set BookID = @bookid,
-		DichVuID = @dvid,
-		Ngay = @ngay,
-		SoLuong = @sl,
-		ThanhTien = @thanhtien
-	where ID = @id
-go
-
-create proc sp_Del_HoaDon_Dung_DichVu(@id int)
-as
-	delete from HOADON_DUNG_DICHVU
-	where ID = @id
-go
-
-/*procedure của bảng KHACHHANG*/
+﻿/*procedure của bảng KHACHHANG*/
 
 create proc sp_Ins_KhachHang(@ten nvarchar(30),
 							@gt bit,
@@ -174,7 +21,7 @@ as
 			@ghichu)
 go
 
-create proc sp_Up_KhachHang(@khid int,
+create proc sp_Up_KhachHang(@khid nvarchar(13),
 							@ten nvarchar(30),
 							@gt bit,
 							@cmnd nvarchar(10),
@@ -192,113 +39,47 @@ as
 	where KhachHangID = @khid
 go
 
-create proc sp_Del_KhachHang(@khid int)
+create proc sp_Del_KhachHang(@khid nvarchar(13))
 as
 	delete from KHACHHANG
 	where KhachHangID = @khid
 go
 
-/*procedure của bảng LOAIDICHVU*/
-
-create proc sp_Ins_LoaiDichVu(@tendv nvarchar(50),
-								@gia decimal,
-								@giomo time,
-								@giodong time)
+/*procedure của bảng CHUCVU*/
+create proc sp_Ins_ChucVu(@tencv nvarchar(30),
+							@mota ntext,
+							@quyenhan int)
 as
-	insert into LOAIDICHVU(TenDichVu,
-							Gia,
-							GioMo,
-							GioDong)
-	values(@tendv,
-			@gia,
-			@giomo,
-			@giodong)
+	insert into CHUCVU(TenChucVu,
+						MoTa,
+						QuyenHan)
+	values(@tencv, @mota, @quyenhan)
 go
 
-create proc sp_Up_LoaiDichVu(@dvid int,
-								@tendv nvarchar(50),
-								@gia decimal,
-								@giomo time,
-								@giodong time)
+create proc sp_Up_ChucVu(@cvid nvarchar(5), 
+							@tencv nvarchar(30),
+							@mota ntext,
+							@quyenhan int)
 as
-	update LOAIDICHVU
-	set TenDichVu = @tendv,
-		Gia = @gia,
-		GioDong = @giodong,
-		GioMo = @giomo
-	where DichVuID = @dvid
+	update CHUCVU
+	set TenChucVu = @tencv,
+		MoTa = @mota,
+		QuyenHan = @quyenhan
+	where ChucVuID = @cvid
 go
 
-create proc sp_Del_LoaiDichVu(@dvid int)
+create proc sp_Del_ChucVu(@cvid nvarchar(5))
 as
-	delete from LOAIDICHVU
-	where DichVuID = @dvid
-go
-
-/*procedure của bảng LOAIPHONG*/
-
-create proc sp_Ins_LoaiPhong(@ten nvarchar(50),
-								@gia decimal,
-								@songuoi int)
-as
-	insert into LOAIPHONG(TenLoaiPhong,
-							Gia,
-							SoNguoi)
-	values(@ten,
-			@gia,
-			@songuoi)
-go
-
-create proc sp_Up_LoaiPhong(@lpid int,
-								@ten nvarchar(50),
-								@gia decimal,
-								@songuoi int)
-as
-	update LOAIPHONG
-	set TenLoaiPhong = @ten,
-		Gia = @gia,
-		SoNguoi = @songuoi
-	where LoaiPhongID = @lpid
-go
-
-create proc sp_Del_LoaiPhong(@lpid int)
-as
-	delete from LOAIPHONG
-	where LoaiPhongID = @lpid
-go
-
-/*procedure của bảng LOAIVATDUNG*/
-
-create proc sp_Ins_LoaiVatDung(@ten nvarchar(50),
-								@gia decimal,
-								@thietbicd bit)
-as
-	insert into LOAIVATDUNG(TenVatDung, Gia, ThietBiCoDinh)
-	values(@ten, @gia, @thietbicd)
-go
-
-create proc sp_Up_LoaiVatDung(@vdid int,
-								@ten nvarchar(50),
-								@gia decimal,
-								@thietbicd bit)
-as
-	update LOAIVATDUNG
-	set TenVatDung = @ten, Gia = @gia, ThietBiCoDinh = @thietbicd
-	where VatDungID = @vdid
-go
-
-create proc sp_Del_LoaiVatDung(@vdid int)
-as
-	delete from LOAIVATDUNG
-	where VatDungID = @vdid
+	delete from CHUCVU	
+	where ChucVuID = @cvid
 go
 
 /*procedure của bảng NHANVIEN*/
 
-create proc sp_Ins_NhanVien(@cvid int,
+create proc sp_Ins_NhanVien(@cvid nvarchar(5),
 							@ten nvarchar(30),
 							@gt bit,
-							@ngaysinh datetime,
+							@ngaysinh date,
 							@cmnd nvarchar(10),
 							@sdt nvarchar(11),
 							@diachi nvarchar(100),
@@ -322,11 +103,11 @@ as
 			@ghichu)
 go
 
-create proc sp_Up_NhanVien(@nvid int,
-							@cvid int,
+create proc sp_Up_NhanVien(@nvid nvarchar(11),
+							@cvid nvarchar(5),
 							@ten nvarchar(30),
 							@gt bit,
-							@ngaysinh datetime,
+							@ngaysinh date,
 							@cmnd nvarchar(10),
 							@sdt nvarchar(11),
 							@diachi nvarchar(100),
@@ -344,21 +125,144 @@ as
 	where NhanVienID = @nvid
 go
 
-create proc sp_Del_NhanVien(@nvid int)
+create proc sp_Del_NhanVien(@nvid nvarchar(11))
 as
 	delete from NHANVIEN
 	where NhanVienID = @nvid
 go
 
-/*procedure của bảng PHONG*/
+/*procedure của bảng LOAIDICHVU*/
 
-create proc sp_Ins_Phong(@lp int, @status bit)
+create proc sp_Ins_LoaiDichVu(@tendv nvarchar(50),
+								@dongia decimal,
+								@giomo time,
+								@giodong time)
 as
-	insert into PHONG(LoaiPhongID, TrangThai)
-	values(@lp, @status)
+	insert into LOAIDICHVU(TenDichVu,
+							DonGia,
+							GioMo,
+							GioDong)
+	values(@tendv,
+			@dongia,
+			@giomo,
+			@giodong)
 go
 
-create proc sp_Up_Phong(@pid int, @lp int, @status bit)
+create proc sp_Up_LoaiDichVu(@dvid nvarchar(5),
+								@tendv nvarchar(50),
+								@dongia decimal,
+								@giomo time,
+								@giodong time)
+as
+	update LOAIDICHVU
+	set TenDichVu = @tendv,
+		DonGia = @dongia,
+		GioDong = @giodong,
+		GioMo = @giomo
+	where DichVuID = @dvid
+go
+
+create proc sp_Del_LoaiDichVu(@dvid nvarchar(5))
+as
+	delete from LOAIDICHVU
+	where DichVuID = @dvid
+go
+
+/*procedure của bảng DANGNHAP*/
+
+create proc sp_Ins_DangNhap(@nvid nvarchar(11),
+							@mk nvarchar(20),
+							@status bit)
+as
+	insert into DANGNHAP
+	values(@nvid, @mk, @status)
+go
+
+create proc sp_Up_DangNhap(@nvid nvarchar(11),
+							@mk nvarchar(20),
+							@status bit)
+as
+	update DANGNHAP
+	set MatKhau = @mk,
+		TrangThai = @status
+	where NhanVienID = @nvid
+go
+
+create proc sp_Del_DangNhap(@nvid nvarchar(11))
+as
+	delete from DANGNHAP
+	where NhanVienID = @nvid
+go
+
+/*procedure của bảng LOAIPHONG*/
+
+create proc sp_Ins_LoaiPhong(@ten nvarchar(50),
+								@gia decimal,
+								@songuoi int)
+as
+	insert into LOAIPHONG(TenLoaiPhong,
+							Gia,
+							SoNguoi)
+	values(@ten,
+			@gia,
+			@songuoi)
+go
+
+create proc sp_Up_LoaiPhong(@lpid nvarchar(4),
+								@ten nvarchar(50),
+								@gia decimal,
+								@songuoi int)
+as
+	update LOAIPHONG
+	set TenLoaiPhong = @ten,
+		Gia = @gia,
+		SoNguoi = @songuoi
+	where LoaiPhongID = @lpid
+go
+
+create proc sp_Del_LoaiPhong(@lpid nvarchar(4))
+as
+	delete from LOAIPHONG
+	where LoaiPhongID = @lpid
+go
+
+/*procedure của bảng LOAIVATDUNG*/
+
+create proc sp_Ins_LoaiVatDung(@ten nvarchar(50),
+								@dongia decimal,
+								@thietbicd bit)
+as
+	insert into LOAIVATDUNG(TenVatDung, DonGia, ThietBiCoDinh)
+	values(@ten, @dongia, @thietbicd)
+go
+
+create proc sp_Up_LoaiVatDung(@vdid nvarchar(5),
+								@ten nvarchar(50),
+								@dongia decimal,
+								@thietbicd bit)
+as
+	update LOAIVATDUNG
+	set TenVatDung = @ten, DonGia = @dongia, ThietBiCoDinh = @thietbicd
+	where VatDungID = @vdid
+go
+
+create proc sp_Del_LoaiVatDung(@vdid nvarchar(5))
+as
+	delete from LOAIVATDUNG
+	where VatDungID = @vdid
+go
+
+/*procedure của bảng PHONG*/
+
+create proc sp_Ins_Phong(@phongid char(3),
+						@lp nvarchar(4),
+						@status bit)
+as
+	insert into PHONG
+	values(@phongid, @lp, @status)
+go
+
+create proc sp_Up_Phong(@pid char(3), @lp nvarchar(4), @status bit)
 as
 	update PHONG
 	set LoaiPhongID = @lp,
@@ -366,30 +270,264 @@ as
 	where PhongID = @pid
 go
 
-create proc sp_Del_Phong(@pid int)
+create proc sp_Del_Phong(@pid char(3))
 as
 	delete from PHONG
 	where PhongID = @pid
 go
 
+/*procedure của bảng TRANGTHAIVATDUNG*/
+
+create proc sp_Ins_TrangThaiVatDung(@ttvdid nvarchar(50),
+									@mota ntext)
+as
+	insert into trangthaivatdung
+	values(@ttvdid, @mota)
+go
+
+create proc sp_Up_TrangThaiVatDung(@ttvdid nvarchar(50),
+									@mota ntext)
+as
+	update trangthaivatdung
+	set Mota = @mota
+	where TrangThaiVatDungID = @ttvdid
+go
+
+create proc sp_Del_TrangThaiVatDung(@ttvdid nvarchar(50))
+as
+	delete from trangthaivatdung
+	where TrangThaiVatDungID = @ttvdid
+go
+
 /*procedure của bảng VATDUNGPHONG*/
 
-create proc sp_Ins_VatDungPhong(@pid char(3), @vdid int, @sl int, @status bit)
+create proc sp_Ins_VatDungPhong(@pid char(3),
+								@vdid nvarchar(5),
+								@sl int,
+								@status nvarchar(50))
 as
 	insert into VATDUNGPHONG
 	values (@pid, @vdid, @sl, @status)
 go
 
-create proc sp_Up_VatDungPhong(@pid char(3), @vdid int, @sl int, @status bit)
+create proc sp_Up_VatDungPhong(@pid char(3),
+								@vdid nvarchar(5),
+								@sl int,
+								@status nvarchar(50))
 as
 	update VATDUNGPHONG
 	set SoLuong = @sl, 
-		TrangThai = @status
+		TrangThaiVatDungID = @status
 	where PhongID = @pid and VatDungID = @vdid
 go
 
-create proc sp_Del_VatDungPhong(@pid char(3), @vdid int)
+create proc sp_Del_VatDungPhong(@pid char(3), @vdid nvarchar(5))
 as
 	delete from VATDUNGPHONG
 	where PhongID = @pid and VatDungID = @vdid
+go
+
+/*procedure của bảng TRANGTHAIBOOK*/
+
+create proc sp_Ins_TrangThaiBook(@ttbid nvarchar(50),
+									@Mota ntext)
+as
+	insert into trangthaibook
+	values(@ttbid, @Mota)
+go
+
+create proc sp_Up_TrangThaiBook(@ttbid nvarchar(50),
+									@Mota ntext)
+as
+	update trangthaibook
+	set Mota = @Mota
+	where TrangThaiBookID = @ttbid
+go
+
+create proc sp_Del_TrangThaiBook(@ttbid nvarchar(50))
+as
+	delete from trangthaibook
+	where trangthaibookid = @ttbid
+go
+
+/*procedure của bảng BOOK*/
+
+create proc sp_Ins_Book(@phongid char(3), 
+						@khid nvarchar(13),
+						@nvid nvarchar(11),
+						@ngaydat datetime,
+						@ngaycheckin datetime,
+						@ngaycheckout datetime,
+						@ngaycheckint_tt datetime,
+						@ngaycheckout_tt datetime,
+						@trangthaibookid nvarchar(50),
+						@thanhtoan decimal)
+as
+	insert into BOOK(PhongID,
+					KhachHangID,
+					NhanVienID,
+					NgayDat,
+					NgayCheckIn,
+					NgayCheckOut,
+					NgayCheckIn_ThucTe,
+					NgayCheckOut_ThucTe,
+					TrangThaiBookID,
+					ThanhToan)
+	values (@phongid,
+			@khid,
+			@nvid,
+			@ngaydat,
+			@ngaycheckin,
+			@ngaycheckout,
+			@ngaycheckint_tt,
+			@ngaycheckout_tt,
+			@trangthaibookid,
+			@thanhtoan)
+go
+
+create proc sp_Up_Book(@bookid nvarchar(12),
+						@phongid char(3), 
+						@khid nvarchar(13),
+						@nvid nvarchar(11),
+						@ngaydat datetime,
+						@ngaycheckin datetime,
+						@ngaycheckout datetime,
+						@ngaycheckint_tt datetime,
+						@ngaycheckout_tt datetime,
+						@trangthaibookid nvarchar(50),
+						@thanhtoan decimal)
+as
+	update BOOK
+	set PhongID = @phongid,
+		KhachHangID = @khid,
+		NhanVienID = @nvid,
+		NgayDat = @ngaydat,
+		NgayCheckIn = @ngaycheckin,
+		NgayCheckOut = @ngaycheckout,
+		NgayCheckIn_ThucTe = @ngaycheckint_tt,
+		NgayCheckOut_ThucTe = @ngaycheckout_tt,
+		TrangThaiBookID = @trangthaibookid,
+		ThanhToan = @thanhtoan
+	where BookID = @bookid
+go
+
+create proc sp_Del_Book(@bookid nvarchar(12))
+as
+	delete from BOOK
+	where BookID = @bookid
+go
+
+/*procedure của bảng HOADON_DUNG_DICHVU*/
+
+create proc sp_Ins_HoaDon_Dung_DichVu(@bookid nvarchar(12),
+										@nvid nvarchar(11),
+										@dvid nvarchar(5),
+										@ngay datetime,
+										@sl int,
+										@thanhtien decimal = 0)
+as
+	insert into HOADON_DUNG_DICHVU(BookID,
+									NhanVienID,
+									DichVuID,
+									Ngay,
+									SoLuong,
+									ThanhTien)
+	values(@bookid,
+			@nvid,
+			@dvid,
+			@ngay,
+			@sl,
+			@thanhtien)
+go
+
+create proc sp_Up_HoaDon_Dung_DichVu(@id int,
+										@bookid nvarchar(12),
+										@nvid nvarchar(11),
+										@dvid nvarchar(5),
+										@ngay datetime,
+										@sl int,
+										@thanhtien decimal = 0)
+as
+	update HOADON_DUNG_DICHVU
+	set BookID = @bookid,
+		NhanVienID = @nvid,
+		DichVuID = @dvid,
+		Ngay = @ngay,
+		SoLuong = @sl,
+		ThanhTien = @thanhtien
+	where ID = @id
+go
+
+create proc sp_Del_HoaDon_Dung_DichVu(@id int)
+as
+	delete from HOADON_DUNG_DICHVU
+	where ID = @id
+go
+
+/*procedure của bảng KHACHHANG_BOOK*/
+
+create proc sp_Ins_KhachHang_Book(@khid nvarchar(13),
+									@bookid nvarchar(12))
+as
+	insert into KHACHHANG_BOOK
+	values(@khid, @bookid)
+go
+
+create proc sp_Del_KhachHang_Book(@khid nvarchar(13),
+									@bookid nvarchar(12))
+as
+	delete from KHACHHANG_BOOK
+	where KhachHangID = @khid and BookID = @bookid
+go
+
+/*procedure của bảng HOADON*/
+
+create proc sp_Ins_HoaDon(@bookid nvarchar(12),
+							@ngaytt datetime,
+							@tienphong decimal,
+							@tiendichvu decimal,
+							@tienvattu decimal,
+							@tongtien decimal,
+							@ghichu ntext)
+as
+	insert into HOADON(BookID,
+						NgayThanhToan,
+						TienPhong,
+						TienDichVu,
+						TienVatTu,
+						TongTien,
+						GhiChu)
+	values(@bookid,
+			@ngaytt,
+			@tienphong,
+			@tiendichvu,
+			@tienvattu,
+			@tongtien,
+			@ghichu)
+go
+
+create proc sp_Up_HoaDon(@hdid nvarchar(13),
+							@bookid nvarchar(12),
+							@ngaytt datetime,
+							@tienphong decimal,
+							@tiendichvu decimal,
+							@tienvattu decimal,
+							@tongtien decimal,
+							@ghichu ntext)
+as
+	update HOADON
+	set BookID = @bookid,
+		NgayThanhToan = @ngaytt,
+		TienDichVu = @tiendichvu,
+		TienPhong = @tienphong,
+		TienVatTu = @tienvattu,
+		TongTien = @tongtien,
+		GhiChu = @ghichu
+	where HoaDonID = @hdid
+go
+
+create proc sp_Del_HoaDon(@hdid nvarchar(13))
+as
+	delete from HOADON
+	where HoaDonID = @hdid
 go

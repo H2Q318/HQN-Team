@@ -303,20 +303,23 @@ go
 
 create proc sp_Ins_VatDungPhong(@pid char(3),
 								@vdid nvarchar(5),
-								@sl int,
+								@slbd int,
+								@slht int,
 								@status nvarchar(50))
 as
 	insert into VATDUNGPHONG
-	values (@pid, @vdid, @sl, @status)
+	values (@pid, @vdid, @slbd, @slht, @status)
 go
 
 create proc sp_Up_VatDungPhong(@pid char(3),
 								@vdid nvarchar(5),
-								@sl int,
+								@slbd int,
+								@slht int,
 								@status nvarchar(50))
 as
 	update VATDUNGPHONG
-	set SoLuong = @sl, 
+	set SoLuongBanDau = @slbd,
+		SoLuongHienTai = @slht,
 		TrangThaiVatDungID = @status
 	where PhongID = @pid and VatDungID = @vdid
 go
@@ -530,4 +533,46 @@ create proc sp_Del_HoaDon(@hdid nvarchar(13))
 as
 	delete from HOADON
 	where HoaDonID = @hdid
+go
+
+/*Procedure tính bảng HOADON - khi khách hàng thuộc bookid_A checkout, sẽ gọi procedure
+  này trong chương trình để thực hiện tính tổng tiền hoá đơn cho một bookID_A và lưu vào
+  bảng HOADON */
+create proc sp_Cal_HoaDon(@bookid nvarchar(12))
+as
+	declare @today datetime = getdate()
+	declare @tienphong decimal = 0
+	declare @tiendichvu decimal = 0
+	declare @tienvattu decimal = 0
+	declare @tongtien decimal = 0
+	declare @gia decimal = 0
+
+	select @gia = gia from loaiphong where loaiphongid =
+							(select loaiphongid from PHONG where phongid =
+							(select phongid from BOOK where BookID = @bookid))
+
+	select @tienphong = datediff(day,
+						(select ngaycheckin_thucte from BOOK where BookID = @bookid), 
+						(select ngaycheckout_thucte from BOOK where BookID = @bookid)) * @gia
+	
+	select @tiendichvu = sum(thanhtien) from HOADON_DUNG_DICHVU where BookID = @bookid
+
+	select @tienvattu = sum(dongia * (soluongbandau - soluonghientai))
+	from VATDUNGPHONG inner join LOAIVATDUNG
+	on LOAIVATDUNG.VatDungID = VATDUNGPHONG.VatDungID
+	where PhongID = (select PhongID from BOOK where BookID = @bookid)
+			and TrangThaiVatDungID = N'Khách làm hư'
+
+	select @tiendichvu = ISNULL(@tiendichvu, 0)
+	select @tienphong = ISNULL(@tienphong, 0)
+	select @tienvattu= ISNULL(@tienvattu, 0)
+
+	select @tongtien = @tienphong + @tiendichvu + @tienvattu
+	exec sp_Ins_HoaDon @bookid,
+						@today,
+						@tienphong,
+						@tiendichvu,
+						@tienvattu,
+						@tongtien,
+						null
 go

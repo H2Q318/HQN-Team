@@ -160,7 +160,8 @@ create table VATDUNGPHONG
 (
 	PhongID char(3) not null,
 	VatDungID nvarchar(5) not null,
-	SoLuong int not null,
+	SoLuongBanDau int not null,
+	SoLuongHienTai int not null,
 	TrangThaiVatDungID nvarchar(50) not null,
 	constraint pk_vatdungphong primary key (phongid, vatdungid),
 	constraint fk_vatdungphong_vatdungid foreign key (vatdungid) references loaivatdung(vatdungid)

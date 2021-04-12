@@ -71,8 +71,6 @@ as
 	where HOADON_DUNG_DICHVU.ID = inserted.ID
 go
 
-
-
 /*Trigger cho bảng hoá đơn khi bảng hoá đơn dùng dịch vụ thay đổi dữ liệu
 create trigger trg_HoaDon_Dung_DichVu_Ins
 on HOADON_DUNG_DICHVU

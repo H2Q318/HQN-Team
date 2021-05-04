@@ -50,33 +50,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.btnResetSCheckIn = new System.Windows.Forms.Button();
-            this.btnSearchCheckIn = new System.Windows.Forms.Button();
-            this.txbSeachCk = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.btnResetCheckIn = new System.Windows.Forms.Button();
-            this.btnXoaCheckIn = new System.Windows.Forms.Button();
-            this.btnSuaCheckIn = new System.Windows.Forms.Button();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.dgvCheckIn = new System.Windows.Forms.DataGridView();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dtbNgayDiCk = new System.Windows.Forms.DateTimePicker();
-            this.txbMaNv = new System.Windows.Forms.TextBox();
-            this.dtbNgayDenCk = new System.Windows.Forms.DateTimePicker();
-            this.txbMaKhachCk = new System.Windows.Forms.TextBox();
-            this.txbGhiChuCk = new System.Windows.Forms.TextBox();
-            this.txbMaPhongCk = new System.Windows.Forms.TextBox();
-            this.txbMaCheckin = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnResetLP = new System.Windows.Forms.Button();
@@ -200,12 +173,6 @@
             this.panel27.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVatTu)).BeginInit();
             this.panel28.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).BeginInit();
-            this.panel20.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -468,284 +435,6 @@
             this.label42.Size = new System.Drawing.Size(66, 13);
             this.label42.TabIndex = 18;
             this.label42.Text = "ID Vật Dụng";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.panel17);
-            this.tabPage4.Controls.Add(this.panel18);
-            this.tabPage4.Controls.Add(this.panel19);
-            this.tabPage4.Controls.Add(this.panel20);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(978, 446);
-            this.tabPage4.TabIndex = 5;
-            this.tabPage4.Text = "Checkin";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // panel17
-            // 
-            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel17.Controls.Add(this.btnResetSCheckIn);
-            this.panel17.Controls.Add(this.btnSearchCheckIn);
-            this.panel17.Controls.Add(this.txbSeachCk);
-            this.panel17.Controls.Add(this.label29);
-            this.panel17.Location = new System.Drawing.Point(703, 98);
-            this.panel17.Margin = new System.Windows.Forms.Padding(2);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(273, 344);
-            this.panel17.TabIndex = 15;
-            // 
-            // btnResetSCheckIn
-            // 
-            this.btnResetSCheckIn.Location = new System.Drawing.Point(157, 73);
-            this.btnResetSCheckIn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnResetSCheckIn.Name = "btnResetSCheckIn";
-            this.btnResetSCheckIn.Size = new System.Drawing.Size(71, 32);
-            this.btnResetSCheckIn.TabIndex = 21;
-            this.btnResetSCheckIn.Text = "Reset";
-            this.btnResetSCheckIn.UseVisualStyleBackColor = true;
-            // 
-            // btnSearchCheckIn
-            // 
-            this.btnSearchCheckIn.Location = new System.Drawing.Point(43, 73);
-            this.btnSearchCheckIn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchCheckIn.Name = "btnSearchCheckIn";
-            this.btnSearchCheckIn.Size = new System.Drawing.Size(75, 32);
-            this.btnSearchCheckIn.TabIndex = 20;
-            this.btnSearchCheckIn.Text = "Tìm kiếm";
-            this.btnSearchCheckIn.UseVisualStyleBackColor = true;
-            // 
-            // txbSeachCk
-            // 
-            this.txbSeachCk.Location = new System.Drawing.Point(121, 23);
-            this.txbSeachCk.Margin = new System.Windows.Forms.Padding(2);
-            this.txbSeachCk.Name = "txbSeachCk";
-            this.txbSeachCk.Size = new System.Drawing.Size(117, 20);
-            this.txbSeachCk.TabIndex = 17;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(15, 26);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(91, 13);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "Nhập mã checkin";
-            // 
-            // panel18
-            // 
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Controls.Add(this.btnResetCheckIn);
-            this.panel18.Controls.Add(this.btnXoaCheckIn);
-            this.panel18.Controls.Add(this.btnSuaCheckIn);
-            this.panel18.Location = new System.Drawing.Point(703, 4);
-            this.panel18.Margin = new System.Windows.Forms.Padding(2);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(273, 90);
-            this.panel18.TabIndex = 14;
-            // 
-            // btnResetCheckIn
-            // 
-            this.btnResetCheckIn.Location = new System.Drawing.Point(143, 13);
-            this.btnResetCheckIn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnResetCheckIn.Name = "btnResetCheckIn";
-            this.btnResetCheckIn.Size = new System.Drawing.Size(70, 59);
-            this.btnResetCheckIn.TabIndex = 3;
-            this.btnResetCheckIn.Text = "Reset";
-            this.btnResetCheckIn.UseVisualStyleBackColor = true;
-            // 
-            // btnXoaCheckIn
-            // 
-            this.btnXoaCheckIn.Location = new System.Drawing.Point(63, 47);
-            this.btnXoaCheckIn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoaCheckIn.Name = "btnXoaCheckIn";
-            this.btnXoaCheckIn.Size = new System.Drawing.Size(69, 25);
-            this.btnXoaCheckIn.TabIndex = 2;
-            this.btnXoaCheckIn.Text = "Xóa";
-            this.btnXoaCheckIn.UseVisualStyleBackColor = true;
-            // 
-            // btnSuaCheckIn
-            // 
-            this.btnSuaCheckIn.Location = new System.Drawing.Point(63, 13);
-            this.btnSuaCheckIn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSuaCheckIn.Name = "btnSuaCheckIn";
-            this.btnSuaCheckIn.Size = new System.Drawing.Size(69, 26);
-            this.btnSuaCheckIn.TabIndex = 1;
-            this.btnSuaCheckIn.Text = "Sửa";
-            this.btnSuaCheckIn.UseVisualStyleBackColor = true;
-            // 
-            // panel19
-            // 
-            this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel19.Controls.Add(this.dgvCheckIn);
-            this.panel19.Location = new System.Drawing.Point(4, 98);
-            this.panel19.Margin = new System.Windows.Forms.Padding(2);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(694, 344);
-            this.panel19.TabIndex = 13;
-            // 
-            // dgvCheckIn
-            // 
-            this.dgvCheckIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCheckIn.Location = new System.Drawing.Point(3, 3);
-            this.dgvCheckIn.Name = "dgvCheckIn";
-            this.dgvCheckIn.Size = new System.Drawing.Size(688, 337);
-            this.dgvCheckIn.TabIndex = 0;
-            // 
-            // panel20
-            // 
-            this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel20.Controls.Add(this.label9);
-            this.panel20.Controls.Add(this.dtbNgayDiCk);
-            this.panel20.Controls.Add(this.txbMaNv);
-            this.panel20.Controls.Add(this.dtbNgayDenCk);
-            this.panel20.Controls.Add(this.txbMaKhachCk);
-            this.panel20.Controls.Add(this.txbGhiChuCk);
-            this.panel20.Controls.Add(this.txbMaPhongCk);
-            this.panel20.Controls.Add(this.txbMaCheckin);
-            this.panel20.Controls.Add(this.label25);
-            this.panel20.Controls.Add(this.label26);
-            this.panel20.Controls.Add(this.label27);
-            this.panel20.Controls.Add(this.label28);
-            this.panel20.Controls.Add(this.label30);
-            this.panel20.Controls.Add(this.label31);
-            this.panel20.Location = new System.Drawing.Point(4, 4);
-            this.panel20.Margin = new System.Windows.Forms.Padding(2);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(694, 90);
-            this.panel20.TabIndex = 12;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(544, 14);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Ghi chú";
-            // 
-            // dtbNgayDiCk
-            // 
-            this.dtbNgayDiCk.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtbNgayDiCk.Location = new System.Drawing.Point(415, 56);
-            this.dtbNgayDiCk.Margin = new System.Windows.Forms.Padding(2);
-            this.dtbNgayDiCk.Name = "dtbNgayDiCk";
-            this.dtbNgayDiCk.Size = new System.Drawing.Size(125, 20);
-            this.dtbNgayDiCk.TabIndex = 18;
-            // 
-            // txbMaNv
-            // 
-            this.txbMaNv.Location = new System.Drawing.Point(243, 13);
-            this.txbMaNv.Margin = new System.Windows.Forms.Padding(2);
-            this.txbMaNv.Name = "txbMaNv";
-            this.txbMaNv.Size = new System.Drawing.Size(99, 20);
-            this.txbMaNv.TabIndex = 17;
-            // 
-            // dtbNgayDenCk
-            // 
-            this.dtbNgayDenCk.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtbNgayDenCk.Location = new System.Drawing.Point(415, 11);
-            this.dtbNgayDenCk.Margin = new System.Windows.Forms.Padding(2);
-            this.dtbNgayDenCk.Name = "dtbNgayDenCk";
-            this.dtbNgayDenCk.Size = new System.Drawing.Size(125, 20);
-            this.dtbNgayDenCk.TabIndex = 15;
-            // 
-            // txbMaKhachCk
-            // 
-            this.txbMaKhachCk.Location = new System.Drawing.Point(68, 56);
-            this.txbMaKhachCk.Margin = new System.Windows.Forms.Padding(2);
-            this.txbMaKhachCk.Name = "txbMaKhachCk";
-            this.txbMaKhachCk.Size = new System.Drawing.Size(99, 20);
-            this.txbMaKhachCk.TabIndex = 13;
-            // 
-            // txbGhiChuCk
-            // 
-            this.txbGhiChuCk.Location = new System.Drawing.Point(592, 11);
-            this.txbGhiChuCk.Margin = new System.Windows.Forms.Padding(2);
-            this.txbGhiChuCk.Name = "txbGhiChuCk";
-            this.txbGhiChuCk.Size = new System.Drawing.Size(99, 20);
-            this.txbGhiChuCk.TabIndex = 11;
-            // 
-            // txbMaPhongCk
-            // 
-            this.txbMaPhongCk.Location = new System.Drawing.Point(243, 55);
-            this.txbMaPhongCk.Margin = new System.Windows.Forms.Padding(2);
-            this.txbMaPhongCk.Name = "txbMaPhongCk";
-            this.txbMaPhongCk.Size = new System.Drawing.Size(99, 20);
-            this.txbMaPhongCk.TabIndex = 9;
-            // 
-            // txbMaCheckin
-            // 
-            this.txbMaCheckin.Enabled = false;
-            this.txbMaCheckin.Location = new System.Drawing.Point(68, 12);
-            this.txbMaCheckin.Margin = new System.Windows.Forms.Padding(2);
-            this.txbMaCheckin.Name = "txbMaCheckin";
-            this.txbMaCheckin.Size = new System.Drawing.Size(98, 20);
-            this.txbMaCheckin.TabIndex = 8;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(367, 58);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(44, 13);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "Ngày đi";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(357, 14);
-            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(54, 13);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Ngày đến";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(170, 16);
-            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(72, 13);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "Mã nhân viên";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(184, 58);
-            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(55, 13);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Mã phòng";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(2, 58);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(55, 13);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "Mã khách";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(2, 16);
-            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(64, 13);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "Mã Checkin";
             // 
             // tabPage3
             // 
@@ -1962,7 +1651,6 @@
             this.tabcontrol.Controls.Add(this.tpMenuDichVu);
             this.tabcontrol.Controls.Add(this.tabPage1);
             this.tabcontrol.Controls.Add(this.tabPage3);
-            this.tabcontrol.Controls.Add(this.tabPage4);
             this.tabcontrol.Controls.Add(this.tabPage5);
             this.tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabcontrol.Location = new System.Drawing.Point(0, 0);
@@ -1989,14 +1677,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVatTu)).EndInit();
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            this.panel18.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).EndInit();
-            this.panel20.ResumeLayout(false);
-            this.panel20.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -2061,30 +1741,6 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox txbSeachCk;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Button btnResetCheckIn;
-        private System.Windows.Forms.Button btnXoaCheckIn;
-        private System.Windows.Forms.Button btnSuaCheckIn;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dtbNgayDiCk;
-        private System.Windows.Forms.TextBox txbMaNv;
-        private System.Windows.Forms.DateTimePicker dtbNgayDenCk;
-        private System.Windows.Forms.TextBox txbMaKhachCk;
-        private System.Windows.Forms.TextBox txbGhiChuCk;
-        private System.Windows.Forms.TextBox txbMaPhongCk;
-        private System.Windows.Forms.TextBox txbMaCheckin;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnResetSLp;
@@ -2202,9 +1858,6 @@
         private System.Windows.Forms.Button btnXoaLP;
         private System.Windows.Forms.Button btnSuaLP;
         private System.Windows.Forms.Button btnThemLP;
-        private System.Windows.Forms.DataGridView dgvCheckIn;
-        private System.Windows.Forms.Button btnResetSCheckIn;
-        private System.Windows.Forms.Button btnSearchCheckIn;
         private System.Windows.Forms.DataGridView dgvVatTu;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Button btnResetVT;

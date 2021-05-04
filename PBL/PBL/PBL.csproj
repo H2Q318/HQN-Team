@@ -45,6 +45,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\fManageSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fManageSupplies.Designer.cs">
+      <DependentUpon>fManageSupplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fMenuQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fMenuQuanLy.Designer.cs">
+      <DependentUpon>fMenuQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fChangePassword.Designer.cs">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\fBooking.cs">
@@ -52,12 +70,6 @@
     </Compile>
     <Compile Include="View\fBooking.designer.cs">
       <DependentUpon>fBooking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\fChangePassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\fChangePassword.designer.cs">
-      <DependentUpon>fChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="View\fLogin.cs">
       <SubType>Form</SubType>
@@ -71,30 +83,21 @@
     <Compile Include="View\fHome.designer.cs">
       <DependentUpon>fHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\fmaManageSupplies.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\fmaManageSupplies.Designer.cs">
-      <DependentUpon>fmaManageSupplies.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\fStaffManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\fStaffManager.designer.cs">
       <DependentUpon>fStaffManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\fTableManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\fTableManager.designer.cs">
-      <DependentUpon>fTableManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\fMenuQuanLy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\fMenuQuanLy.designer.cs">
+    <EmbeddedResource Include="View\fManageSupplies.resx">
+      <DependentUpon>fManageSupplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fMenuQuanLy.resx">
       <DependentUpon>fMenuQuanLy.cs</DependentUpon>
-    </Compile>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fChangePassword.resx">
+      <DependentUpon>fChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -107,26 +110,14 @@
     <EmbeddedResource Include="View\fBooking.resx">
       <DependentUpon>fBooking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\fChangePassword.resx">
-      <DependentUpon>fChangePassword.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\fHome.resx">
       <DependentUpon>fHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\fmaManageSupplies.resx">
-      <DependentUpon>fmaManageSupplies.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\fStaffManager.resx">
       <DependentUpon>fStaffManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\fTableManager.resx">
-      <DependentUpon>fTableManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\fMenuQuanLy.resx">
-      <DependentUpon>fMenuQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

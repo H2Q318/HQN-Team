@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL.View
+namespace PBL
 {
-    public partial class fmaManageSupplies : Form
+    public partial class fManageSupplies : Form
     {
-        public fmaManageSupplies()
+        public fManageSupplies()
         {
             InitializeComponent();
         }

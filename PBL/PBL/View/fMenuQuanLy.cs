@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +10,21 @@ using System.Windows.Forms;
 
 namespace PBL
 {
-    public partial class MenuQuanLy : Form
+    public partial class fMenuQuanLy : Form
     {
-        public MenuQuanLy()
+        public fMenuQuanLy()
         {
             InitializeComponent();
-           
         }
-      
+
+        private void btnSeachBill_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnResetSBill_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

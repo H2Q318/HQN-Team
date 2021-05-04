@@ -19,9 +19,50 @@ namespace PBL
             
 
         }
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void itemDangXuat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void itemDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            fChangePassword f = new fChangePassword();
+            f.ShowDialog();
+        }
+
+        private void itemNhanVienVaChucVu_Click(object sender, EventArgs e)
+        {
+            fStaffManager f = new fStaffManager();
+            f.ShowDialog();
+        }
+
+        private void itemMenuChinh_Click(object sender, EventArgs e)
+        {
+            fMenuQuanLy f = new fMenuQuanLy();
+            f.ShowDialog();
+        }
+
+        private void itemVatTu_Click(object sender, EventArgs e)
+        {
+            fManageSupplies f = new fManageSupplies();
+            f.ShowDialog();
+        }
+
+        private void btnCheckin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void itemDatPhong_Click(object sender, EventArgs e)
+        {
+            fBooking f = new fBooking();
+            f.ShowDialog();
         }
     }
    

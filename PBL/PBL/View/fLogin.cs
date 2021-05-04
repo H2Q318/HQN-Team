@@ -20,7 +20,10 @@ namespace PBL
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            fHome f = new fHome();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

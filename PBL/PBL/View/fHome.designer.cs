@@ -33,7 +33,7 @@ namespace PBL
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuItemMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.itemMenuChinh = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemDatPhong = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemBook = new System.Windows.Forms.ToolStripMenuItem();
             this.itemNhanVienVaChucVu = new System.Windows.Forms.ToolStripMenuItem();
             this.itemVatTu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemNhanVien = new System.Windows.Forms.ToolStripMenuItem();
@@ -172,12 +172,12 @@ namespace PBL
             // 
             this.menuItemMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemMenuChinh,
-            this.itemDatPhong,
+            this.itemBook,
             this.itemNhanVienVaChucVu,
             this.itemVatTu});
             this.menuItemMenu.Name = "menuItemMenu";
-            this.menuItemMenu.Size = new System.Drawing.Size(70, 20);
-            this.menuItemMenu.Text = "&Thông tin";
+            this.menuItemMenu.Size = new System.Drawing.Size(60, 20);
+            this.menuItemMenu.Text = "&Quản lý";
             // 
             // itemMenuChinh
             // 
@@ -186,12 +186,12 @@ namespace PBL
             this.itemMenuChinh.Text = "Menu chính";
             this.itemMenuChinh.Click += new System.EventHandler(this.itemMenuChinh_Click);
             // 
-            // itemDatPhong
+            // itemBook
             // 
-            this.itemDatPhong.Name = "itemDatPhong";
-            this.itemDatPhong.Size = new System.Drawing.Size(188, 22);
-            this.itemDatPhong.Text = "Đặt phòng";
-            this.itemDatPhong.Click += new System.EventHandler(this.itemDatPhong_Click);
+            this.itemBook.Name = "itemBook";
+            this.itemBook.Size = new System.Drawing.Size(188, 22);
+            this.itemBook.Text = "Book";
+            this.itemBook.Click += new System.EventHandler(this.itemDatPhong_Click);
             // 
             // itemNhanVienVaChucVu
             // 
@@ -1261,7 +1261,7 @@ namespace PBL
         private System.Windows.Forms.ToolStripMenuItem itemNhanVienVaChucVu;
         private System.Windows.Forms.ToolStripMenuItem itemMenuChinh;
         private System.Windows.Forms.ToolStripMenuItem itemVatTu;
-        private System.Windows.Forms.ToolStripMenuItem itemDatPhong;
+        private System.Windows.Forms.ToolStripMenuItem itemBook;
         private System.Windows.Forms.TabControl tbMain;
         private System.Windows.Forms.TabPage tpKhachHang;
         private System.Windows.Forms.Button btnResetKh;

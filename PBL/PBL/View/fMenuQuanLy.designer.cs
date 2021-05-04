@@ -631,7 +631,7 @@
             // dtbNgayDiCk
             // 
             this.dtbNgayDiCk.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtbNgayDiCk.Location = new System.Drawing.Point(415, 53);
+            this.dtbNgayDiCk.Location = new System.Drawing.Point(415, 56);
             this.dtbNgayDiCk.Margin = new System.Windows.Forms.Padding(2);
             this.dtbNgayDiCk.Name = "dtbNgayDiCk";
             this.dtbNgayDiCk.Size = new System.Drawing.Size(125, 20);
@@ -648,7 +648,7 @@
             // dtbNgayDenCk
             // 
             this.dtbNgayDenCk.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtbNgayDenCk.Location = new System.Drawing.Point(415, 10);
+            this.dtbNgayDenCk.Location = new System.Drawing.Point(415, 11);
             this.dtbNgayDenCk.Margin = new System.Windows.Forms.Padding(2);
             this.dtbNgayDenCk.Name = "dtbNgayDenCk";
             this.dtbNgayDenCk.Size = new System.Drawing.Size(125, 20);
@@ -672,7 +672,7 @@
             // 
             // txbMaPhongCk
             // 
-            this.txbMaPhongCk.Location = new System.Drawing.Point(243, 54);
+            this.txbMaPhongCk.Location = new System.Drawing.Point(243, 55);
             this.txbMaPhongCk.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaPhongCk.Name = "txbMaPhongCk";
             this.txbMaPhongCk.Size = new System.Drawing.Size(99, 20);

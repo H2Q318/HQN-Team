@@ -177,7 +177,7 @@ namespace PBL
             this.itemVatTu});
             this.menuItemMenu.Name = "menuItemMenu";
             this.menuItemMenu.Size = new System.Drawing.Size(60, 20);
-            this.menuItemMenu.Text = "&Quản lý";
+            this.menuItemMenu.Text = "Quản lý";
             // 
             // itemMenuChinh
             // 
@@ -220,13 +220,13 @@ namespace PBL
             // itemTaiKhoan
             // 
             this.itemTaiKhoan.Name = "itemTaiKhoan";
-            this.itemTaiKhoan.Size = new System.Drawing.Size(171, 22);
+            this.itemTaiKhoan.Size = new System.Drawing.Size(180, 22);
             this.itemTaiKhoan.Text = "&Tài Khoản";
             // 
             // itemDoiMatKhau
             // 
             this.itemDoiMatKhau.Name = "itemDoiMatKhau";
-            this.itemDoiMatKhau.Size = new System.Drawing.Size(171, 22);
+            this.itemDoiMatKhau.Size = new System.Drawing.Size(180, 22);
             this.itemDoiMatKhau.Text = "Đổi mật khẩu";
             this.itemDoiMatKhau.Click += new System.EventHandler(this.itemDoiMatKhau_Click);
             // 
@@ -234,7 +234,7 @@ namespace PBL
             // 
             this.itemDangXuat.Name = "itemDangXuat";
             this.itemDangXuat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.itemDangXuat.Size = new System.Drawing.Size(171, 22);
+            this.itemDangXuat.Size = new System.Drawing.Size(180, 22);
             this.itemDangXuat.Text = "Đăng Xuất";
             this.itemDangXuat.Click += new System.EventHandler(this.itemDangXuat_Click);
             // 

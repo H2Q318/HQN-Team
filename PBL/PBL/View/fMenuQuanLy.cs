@@ -26,5 +26,10 @@ namespace PBL
         {
 
         }
+
+        private void btnThemPh_Click(object sender, EventArgs e)
+        {
+            dgvPhong.DataSource = new QLKS().PHONGs.ToList();
+        }
     }
 }

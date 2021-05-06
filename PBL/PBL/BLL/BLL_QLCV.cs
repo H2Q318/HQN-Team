@@ -1,4 +1,5 @@
 ﻿using PBL.DAL;
+using PBL.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -82,12 +83,22 @@ namespace PBL
             {
                 QLKS db = new QLKS();
                 db.CHUCVUs.Remove(db.CHUCVUs.Find(cvid));
+                db.SaveChanges();
                 return true;
             }
             catch
             {
                 return false;
             }
+        }
+        public List<CBBItem> GetListCBBChucVu()
+        {
+            List<CBBItem> data = new List<CBBItem>();
+            foreach(CHUCVU item in GetAllChucVu())
+            {
+                data.Add(new CBBItem { Value = item.ChucVuID, Text = item.TenChucVu });
+            }
+            return data;
         }
     }
 }

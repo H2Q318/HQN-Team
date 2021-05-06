@@ -64,9 +64,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.txbName = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txbID = new System.Windows.Forms.TextBox();
-            this.lbID = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbSearchNV = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -106,7 +103,6 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
@@ -171,8 +167,13 @@
             this.cbSortNV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSortNV.FormattingEnabled = true;
             this.cbSortNV.Items.AddRange(new object[] {
-            "Theo tên chức vụ",
-            "Theo quyền hạn"});
+            "Theo tên nhân viên",
+            "Theo giới tính",
+            "Theo năm sinh",
+            "Theo SĐT",
+            "Theo CMND",
+            "Theo địa chỉ",
+            "Theo chức vụ"});
             this.cbSortNV.Location = new System.Drawing.Point(4, 3);
             this.cbSortNV.Name = "cbSortNV";
             this.cbSortNV.Size = new System.Drawing.Size(158, 25);
@@ -203,7 +204,6 @@
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.panel6);
-            this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(656, 64);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(427, 487);
@@ -238,6 +238,7 @@
             this.btnDeleteNV.TabIndex = 12;
             this.btnDeleteNV.Text = "Xóa";
             this.btnDeleteNV.UseVisualStyleBackColor = true;
+            this.btnDeleteNV.Click += new System.EventHandler(this.btnDeleteNV_Click);
             // 
             // btnAddNV
             // 
@@ -248,6 +249,7 @@
             this.btnAddNV.TabIndex = 10;
             this.btnAddNV.Text = "Thêm";
             this.btnAddNV.UseVisualStyleBackColor = true;
+            this.btnAddNV.Click += new System.EventHandler(this.btnAddNV_Click);
             // 
             // btnUpdateNV
             // 
@@ -258,6 +260,7 @@
             this.btnUpdateNV.TabIndex = 11;
             this.btnUpdateNV.Text = "Cập nhật";
             this.btnUpdateNV.UseVisualStyleBackColor = true;
+            this.btnUpdateNV.Click += new System.EventHandler(this.btnUpdateNV_Click);
             // 
             // panel17
             // 
@@ -300,19 +303,6 @@
             this.cbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPosition.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Items.AddRange(new object[] {
-            "Administrator",
-            "Nhân viên lễ tân",
-            "Nhân viên đặt phòng",
-            "Nhân viên thu ngân",
-            "Nhân viên hành lý",
-            "Nhân viên đứng cửa",
-            "Nhân viên buồng phòng",
-            "Nhân viên buồng phòng",
-            "Nhân viên giặt là",
-            "Nhân viên thủ quỹ",
-            "Nhân viên an ninh",
-            "Nhân viên trực tổng đài"});
             this.cbPosition.Location = new System.Drawing.Point(148, 9);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(245, 24);
@@ -497,34 +487,6 @@
             this.lbName.TabIndex = 0;
             this.lbName.Text = "Tên:";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.txbID);
-            this.panel5.Controls.Add(this.lbID);
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(420, 40);
-            this.panel5.TabIndex = 0;
-            // 
-            // txbID
-            // 
-            this.txbID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbID.Location = new System.Drawing.Point(148, 10);
-            this.txbID.Name = "txbID";
-            this.txbID.ReadOnly = true;
-            this.txbID.Size = new System.Drawing.Size(245, 22);
-            this.txbID.TabIndex = 0;
-            // 
-            // lbID
-            // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.Location = new System.Drawing.Point(64, 13);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(25, 16);
-            this.lbID.TabIndex = 0;
-            this.lbID.Text = "ID:";
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.cbSearchNV);
@@ -541,8 +503,12 @@
             this.cbSearchNV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSearchNV.FormattingEnabled = true;
             this.cbSearchNV.Items.AddRange(new object[] {
-            "Theo ID",
-            "Theo tên"});
+            "Theo tên",
+            "Theo năm sinh",
+            "Theo SĐT",
+            "Theo CMND",
+            "Theo địa chỉ",
+            "Theo chức vụ"});
             this.cbSearchNV.Location = new System.Drawing.Point(4, 3);
             this.cbSearchNV.Name = "cbSearchNV";
             this.cbSearchNV.Size = new System.Drawing.Size(113, 25);
@@ -584,7 +550,9 @@
             this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStaff.Location = new System.Drawing.Point(0, 0);
             this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowHeadersWidth = 51;
+            this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(629, 487);
             this.dgvStaff.TabIndex = 0;
             // 
@@ -609,9 +577,11 @@
             this.dgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChucVu.Location = new System.Drawing.Point(5, 70);
             this.dgvChucVu.Name = "dgvChucVu";
+            this.dgvChucVu.ReadOnly = true;
             this.dgvChucVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChucVu.Size = new System.Drawing.Size(632, 493);
             this.dgvChucVu.TabIndex = 31;
+            this.dgvChucVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChucVu_CellClick);
             // 
             // panel13
             // 
@@ -823,8 +793,6 @@
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -877,9 +845,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txbName;
         private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox txbID;
-        private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbSearchNV;
         private System.Windows.Forms.Button btnSearch;

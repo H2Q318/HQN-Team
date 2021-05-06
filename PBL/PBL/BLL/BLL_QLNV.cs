@@ -38,7 +38,55 @@ namespace PBL
 
         public bool AddNhanVien(NHANVIEN nv)
         {
-            return false;
+            try
+            {
+                QLKS db = new QLKS();
+                db.NHANVIENs.Add(nv);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateNhanVien(NHANVIEN nv)
+        {
+            try
+            {
+                QLKS db = new QLKS();
+                var nhanvien = db.NHANVIENs.Find(nv.NhanVienID);
+                nhanvien.Ten = nv.Ten;
+                nhanvien.GioiTinh = nv.GioiTinh;
+                nhanvien.NgaySinh = nv.NgaySinh;
+                nhanvien.CMND = nv.CMND;
+                nhanvien.SDT = nv.SDT;
+                nhanvien.DiaChi = nv.DiaChi;
+                nhanvien.ChucVuID = nv.ChucVuID;
+                nhanvien.GhiChu = nv.GhiChu;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteNhanVien(string nvid)
+        {
+            try
+            {
+                QLKS db = new QLKS();
+                db.NHANVIENs.Remove(db.NHANVIENs.Find(nvid));
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

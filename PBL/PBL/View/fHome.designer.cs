@@ -222,6 +222,7 @@ namespace PBL
             this.itemTaiKhoan.Name = "itemTaiKhoan";
             this.itemTaiKhoan.Size = new System.Drawing.Size(180, 22);
             this.itemTaiKhoan.Text = "&Tài Khoản";
+            this.itemTaiKhoan.Click += new System.EventHandler(this.itemTaiKhoan_Click);
             // 
             // itemDoiMatKhau
             // 

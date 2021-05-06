@@ -17,6 +17,7 @@ namespace PBL
         public fMenuQuanLy()
         {
             InitializeComponent();
+            GUI();
         }
         private void GUI()
         {
@@ -48,7 +49,7 @@ namespace PBL
                 BLL_QLP.Instance.AddPhong(p);
                 ShowDGVPhong();
             }
-            catch(Exception ex)
+            catch
             {
                 MessageBox.Show("Vui long nhap day du va dung kieu du lieu cua thong tin !");
             }

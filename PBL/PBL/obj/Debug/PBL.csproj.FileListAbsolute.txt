@@ -52,3 +52,8 @@ D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CoreCo
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.exe
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.pdb
+C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.dll
+C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.xml
+C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete

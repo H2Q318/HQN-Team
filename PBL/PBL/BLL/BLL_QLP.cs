@@ -52,6 +52,5 @@ namespace PBL
             db.PHONGs.Remove(db.PHONGs.Find(s));
             db.SaveChanges();
         }
-
     }
 }

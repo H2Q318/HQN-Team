@@ -7,21 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBL
+namespace PBL.DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TRANGTHAIVATDUNG
+    public partial class LOAIVATDUNG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TRANGTHAIVATDUNG()
+        public LOAIVATDUNG()
         {
             this.VATDUNGPHONGs = new HashSet<VATDUNGPHONG>();
         }
     
-        public string TrangThaiVatDungID { get; set; }
-        public string Mota { get; set; }
+        public string VatDungID { get; set; }
+        public string TenVatDung { get; set; }
+        public decimal DonGia { get; set; }
+        public Nullable<bool> ThietBiCoDinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VATDUNGPHONG> VATDUNGPHONGs { get; set; }

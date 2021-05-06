@@ -54,69 +54,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BOOK.cs">
+    <Compile Include="BLL\BLL_QLP.cs" />
+    <Compile Include="DAL\BOOK.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="CHUCVU.cs">
+    <Compile Include="DAL\CHUCVU.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="DANGNHAP.cs">
+    <Compile Include="DAL\DANGNHAP.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="func_XemChiTietHoaDon_DichVu_Result.cs">
+    <Compile Include="DAL\func_XemChiTietHoaDon_DichVu_Result.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="func_XemChiTietHoaDon_VatTu_Result.cs">
+    <Compile Include="DAL\func_XemChiTietHoaDon_VatTu_Result.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="HOADON.cs">
+    <Compile Include="DAL\HOADON.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="HOADON_DUNG_DICHVU.cs">
+    <Compile Include="DAL\HOADON_DUNG_DICHVU.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="KHACHHANG.cs">
+    <Compile Include="DAL\KHACHHANG.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="LOAIDICHVU.cs">
+    <Compile Include="DAL\LOAIDICHVU.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="LOAIPHONG.cs">
+    <Compile Include="DAL\LOAIPHONG.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="LOAIVATDUNG.cs">
+    <Compile Include="DAL\LOAIVATDUNG.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="NHANVIEN.cs">
+    <Compile Include="DAL\NHANVIEN.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="PHONG.cs">
+    <Compile Include="DAL\PHONG.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="QLKS.Context.cs">
+    <Compile Include="DAL\QLKS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKS.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="QLKS.cs">
+    <Compile Include="DAL\QLKS.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="QLKS.Designer.cs">
+    <Compile Include="DAL\QLKS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKS.edmx</DependentUpon>
     </Compile>
-    <Compile Include="TRANGTHAIBOOK.cs">
+    <Compile Include="DAL\TRANGTHAIBOOK.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="TRANGTHAIVATDUNG.cs">
+    <Compile Include="DAL\TRANGTHAIVATDUNG.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="VATDUNGPHONG.cs">
+    <Compile Include="DAL\VATDUNGPHONG.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="View\fManageSupplies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,29 +203,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="QLKS.edmx">
+    <EntityDeploy Include="DAL\QLKS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLKS.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="QLKS.edmx.diagram">
+    <None Include="DAL\QLKS.edmx.diagram">
       <DependentUpon>QLKS.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
-    <Folder Include="DTO\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="QLKS.Context.tt">
+    <Content Include="DAL\QLKS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>QLKS.Context.cs</LastGenOutput>
       <DependentUpon>QLKS.edmx</DependentUpon>
     </Content>
-    <Content Include="QLKS.tt">
+    <Content Include="DAL\QLKS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLKS.edmx</DependentUpon>
       <LastGenOutput>QLKS.cs</LastGenOutput>

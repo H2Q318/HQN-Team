@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBL
+namespace PBL.DAL
 {
     using System;
     using System.Data.Entity;

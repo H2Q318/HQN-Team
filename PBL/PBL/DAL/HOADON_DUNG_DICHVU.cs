@@ -7,17 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBL
+namespace PBL.DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class DANGNHAP
+    public partial class HOADON_DUNG_DICHVU
     {
+        public int ID { get; set; }
+        public string BookID { get; set; }
         public string NhanVienID { get; set; }
-        public string MatKhau { get; set; }
-        public bool TrangThai { get; set; }
+        public string DichVuID { get; set; }
+        public System.DateTime Ngay { get; set; }
+        public int SoLuong { get; set; }
+        public Nullable<decimal> ThanhTien { get; set; }
     
+        public virtual BOOK BOOK { get; set; }
+        public virtual LOAIDICHVU LOAIDICHVU { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

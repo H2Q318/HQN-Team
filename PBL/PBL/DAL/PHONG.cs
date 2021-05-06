@@ -7,25 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBL
+namespace PBL.DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CHUCVU
+    public partial class PHONG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CHUCVU()
+        public PHONG()
         {
-            this.NHANVIENs = new HashSet<NHANVIEN>();
+            this.BOOKs = new HashSet<BOOK>();
+            this.VATDUNGPHONGs = new HashSet<VATDUNGPHONG>();
         }
     
-        public string ChucVuID { get; set; }
-        public string TenChucVu { get; set; }
-        public string MoTa { get; set; }
-        public int QuyenHan { get; set; }
+        public string PhongID { get; set; }
+        public string LoaiPhongID { get; set; }
+        public bool TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
+        public virtual ICollection<BOOK> BOOKs { get; set; }
+        public virtual LOAIPHONG LOAIPHONG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VATDUNGPHONG> VATDUNGPHONGs { get; set; }
     }
 }

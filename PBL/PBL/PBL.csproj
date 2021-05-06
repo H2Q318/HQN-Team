@@ -122,6 +122,7 @@
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CBBItem.cs" />
+    <Compile Include="DTO\NV_View.cs" />
     <Compile Include="View\fManageSupplies.cs">
       <SubType>Form</SubType>
     </Compile>

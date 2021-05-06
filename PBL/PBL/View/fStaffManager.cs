@@ -28,6 +28,8 @@ namespace PBL
         private void ShowDgvStaff()
         {
             dgvStaff.DataSource = BLL_QLNV.Instance.GetAllNhanVien();
+            dgvStaff.Columns["NhanVienID"].Visible = false;
+            dgvStaff.Columns["ChucVuID"].Visible = false;
         }
         private void ShowDgvChucVu()
         {
@@ -121,11 +123,6 @@ namespace PBL
         private void btnSearchCV_Click(object sender, EventArgs e)
         {
             dgvChucVu.DataSource = BLL_QLCV.Instance.SearchChucVu(txbSearchCV.Text);
-        }
-
-        private void btnSortCV_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

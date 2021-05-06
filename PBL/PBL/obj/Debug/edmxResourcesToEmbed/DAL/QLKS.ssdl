@@ -20,7 +20,7 @@
     <Key>
       <PropertyRef Name="ChucVuID" />
     </Key>
-    <Property Name="ChucVuID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="ChucVuID" Type="nvarchar" MaxLength="5" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="TenChucVu" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="MoTa" Type="ntext" />
     <Property Name="QuyenHan" Type="int" Nullable="false" />

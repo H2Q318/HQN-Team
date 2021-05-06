@@ -33,11 +33,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnClearNV = new System.Windows.Forms.Button();
+            this.btnDeleteNV = new System.Windows.Forms.Button();
+            this.btnAddNV = new System.Windows.Forms.Button();
+            this.btnUpdateNV = new System.Windows.Forms.Button();
             this.panel17 = new System.Windows.Forms.Panel();
             this.txbNote = new System.Windows.Forms.TextBox();
             this.lbNote = new System.Windows.Forms.Label();
@@ -66,19 +65,16 @@
             this.txbID = new System.Windows.Forms.TextBox();
             this.lbID = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.cbSearchNV = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txbSearch = new System.Windows.Forms.TextBox();
+            this.txbSearchNV = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnClearCV = new System.Windows.Forms.Button();
+            this.btnDeleteCV = new System.Windows.Forms.Button();
+            this.btnAddCV = new System.Windows.Forms.Button();
+            this.btnUpdateCV = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.txbQuyenHan = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
@@ -88,11 +84,15 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.txbChucVu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.cbSearchCV = new System.Windows.Forms.ComboBox();
+            this.txbSearchCV = new System.Windows.Forms.TextBox();
+            this.dgvChucVu = new System.Windows.Forms.DataGridView();
+            this.btnSearchCV = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.cbSortCV = new System.Windows.Forms.ComboBox();
+            this.btnSortCV = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -110,14 +110,13 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel23.SuspendLayout();
-            this.panel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel24.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).BeginInit();
+            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -139,7 +138,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(1102, 609);
+            this.tabPage1.Size = new System.Drawing.Size(1102, 568);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -154,7 +153,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1098, 605);
+            this.panel1.Size = new System.Drawing.Size(1098, 564);
             this.panel1.TabIndex = 5;
             // 
             // btnResetPassword
@@ -169,11 +168,10 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnClear);
-            this.panel4.Controls.Add(this.btnDelete);
-            this.panel4.Controls.Add(this.btnAdd);
-            this.panel4.Controls.Add(this.btnExit);
-            this.panel4.Controls.Add(this.btnUpdate);
+            this.panel4.Controls.Add(this.btnClearNV);
+            this.panel4.Controls.Add(this.btnDeleteNV);
+            this.panel4.Controls.Add(this.btnAddNV);
+            this.panel4.Controls.Add(this.btnUpdateNV);
             this.panel4.Controls.Add(this.panel17);
             this.panel4.Controls.Add(this.panel16);
             this.panel4.Controls.Add(this.panel12);
@@ -188,56 +186,45 @@
             this.panel4.Size = new System.Drawing.Size(427, 487);
             this.panel4.TabIndex = 2;
             // 
-            // btnClear
+            // btnClearNV
             // 
-            this.btnClear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(257, 437);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(80, 35);
-            this.btnClear.TabIndex = 21;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClearNV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearNV.Location = new System.Drawing.Point(343, 433);
+            this.btnClearNV.Name = "btnClearNV";
+            this.btnClearNV.Size = new System.Drawing.Size(80, 35);
+            this.btnClearNV.TabIndex = 21;
+            this.btnClearNV.Text = "Clear";
+            this.btnClearNV.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // btnDeleteNV
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(173, 437);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(78, 35);
-            this.btnDelete.TabIndex = 20;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDeleteNV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteNV.Location = new System.Drawing.Point(259, 433);
+            this.btnDeleteNV.Name = "btnDeleteNV";
+            this.btnDeleteNV.Size = new System.Drawing.Size(78, 35);
+            this.btnDeleteNV.TabIndex = 20;
+            this.btnDeleteNV.Text = "Xóa";
+            this.btnDeleteNV.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
+            // btnAddNV
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(3, 437);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(79, 35);
-            this.btnAdd.TabIndex = 18;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAddNV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNV.Location = new System.Drawing.Point(89, 433);
+            this.btnAddNV.Name = "btnAddNV";
+            this.btnAddNV.Size = new System.Drawing.Size(79, 35);
+            this.btnAddNV.TabIndex = 18;
+            this.btnAddNV.Text = "Thêm";
+            this.btnAddNV.UseVisualStyleBackColor = true;
             // 
-            // btnExit
+            // btnUpdateNV
             // 
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(343, 437);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(80, 35);
-            this.btnExit.TabIndex = 22;
-            this.btnExit.Text = "Quay lại";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(88, 437);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(79, 35);
-            this.btnUpdate.TabIndex = 19;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdateNV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateNV.Location = new System.Drawing.Point(174, 433);
+            this.btnUpdateNV.Name = "btnUpdateNV";
+            this.btnUpdateNV.Size = new System.Drawing.Size(79, 35);
+            this.btnUpdateNV.TabIndex = 19;
+            this.btnUpdateNV.Text = "Cập nhật";
+            this.btnUpdateNV.UseVisualStyleBackColor = true;
             // 
             // panel17
             // 
@@ -507,26 +494,26 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.cbSearch);
+            this.panel3.Controls.Add(this.cbSearchNV);
             this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Controls.Add(this.txbSearch);
+            this.panel3.Controls.Add(this.txbSearchNV);
             this.panel3.Location = new System.Drawing.Point(6, 17);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(629, 32);
             this.panel3.TabIndex = 0;
             // 
-            // cbSearch
+            // cbSearchNV
             // 
-            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearch.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Items.AddRange(new object[] {
+            this.cbSearchNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchNV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSearchNV.FormattingEnabled = true;
+            this.cbSearchNV.Items.AddRange(new object[] {
             "Theo ID",
             "Theo tên"});
-            this.cbSearch.Location = new System.Drawing.Point(4, 3);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(158, 25);
-            this.cbSearch.TabIndex = 0;
+            this.cbSearchNV.Location = new System.Drawing.Point(4, 3);
+            this.cbSearchNV.Name = "cbSearchNV";
+            this.cbSearchNV.Size = new System.Drawing.Size(158, 25);
+            this.cbSearchNV.TabIndex = 0;
             // 
             // btnSearch
             // 
@@ -538,13 +525,13 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // txbSearch
+            // txbSearchNV
             // 
-            this.txbSearch.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSearch.Location = new System.Drawing.Point(168, 4);
-            this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(329, 25);
-            this.txbSearch.TabIndex = 1;
+            this.txbSearchNV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearchNV.Location = new System.Drawing.Point(168, 4);
+            this.txbSearchNV.Name = "txbSearchNV";
+            this.txbSearchNV.Size = new System.Drawing.Size(329, 25);
+            this.txbSearchNV.TabIndex = 1;
             // 
             // panel2
             // 
@@ -570,6 +557,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel14);
+            this.tabPage2.Controls.Add(this.dgvChucVu);
+            this.tabPage2.Controls.Add(this.panel13);
             this.tabPage2.Controls.Add(this.panel11);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
@@ -580,93 +570,58 @@
             this.tabPage2.Text = "Chức vụ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // panel11
+            // btnClearCV
             // 
-            this.panel11.Controls.Add(this.panel13);
-            this.panel11.Controls.Add(this.panel25);
-            this.panel11.Controls.Add(this.panel24);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(2, 2);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1098, 564);
-            this.panel11.TabIndex = 0;
+            this.btnClearCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearCV.Location = new System.Drawing.Point(336, 429);
+            this.btnClearCV.Name = "btnClearCV";
+            this.btnClearCV.Size = new System.Drawing.Size(80, 35);
+            this.btnClearCV.TabIndex = 6;
+            this.btnClearCV.Text = "Clear";
+            this.btnClearCV.UseVisualStyleBackColor = true;
+            this.btnClearCV.Click += new System.EventHandler(this.btnClearCV_Click);
             // 
-            // panel13
+            // btnDeleteCV
             // 
-            this.panel13.Controls.Add(this.button1);
-            this.panel13.Controls.Add(this.button2);
-            this.panel13.Controls.Add(this.button3);
-            this.panel13.Controls.Add(this.button4);
-            this.panel13.Controls.Add(this.button5);
-            this.panel13.Controls.Add(this.panel19);
-            this.panel13.Controls.Add(this.panel20);
-            this.panel13.Controls.Add(this.panel23);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(629, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(469, 564);
-            this.panel13.TabIndex = 4;
+            this.btnDeleteCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCV.Location = new System.Drawing.Point(251, 429);
+            this.btnDeleteCV.Name = "btnDeleteCV";
+            this.btnDeleteCV.Size = new System.Drawing.Size(78, 35);
+            this.btnDeleteCV.TabIndex = 5;
+            this.btnDeleteCV.Text = "Xóa";
+            this.btnDeleteCV.UseVisualStyleBackColor = true;
+            this.btnDeleteCV.Click += new System.EventHandler(this.btnDeleteCV_Click);
             // 
-            // button1
+            // btnAddCV
             // 
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(279, 438);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 35);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCV.Location = new System.Drawing.Point(82, 429);
+            this.btnAddCV.Name = "btnAddCV";
+            this.btnAddCV.Size = new System.Drawing.Size(79, 35);
+            this.btnAddCV.TabIndex = 3;
+            this.btnAddCV.Text = "Thêm";
+            this.btnAddCV.UseVisualStyleBackColor = true;
+            this.btnAddCV.Click += new System.EventHandler(this.btnAddCV_Click);
             // 
-            // button2
+            // btnUpdateCV
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(194, 438);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 35);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(25, 438);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 35);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Thêm";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(365, 438);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 35);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Quay lại";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(110, 438);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(79, 35);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Cập nhật";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnUpdateCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateCV.Location = new System.Drawing.Point(167, 429);
+            this.btnUpdateCV.Name = "btnUpdateCV";
+            this.btnUpdateCV.Size = new System.Drawing.Size(79, 35);
+            this.btnUpdateCV.TabIndex = 4;
+            this.btnUpdateCV.Text = "Cập nhật";
+            this.btnUpdateCV.UseVisualStyleBackColor = true;
+            this.btnUpdateCV.Click += new System.EventHandler(this.btnUpdateCV_Click);
             // 
             // panel19
             // 
             this.panel19.Controls.Add(this.txbQuyenHan);
             this.panel19.Controls.Add(this.label);
-            this.panel19.Location = new System.Drawing.Point(41, 268);
+            this.panel19.Location = new System.Drawing.Point(34, 295);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(382, 28);
-            this.panel19.TabIndex = 5;
+            this.panel19.TabIndex = 2;
             // 
             // txbQuyenHan
             // 
@@ -690,10 +645,10 @@
             // 
             this.panel20.Controls.Add(this.txbMota);
             this.panel20.Controls.Add(this.label5);
-            this.panel20.Location = new System.Drawing.Point(41, 177);
+            this.panel20.Location = new System.Drawing.Point(34, 204);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(382, 29);
-            this.panel20.TabIndex = 4;
+            this.panel20.TabIndex = 1;
             // 
             // txbMota
             // 
@@ -717,10 +672,10 @@
             // 
             this.panel23.Controls.Add(this.txbChucVu);
             this.panel23.Controls.Add(this.label8);
-            this.panel23.Location = new System.Drawing.Point(41, 83);
+            this.panel23.Location = new System.Drawing.Point(34, 110);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(382, 28);
-            this.panel23.TabIndex = 1;
+            this.panel23.TabIndex = 0;
             // 
             // txbChucVu
             // 
@@ -740,56 +695,102 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Tên chức vụ:";
             // 
-            // panel25
+            // panel11
             // 
-            this.panel25.Controls.Add(this.dataGridView1);
-            this.panel25.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel25.Location = new System.Drawing.Point(0, 0);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(629, 564);
-            this.panel25.TabIndex = 3;
+            this.panel11.Controls.Add(this.panel23);
+            this.panel11.Controls.Add(this.btnClearCV);
+            this.panel11.Controls.Add(this.btnUpdateCV);
+            this.panel11.Controls.Add(this.panel19);
+            this.panel11.Controls.Add(this.btnDeleteCV);
+            this.panel11.Controls.Add(this.btnAddCV);
+            this.panel11.Controls.Add(this.panel20);
+            this.panel11.Location = new System.Drawing.Point(643, 70);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(456, 495);
+            this.panel11.TabIndex = 0;
             // 
-            // dataGridView1
+            // panel13
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(629, 564);
-            this.dataGridView1.TabIndex = 0;
+            this.panel13.Controls.Add(this.cbSearchCV);
+            this.panel13.Controls.Add(this.btnSearchCV);
+            this.panel13.Controls.Add(this.txbSearchCV);
+            this.panel13.Location = new System.Drawing.Point(643, 21);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(454, 32);
+            this.panel13.TabIndex = 1;
             // 
-            // panel24
+            // cbSearchCV
             // 
-            this.panel24.Controls.Add(this.textBox6);
-            this.panel24.Controls.Add(this.label9);
-            this.panel24.Location = new System.Drawing.Point(654, 14);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(420, 40);
-            this.panel24.TabIndex = 0;
+            this.cbSearchCV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSearchCV.FormattingEnabled = true;
+            this.cbSearchCV.Items.AddRange(new object[] {
+            "Theo tên chức vụ"});
+            this.cbSearchCV.Location = new System.Drawing.Point(4, 4);
+            this.cbSearchCV.Name = "cbSearchCV";
+            this.cbSearchCV.Size = new System.Drawing.Size(135, 25);
+            this.cbSearchCV.TabIndex = 0;
             // 
-            // textBox6
+            // txbSearchCV
             // 
-            this.textBox6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(148, 10);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(245, 22);
-            this.textBox6.TabIndex = 1;
+            this.txbSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearchCV.Location = new System.Drawing.Point(145, 3);
+            this.txbSearchCV.Name = "txbSearchCV";
+            this.txbSearchCV.Size = new System.Drawing.Size(206, 25);
+            this.txbSearchCV.TabIndex = 1;
             // 
-            // label9
+            // dgvChucVu
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(64, 13);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(25, 16);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "ID:";
+            this.dgvChucVu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChucVu.Location = new System.Drawing.Point(5, 70);
+            this.dgvChucVu.Name = "dgvChucVu";
+            this.dgvChucVu.Size = new System.Drawing.Size(632, 493);
+            this.dgvChucVu.TabIndex = 31;
+            // 
+            // btnSearchCV
+            // 
+            this.btnSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCV.Location = new System.Drawing.Point(357, 2);
+            this.btnSearchCV.Name = "btnSearchCV";
+            this.btnSearchCV.Size = new System.Drawing.Size(94, 28);
+            this.btnSearchCV.TabIndex = 2;
+            this.btnSearchCV.Text = "Tìm kiếm";
+            this.btnSearchCV.UseVisualStyleBackColor = true;
+            this.btnSearchCV.Click += new System.EventHandler(this.btnSearchCV_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.cbSortCV);
+            this.panel14.Controls.Add(this.btnSortCV);
+            this.panel14.Location = new System.Drawing.Point(3, 21);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(273, 32);
+            this.panel14.TabIndex = 2;
+            // 
+            // cbSortCV
+            // 
+            this.cbSortCV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSortCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSortCV.FormattingEnabled = true;
+            this.cbSortCV.Items.AddRange(new object[] {
+            "Theo tên chức vụ",
+            "Theo quyền hạn"});
+            this.cbSortCV.Location = new System.Drawing.Point(4, 3);
+            this.cbSortCV.Name = "cbSortCV";
+            this.cbSortCV.Size = new System.Drawing.Size(158, 25);
+            this.cbSortCV.TabIndex = 0;
+            // 
+            // btnSortCV
+            // 
+            this.btnSortCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortCV.Location = new System.Drawing.Point(168, 2);
+            this.btnSortCV.Name = "btnSortCV";
+            this.btnSortCV.Size = new System.Drawing.Size(94, 28);
+            this.btnSortCV.TabIndex = 1;
+            this.btnSortCV.Text = "Sort";
+            this.btnSortCV.UseVisualStyleBackColor = true;
+            this.btnSortCV.Click += new System.EventHandler(this.btnSortCV_Click);
             // 
             // fStaffManager
             // 
@@ -827,18 +828,17 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).EndInit();
+            this.panel14.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -848,11 +848,10 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnClearNV;
+        private System.Windows.Forms.Button btnDeleteNV;
+        private System.Windows.Forms.Button btnAddNV;
+        private System.Windows.Forms.Button btnUpdateNV;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.TextBox txbNote;
         private System.Windows.Forms.Label lbNote;
@@ -881,33 +880,34 @@
         private System.Windows.Forms.TextBox txbID;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox cbSearch;
+        private System.Windows.Forms.ComboBox cbSearchNV;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txbSearch;
+        private System.Windows.Forms.TextBox txbSearchNV;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvStaff;
+        private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.TextBox txbQuyenHan;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox txbMota;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnClearCV;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.TextBox txbChucVu;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnResetPassword;
+        private System.Windows.Forms.Button btnDeleteCV;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.TextBox txbMota;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAddCV;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.TextBox txbQuyenHan;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Button btnUpdateCV;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.DataGridView dgvChucVu;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.ComboBox cbSearchCV;
+        private System.Windows.Forms.TextBox txbSearchCV;
+        private System.Windows.Forms.Button btnSearchCV;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.ComboBox cbSortCV;
+        private System.Windows.Forms.Button btnSortCV;
     }
 }

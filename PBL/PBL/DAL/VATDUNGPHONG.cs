@@ -7,15 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBL
+namespace PBL.DAL
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class func_XemChiTietHoaDon_VatTu_Result
+    public partial class VATDUNGPHONG
     {
+        public string PhongID { get; set; }
         public string VatDungID { get; set; }
-        public string tenvatdung { get; set; }
-        public decimal DonGia { get; set; }
-        public Nullable<int> SoLuongHu { get; set; }
+        public int SoLuongBanDau { get; set; }
+        public int SoLuongHienTai { get; set; }
+        public string TrangThaiVatDungID { get; set; }
+    
+        public virtual LOAIVATDUNG LOAIVATDUNG { get; set; }
+        public virtual PHONG PHONG { get; set; }
+        public virtual TRANGTHAIVATDUNG TRANGTHAIVATDUNG { get; set; }
     }
 }

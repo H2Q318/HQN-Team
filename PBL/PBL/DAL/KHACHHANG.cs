@@ -7,26 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBL
+namespace PBL.DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class LOAIDICHVU
+    public partial class KHACHHANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAIDICHVU()
+        public KHACHHANG()
         {
-            this.HOADON_DUNG_DICHVU = new HashSet<HOADON_DUNG_DICHVU>();
+            this.BOOKs = new HashSet<BOOK>();
+            this.BOOKs1 = new HashSet<BOOK>();
         }
     
-        public string DichVuID { get; set; }
-        public string TenDichVu { get; set; }
-        public decimal DonGia { get; set; }
-        public Nullable<System.TimeSpan> GioMo { get; set; }
-        public Nullable<System.TimeSpan> GioDong { get; set; }
+        public string KhachHangID { get; set; }
+        public string Ten { get; set; }
+        public Nullable<bool> GioiTinh { get; set; }
+        public string CMND { get; set; }
+        public string SDT { get; set; }
+        public string QuocTich { get; set; }
+        public string GhiChu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON_DUNG_DICHVU> HOADON_DUNG_DICHVU { get; set; }
+        public virtual ICollection<BOOK> BOOKs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BOOK> BOOKs1 { get; set; }
     }
 }

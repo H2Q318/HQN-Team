@@ -132,8 +132,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.txbTinhTrang = new System.Windows.Forms.TextBox();
-            this.cbMaLoaiPhong = new System.Windows.Forms.ComboBox();
+            this.cbTenLoaiPhong = new System.Windows.Forms.ComboBox();
             this.txbMaPhong = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -167,6 +166,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabcontrol = new System.Windows.Forms.TabControl();
+            this.rbtAvailable = new System.Windows.Forms.RadioButton();
+            this.rbtNotAvailable = new System.Windows.Forms.RadioButton();
             this.tabPage5.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -339,7 +340,7 @@
             // 
             this.dgvVatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVatTu.Location = new System.Drawing.Point(5, 4);
-            this.dgvVatTu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvVatTu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvVatTu.Name = "dgvVatTu";
             this.dgvVatTu.RowHeadersWidth = 51;
             this.dgvVatTu.Size = new System.Drawing.Size(916, 416);
@@ -565,7 +566,7 @@
             // 
             this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiPhong.Location = new System.Drawing.Point(4, 4);
-            this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.RowHeadersWidth = 51;
             this.dgvLoaiPhong.Size = new System.Drawing.Size(917, 415);
@@ -772,7 +773,7 @@
             // 
             this.dgvBillDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillDV.Location = new System.Drawing.Point(4, 4);
-            this.dgvBillDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvBillDV.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBillDV.Name = "dgvBillDV";
             this.dgvBillDV.RowHeadersWidth = 51;
             this.dgvBillDV.Size = new System.Drawing.Size(917, 415);
@@ -1057,7 +1058,7 @@
             // 
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.Location = new System.Drawing.Point(3, 2);
-            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.Size = new System.Drawing.Size(916, 415);
@@ -1263,17 +1264,19 @@
             // 
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhong.Location = new System.Drawing.Point(3, 2);
-            this.dgvPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.RowHeadersWidth = 51;
             this.dgvPhong.Size = new System.Drawing.Size(916, 415);
             this.dgvPhong.TabIndex = 0;
+            this.dgvPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellContentClick);
             // 
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.txbTinhTrang);
-            this.panel8.Controls.Add(this.cbMaLoaiPhong);
+            this.panel8.Controls.Add(this.rbtNotAvailable);
+            this.panel8.Controls.Add(this.rbtAvailable);
+            this.panel8.Controls.Add(this.cbTenLoaiPhong);
             this.panel8.Controls.Add(this.txbMaPhong);
             this.panel8.Controls.Add(this.label11);
             this.panel8.Controls.Add(this.label12);
@@ -1284,22 +1287,14 @@
             this.panel8.Size = new System.Drawing.Size(925, 110);
             this.panel8.TabIndex = 4;
             // 
-            // txbTinhTrang
+            // cbTenLoaiPhong
             // 
-            this.txbTinhTrang.Location = new System.Drawing.Point(475, 14);
-            this.txbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbTinhTrang.Name = "txbTinhTrang";
-            this.txbTinhTrang.Size = new System.Drawing.Size(148, 22);
-            this.txbTinhTrang.TabIndex = 16;
-            // 
-            // cbMaLoaiPhong
-            // 
-            this.cbMaLoaiPhong.FormattingEnabled = true;
-            this.cbMaLoaiPhong.Location = new System.Drawing.Point(133, 70);
-            this.cbMaLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbMaLoaiPhong.Name = "cbMaLoaiPhong";
-            this.cbMaLoaiPhong.Size = new System.Drawing.Size(141, 24);
-            this.cbMaLoaiPhong.TabIndex = 14;
+            this.cbTenLoaiPhong.FormattingEnabled = true;
+            this.cbTenLoaiPhong.Location = new System.Drawing.Point(133, 70);
+            this.cbTenLoaiPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbTenLoaiPhong.Name = "cbTenLoaiPhong";
+            this.cbTenLoaiPhong.Size = new System.Drawing.Size(141, 24);
+            this.cbTenLoaiPhong.TabIndex = 14;
             // 
             // txbMaPhong
             // 
@@ -1307,6 +1302,7 @@
             this.txbMaPhong.Location = new System.Drawing.Point(133, 14);
             this.txbMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbMaPhong.Name = "txbMaPhong";
+            this.txbMaPhong.ReadOnly = true;
             this.txbMaPhong.Size = new System.Drawing.Size(141, 22);
             this.txbMaPhong.TabIndex = 8;
             // 
@@ -1324,9 +1320,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(7, 74);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 17);
+            this.label12.Size = new System.Drawing.Size(109, 17);
             this.label12.TabIndex = 4;
-            this.label12.Text = "Mã Loại Phòng";
+            this.label12.Text = "Tên Loại Phòng";
             // 
             // label16
             // 
@@ -1469,7 +1465,7 @@
             // 
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Location = new System.Drawing.Point(4, 4);
-            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.Size = new System.Drawing.Size(915, 414);
@@ -1640,13 +1636,35 @@
             this.tabcontrol.Size = new System.Drawing.Size(1315, 581);
             this.tabcontrol.TabIndex = 1;
             // 
+            // rbtAvailable
+            // 
+            this.rbtAvailable.AutoSize = true;
+            this.rbtAvailable.Location = new System.Drawing.Point(487, 15);
+            this.rbtAvailable.Name = "rbtAvailable";
+            this.rbtAvailable.Size = new System.Drawing.Size(86, 21);
+            this.rbtAvailable.TabIndex = 15;
+            this.rbtAvailable.TabStop = true;
+            this.rbtAvailable.Text = "Available";
+            this.rbtAvailable.UseVisualStyleBackColor = true;
+            // 
+            // rbtNotAvailable
+            // 
+            this.rbtNotAvailable.AutoSize = true;
+            this.rbtNotAvailable.Location = new System.Drawing.Point(487, 71);
+            this.rbtNotAvailable.Name = "rbtNotAvailable";
+            this.rbtNotAvailable.Size = new System.Drawing.Size(112, 21);
+            this.rbtNotAvailable.TabIndex = 16;
+            this.rbtNotAvailable.TabStop = true;
+            this.rbtNotAvailable.Text = "Not Available";
+            this.rbtNotAvailable.UseVisualStyleBackColor = true;
+            // 
             // fMenuQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 581);
             this.Controls.Add(this.tabcontrol);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fMenuQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fMenuQuanLy";
@@ -1782,8 +1800,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridView dgvPhong;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox txbTinhTrang;
-        private System.Windows.Forms.ComboBox cbMaLoaiPhong;
+        private System.Windows.Forms.ComboBox cbTenLoaiPhong;
         private System.Windows.Forms.TextBox txbMaPhong;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -1845,5 +1862,7 @@
         private System.Windows.Forms.Button btnXoaVT;
         private System.Windows.Forms.Button btnSuaVT;
         private System.Windows.Forms.Button btnThemVT;
+        private System.Windows.Forms.RadioButton rbtNotAvailable;
+        private System.Windows.Forms.RadioButton rbtAvailable;
     }
 }

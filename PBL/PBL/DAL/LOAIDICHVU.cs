@@ -7,25 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBL
+namespace PBL.DAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class LOAIVATDUNG
+    public partial class LOAIDICHVU
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAIVATDUNG()
+        public LOAIDICHVU()
         {
-            this.VATDUNGPHONGs = new HashSet<VATDUNGPHONG>();
+            this.HOADON_DUNG_DICHVU = new HashSet<HOADON_DUNG_DICHVU>();
         }
     
-        public string VatDungID { get; set; }
-        public string TenVatDung { get; set; }
+        public string DichVuID { get; set; }
+        public string TenDichVu { get; set; }
         public decimal DonGia { get; set; }
-        public Nullable<bool> ThietBiCoDinh { get; set; }
+        public Nullable<System.TimeSpan> GioMo { get; set; }
+        public Nullable<System.TimeSpan> GioDong { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VATDUNGPHONG> VATDUNGPHONGs { get; set; }
+        public virtual ICollection<HOADON_DUNG_DICHVU> HOADON_DUNG_DICHVU { get; set; }
     }
 }

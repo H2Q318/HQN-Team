@@ -7,18 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PBL
+namespace PBL.DAL
 {
     using System;
     
-    public partial class func_XemChiTietHoaDon_DichVu_Result
+    public partial class func_XemChiTietHoaDon_VatTu_Result
     {
-        public int ID { get; set; }
-        public string BookID { get; set; }
-        public string NhanVienID { get; set; }
-        public string DichVuID { get; set; }
-        public System.DateTime Ngay { get; set; }
-        public int SoLuong { get; set; }
-        public Nullable<decimal> ThanhTien { get; set; }
+        public string VatDungID { get; set; }
+        public string tenvatdung { get; set; }
+        public decimal DonGia { get; set; }
+        public Nullable<int> SoLuongHu { get; set; }
     }
 }

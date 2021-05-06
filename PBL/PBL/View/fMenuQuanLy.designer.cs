@@ -37,12 +37,12 @@
             this.panel25 = new System.Windows.Forms.Panel();
             this.btnResetSVT = new System.Windows.Forms.Button();
             this.BtnSearchVT = new System.Windows.Forms.Button();
-            this.txbSeach = new System.Windows.Forms.TextBox();
+            this.txbSeachVD = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.dgvVatTu = new System.Windows.Forms.DataGridView();
+            this.dgvLoaiVatDung = new System.Windows.Forms.DataGridView();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxTBCoDinh = new System.Windows.Forms.CheckBox();
             this.txbDonGiaVt = new System.Windows.Forms.TextBox();
             this.txbTenVt = new System.Windows.Forms.TextBox();
             this.txbIDVt = new System.Windows.Forms.TextBox();
@@ -174,7 +174,7 @@
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVatTu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiVatDung)).BeginInit();
             this.panel28.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -223,7 +223,7 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Size = new System.Drawing.Size(1307, 552);
             this.tabPage5.TabIndex = 6;
-            this.tabPage5.Text = "Vật tư phòng";
+            this.tabPage5.Text = "Loại vật dụng";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // panel26
@@ -248,6 +248,7 @@
             this.btnResetVT.TabIndex = 3;
             this.btnResetVT.Text = "Reset";
             this.btnResetVT.UseVisualStyleBackColor = true;
+            this.btnResetVT.Click += new System.EventHandler(this.btnResetVT_Click);
             // 
             // btnXoaVT
             // 
@@ -258,6 +259,7 @@
             this.btnXoaVT.TabIndex = 2;
             this.btnXoaVT.Text = "Xóa";
             this.btnXoaVT.UseVisualStyleBackColor = true;
+            this.btnXoaVT.Click += new System.EventHandler(this.btnXoaVT_Click);
             // 
             // btnSuaVT
             // 
@@ -268,6 +270,7 @@
             this.btnSuaVT.TabIndex = 1;
             this.btnSuaVT.Text = "Sửa";
             this.btnSuaVT.UseVisualStyleBackColor = true;
+            this.btnSuaVT.Click += new System.EventHandler(this.btnSuaVT_Click);
             // 
             // btnThemVT
             // 
@@ -278,13 +281,14 @@
             this.btnThemVT.TabIndex = 0;
             this.btnThemVT.Text = "Thêm";
             this.btnThemVT.UseVisualStyleBackColor = true;
+            this.btnThemVT.Click += new System.EventHandler(this.btnThemVT_Click);
             // 
             // panel25
             // 
             this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel25.Controls.Add(this.btnResetSVT);
             this.panel25.Controls.Add(this.BtnSearchVT);
-            this.panel25.Controls.Add(this.txbSeach);
+            this.panel25.Controls.Add(this.txbSeachVD);
             this.panel25.Controls.Add(this.label15);
             this.panel25.Location = new System.Drawing.Point(935, 121);
             this.panel25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -301,6 +305,7 @@
             this.btnResetSVT.TabIndex = 19;
             this.btnResetSVT.Text = "Reset";
             this.btnResetSVT.UseVisualStyleBackColor = true;
+            this.btnResetSVT.Click += new System.EventHandler(this.btnResetSVT_Click);
             // 
             // BtnSearchVT
             // 
@@ -311,48 +316,50 @@
             this.BtnSearchVT.TabIndex = 18;
             this.BtnSearchVT.Text = "Tìm kiếm";
             this.BtnSearchVT.UseVisualStyleBackColor = true;
+            this.BtnSearchVT.Click += new System.EventHandler(this.BtnSearchVT_Click);
             // 
-            // txbSeach
+            // txbSeachVD
             // 
-            this.txbSeach.Location = new System.Drawing.Point(187, 32);
-            this.txbSeach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbSeach.Name = "txbSeach";
-            this.txbSeach.Size = new System.Drawing.Size(140, 22);
-            this.txbSeach.TabIndex = 17;
+            this.txbSeachVD.Location = new System.Drawing.Point(187, 32);
+            this.txbSeachVD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbSeachVD.Name = "txbSeachVD";
+            this.txbSeachVD.Size = new System.Drawing.Size(140, 22);
+            this.txbSeachVD.TabIndex = 17;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(25, 36);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(136, 17);
+            this.label15.Size = new System.Drawing.Size(125, 17);
             this.label15.TabIndex = 16;
-            this.label15.Text = "Nhập tên loại phòng";
+            this.label15.Text = "Nhập tên vật dụng";
             // 
             // panel27
             // 
             this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel27.Controls.Add(this.dgvVatTu);
+            this.panel27.Controls.Add(this.dgvLoaiVatDung);
             this.panel27.Location = new System.Drawing.Point(5, 121);
             this.panel27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(925, 423);
             this.panel27.TabIndex = 17;
             // 
-            // dgvVatTu
+            // dgvLoaiVatDung
             // 
-            this.dgvVatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVatTu.Location = new System.Drawing.Point(5, 4);
-            this.dgvVatTu.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvVatTu.Name = "dgvVatTu";
-            this.dgvVatTu.RowHeadersWidth = 51;
-            this.dgvVatTu.Size = new System.Drawing.Size(916, 416);
-            this.dgvVatTu.TabIndex = 0;
+            this.dgvLoaiVatDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoaiVatDung.Location = new System.Drawing.Point(5, 4);
+            this.dgvLoaiVatDung.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLoaiVatDung.Name = "dgvLoaiVatDung";
+            this.dgvLoaiVatDung.RowHeadersWidth = 51;
+            this.dgvLoaiVatDung.Size = new System.Drawing.Size(916, 416);
+            this.dgvLoaiVatDung.TabIndex = 0;
+            this.dgvLoaiVatDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVatTu_CellClick);
             // 
             // panel28
             // 
             this.panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel28.Controls.Add(this.checkBox1);
+            this.panel28.Controls.Add(this.checkBoxTBCoDinh);
             this.panel28.Controls.Add(this.txbDonGiaVt);
             this.panel28.Controls.Add(this.txbTenVt);
             this.panel28.Controls.Add(this.txbIDVt);
@@ -366,15 +373,15 @@
             this.panel28.Size = new System.Drawing.Size(925, 110);
             this.panel28.TabIndex = 16;
             // 
-            // checkBox1
+            // checkBoxTBCoDinh
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(503, 74);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 33;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxTBCoDinh.AutoSize = true;
+            this.checkBoxTBCoDinh.Location = new System.Drawing.Point(503, 74);
+            this.checkBoxTBCoDinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkBoxTBCoDinh.Name = "checkBoxTBCoDinh";
+            this.checkBoxTBCoDinh.Size = new System.Drawing.Size(18, 17);
+            this.checkBoxTBCoDinh.TabIndex = 33;
+            this.checkBoxTBCoDinh.UseVisualStyleBackColor = true;
             // 
             // txbDonGiaVt
             // 
@@ -383,6 +390,7 @@
             this.txbDonGiaVt.Name = "txbDonGiaVt";
             this.txbDonGiaVt.Size = new System.Drawing.Size(149, 22);
             this.txbDonGiaVt.TabIndex = 32;
+            this.txbDonGiaVt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDonGiaVt_KeyPress);
             // 
             // txbTenVt
             // 
@@ -424,9 +432,9 @@
             this.label41.AutoSize = true;
             this.label41.Location = new System.Drawing.Point(23, 73);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(93, 17);
+            this.label41.Size = new System.Drawing.Size(92, 17);
             this.label41.TabIndex = 19;
-            this.label41.Text = "Tên dật dụng";
+            this.label41.Text = "Tên vật dụng";
             // 
             // label42
             // 
@@ -1712,7 +1720,7 @@
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             this.panel27.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVatTu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiVatDung)).EndInit();
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -1768,11 +1776,11 @@
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Button btnResetSVT;
         private System.Windows.Forms.Button BtnSearchVT;
-        private System.Windows.Forms.TextBox txbSeach;
+        private System.Windows.Forms.TextBox txbSeachVD;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxTBCoDinh;
         private System.Windows.Forms.TextBox txbDonGiaVt;
         private System.Windows.Forms.TextBox txbTenVt;
         private System.Windows.Forms.TextBox txbIDVt;
@@ -1896,7 +1904,7 @@
         private System.Windows.Forms.Button btnXoaLP;
         private System.Windows.Forms.Button btnSuaLP;
         private System.Windows.Forms.Button btnThemLP;
-        private System.Windows.Forms.DataGridView dgvVatTu;
+        private System.Windows.Forms.DataGridView dgvLoaiVatDung;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Button btnResetVT;
         private System.Windows.Forms.Button btnXoaVT;

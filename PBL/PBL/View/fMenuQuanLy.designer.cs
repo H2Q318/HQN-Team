@@ -64,6 +64,8 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.dgvLoaiPhong = new System.Windows.Forms.DataGridView();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nUDSoNguoi = new System.Windows.Forms.NumericUpDown();
             this.txbTenLoaiPhong = new System.Windows.Forms.TextBox();
             this.txbGiaLP = new System.Windows.Forms.TextBox();
             this.txbMaLoaiPhong = new System.Windows.Forms.TextBox();
@@ -180,6 +182,7 @@
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).BeginInit();
             this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDSoNguoi)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -471,6 +474,7 @@
             this.btnResetLP.TabIndex = 3;
             this.btnResetLP.Text = "Reset";
             this.btnResetLP.UseVisualStyleBackColor = true;
+            this.btnResetLP.Click += new System.EventHandler(this.btnResetLP_Click);
             // 
             // btnXoaLP
             // 
@@ -481,6 +485,7 @@
             this.btnXoaLP.TabIndex = 2;
             this.btnXoaLP.Text = "Xóa";
             this.btnXoaLP.UseVisualStyleBackColor = true;
+            this.btnXoaLP.Click += new System.EventHandler(this.btnXoaLP_Click);
             // 
             // btnSuaLP
             // 
@@ -491,6 +496,7 @@
             this.btnSuaLP.TabIndex = 1;
             this.btnSuaLP.Text = "Sửa";
             this.btnSuaLP.UseVisualStyleBackColor = true;
+            this.btnSuaLP.Click += new System.EventHandler(this.btnSuaLP_Click);
             // 
             // btnThemLP
             // 
@@ -501,6 +507,7 @@
             this.btnThemLP.TabIndex = 0;
             this.btnThemLP.Text = "Thêm";
             this.btnThemLP.UseVisualStyleBackColor = true;
+            this.btnThemLP.Click += new System.EventHandler(this.btnThemLP_Click);
             // 
             // panel1
             // 
@@ -524,6 +531,7 @@
             this.btnResetSLp.TabIndex = 19;
             this.btnResetSLp.Text = "Reset";
             this.btnResetSLp.UseVisualStyleBackColor = true;
+            this.btnResetSLp.Click += new System.EventHandler(this.btnResetSLp_Click);
             // 
             // btnSearchLP
             // 
@@ -534,6 +542,7 @@
             this.btnSearchLP.TabIndex = 18;
             this.btnSearchLP.Text = "Tìm kiếm";
             this.btnSearchLP.UseVisualStyleBackColor = true;
+            this.btnSearchLP.Click += new System.EventHandler(this.btnSearchLP_Click);
             // 
             // txbSeachLp
             // 
@@ -569,12 +578,16 @@
             this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.RowHeadersWidth = 51;
+            this.dgvLoaiPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiPhong.Size = new System.Drawing.Size(917, 415);
             this.dgvLoaiPhong.TabIndex = 0;
+            this.dgvLoaiPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiPhong_CellClick);
             // 
             // panel16
             // 
             this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel16.Controls.Add(this.label6);
+            this.panel16.Controls.Add(this.nUDSoNguoi);
             this.panel16.Controls.Add(this.txbTenLoaiPhong);
             this.panel16.Controls.Add(this.txbGiaLP);
             this.panel16.Controls.Add(this.txbMaLoaiPhong);
@@ -586,6 +599,27 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(925, 110);
             this.panel16.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(351, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 17);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Số người";
+            // 
+            // nUDSoNguoi
+            // 
+            this.nUDSoNguoi.Location = new System.Drawing.Point(437, 18);
+            this.nUDSoNguoi.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nUDSoNguoi.Name = "nUDSoNguoi";
+            this.nUDSoNguoi.Size = new System.Drawing.Size(120, 22);
+            this.nUDSoNguoi.TabIndex = 14;
             // 
             // txbTenLoaiPhong
             // 
@@ -602,6 +636,7 @@
             this.txbGiaLP.Name = "txbGiaLP";
             this.txbGiaLP.Size = new System.Drawing.Size(159, 22);
             this.txbGiaLP.TabIndex = 11;
+            this.txbGiaLP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbGiaLP_KeyPress);
             // 
             // txbMaLoaiPhong
             // 
@@ -729,7 +764,6 @@
             this.BtnResetSBill.TabIndex = 19;
             this.BtnResetSBill.Text = "Reset";
             this.BtnResetSBill.UseVisualStyleBackColor = true;
-            this.BtnResetSBill.Click += new System.EventHandler(this.BtnResetSBill_Click);
             // 
             // btnSearchBill
             // 
@@ -740,7 +774,6 @@
             this.btnSearchBill.TabIndex = 18;
             this.btnSearchBill.Text = "Tìm kiếm";
             this.btnSearchBill.UseVisualStyleBackColor = true;
-            this.btnSearchBill.Click += new System.EventHandler(this.btnSeachBill_Click);
             // 
             // txbSeachBill
             // 
@@ -1690,6 +1723,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiPhong)).EndInit();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDSoNguoi)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
@@ -1870,5 +1904,7 @@
         private System.Windows.Forms.Button btnThemVT;
         private System.Windows.Forms.RadioButton rbtNotAvailable;
         private System.Windows.Forms.RadioButton rbtAvailable;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown nUDSoNguoi;
     }
 }

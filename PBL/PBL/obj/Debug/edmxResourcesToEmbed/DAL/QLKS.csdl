@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DHP_04Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="func_XemChiTietHoaDon_DichVu_Result">
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DichVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="ThanhTien" Type="Decimal" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="func_XemChiTietHoaDon_VatTu_Result">
+    <Property Name="VatDungID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenvatdung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SoLuongHu" Type="Int32" />
+  </ComplexType>
+  <EntityType Name="BOOK">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhongID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="KhachHangID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayDat" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayCheckIn" Type="DateTime" Precision="3" />
+    <Property Name="NgayCheckOut" Type="DateTime" Precision="3" />
+    <Property Name="NgayCheckIn_ThucTe" Type="DateTime" Precision="3" />
+    <Property Name="NgayCheckOut_ThucTe" Type="DateTime" Precision="3" />
+    <Property Name="TrangThaiBookID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ThanhToan" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.fk_book_khachhangid" FromRole="BOOK" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_book_nhanvienid" FromRole="BOOK" ToRole="NHANVIEN" />
+    <NavigationProperty Name="PHONG" Relationship="Self.fk_book_phongid" FromRole="BOOK" ToRole="PHONG" />
+    <NavigationProperty Name="TRANGTHAIBOOK" Relationship="Self.fk_book_trangthaibookid" FromRole="BOOK" ToRole="TRANGTHAIBOOK" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.fk_hoadon_bookid" FromRole="BOOK" ToRole="HOADON" />
+    <NavigationProperty Name="HOADON_DUNG_DICHVU" Relationship="Self.fk_hoadon_dung_dichvu_bookid" FromRole="BOOK" ToRole="HOADON_DUNG_DICHVU" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="Self.KHACHHANG_BOOK" FromRole="BOOK" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityType Name="CHUCVU">
+    <Key>
+      <PropertyRef Name="ChucVuID" />
+    </Key>
+    <Property Name="ChucVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenChucVu" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="QuyenHan" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NHANVIENs" Relationship="Self.fk_nhanvien_chucvuid" FromRole="CHUCVU" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="DANGNHAP">
+    <Key>
+      <PropertyRef Name="NhanVienID" />
+    </Key>
+    <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_dangnhap_nhanvienid" FromRole="DANGNHAP" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="HoaDonID" />
+    </Key>
+    <Property Name="HoaDonID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NgayThanhToan" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TienPhong" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TienDichVu" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TienVatTu" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TongTien" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BOOK" Relationship="Self.fk_hoadon_bookid" FromRole="HOADON" ToRole="BOOK" />
+  </EntityType>
+  <EntityType Name="HOADON_DUNG_DICHVU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DichVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="ThanhTien" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="BOOK" Relationship="Self.fk_hoadon_dung_dichvu_bookid" FromRole="HOADON_DUNG_DICHVU" ToRole="BOOK" />
+    <NavigationProperty Name="LOAIDICHVU" Relationship="Self.fk_hoadon_dung_dichvu_dichvuid" FromRole="HOADON_DUNG_DICHVU" ToRole="LOAIDICHVU" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_hoadon_dung_dichvu_nhanvienid" FromRole="HOADON_DUNG_DICHVU" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="KhachHangID" />
+    </Key>
+    <Property Name="KhachHangID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="CMND" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QuocTich" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BOOKs" Relationship="Self.fk_book_khachhangid" FromRole="KHACHHANG" ToRole="BOOK" />
+    <NavigationProperty Name="BOOKs1" Relationship="Self.KHACHHANG_BOOK" FromRole="KHACHHANG" ToRole="BOOK" />
+  </EntityType>
+  <EntityType Name="LOAIDICHVU">
+    <Key>
+      <PropertyRef Name="DichVuID" />
+    </Key>
+    <Property Name="DichVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenDichVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="GioMo" Type="Time" Precision="7" />
+    <Property Name="GioDong" Type="Time" Precision="7" />
+    <NavigationProperty Name="HOADON_DUNG_DICHVU" Relationship="Self.fk_hoadon_dung_dichvu_dichvuid" FromRole="LOAIDICHVU" ToRole="HOADON_DUNG_DICHVU" />
+  </EntityType>
+  <EntityType Name="LOAIPHONG">
+    <Key>
+      <PropertyRef Name="LoaiPhongID" />
+    </Key>
+    <Property Name="LoaiPhongID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenLoaiPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="SoNguoi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PHONGs" Relationship="Self.fk_phong_loaiphongid" FromRole="LOAIPHONG" ToRole="PHONG" />
+  </EntityType>
+  <EntityType Name="LOAIVATDUNG">
+    <Key>
+      <PropertyRef Name="VatDungID" />
+    </Key>
+    <Property Name="VatDungID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenVatDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ThietBiCoDinh" Type="Boolean" />
+    <NavigationProperty Name="VATDUNGPHONGs" Relationship="Self.fk_vatdungphong_vatdungid" FromRole="LOAIVATDUNG" ToRole="VATDUNGPHONG" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="NhanVienID" />
+    </Key>
+    <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ChucVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CMND" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BOOKs" Relationship="Self.fk_book_nhanvienid" FromRole="NHANVIEN" ToRole="BOOK" />
+    <NavigationProperty Name="CHUCVU" Relationship="Self.fk_nhanvien_chucvuid" FromRole="NHANVIEN" ToRole="CHUCVU" />
+    <NavigationProperty Name="DANGNHAP" Relationship="Self.fk_dangnhap_nhanvienid" FromRole="NHANVIEN" ToRole="DANGNHAP" />
+    <NavigationProperty Name="HOADON_DUNG_DICHVU" Relationship="Self.fk_hoadon_dung_dichvu_nhanvienid" FromRole="NHANVIEN" ToRole="HOADON_DUNG_DICHVU" />
+  </EntityType>
+  <EntityType Name="PHONG">
+    <Key>
+      <PropertyRef Name="PhongID" />
+    </Key>
+    <Property Name="PhongID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="LoaiPhongID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TrangThai" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="BOOKs" Relationship="Self.fk_book_phongid" FromRole="PHONG" ToRole="BOOK" />
+    <NavigationProperty Name="LOAIPHONG" Relationship="Self.fk_phong_loaiphongid" FromRole="PHONG" ToRole="LOAIPHONG" />
+    <NavigationProperty Name="VATDUNGPHONGs" Relationship="Self.fk_vatdungphong_phongid" FromRole="PHONG" ToRole="VATDUNGPHONG" />
+  </EntityType>
+  <EntityType Name="TRANGTHAIBOOK">
+    <Key>
+      <PropertyRef Name="TrangThaiBookID" />
+    </Key>
+    <Property Name="TrangThaiBookID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BOOKs" Relationship="Self.fk_book_trangthaibookid" FromRole="TRANGTHAIBOOK" ToRole="BOOK" />
+  </EntityType>
+  <EntityType Name="TRANGTHAIVATDUNG">
+    <Key>
+      <PropertyRef Name="TrangThaiVatDungID" />
+    </Key>
+    <Property Name="TrangThaiVatDungID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="VATDUNGPHONGs" Relationship="Self.fk_vatdungphong_trangthaivatdungid" FromRole="TRANGTHAIVATDUNG" ToRole="VATDUNGPHONG" />
+  </EntityType>
+  <EntityType Name="VATDUNGPHONG">
+    <Key>
+      <PropertyRef Name="PhongID" />
+      <PropertyRef Name="VatDungID" />
+    </Key>
+    <Property Name="PhongID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="VatDungID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoLuongBanDau" Type="Int32" Nullable="false" />
+    <Property Name="SoLuongHienTai" Type="Int32" Nullable="false" />
+    <Property Name="TrangThaiVatDungID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="LOAIVATDUNG" Relationship="Self.fk_vatdungphong_vatdungid" FromRole="VATDUNGPHONG" ToRole="LOAIVATDUNG" />
+    <NavigationProperty Name="PHONG" Relationship="Self.fk_vatdungphong_phongid" FromRole="VATDUNGPHONG" ToRole="PHONG" />
+    <NavigationProperty Name="TRANGTHAIVATDUNG" Relationship="Self.fk_vatdungphong_trangthaivatdungid" FromRole="VATDUNGPHONG" ToRole="TRANGTHAIVATDUNG" />
+  </EntityType>
+  <Association Name="fk_book_khachhangid">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="KhachHangID" />
+      </Principal>
+      <Dependent Role="BOOK">
+        <PropertyRef Name="KhachHangID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_book_nhanvienid">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="NhanVienID" />
+      </Principal>
+      <Dependent Role="BOOK">
+        <PropertyRef Name="NhanVienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_book_phongid">
+    <End Role="PHONG" Type="Self.PHONG" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHONG">
+        <PropertyRef Name="PhongID" />
+      </Principal>
+      <Dependent Role="BOOK">
+        <PropertyRef Name="PhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_book_trangthaibookid">
+    <End Role="TRANGTHAIBOOK" Type="Self.TRANGTHAIBOOK" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANGTHAIBOOK">
+        <PropertyRef Name="TrangThaiBookID" />
+      </Principal>
+      <Dependent Role="BOOK">
+        <PropertyRef Name="TrangThaiBookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hoadon_bookid">
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BOOK">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hoadon_dung_dichvu_bookid">
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="1" />
+    <End Role="HOADON_DUNG_DICHVU" Type="Self.HOADON_DUNG_DICHVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BOOK">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="HOADON_DUNG_DICHVU">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_nhanvien_chucvuid">
+    <End Role="CHUCVU" Type="Self.CHUCVU" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUCVU">
+        <PropertyRef Name="ChucVuID" />
+      </Principal>
+      <Dependent Role="NHANVIEN">
+        <PropertyRef Name="ChucVuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_dangnhap_nhanvienid">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="DANGNHAP" Type="Self.DANGNHAP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="NhanVienID" />
+      </Principal>
+      <Dependent Role="DANGNHAP">
+        <PropertyRef Name="NhanVienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hoadon_dung_dichvu_dichvuid">
+    <End Role="LOAIDICHVU" Type="Self.LOAIDICHVU" Multiplicity="1" />
+    <End Role="HOADON_DUNG_DICHVU" Type="Self.HOADON_DUNG_DICHVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIDICHVU">
+        <PropertyRef Name="DichVuID" />
+      </Principal>
+      <Dependent Role="HOADON_DUNG_DICHVU">
+        <PropertyRef Name="DichVuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hoadon_dung_dichvu_nhanvienid">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="HOADON_DUNG_DICHVU" Type="Self.HOADON_DUNG_DICHVU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="NhanVienID" />
+      </Principal>
+      <Dependent Role="HOADON_DUNG_DICHVU">
+        <PropertyRef Name="NhanVienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_phong_loaiphongid">
+    <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PHONG" Type="Self.PHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIPHONG">
+        <PropertyRef Name="LoaiPhongID" />
+      </Principal>
+      <Dependent Role="PHONG">
+        <PropertyRef Name="LoaiPhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vatdungphong_vatdungid">
+    <End Role="LOAIVATDUNG" Type="Self.LOAIVATDUNG" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VATDUNGPHONG" Type="Self.VATDUNGPHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIVATDUNG">
+        <PropertyRef Name="VatDungID" />
+      </Principal>
+      <Dependent Role="VATDUNGPHONG">
+        <PropertyRef Name="VatDungID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vatdungphong_phongid">
+    <End Role="PHONG" Type="Self.PHONG" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VATDUNGPHONG" Type="Self.VATDUNGPHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHONG">
+        <PropertyRef Name="PhongID" />
+      </Principal>
+      <Dependent Role="VATDUNGPHONG">
+        <PropertyRef Name="PhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vatdungphong_trangthaivatdungid">
+    <End Role="TRANGTHAIVATDUNG" Type="Self.TRANGTHAIVATDUNG" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VATDUNGPHONG" Type="Self.VATDUNGPHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRANGTHAIVATDUNG">
+        <PropertyRef Name="TrangThaiVatDungID" />
+      </Principal>
+      <Dependent Role="VATDUNGPHONG">
+        <PropertyRef Name="TrangThaiVatDungID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KHACHHANG_BOOK">
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="QLKS" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BOOKs" EntityType="Self.BOOK" />
+    <EntitySet Name="CHUCVUs" EntityType="Self.CHUCVU" />
+    <EntitySet Name="DANGNHAPs" EntityType="Self.DANGNHAP" />
+    <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+    <EntitySet Name="HOADON_DUNG_DICHVU" EntityType="Self.HOADON_DUNG_DICHVU" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="LOAIDICHVUs" EntityType="Self.LOAIDICHVU" />
+    <EntitySet Name="LOAIPHONGs" EntityType="Self.LOAIPHONG" />
+    <EntitySet Name="LOAIVATDUNGs" EntityType="Self.LOAIVATDUNG" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="PHONGs" EntityType="Self.PHONG" />
+    <EntitySet Name="TRANGTHAIBOOKs" EntityType="Self.TRANGTHAIBOOK" />
+    <EntitySet Name="TRANGTHAIVATDUNGs" EntityType="Self.TRANGTHAIVATDUNG" />
+    <EntitySet Name="VATDUNGPHONGs" EntityType="Self.VATDUNGPHONG" />
+    <AssociationSet Name="fk_book_khachhangid" Association="Self.fk_book_khachhangid">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="BOOK" EntitySet="BOOKs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_book_nhanvienid" Association="Self.fk_book_nhanvienid">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="BOOK" EntitySet="BOOKs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_book_phongid" Association="Self.fk_book_phongid">
+      <End Role="PHONG" EntitySet="PHONGs" />
+      <End Role="BOOK" EntitySet="BOOKs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_book_trangthaibookid" Association="Self.fk_book_trangthaibookid">
+      <End Role="TRANGTHAIBOOK" EntitySet="TRANGTHAIBOOKs" />
+      <End Role="BOOK" EntitySet="BOOKs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hoadon_bookid" Association="Self.fk_hoadon_bookid">
+      <End Role="BOOK" EntitySet="BOOKs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hoadon_dung_dichvu_bookid" Association="Self.fk_hoadon_dung_dichvu_bookid">
+      <End Role="BOOK" EntitySet="BOOKs" />
+      <End Role="HOADON_DUNG_DICHVU" EntitySet="HOADON_DUNG_DICHVU" />
+    </AssociationSet>
+    <AssociationSet Name="fk_nhanvien_chucvuid" Association="Self.fk_nhanvien_chucvuid">
+      <End Role="CHUCVU" EntitySet="CHUCVUs" />
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_dangnhap_nhanvienid" Association="Self.fk_dangnhap_nhanvienid">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="DANGNHAP" EntitySet="DANGNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hoadon_dung_dichvu_dichvuid" Association="Self.fk_hoadon_dung_dichvu_dichvuid">
+      <End Role="LOAIDICHVU" EntitySet="LOAIDICHVUs" />
+      <End Role="HOADON_DUNG_DICHVU" EntitySet="HOADON_DUNG_DICHVU" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hoadon_dung_dichvu_nhanvienid" Association="Self.fk_hoadon_dung_dichvu_nhanvienid">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HOADON_DUNG_DICHVU" EntitySet="HOADON_DUNG_DICHVU" />
+    </AssociationSet>
+    <AssociationSet Name="fk_phong_loaiphongid" Association="Self.fk_phong_loaiphongid">
+      <End Role="LOAIPHONG" EntitySet="LOAIPHONGs" />
+      <End Role="PHONG" EntitySet="PHONGs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vatdungphong_vatdungid" Association="Self.fk_vatdungphong_vatdungid">
+      <End Role="LOAIVATDUNG" EntitySet="LOAIVATDUNGs" />
+      <End Role="VATDUNGPHONG" EntitySet="VATDUNGPHONGs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vatdungphong_phongid" Association="Self.fk_vatdungphong_phongid">
+      <End Role="PHONG" EntitySet="PHONGs" />
+      <End Role="VATDUNGPHONG" EntitySet="VATDUNGPHONGs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vatdungphong_trangthaivatdungid" Association="Self.fk_vatdungphong_trangthaivatdungid">
+      <End Role="TRANGTHAIVATDUNG" EntitySet="TRANGTHAIVATDUNGs" />
+      <End Role="VATDUNGPHONG" EntitySet="VATDUNGPHONGs" />
+    </AssociationSet>
+    <AssociationSet Name="KHACHHANG_BOOK" Association="Self.KHACHHANG_BOOK">
+      <End Role="BOOK" EntitySet="BOOKs" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+    </AssociationSet>
+    <FunctionImport Name="func_XemChiTietHoaDon_DichVu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_DichVu_Result)">
+      <Parameter Name="hoadonid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="func_XemChiTietHoaDon_VatTu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_VatTu_Result)">
+      <Parameter Name="hoadonid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Cal_HoaDon">
+      <Parameter Name="bookid" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

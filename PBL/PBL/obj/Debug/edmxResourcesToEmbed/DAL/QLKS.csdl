@@ -42,7 +42,7 @@
     <Key>
       <PropertyRef Name="ChucVuID" />
     </Key>
-    <Property Name="ChucVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ChucVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenChucVu" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="QuyenHan" Type="Int32" Nullable="false" />

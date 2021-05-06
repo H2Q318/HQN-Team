@@ -25,9 +25,15 @@ namespace PBL
 
         private BLL_QLNV() { }
 
-        public List<NHANVIEN> GetAllNhanVien()
+        public List<NV_View> GetAllNhanVien()
         {
-            return new QLKS().NHANVIENs.ToList();
+            List<NV_View> data = new List<NV_View>();
+            QLKS db = new QLKS();
+            foreach(NHANVIEN item in db.NHANVIENs.ToList())
+            {
+                data.Add(new NV_View(item));
+            }
+            return data;
         }
 
         public bool AddNhanVien(NHANVIEN nv)

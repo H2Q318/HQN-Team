@@ -71,6 +71,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cbSortCV = new System.Windows.Forms.ComboBox();
+            this.btnSortCV = new System.Windows.Forms.Button();
             this.dgvChucVu = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
             this.cbSearchCV = new System.Windows.Forms.ComboBox();
@@ -107,6 +110,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -186,7 +190,7 @@
             this.btnSortNV.Name = "btnSortNV";
             this.btnSortNV.Size = new System.Drawing.Size(94, 28);
             this.btnSortNV.TabIndex = 1;
-            this.btnSortNV.Text = "Sort";
+            this.btnSortNV.Text = "Sắp xếp";
             this.btnSortNV.UseVisualStyleBackColor = true;
             // 
             // panel4
@@ -558,6 +562,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.Controls.Add(this.dgvChucVu);
             this.tabPage2.Controls.Add(this.panel13);
             this.tabPage2.Controls.Add(this.panel11);
@@ -569,6 +574,39 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Chức vụ";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.cbSortCV);
+            this.panel5.Controls.Add(this.btnSortCV);
+            this.panel5.Location = new System.Drawing.Point(8, 21);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(273, 32);
+            this.panel5.TabIndex = 32;
+            // 
+            // cbSortCV
+            // 
+            this.cbSortCV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSortCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSortCV.FormattingEnabled = true;
+            this.cbSortCV.Items.AddRange(new object[] {
+            "Theo tên chức vụ",
+            "Theo quyền hạn"});
+            this.cbSortCV.Location = new System.Drawing.Point(4, 3);
+            this.cbSortCV.Name = "cbSortCV";
+            this.cbSortCV.Size = new System.Drawing.Size(158, 25);
+            this.cbSortCV.TabIndex = 0;
+            // 
+            // btnSortCV
+            // 
+            this.btnSortCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortCV.Location = new System.Drawing.Point(168, 2);
+            this.btnSortCV.Name = "btnSortCV";
+            this.btnSortCV.Size = new System.Drawing.Size(94, 28);
+            this.btnSortCV.TabIndex = 1;
+            this.btnSortCV.Text = "Sắp xếp";
+            this.btnSortCV.UseVisualStyleBackColor = true;
+            this.btnSortCV.Click += new System.EventHandler(this.btnSortCV_Click);
             // 
             // dgvChucVu
             // 
@@ -798,6 +836,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
@@ -875,5 +914,8 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.ComboBox cbSortNV;
         private System.Windows.Forms.Button btnSortNV;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox cbSortCV;
+        private System.Windows.Forms.Button btnSortCV;
     }
 }

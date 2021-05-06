@@ -32,6 +32,8 @@ namespace PBL
         private void ShowDgvChucVu()
         {
             dgvChucVu.DataSource = BLL_QLCV.Instance.GetAllChucVu();
+            dgvChucVu.Columns["ChucVuID"].Visible = false;
+            dgvChucVu.Columns["NHANVIENs"].Visible = false;
         }
 
         private void btnAddCV_Click(object sender, EventArgs e)

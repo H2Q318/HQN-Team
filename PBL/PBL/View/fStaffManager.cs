@@ -30,6 +30,7 @@ namespace PBL
             cbSearchNV.SelectedIndex = 0;
             cbGender.SelectedIndex = 0;
             cbPosition.SelectedIndex = 0;
+            cbSortCV.SelectedIndex = 0;
             cbSearchCV.SelectedIndex = 0;
         }
 
@@ -41,6 +42,7 @@ namespace PBL
         #region Code cua Tab Chuc Vu
         private void RefreshCV()
         {
+            txbSearchCV.Clear();
             txbChucVu.Clear();
             txbMota.Clear();
             txbQuyenHan.Clear();
@@ -50,7 +52,7 @@ namespace PBL
         //Hien thi datagridview chuc vu
         private void ShowDgvChucVu()
         {
-            dgvChucVu.DataSource = BLL_QLCV.Instance.GetAllChucVu();
+            dgvChucVu.DataSource = BLL_QLCV.Instance.GetListChucVu(txbSearchCV.Text);
             dgvChucVu.Columns["ChucVuID"].Visible = false;
             dgvChucVu.Columns["NHANVIENs"].Visible = false;
         }
@@ -139,10 +141,10 @@ namespace PBL
             RefreshCV();   
         }
 
-        //tim kiem chuc vu theo ten
+        //Tim kiem chuc vu
         private void btnSearchCV_Click(object sender, EventArgs e)
         {
-            dgvChucVu.DataSource = BLL_QLCV.Instance.SearchChucVu(txbSearchCV.Text);
+            dgvChucVu.DataSource = BLL_QLCV.Instance.GetListChucVu(txbSearchCV.Text);
         }
 
         //click row tren datagridview se hien thi len cac textbox va combobox
@@ -151,6 +153,25 @@ namespace PBL
             txbChucVu.Text = dgvChucVu.SelectedRows[0].Cells["TenChucVu"].Value.ToString();
             txbMota.Text = dgvChucVu.SelectedRows[0].Cells["MoTa"].Value.ToString();
             txbQuyenHan.Text = dgvChucVu.SelectedRows[0].Cells["QuyenHan"].Value.ToString();
+        }
+
+        //sap xep chuc vu
+        private void btnSortCV_Click(object sender, EventArgs e)
+        {
+            if (cbSortCV.SelectedIndex >= 0)
+            {
+                //List cac ChucVuID dang hien thi tren datagridview
+                List<string> LcvID = new List<string>();
+                for (int i = 0; i < dgvChucVu.Rows.Count; i++)
+                {
+                    LcvID.Add(dgvChucVu.Rows[i].Cells["ChucVuID"].Value.ToString());
+                }
+                dgvChucVu.DataSource = BLL_QLCV.Instance.GetListChucVuSorted(LcvID, cbSortCV.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Vui long chon kieu sap xep!");
+            }
         }
         #endregion
 

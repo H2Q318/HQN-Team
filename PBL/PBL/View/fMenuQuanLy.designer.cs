@@ -168,8 +168,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabcontrol = new System.Windows.Forms.TabControl();
-            this.rbtAvailable = new System.Windows.Forms.RadioButton();
-            this.rbtNotAvailable = new System.Windows.Forms.RadioButton();
             this.tabPage5.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -1666,28 +1664,6 @@
             this.tabcontrol.SelectedIndex = 0;
             this.tabcontrol.Size = new System.Drawing.Size(1315, 581);
             this.tabcontrol.TabIndex = 1;
-            // 
-            // rbtAvailable
-            // 
-            this.rbtAvailable.AutoSize = true;
-            this.rbtAvailable.Location = new System.Drawing.Point(487, 15);
-            this.rbtAvailable.Name = "rbtAvailable";
-            this.rbtAvailable.Size = new System.Drawing.Size(86, 21);
-            this.rbtAvailable.TabIndex = 15;
-            this.rbtAvailable.TabStop = true;
-            this.rbtAvailable.Text = "Available";
-            this.rbtAvailable.UseVisualStyleBackColor = true;
-            // 
-            // rbtNotAvailable
-            // 
-            this.rbtNotAvailable.AutoSize = true;
-            this.rbtNotAvailable.Location = new System.Drawing.Point(487, 71);
-            this.rbtNotAvailable.Name = "rbtNotAvailable";
-            this.rbtNotAvailable.Size = new System.Drawing.Size(112, 21);
-            this.rbtNotAvailable.TabIndex = 16;
-            this.rbtNotAvailable.TabStop = true;
-            this.rbtNotAvailable.Text = "Not Available";
-            this.rbtNotAvailable.UseVisualStyleBackColor = true;
             // 
             // fMenuQuanLy
             // 

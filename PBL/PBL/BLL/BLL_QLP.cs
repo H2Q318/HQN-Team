@@ -24,12 +24,12 @@ namespace PBL
         }
         private BLL_QLP() { }
 
-        public List<PHONG> GetAllPhong()
+        public List<PHONG> GetListPhong(string s)
         {
-            return new QLKS().PHONGs.ToList();
-        }
-        public List<PHONG> GetPhong(string s)
-        {
+            if (s == null)
+            {
+                return new QLKS().PHONGs.ToList();
+            }
             return new QLKS().PHONGs.Where(p => p.PhongID == s).ToList();
         }
         public void AddPhong(PHONG p)
@@ -42,15 +42,26 @@ namespace PBL
         {
             QLKS db = new QLKS();
             var phong = db.PHONGs.Find(p.PhongID);
-            phong.LoaiPhongID = p.LoaiPhongID;
-            phong.TrangThai = p.TrangThai;
-            db.SaveChanges();
+            if (phong != null)
+            {
+                phong.LoaiPhongID = p.LoaiPhongID;
+                phong.TrangThai = p.TrangThai;
+                db.SaveChanges();
+            }
+            
         }
-        public void DeletePhong(string s)
+        public PHONG FindPhong(string s)
+        {
+            return new QLKS().PHONGs.Find(s);
+        }
+        public void DeletePhong(List <string>  l)
         {
             QLKS db = new QLKS();
-            db.PHONGs.Remove(db.PHONGs.Find(s));
-            db.SaveChanges();
+            foreach(string s in l)
+            {
+                db.PHONGs.Remove(db.PHONGs.Find(s));
+                db.SaveChanges();
+            }
         }
 
     }

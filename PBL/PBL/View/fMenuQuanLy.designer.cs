@@ -132,6 +132,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.rbtNotAvailable = new System.Windows.Forms.RadioButton();
+            this.rbtAvailable = new System.Windows.Forms.RadioButton();
             this.cbTenLoaiPhong = new System.Windows.Forms.ComboBox();
             this.txbMaPhong = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -166,8 +168,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabcontrol = new System.Windows.Forms.TabControl();
-            this.rbtAvailable = new System.Windows.Forms.RadioButton();
-            this.rbtNotAvailable = new System.Windows.Forms.RadioButton();
             this.tabPage5.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -1168,6 +1168,7 @@
             this.btnResetSp.TabIndex = 19;
             this.btnResetSp.Text = "Reset";
             this.btnResetSp.UseVisualStyleBackColor = true;
+            this.btnResetSp.Click += new System.EventHandler(this.btnResetSp_Click);
             // 
             // btnSearchP
             // 
@@ -1178,6 +1179,7 @@
             this.btnSearchP.TabIndex = 18;
             this.btnSearchP.Text = "Tìm kiếm";
             this.btnSearchP.UseVisualStyleBackColor = true;
+            this.btnSearchP.Click += new System.EventHandler(this.btnSearchP_Click);
             // 
             // txbSeachP
             // 
@@ -1218,6 +1220,7 @@
             this.btnResetPh.TabIndex = 7;
             this.btnResetPh.Text = "Reset";
             this.btnResetPh.UseVisualStyleBackColor = true;
+            this.btnResetPh.Click += new System.EventHandler(this.btnResetPh_Click);
             // 
             // btnXoaPh
             // 
@@ -1228,6 +1231,7 @@
             this.btnXoaPh.TabIndex = 6;
             this.btnXoaPh.Text = "Xóa";
             this.btnXoaPh.UseVisualStyleBackColor = true;
+            this.btnXoaPh.Click += new System.EventHandler(this.btnXoaPh_Click);
             // 
             // btnSuaPh
             // 
@@ -1238,6 +1242,7 @@
             this.btnSuaPh.TabIndex = 5;
             this.btnSuaPh.Text = "Sửa";
             this.btnSuaPh.UseVisualStyleBackColor = true;
+            this.btnSuaPh.Click += new System.EventHandler(this.btnSuaPh_Click);
             // 
             // btnThemPh
             // 
@@ -1267,9 +1272,10 @@
             this.dgvPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.RowHeadersWidth = 51;
+            this.dgvPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhong.Size = new System.Drawing.Size(916, 415);
             this.dgvPhong.TabIndex = 0;
-            this.dgvPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellContentClick);
+            this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
             // 
             // panel8
             // 
@@ -1287,6 +1293,28 @@
             this.panel8.Size = new System.Drawing.Size(925, 110);
             this.panel8.TabIndex = 4;
             // 
+            // rbtNotAvailable
+            // 
+            this.rbtNotAvailable.AutoSize = true;
+            this.rbtNotAvailable.Location = new System.Drawing.Point(487, 71);
+            this.rbtNotAvailable.Name = "rbtNotAvailable";
+            this.rbtNotAvailable.Size = new System.Drawing.Size(112, 21);
+            this.rbtNotAvailable.TabIndex = 16;
+            this.rbtNotAvailable.TabStop = true;
+            this.rbtNotAvailable.Text = "Not Available";
+            this.rbtNotAvailable.UseVisualStyleBackColor = true;
+            // 
+            // rbtAvailable
+            // 
+            this.rbtAvailable.AutoSize = true;
+            this.rbtAvailable.Location = new System.Drawing.Point(487, 15);
+            this.rbtAvailable.Name = "rbtAvailable";
+            this.rbtAvailable.Size = new System.Drawing.Size(86, 21);
+            this.rbtAvailable.TabIndex = 15;
+            this.rbtAvailable.TabStop = true;
+            this.rbtAvailable.Text = "Available";
+            this.rbtAvailable.UseVisualStyleBackColor = true;
+            // 
             // cbTenLoaiPhong
             // 
             this.cbTenLoaiPhong.FormattingEnabled = true;
@@ -1298,13 +1326,13 @@
             // 
             // txbMaPhong
             // 
-            this.txbMaPhong.Enabled = false;
             this.txbMaPhong.Location = new System.Drawing.Point(133, 14);
             this.txbMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbMaPhong.MaxLength = 3;
             this.txbMaPhong.Name = "txbMaPhong";
-            this.txbMaPhong.ReadOnly = true;
             this.txbMaPhong.Size = new System.Drawing.Size(141, 22);
             this.txbMaPhong.TabIndex = 8;
+            this.txbMaPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMaPhong_KeyPress);
             // 
             // label11
             // 
@@ -1329,9 +1357,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(7, 17);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 17);
+            this.label16.Size = new System.Drawing.Size(77, 17);
             this.label16.TabIndex = 0;
-            this.label16.Text = "Mã Phòng";
+            this.label16.Text = "Tên phòng";
             // 
             // tpKhachHang
             // 
@@ -1635,28 +1663,6 @@
             this.tabcontrol.SelectedIndex = 0;
             this.tabcontrol.Size = new System.Drawing.Size(1315, 581);
             this.tabcontrol.TabIndex = 1;
-            // 
-            // rbtAvailable
-            // 
-            this.rbtAvailable.AutoSize = true;
-            this.rbtAvailable.Location = new System.Drawing.Point(487, 15);
-            this.rbtAvailable.Name = "rbtAvailable";
-            this.rbtAvailable.Size = new System.Drawing.Size(86, 21);
-            this.rbtAvailable.TabIndex = 15;
-            this.rbtAvailable.TabStop = true;
-            this.rbtAvailable.Text = "Available";
-            this.rbtAvailable.UseVisualStyleBackColor = true;
-            // 
-            // rbtNotAvailable
-            // 
-            this.rbtNotAvailable.AutoSize = true;
-            this.rbtNotAvailable.Location = new System.Drawing.Point(487, 71);
-            this.rbtNotAvailable.Name = "rbtNotAvailable";
-            this.rbtNotAvailable.Size = new System.Drawing.Size(112, 21);
-            this.rbtNotAvailable.TabIndex = 16;
-            this.rbtNotAvailable.TabStop = true;
-            this.rbtNotAvailable.Text = "Not Available";
-            this.rbtNotAvailable.UseVisualStyleBackColor = true;
             // 
             // fMenuQuanLy
             // 

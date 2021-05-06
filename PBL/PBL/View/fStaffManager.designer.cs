@@ -71,28 +71,28 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.cbSortCV = new System.Windows.Forms.ComboBox();
+            this.btnSortCV = new System.Windows.Forms.Button();
+            this.dgvChucVu = new System.Windows.Forms.DataGridView();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.cbSearchCV = new System.Windows.Forms.ComboBox();
+            this.btnSearchCV = new System.Windows.Forms.Button();
+            this.txbSearchCV = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.txbChucVu = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnClearCV = new System.Windows.Forms.Button();
-            this.btnDeleteCV = new System.Windows.Forms.Button();
-            this.btnAddCV = new System.Windows.Forms.Button();
             this.btnUpdateCV = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.txbQuyenHan = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
+            this.btnDeleteCV = new System.Windows.Forms.Button();
+            this.btnAddCV = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
             this.txbMota = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.txbChucVu = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.cbSearchCV = new System.Windows.Forms.ComboBox();
-            this.txbSearchCV = new System.Windows.Forms.TextBox();
-            this.dgvChucVu = new System.Windows.Forms.DataGridView();
-            this.btnSearchCV = new System.Windows.Forms.Button();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.cbSortCV = new System.Windows.Forms.ComboBox();
-            this.btnSortCV = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -110,13 +110,13 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.panel23.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).BeginInit();
-            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -570,6 +570,132 @@
             this.tabPage2.Text = "Chức vụ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.cbSortCV);
+            this.panel14.Controls.Add(this.btnSortCV);
+            this.panel14.Location = new System.Drawing.Point(3, 21);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(273, 32);
+            this.panel14.TabIndex = 2;
+            // 
+            // cbSortCV
+            // 
+            this.cbSortCV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSortCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSortCV.FormattingEnabled = true;
+            this.cbSortCV.Items.AddRange(new object[] {
+            "Theo tên chức vụ",
+            "Theo quyền hạn"});
+            this.cbSortCV.Location = new System.Drawing.Point(4, 3);
+            this.cbSortCV.Name = "cbSortCV";
+            this.cbSortCV.Size = new System.Drawing.Size(158, 25);
+            this.cbSortCV.TabIndex = 0;
+            // 
+            // btnSortCV
+            // 
+            this.btnSortCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortCV.Location = new System.Drawing.Point(168, 2);
+            this.btnSortCV.Name = "btnSortCV";
+            this.btnSortCV.Size = new System.Drawing.Size(94, 28);
+            this.btnSortCV.TabIndex = 1;
+            this.btnSortCV.Text = "Sort";
+            this.btnSortCV.UseVisualStyleBackColor = true;
+            this.btnSortCV.Click += new System.EventHandler(this.btnSortCV_Click);
+            // 
+            // dgvChucVu
+            // 
+            this.dgvChucVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChucVu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChucVu.Location = new System.Drawing.Point(5, 70);
+            this.dgvChucVu.Name = "dgvChucVu";
+            this.dgvChucVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvChucVu.Size = new System.Drawing.Size(632, 493);
+            this.dgvChucVu.TabIndex = 31;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.cbSearchCV);
+            this.panel13.Controls.Add(this.btnSearchCV);
+            this.panel13.Controls.Add(this.txbSearchCV);
+            this.panel13.Location = new System.Drawing.Point(643, 21);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(454, 32);
+            this.panel13.TabIndex = 1;
+            // 
+            // cbSearchCV
+            // 
+            this.cbSearchCV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSearchCV.FormattingEnabled = true;
+            this.cbSearchCV.Items.AddRange(new object[] {
+            "Theo tên chức vụ"});
+            this.cbSearchCV.Location = new System.Drawing.Point(4, 4);
+            this.cbSearchCV.Name = "cbSearchCV";
+            this.cbSearchCV.Size = new System.Drawing.Size(135, 25);
+            this.cbSearchCV.TabIndex = 0;
+            // 
+            // btnSearchCV
+            // 
+            this.btnSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCV.Location = new System.Drawing.Point(357, 2);
+            this.btnSearchCV.Name = "btnSearchCV";
+            this.btnSearchCV.Size = new System.Drawing.Size(94, 28);
+            this.btnSearchCV.TabIndex = 2;
+            this.btnSearchCV.Text = "Tìm kiếm";
+            this.btnSearchCV.UseVisualStyleBackColor = true;
+            this.btnSearchCV.Click += new System.EventHandler(this.btnSearchCV_Click);
+            // 
+            // txbSearchCV
+            // 
+            this.txbSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSearchCV.Location = new System.Drawing.Point(145, 3);
+            this.txbSearchCV.Name = "txbSearchCV";
+            this.txbSearchCV.Size = new System.Drawing.Size(206, 25);
+            this.txbSearchCV.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.panel23);
+            this.panel11.Controls.Add(this.btnClearCV);
+            this.panel11.Controls.Add(this.btnUpdateCV);
+            this.panel11.Controls.Add(this.panel19);
+            this.panel11.Controls.Add(this.btnDeleteCV);
+            this.panel11.Controls.Add(this.btnAddCV);
+            this.panel11.Controls.Add(this.panel20);
+            this.panel11.Location = new System.Drawing.Point(643, 70);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(456, 495);
+            this.panel11.TabIndex = 0;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.txbChucVu);
+            this.panel23.Controls.Add(this.label8);
+            this.panel23.Location = new System.Drawing.Point(34, 110);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(382, 28);
+            this.panel23.TabIndex = 0;
+            // 
+            // txbChucVu
+            // 
+            this.txbChucVu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbChucVu.Location = new System.Drawing.Point(112, 3);
+            this.txbChucVu.Name = "txbChucVu";
+            this.txbChucVu.Size = new System.Drawing.Size(245, 22);
+            this.txbChucVu.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 5);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 16);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Tên chức vụ:";
+            // 
             // btnClearCV
             // 
             this.btnClearCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -580,28 +706,6 @@
             this.btnClearCV.Text = "Clear";
             this.btnClearCV.UseVisualStyleBackColor = true;
             this.btnClearCV.Click += new System.EventHandler(this.btnClearCV_Click);
-            // 
-            // btnDeleteCV
-            // 
-            this.btnDeleteCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCV.Location = new System.Drawing.Point(251, 429);
-            this.btnDeleteCV.Name = "btnDeleteCV";
-            this.btnDeleteCV.Size = new System.Drawing.Size(78, 35);
-            this.btnDeleteCV.TabIndex = 5;
-            this.btnDeleteCV.Text = "Xóa";
-            this.btnDeleteCV.UseVisualStyleBackColor = true;
-            this.btnDeleteCV.Click += new System.EventHandler(this.btnDeleteCV_Click);
-            // 
-            // btnAddCV
-            // 
-            this.btnAddCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCV.Location = new System.Drawing.Point(82, 429);
-            this.btnAddCV.Name = "btnAddCV";
-            this.btnAddCV.Size = new System.Drawing.Size(79, 35);
-            this.btnAddCV.TabIndex = 3;
-            this.btnAddCV.Text = "Thêm";
-            this.btnAddCV.UseVisualStyleBackColor = true;
-            this.btnAddCV.Click += new System.EventHandler(this.btnAddCV_Click);
             // 
             // btnUpdateCV
             // 
@@ -641,6 +745,28 @@
             this.label.TabIndex = 0;
             this.label.Text = "Quyền hạn";
             // 
+            // btnDeleteCV
+            // 
+            this.btnDeleteCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteCV.Location = new System.Drawing.Point(251, 429);
+            this.btnDeleteCV.Name = "btnDeleteCV";
+            this.btnDeleteCV.Size = new System.Drawing.Size(78, 35);
+            this.btnDeleteCV.TabIndex = 5;
+            this.btnDeleteCV.Text = "Xóa";
+            this.btnDeleteCV.UseVisualStyleBackColor = true;
+            this.btnDeleteCV.Click += new System.EventHandler(this.btnDeleteCV_Click);
+            // 
+            // btnAddCV
+            // 
+            this.btnAddCV.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCV.Location = new System.Drawing.Point(82, 429);
+            this.btnAddCV.Name = "btnAddCV";
+            this.btnAddCV.Size = new System.Drawing.Size(79, 35);
+            this.btnAddCV.TabIndex = 3;
+            this.btnAddCV.Text = "Thêm";
+            this.btnAddCV.UseVisualStyleBackColor = true;
+            this.btnAddCV.Click += new System.EventHandler(this.btnAddCV_Click);
+            // 
             // panel20
             // 
             this.panel20.Controls.Add(this.txbMota);
@@ -667,130 +793,6 @@
             this.label5.Size = new System.Drawing.Size(47, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mô tả:";
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.txbChucVu);
-            this.panel23.Controls.Add(this.label8);
-            this.panel23.Location = new System.Drawing.Point(34, 110);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(382, 28);
-            this.panel23.TabIndex = 0;
-            // 
-            // txbChucVu
-            // 
-            this.txbChucVu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbChucVu.Location = new System.Drawing.Point(112, 3);
-            this.txbChucVu.Name = "txbChucVu";
-            this.txbChucVu.Size = new System.Drawing.Size(245, 22);
-            this.txbChucVu.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 16);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tên chức vụ:";
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.panel23);
-            this.panel11.Controls.Add(this.btnClearCV);
-            this.panel11.Controls.Add(this.btnUpdateCV);
-            this.panel11.Controls.Add(this.panel19);
-            this.panel11.Controls.Add(this.btnDeleteCV);
-            this.panel11.Controls.Add(this.btnAddCV);
-            this.panel11.Controls.Add(this.panel20);
-            this.panel11.Location = new System.Drawing.Point(643, 70);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(456, 495);
-            this.panel11.TabIndex = 0;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.cbSearchCV);
-            this.panel13.Controls.Add(this.btnSearchCV);
-            this.panel13.Controls.Add(this.txbSearchCV);
-            this.panel13.Location = new System.Drawing.Point(643, 21);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(454, 32);
-            this.panel13.TabIndex = 1;
-            // 
-            // cbSearchCV
-            // 
-            this.cbSearchCV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSearchCV.FormattingEnabled = true;
-            this.cbSearchCV.Items.AddRange(new object[] {
-            "Theo tên chức vụ"});
-            this.cbSearchCV.Location = new System.Drawing.Point(4, 4);
-            this.cbSearchCV.Name = "cbSearchCV";
-            this.cbSearchCV.Size = new System.Drawing.Size(135, 25);
-            this.cbSearchCV.TabIndex = 0;
-            // 
-            // txbSearchCV
-            // 
-            this.txbSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSearchCV.Location = new System.Drawing.Point(145, 3);
-            this.txbSearchCV.Name = "txbSearchCV";
-            this.txbSearchCV.Size = new System.Drawing.Size(206, 25);
-            this.txbSearchCV.TabIndex = 1;
-            // 
-            // dgvChucVu
-            // 
-            this.dgvChucVu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChucVu.Location = new System.Drawing.Point(5, 70);
-            this.dgvChucVu.Name = "dgvChucVu";
-            this.dgvChucVu.Size = new System.Drawing.Size(632, 493);
-            this.dgvChucVu.TabIndex = 31;
-            // 
-            // btnSearchCV
-            // 
-            this.btnSearchCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCV.Location = new System.Drawing.Point(357, 2);
-            this.btnSearchCV.Name = "btnSearchCV";
-            this.btnSearchCV.Size = new System.Drawing.Size(94, 28);
-            this.btnSearchCV.TabIndex = 2;
-            this.btnSearchCV.Text = "Tìm kiếm";
-            this.btnSearchCV.UseVisualStyleBackColor = true;
-            this.btnSearchCV.Click += new System.EventHandler(this.btnSearchCV_Click);
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.cbSortCV);
-            this.panel14.Controls.Add(this.btnSortCV);
-            this.panel14.Location = new System.Drawing.Point(3, 21);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(273, 32);
-            this.panel14.TabIndex = 2;
-            // 
-            // cbSortCV
-            // 
-            this.cbSortCV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSortCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSortCV.FormattingEnabled = true;
-            this.cbSortCV.Items.AddRange(new object[] {
-            "Theo tên chức vụ",
-            "Theo quyền hạn"});
-            this.cbSortCV.Location = new System.Drawing.Point(4, 3);
-            this.cbSortCV.Name = "cbSortCV";
-            this.cbSortCV.Size = new System.Drawing.Size(158, 25);
-            this.cbSortCV.TabIndex = 0;
-            // 
-            // btnSortCV
-            // 
-            this.btnSortCV.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSortCV.Location = new System.Drawing.Point(168, 2);
-            this.btnSortCV.Name = "btnSortCV";
-            this.btnSortCV.Size = new System.Drawing.Size(94, 28);
-            this.btnSortCV.TabIndex = 1;
-            this.btnSortCV.Text = "Sort";
-            this.btnSortCV.UseVisualStyleBackColor = true;
-            this.btnSortCV.Click += new System.EventHandler(this.btnSortCV_Click);
             // 
             // fStaffManager
             // 
@@ -828,17 +830,17 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChucVu)).EndInit();
-            this.panel14.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

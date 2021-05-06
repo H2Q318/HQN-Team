@@ -63,7 +63,7 @@ namespace PBL
                     BLL_QLP.Instance.AddPhong(p);
                     ShowDGVPhong(null);
                 }
-                catch(Exception ex)
+                catch
                 {
                     MessageBox.Show("Vui long nhap day du va dung kieu du lieu cua thong tin !");
                 }
@@ -90,7 +90,7 @@ namespace PBL
                     BLL_QLP.Instance.UpdatePhong(p);
                     ShowDGVPhong(null);
                 }
-                catch (Exception ex)
+                catch
                 {
                     MessageBox.Show("Vui long nhap day du va dung kieu du lieu cua thong tin !");
                 }

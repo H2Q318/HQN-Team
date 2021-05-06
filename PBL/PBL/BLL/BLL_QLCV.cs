@@ -50,7 +50,7 @@ namespace PBL
                 QLKS db = new QLKS();
                 db.CHUCVUs.Add(cv);
                 db.SaveChanges();
-                return true;.
+                return true;
             }
             catch
             {

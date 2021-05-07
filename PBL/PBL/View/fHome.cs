@@ -120,7 +120,15 @@ namespace PBL
 
         private void btnCheckin_Click(object sender, EventArgs e)
         {
-
+            BOOK s = new BOOK()
+            {             
+                KhachHangID=txbCIMaKhach.Text,
+                NhanVienID=txbCIMaNV.Text,
+                PhongID = txbCIMaPhong.Text,
+                NgayCheckIn_ThucTe =dtbNgayDenThucTe.Value,
+                NgayDat=DateTime.Now
+            };
+            BLL_QLBOOK.Instance.AddBook(s);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -147,8 +155,8 @@ namespace PBL
                 GhiChu= txbKHGhiChu.Text.Trim(),
                 QuocTich=txbKHQuocTich.Text.Trim(),
                 CMND= txbKHCMND.Text.Trim(),
-                SDT= MsbKHDienThoai.Text.Trim() ,
-                KhachHangID=""
+                SDT=txbKHSdt.Text.Trim() ,
+               // KhachHangID=""
             };
                 BLL_QLKH.Instance.AddKh(s);
                 LoadDataGridView();
@@ -164,9 +172,20 @@ namespace PBL
             txbKHCMND.Text = "";
             txbKHQuocTich.Text = "";
             txbKHGhiChu.Text = "";
-            MsbKHDienThoai.Text = "";
+            txbKHSdt.Text = "";
         }
+
         #endregion
+
+        private void dgvCIKhachHang_Click(object sender, EventArgs e)
+        {
+            txbCIMaKhach.Text = dgvCIKhachHang.CurrentRow.Cells["KhachHangID"].Value.ToString();
+        }
+
+        private void dgvDPKhachHang_Click(object sender, EventArgs e)
+        {
+            txbDPMaKhach.Text = dgvDPKhachHang.CurrentRow.Cells["KhachHangID"].Value.ToString();
+        }
     }
 
 }

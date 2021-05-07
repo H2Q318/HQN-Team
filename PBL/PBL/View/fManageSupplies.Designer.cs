@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvVatTu = new System.Windows.Forms.DataGridView();
+            this.dgvVatDungPhong = new System.Windows.Forms.DataGridView();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.btnSeachSVt = new System.Windows.Forms.Button();
-            this.BtnSeachVt = new System.Windows.Forms.Button();
-            this.txbSeach = new System.Windows.Forms.TextBox();
+            this.btnResetSPhong = new System.Windows.Forms.Button();
+            this.BtnSeachPhong = new System.Windows.Forms.Button();
+            this.txbSeachPhong = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
@@ -50,9 +50,9 @@
             this.panel27 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.cbPhongID = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVatTu)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVatDungPhong)).BeginInit();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDSLHienTai)).BeginInit();
@@ -62,22 +62,24 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvVatTu
+            // dgvVatDungPhong
             // 
-            this.dgvVatTu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVatTu.Location = new System.Drawing.Point(3, 2);
-            this.dgvVatTu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvVatTu.Name = "dgvVatTu";
-            this.dgvVatTu.RowHeadersWidth = 51;
-            this.dgvVatTu.Size = new System.Drawing.Size(917, 416);
-            this.dgvVatTu.TabIndex = 0;
+            this.dgvVatDungPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVatDungPhong.Location = new System.Drawing.Point(3, 2);
+            this.dgvVatDungPhong.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvVatDungPhong.Name = "dgvVatDungPhong";
+            this.dgvVatDungPhong.RowHeadersWidth = 51;
+            this.dgvVatDungPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVatDungPhong.Size = new System.Drawing.Size(917, 416);
+            this.dgvVatDungPhong.TabIndex = 0;
+            this.dgvVatDungPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVatDungPhong_CellClick);
             // 
             // panel25
             // 
             this.panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel25.Controls.Add(this.btnSeachSVt);
-            this.panel25.Controls.Add(this.BtnSeachVt);
-            this.panel25.Controls.Add(this.txbSeach);
+            this.panel25.Controls.Add(this.btnResetSPhong);
+            this.panel25.Controls.Add(this.BtnSeachPhong);
+            this.panel25.Controls.Add(this.txbSeachPhong);
             this.panel25.Controls.Add(this.label15);
             this.panel25.Location = new System.Drawing.Point(944, 129);
             this.panel25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -85,33 +87,35 @@
             this.panel25.Size = new System.Drawing.Size(363, 423);
             this.panel25.TabIndex = 23;
             // 
-            // btnSeachSVt
+            // btnResetSPhong
             // 
-            this.btnSeachSVt.Location = new System.Drawing.Point(203, 96);
-            this.btnSeachSVt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSeachSVt.Name = "btnSeachSVt";
-            this.btnSeachSVt.Size = new System.Drawing.Size(84, 41);
-            this.btnSeachSVt.TabIndex = 19;
-            this.btnSeachSVt.Text = "Reset";
-            this.btnSeachSVt.UseVisualStyleBackColor = true;
+            this.btnResetSPhong.Location = new System.Drawing.Point(203, 96);
+            this.btnResetSPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnResetSPhong.Name = "btnResetSPhong";
+            this.btnResetSPhong.Size = new System.Drawing.Size(84, 41);
+            this.btnResetSPhong.TabIndex = 19;
+            this.btnResetSPhong.Text = "Reset";
+            this.btnResetSPhong.UseVisualStyleBackColor = true;
+            this.btnResetSPhong.Click += new System.EventHandler(this.btnResetSPhong_Click);
             // 
-            // BtnSeachVt
+            // BtnSeachPhong
             // 
-            this.BtnSeachVt.Location = new System.Drawing.Point(73, 96);
-            this.BtnSeachVt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnSeachVt.Name = "BtnSeachVt";
-            this.BtnSeachVt.Size = new System.Drawing.Size(84, 41);
-            this.BtnSeachVt.TabIndex = 18;
-            this.BtnSeachVt.Text = "Tìm kiếm";
-            this.BtnSeachVt.UseVisualStyleBackColor = true;
+            this.BtnSeachPhong.Location = new System.Drawing.Point(73, 96);
+            this.BtnSeachPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnSeachPhong.Name = "BtnSeachPhong";
+            this.BtnSeachPhong.Size = new System.Drawing.Size(84, 41);
+            this.BtnSeachPhong.TabIndex = 18;
+            this.BtnSeachPhong.Text = "Tìm kiếm";
+            this.BtnSeachPhong.UseVisualStyleBackColor = true;
+            this.BtnSeachPhong.Click += new System.EventHandler(this.BtnSeachPhong_Click);
             // 
-            // txbSeach
+            // txbSeachPhong
             // 
-            this.txbSeach.Location = new System.Drawing.Point(179, 36);
-            this.txbSeach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbSeach.Name = "txbSeach";
-            this.txbSeach.Size = new System.Drawing.Size(161, 22);
-            this.txbSeach.TabIndex = 17;
+            this.txbSeachPhong.Location = new System.Drawing.Point(179, 36);
+            this.txbSeachPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbSeachPhong.Name = "txbSeachPhong";
+            this.txbSeachPhong.Size = new System.Drawing.Size(161, 22);
+            this.txbSeachPhong.TabIndex = 17;
             // 
             // label15
             // 
@@ -171,6 +175,7 @@
             this.btnResetVt.TabIndex = 3;
             this.btnResetVt.Text = "Reset";
             this.btnResetVt.UseVisualStyleBackColor = true;
+            this.btnResetVt.Click += new System.EventHandler(this.btnResetVt_Click);
             // 
             // BtnXoaVt
             // 
@@ -181,6 +186,7 @@
             this.BtnXoaVt.TabIndex = 2;
             this.BtnXoaVt.Text = "Xóa";
             this.BtnXoaVt.UseVisualStyleBackColor = true;
+            this.BtnXoaVt.Click += new System.EventHandler(this.BtnXoaVt_Click);
             // 
             // BtnSuaVt
             // 
@@ -191,6 +197,7 @@
             this.BtnSuaVt.TabIndex = 1;
             this.BtnSuaVt.Text = "Sửa";
             this.BtnSuaVt.UseVisualStyleBackColor = true;
+            this.BtnSuaVt.Click += new System.EventHandler(this.BtnSuaVt_Click);
             // 
             // btnThemVt
             // 
@@ -201,9 +208,11 @@
             this.btnThemVt.TabIndex = 0;
             this.btnThemVt.Text = "Thêm";
             this.btnThemVt.UseVisualStyleBackColor = true;
+            this.btnThemVt.Click += new System.EventHandler(this.btnThemVt_Click);
             // 
             // cbTrangThai
             // 
+            this.cbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTrangThai.FormattingEnabled = true;
             this.cbTrangThai.Location = new System.Drawing.Point(692, 69);
             this.cbTrangThai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -238,6 +247,7 @@
             // 
             // cbTenVatTu
             // 
+            this.cbTenVatTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTenVatTu.FormattingEnabled = true;
             this.cbTenVatTu.Location = new System.Drawing.Point(123, 66);
             this.cbTenVatTu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -248,7 +258,7 @@
             // panel27
             // 
             this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel27.Controls.Add(this.dgvVatTu);
+            this.panel27.Controls.Add(this.dgvVatDungPhong);
             this.panel27.Location = new System.Drawing.Point(12, 129);
             this.panel27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel27.Name = "panel27";
@@ -283,6 +293,16 @@
             this.panel28.Size = new System.Drawing.Size(925, 110);
             this.panel28.TabIndex = 20;
             // 
+            // cbPhongID
+            // 
+            this.cbPhongID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPhongID.FormattingEnabled = true;
+            this.cbPhongID.Location = new System.Drawing.Point(123, 18);
+            this.cbPhongID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbPhongID.Name = "cbPhongID";
+            this.cbPhongID.Size = new System.Drawing.Size(121, 24);
+            this.cbPhongID.TabIndex = 31;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel25);
@@ -296,26 +316,17 @@
             this.panel1.Size = new System.Drawing.Size(1321, 564);
             this.panel1.TabIndex = 1;
             // 
-            // cbPhongID
-            // 
-            this.cbPhongID.FormattingEnabled = true;
-            this.cbPhongID.Location = new System.Drawing.Point(123, 18);
-            this.cbPhongID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbPhongID.Name = "cbPhongID";
-            this.cbPhongID.Size = new System.Drawing.Size(121, 24);
-            this.cbPhongID.TabIndex = 31;
-            // 
             // fManageSupplies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1321, 564);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fManageSupplies";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fManageSupplies";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVatTu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVatDungPhong)).EndInit();
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();
             this.panel26.ResumeLayout(false);
@@ -331,11 +342,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvVatTu;
+        private System.Windows.Forms.DataGridView dgvVatDungPhong;
         private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.Button btnSeachSVt;
-        private System.Windows.Forms.Button BtnSeachVt;
-        private System.Windows.Forms.TextBox txbSeach;
+        private System.Windows.Forms.Button btnResetSPhong;
+        private System.Windows.Forms.Button BtnSeachPhong;
+        private System.Windows.Forms.TextBox txbSeachPhong;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label40;

@@ -64,6 +64,7 @@
             // 
             // dgvVatDungPhong
             // 
+            this.dgvVatDungPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVatDungPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVatDungPhong.Location = new System.Drawing.Point(3, 2);
             this.dgvVatDungPhong.Margin = new System.Windows.Forms.Padding(4);

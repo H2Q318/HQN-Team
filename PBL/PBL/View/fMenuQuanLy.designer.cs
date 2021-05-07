@@ -353,6 +353,7 @@
             this.dgvLoaiVatDung.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiVatDung.Name = "dgvLoaiVatDung";
             this.dgvLoaiVatDung.RowHeadersWidth = 51;
+            this.dgvLoaiVatDung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiVatDung.Size = new System.Drawing.Size(916, 416);
             this.dgvLoaiVatDung.TabIndex = 0;
             this.dgvLoaiVatDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVatTu_CellClick);

@@ -13,7 +13,6 @@
           <ScalarProperty Name="NgayCheckOut" ColumnName="NgayCheckOut" />
           <ScalarProperty Name="NgayCheckIn_ThucTe" ColumnName="NgayCheckIn_ThucTe" />
           <ScalarProperty Name="NgayCheckOut_ThucTe" ColumnName="NgayCheckOut_ThucTe" />
-          <ScalarProperty Name="TrangThaiBookID" ColumnName="TrangThaiBookID" />
           <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -129,14 +128,6 @@
           <ScalarProperty Name="PhongID" ColumnName="PhongID" />
           <ScalarProperty Name="LoaiPhongID" ColumnName="LoaiPhongID" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TRANGTHAIBOOKs">
-      <EntityTypeMapping TypeName="DHP_04Model.TRANGTHAIBOOK">
-        <MappingFragment StoreEntitySet="TRANGTHAIBOOK">
-          <ScalarProperty Name="TrangThaiBookID" ColumnName="TrangThaiBookID" />
-          <ScalarProperty Name="Mota" ColumnName="Mota" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

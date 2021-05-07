@@ -116,9 +116,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKS.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DAL\TRANGTHAIBOOK.cs">
-      <DependentUpon>QLKS.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\TRANGTHAIVATDUNG.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>

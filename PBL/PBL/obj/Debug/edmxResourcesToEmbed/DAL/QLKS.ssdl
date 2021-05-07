@@ -13,7 +13,6 @@
     <Property Name="NgayCheckOut" Type="datetime" />
     <Property Name="NgayCheckIn_ThucTe" Type="datetime" />
     <Property Name="NgayCheckOut_ThucTe" Type="datetime" />
-    <Property Name="TrangThaiBookID" Type="nvarchar" MaxLength="50" />
     <Property Name="ThanhToan" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CHUCVU">
@@ -128,13 +127,6 @@
     <Property Name="LoaiPhongID" Type="nvarchar" MaxLength="4" Nullable="false" />
     <Property Name="TrangThai" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="TRANGTHAIBOOK">
-    <Key>
-      <PropertyRef Name="TrangThaiBookID" />
-    </Key>
-    <Property Name="TrangThaiBookID" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Mota" Type="ntext" />
-  </EntityType>
   <EntityType Name="TRANGTHAIVATDUNG">
     <Key>
       <PropertyRef Name="TrangThaiVatDungID" />
@@ -192,20 +184,6 @@
       </Principal>
       <Dependent Role="BOOK">
         <PropertyRef Name="PhongID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_book_trangthaibookid">
-    <End Role="TRANGTHAIBOOK" Type="Self.TRANGTHAIBOOK" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TRANGTHAIBOOK">
-        <PropertyRef Name="TrangThaiBookID" />
-      </Principal>
-      <Dependent Role="BOOK">
-        <PropertyRef Name="TrangThaiBookID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -367,7 +345,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="func_XemChiTietHoaDon_DichVu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="hoadonid" Type="nvarchar" Mode="In" />
     <ReturnType>
@@ -413,7 +390,6 @@
     <EntitySet Name="LOAIVATDUNG" EntityType="Self.LOAIVATDUNG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHONG" EntityType="Self.PHONG" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TRANGTHAIBOOK" EntityType="Self.TRANGTHAIBOOK" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TRANGTHAIVATDUNG" EntityType="Self.TRANGTHAIVATDUNG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="VATDUNGPHONG" EntityType="Self.VATDUNGPHONG" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_book_khachhangid" Association="Self.fk_book_khachhangid">
@@ -426,10 +402,6 @@
     </AssociationSet>
     <AssociationSet Name="fk_book_phongid" Association="Self.fk_book_phongid">
       <End Role="PHONG" EntitySet="PHONG" />
-      <End Role="BOOK" EntitySet="BOOK" />
-    </AssociationSet>
-    <AssociationSet Name="fk_book_trangthaibookid" Association="Self.fk_book_trangthaibookid">
-      <End Role="TRANGTHAIBOOK" EntitySet="TRANGTHAIBOOK" />
       <End Role="BOOK" EntitySet="BOOK" />
     </AssociationSet>
     <AssociationSet Name="fk_dangnhap_nhanvienid" Association="Self.fk_dangnhap_nhanvienid">

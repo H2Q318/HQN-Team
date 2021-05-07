@@ -16,13 +16,11 @@
         <EntityTypeShape EntityType="DHP_04Model.LOAIVATDUNG" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.NHANVIEN" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.PHONG" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DHP_04Model.TRANGTHAIBOOK" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.TRANGTHAIVATDUNG" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.VATDUNGPHONG" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
         <AssociationConnector Association="DHP_04Model.fk_book_khachhangid" ManuallyRouted="false" />
         <AssociationConnector Association="DHP_04Model.fk_book_nhanvienid" ManuallyRouted="false" />
         <AssociationConnector Association="DHP_04Model.fk_book_phongid" ManuallyRouted="false" />
-        <AssociationConnector Association="DHP_04Model.fk_book_trangthaibookid" ManuallyRouted="false" />
         <AssociationConnector Association="DHP_04Model.fk_hoadon_bookid" ManuallyRouted="false" />
         <AssociationConnector Association="DHP_04Model.fk_hoadon_dung_dichvu_bookid" ManuallyRouted="false" />
         <AssociationConnector Association="DHP_04Model.fk_nhanvien_chucvuid" ManuallyRouted="false" />

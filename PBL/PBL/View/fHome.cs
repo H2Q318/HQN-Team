@@ -70,10 +70,10 @@ namespace PBL
             txbMaPhongOut.Text = IDPhong.ToString();
             TxbRoom.Text = ((sender as Button).Tag as PHONG).PhongID;
             ShowBill(IDPhong);
-            if (true)
+            if (IDBook=="-1")
                 txbMaKhachOut.Text = "";
-           // else
-               // txbMaKhachOut.Text = CheckinDAO.Instance.MaKhach.ToString();
+             else
+                txbMaKhachOut.Text = IDBook;
         }
         void ShowBill(String IDPhong)
         {

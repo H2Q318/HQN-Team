@@ -30,6 +30,7 @@ namespace PBL
         {
             LoadRoom();
             LoadDataGridView();
+            LoadMenudv();
         } 
         private void LoadRoom() 
         { 
@@ -50,6 +51,12 @@ namespace PBL
         {
             dgvCIKhachHang.DataSource = BLL_QLKH.Instance.GetAllKhachHang();
             dgvDPKhachHang.DataSource= BLL_QLKH.Instance.GetAllKhachHang();
+        }
+        void LoadMenudv()
+        {
+            List<LOAIDICHVU> listloaidv = BLL_QLDV.Instance.GetAllDichVu();
+            cbMenuDv.DataSource = listloaidv;
+            cbMenuDv.DisplayMember = "TenDichVu";
         }
         #endregion 
         void btn_Click(object sender, EventArgs e) 
@@ -118,18 +125,7 @@ namespace PBL
             f.ShowDialog();
         }
 
-        private void btnCheckin_Click(object sender, EventArgs e)
-        {
-            BOOK s = new BOOK()
-            {             
-                KhachHangID=txbCIMaKhach.Text,
-                NhanVienID=txbCIMaNV.Text,
-                PhongID = txbCIMaPhong.Text,
-                NgayCheckIn_ThucTe =dtbNgayDenThucTe.Value,
-                NgayDat=DateTime.Now
-            };
-            BLL_QLBOOK.Instance.AddBook(s);
-        }
+       
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -147,23 +143,7 @@ namespace PBL
 
         }
 
-        private void btnThemKh_Click(object sender, EventArgs e)
-        {
-            KHACHHANG s = new KHACHHANG()
-            {   Ten=txbKHHoTen.Text.Trim(),
-                GioiTinh=ckbKHGioiTinh.Checked,
-                GhiChu= txbKHGhiChu.Text.Trim(),
-                QuocTich=txbKHQuocTich.Text.Trim(),
-                CMND= txbKHCMND.Text.Trim(),
-                SDT=txbKHSdt.Text.Trim() ,
-               // KhachHangID=""
-            };
-                BLL_QLKH.Instance.AddKh(s);
-                LoadDataGridView();
-               // MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
-            
-            ResetValuesKhachHang();
-        }
+      
         #region Reset
        
         private void ResetValuesKhachHang()
@@ -185,6 +165,78 @@ namespace PBL
         private void dgvDPKhachHang_Click(object sender, EventArgs e)
         {
             txbDPMaKhach.Text = dgvDPKhachHang.CurrentRow.Cells["KhachHangID"].Value.ToString();
+        }
+        #region Button
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnThemKh_Click(object sender, EventArgs e)
+        {
+            KHACHHANG s = new KHACHHANG()
+            {
+                Ten = txbKHHoTen.Text.Trim(),
+                GioiTinh = ckbKHGioiTinh.Checked,
+                GhiChu = txbKHGhiChu.Text.Trim(),
+                QuocTich = txbKHQuocTich.Text.Trim(),
+                CMND = txbKHCMND.Text.Trim(),
+                SDT = txbKHSdt.Text.Trim(),
+                // KhachHangID=""
+            };
+            BLL_QLKH.Instance.AddKh(s);
+            LoadDataGridView();
+            // MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
+
+            ResetValuesKhachHang();
+
+        }
+        private void btnCheckin_Click(object sender, EventArgs e)
+        {
+            BOOK s = new BOOK()
+            {
+                KhachHangID = txbCIMaKhach.Text,
+                NhanVienID = txbCIMaNV.Text,
+                PhongID = txbCIMaPhong.Text,
+                NgayCheckIn_ThucTe = dtbNgayDenThucTe.Value,
+                NgayDat = DateTime.Now
+            };
+            BLL_QLBOOK.Instance.AddBook(s);
+            LoadRoom();
+        }
+
+        #endregion
+
+        private void btnThemDv_Click(object sender, EventArgs e)
+        {
+            if (NbSoLuong.Value == 0)
+            {
+                MessageBox.Show("Vui lòng nhập số lượng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (TxbRoom.Text.Length == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần thêm bill", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (IDBook == "-1")
+            {
+                MessageBox.Show("Phòng chưa có khách ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string madichvu = (cbMenuDv.SelectedItem as LOAIDICHVU).DichVuID;
+            int soluong = (int)NbSoLuong.Value;
+            string idBook = IDBook;
+            DateTime ngaydat = DtNgayDat.Value;
+            HOADON_DUNG_DICHVU them = new HOADON_DUNG_DICHVU()
+            {
+                DichVuID = madichvu,
+                SoLuong = soluong,
+                BookID = idBook,
+                Ngay = ngaydat,
+                NhanVienID = "NV070521003"
+            };
+            BLL_QLDV.Instance.AddDichVu(them);
+            ShowBill(IDPhong);
         }
     }
 

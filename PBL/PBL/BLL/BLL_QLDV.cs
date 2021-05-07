@@ -28,5 +28,15 @@ namespace PBL.BLL
         {
             return new QLKS().HOADON_DUNG_DICHVU.Where(p => p.BookID == IDBook).ToList();
         }
+        public List<LOAIDICHVU> GetAllDichVu()
+        {
+            return new QLKS().LOAIDICHVUs.ToList();
+        }
+        public void AddDichVu(HOADON_DUNG_DICHVU s)
+        {
+            QLKS db = new QLKS();
+            db.HOADON_DUNG_DICHVU.Add(s);
+            db.SaveChanges();
+        }
     }
 }

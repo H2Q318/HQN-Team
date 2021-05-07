@@ -26,8 +26,20 @@ namespace PBL.BLL
         private BLL_QLBOOK() { }
         public string GetIdCheckinByIDRoom(string id)
         {
-          //  new QLKS().KHACHHANG.Add()
-            return new QLKS().BOOKs.Where(p => p.NgayCheckIn_ThucTe != null && p.NgayCheckOut_ThucTe == null && p.PhongID==id).Select(p => p.BookID).ToString();
+         
+         var s   = new QLKS().BOOKs
+                .Where(p => p.NgayCheckIn_ThucTe != null && p.NgayCheckOut_ThucTe == null && p.PhongID==id)
+                .Select(p => p.BookID).ToList();
+            if(s.Count==0)
+            {
+                return "-1";
+
+            }    
+          else
+            {
+                return s[0].ToString();
+            }    
+           
         }
         public void AddBook(BOOK s)
         {
@@ -35,5 +47,6 @@ namespace PBL.BLL
             db.BOOKs.Add(s);
             db.SaveChanges();
         }
+       
     }
 }

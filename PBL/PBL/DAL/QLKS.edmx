@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="BookID" />
           </Key>
-          <Property Name="BookID" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="BookID" Type="nvarchar" MaxLength="12" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="PhongID" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="KhachHangID" Type="nvarchar" MaxLength="13" Nullable="false" />
           <Property Name="NhanVienID" Type="nvarchar" MaxLength="11" Nullable="false" />
@@ -510,7 +510,7 @@
           <Key>
             <PropertyRef Name="BookID" />
           </Key>
-          <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PhongID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="KhachHangID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />

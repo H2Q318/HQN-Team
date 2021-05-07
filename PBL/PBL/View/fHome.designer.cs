@@ -65,6 +65,8 @@ namespace PBL
             this.tpBooking = new System.Windows.Forms.TabPage();
             this.dgvDPKhachHang = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnDPReset = new System.Windows.Forms.Button();
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
@@ -80,6 +82,8 @@ namespace PBL
             this.tpCheckin = new System.Windows.Forms.TabPage();
             this.dgvCIKhachHang = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txbCIGhiChu = new System.Windows.Forms.TextBox();
             this.btnCIReset = new System.Windows.Forms.Button();
             this.btnCheckin = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -105,7 +109,7 @@ namespace PBL
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnThemDv = new System.Windows.Forms.Button();
             this.NbSoLuong = new System.Windows.Forms.NumericUpDown();
             this.DtNgayDat = new System.Windows.Forms.DateTimePicker();
             this.cbMenuDv = new System.Windows.Forms.ComboBox();
@@ -132,10 +136,6 @@ namespace PBL
             this.txbMaKhachOut = new System.Windows.Forms.TextBox();
             this.dtpNgayDenOut = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txbCIGhiChu = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tbMain.SuspendLayout();
@@ -164,7 +164,7 @@ namespace PBL
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(1505, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1505, 30);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -270,7 +270,7 @@ namespace PBL
             this.flpRom.Location = new System.Drawing.Point(0, 0);
             this.flpRom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpRom.Name = "flpRom";
-            this.flpRom.Size = new System.Drawing.Size(881, 706);
+            this.flpRom.Size = new System.Drawing.Size(881, 704);
             this.flpRom.TabIndex = 6;
             // 
             // panel6
@@ -280,7 +280,7 @@ namespace PBL
             this.panel6.Location = new System.Drawing.Point(886, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(619, 706);
+            this.panel6.Size = new System.Drawing.Size(619, 704);
             this.panel6.TabIndex = 7;
             // 
             // tbMain
@@ -295,7 +295,7 @@ namespace PBL
             this.tbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMain.Name = "tbMain";
             this.tbMain.SelectedIndex = 0;
-            this.tbMain.Size = new System.Drawing.Size(619, 706);
+            this.tbMain.Size = new System.Drawing.Size(619, 704);
             this.tbMain.TabIndex = 0;
             // 
             // tpKhachHang
@@ -498,6 +498,23 @@ namespace PBL
             this.panel1.Size = new System.Drawing.Size(600, 410);
             this.panel1.TabIndex = 22;
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(121, 318);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(59, 17);
+            this.label31.TabIndex = 35;
+            this.label31.Text = "Ghi Chú";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(239, 314);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(233, 22);
+            this.textBox1.TabIndex = 34;
+            // 
             // btnDPReset
             // 
             this.btnDPReset.Location = new System.Drawing.Point(352, 367);
@@ -517,6 +534,7 @@ namespace PBL
             this.btnDatPhong.TabIndex = 32;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.UseVisualStyleBackColor = true;
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // label26
             // 
@@ -615,7 +633,7 @@ namespace PBL
             this.tpCheckin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpCheckin.Name = "tpCheckin";
             this.tpCheckin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpCheckin.Size = new System.Drawing.Size(611, 677);
+            this.tpCheckin.Size = new System.Drawing.Size(611, 675);
             this.tpCheckin.TabIndex = 1;
             this.tpCheckin.Text = "Checkin";
             this.tpCheckin.UseVisualStyleBackColor = true;
@@ -651,6 +669,23 @@ namespace PBL
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(597, 359);
             this.panel2.TabIndex = 2;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(123, 261);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 17);
+            this.label24.TabIndex = 11;
+            this.label24.Text = "Ghi Chú";
+            // 
+            // txbCIGhiChu
+            // 
+            this.txbCIGhiChu.Location = new System.Drawing.Point(240, 257);
+            this.txbCIGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbCIGhiChu.Name = "txbCIGhiChu";
+            this.txbCIGhiChu.Size = new System.Drawing.Size(233, 22);
+            this.txbCIGhiChu.TabIndex = 10;
             // 
             // btnCIReset
             // 
@@ -725,6 +760,7 @@ namespace PBL
             this.txbCIMaNV.Name = "txbCIMaNV";
             this.txbCIMaNV.Size = new System.Drawing.Size(233, 22);
             this.txbCIMaNV.TabIndex = 2;
+            this.txbCIMaNV.Text = "NV070521003";
             // 
             // txbCIMaKhach
             // 
@@ -754,7 +790,7 @@ namespace PBL
             this.tpBillDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpBillDichVu.Name = "tpBillDichVu";
             this.tpBillDichVu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpBillDichVu.Size = new System.Drawing.Size(611, 677);
+            this.tpBillDichVu.Size = new System.Drawing.Size(611, 675);
             this.tpBillDichVu.TabIndex = 2;
             this.tpBillDichVu.Text = "Bill Dịch Vụ";
             this.tpBillDichVu.UseVisualStyleBackColor = true;
@@ -826,7 +862,7 @@ namespace PBL
             this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.button5);
+            this.panel4.Controls.Add(this.btnThemDv);
             this.panel4.Controls.Add(this.NbSoLuong);
             this.panel4.Controls.Add(this.DtNgayDat);
             this.panel4.Controls.Add(this.cbMenuDv);
@@ -882,15 +918,16 @@ namespace PBL
             this.label21.TabIndex = 4;
             this.label21.Text = "Dịch vụ";
             // 
-            // button5
+            // btnThemDv
             // 
-            this.button5.Location = new System.Drawing.Point(325, 15);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 66);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Thêm Dịch Vụ";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnThemDv.Location = new System.Drawing.Point(325, 15);
+            this.btnThemDv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemDv.Name = "btnThemDv";
+            this.btnThemDv.Size = new System.Drawing.Size(91, 66);
+            this.btnThemDv.TabIndex = 3;
+            this.btnThemDv.Text = "Thêm Dịch Vụ";
+            this.btnThemDv.UseVisualStyleBackColor = true;
+            this.btnThemDv.Click += new System.EventHandler(this.btnThemDv_Click);
             // 
             // NbSoLuong
             // 
@@ -1144,45 +1181,11 @@ namespace PBL
             this.panel7.Controls.Add(this.panel6);
             this.panel7.Controls.Add(this.flpRom);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 28);
+            this.panel7.Location = new System.Drawing.Point(0, 30);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1505, 706);
+            this.panel7.Size = new System.Drawing.Size(1505, 704);
             this.panel7.TabIndex = 8;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(239, 314);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 22);
-            this.textBox1.TabIndex = 34;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(121, 318);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(59, 17);
-            this.label31.TabIndex = 35;
-            this.label31.Text = "Ghi Chú";
-            // 
-            // txbCIGhiChu
-            // 
-            this.txbCIGhiChu.Location = new System.Drawing.Point(240, 257);
-            this.txbCIGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbCIGhiChu.Name = "txbCIGhiChu";
-            this.txbCIGhiChu.Size = new System.Drawing.Size(233, 22);
-            this.txbCIGhiChu.TabIndex = 10;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(123, 261);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 17);
-            this.label24.TabIndex = 11;
-            this.label24.Text = "Ghi Chú";
             // 
             // fHome
             // 
@@ -1294,7 +1297,7 @@ namespace PBL
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnThemDv;
         private System.Windows.Forms.NumericUpDown NbSoLuong;
         private System.Windows.Forms.DateTimePicker DtNgayDat;
         private System.Windows.Forms.ComboBox cbMenuDv;

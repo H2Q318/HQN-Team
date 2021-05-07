@@ -25,7 +25,7 @@ namespace PBL
         }
         private BLL_QLP() { }
 
-        public List<PHONG> GetListPhong(string s=null)
+        public List<PHONG> GetListPhong(string s)
         {
             if (s == null)
             {

@@ -39,7 +39,7 @@ namespace PBL
             cbPosition.Items.AddRange(BLL_QLCV.Instance.GetListCBBChucVu().ToArray());
         }
 
-        #region Code cua Tab Chuc Vu
+        #region Quản lý chức vụ
         private void RefreshCV()
         {
             txbSearchCV.Clear();
@@ -189,7 +189,7 @@ namespace PBL
         }
         #endregion
 
-        #region Code cua Tab Nhan Vien
+        #region Quản lý nhân viên
 
         private void RefreshNV()
         {

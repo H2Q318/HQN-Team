@@ -21,6 +21,7 @@ namespace PBL
             GUIPhong();
             GUILoaiPhong();
             GUILoaiVatDung();
+            GUIDichVu();
         }
         #region Quản lý phòng
         private void GUIPhong()
@@ -409,6 +410,166 @@ namespace PBL
             txbDonGiaVt.Text = lvd.DonGia.ToString();
         }
 
+        #endregion
+
+        #region Quản lý dịch vụ
+        private void GUIDichVu()
+        {
+            ShowDgvDV();
+            cbSortDV.SelectedIndex = 0;
+        }
+
+        private void ShowDgvDV()
+        {
+            dgvDichVu.DataSource = BLL_QLDV.Instance.GetAllDichVu();
+            dgvDichVu.Columns["DichVuID"].Visible = false;
+            dgvDichVu.Columns["HOADON_DUNG_DICHVU"].Visible = false;
+        }
+
+        private void RefreshDV()
+        {
+            txbTenDV.Clear();
+            txbGiaDV.Clear();
+            txbOpenDV.Clear();
+            txbCloseDV.Clear();
+            ShowDgvDV();
+        }
+
+        private void btnThemDV_Click(object sender, EventArgs e)
+        {
+            if (txbTenDV.TextLength != 0 && txbGiaDV.TextLength != 0)
+            {
+                LOAIDICHVU dv = new LOAIDICHVU
+                {
+                    TenDichVu = txbTenDV.Text,
+                    DonGia = Convert.ToDecimal(txbGiaDV.Text),
+                    GioMo = TimeSpan.Parse(txbOpenDV.Text),
+                    GioDong = TimeSpan.Parse(txbCloseDV.Text)
+                };
+                if (BLL_QLDV.Instance.AddDichVu(dv))
+                {
+                    MessageBox.Show("Them dich vu thanh cong!");
+                    RefreshDV();
+                }
+                else
+                {
+                    MessageBox.Show("Them dich vu that bai! Vui long kiem tra lai thong tin");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui long nhap ten va gia dich vu!");
+            }
+        }
+
+        private void btnSuaDV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txbTenDV.TextLength != 0 && txbGiaDV.TextLength != 0)
+                {
+                    LOAIDICHVU dv = new LOAIDICHVU
+                    {
+                        DichVuID = dgvDichVu.SelectedRows[0].Cells["DichVuID"].Value.ToString(),
+                        TenDichVu = txbTenDV.Text,
+                        DonGia = Convert.ToDecimal(txbGiaDV.Text),
+                        GioMo = TimeSpan.Parse(txbOpenDV.Text),
+                        GioDong = TimeSpan.Parse(txbCloseDV.Text)
+                    };
+                    if (BLL_QLDV.Instance.UpdateDichVu(dv))
+                    {
+                        MessageBox.Show("Cap nhat dich vu thanh cong!");
+                        RefreshDV();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cap nhat dich vu that bai! Vui long kiem tra lai thong tin");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui long nhap day du thong tin dich vu!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui long chon dich vu can cap nhat!");
+            }
+        }
+
+        private void btnXoaDV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string dvid = dgvDichVu.SelectedRows[0].Cells["DichVuID"].Value.ToString();
+                if (BLL_QLDV.Instance.DeleteDichVu(dvid))
+                {
+                    MessageBox.Show("Xoa dich vu thanh cong!");
+                    RefreshDV();
+                }
+                else
+                {
+                    MessageBox.Show("Dich vu khong the xoa! Vui long kiem tra lai");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui long chon dich vu can xoa!");
+            }
+        }
+
+        private void btnResetDV_Click(object sender, EventArgs e)
+        {
+            RefreshDV();
+        }
+
+        private void btnSearchDv_Click(object sender, EventArgs e)
+        {
+            dgvDichVu.DataSource = BLL_QLDV.Instance.GetListDichVu(txbSeachDv.Text);
+        }
+
+        private void btnResetSDv_Click(object sender, EventArgs e)
+        {
+            txbSeachDv.Clear();
+        }
+
+        private void btnSortDV_Click(object sender, EventArgs e)
+        {
+            if (cbSortDV.SelectedIndex >= 0)
+            {
+                List<string> LdvID = new List<string>();
+                for (int i = 0; i < dgvDichVu.Rows.Count; i++)
+                {
+                    LdvID.Add(dgvDichVu.Rows[i].Cells["DichVuID"].Value.ToString());
+                }
+                dgvDichVu.DataSource = BLL_QLDV.Instance.GetListDichVuSorted(LdvID, cbSortDV.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Vui long chon kieu sap xep!");
+            }
+        }
+
+        private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txbTenDV.Text = dgvDichVu.SelectedRows[0].Cells["TenDichVu"].Value.ToString();
+            txbGiaDV.Text = dgvDichVu.SelectedRows[0].Cells["DonGia"].Value.ToString();
+            txbOpenDV.Text = dgvDichVu.SelectedRows[0].Cells["GioMo"].Value.ToString();
+            txbCloseDV.Text = dgvDichVu.SelectedRows[0].Cells["GioDong"].Value.ToString();
+        }
+
+        private void txbGiaDV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvDichVu_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvDichVu.ClearSelection();
+        }
         #endregion
     }
 }

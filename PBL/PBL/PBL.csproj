@@ -61,6 +61,7 @@
     <Compile Include="BLL\BLL_QLNV.cs" />
     <Compile Include="BLL\BLL_QLCV.cs" />
     <Compile Include="BLL\BLL_QLVDP.cs" />
+    <Compile Include="BLL\BLL_QLDV.cs" />
     <Compile Include="DTO\DTO_ChucVu.cs" />
     <Compile Include="DAL\BOOK.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
@@ -130,6 +131,7 @@
     <Compile Include="DTO\Phong_View.cs" />
     <Compile Include="DTO\NV_View.cs" />
     <Compile Include="DTO\VatDungPhong_View.cs" />
+    <Compile Include="DTO\DTO_DichVu.cs" />
     <Compile Include="View\fManageSupplies.cs">
       <SubType>Form</SubType>
     </Compile>

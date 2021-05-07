@@ -361,9 +361,11 @@
             // 
             this.txbCMND.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCMND.Location = new System.Drawing.Point(148, 10);
+            this.txbCMND.MaxLength = 10;
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.Size = new System.Drawing.Size(245, 22);
             this.txbCMND.TabIndex = 1;
+            this.txbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JustNumberKeyPress);
             // 
             // lbCMND
             // 
@@ -388,9 +390,11 @@
             // 
             this.txbPhone.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPhone.Location = new System.Drawing.Point(148, 10);
+            this.txbPhone.MaxLength = 11;
             this.txbPhone.Name = "txbPhone";
             this.txbPhone.Size = new System.Drawing.Size(245, 22);
-            this.txbPhone.TabIndex = 4;
+            this.txbPhone.TabIndex = 2;
+            this.txbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JustNumberKeyPress);
             // 
             // lbPhone
             // 
@@ -742,6 +746,7 @@
             this.txbQuyenHan.Name = "txbQuyenHan";
             this.txbQuyenHan.Size = new System.Drawing.Size(242, 22);
             this.txbQuyenHan.TabIndex = 1;
+            this.txbQuyenHan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JustNumberKeyPress);
             // 
             // label
             // 
@@ -871,10 +876,8 @@
         private System.Windows.Forms.TextBox txbAddress;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox txbCMND;
         private System.Windows.Forms.Label lbCMND;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txbPhone;
         private System.Windows.Forms.Label lbPhone;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DateTimePicker dtpBirthday;
@@ -918,5 +921,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cbSortCV;
         private System.Windows.Forms.Button btnSortCV;
+        private System.Windows.Forms.TextBox txbCMND;
+        private System.Windows.Forms.TextBox txbPhone;
     }
 }

@@ -167,6 +167,7 @@ namespace PBL
                     cmp = NV_View.Compare_Chucvu;
                     break;
             }
+            Sort(ref data, cmp);
             return data;
         }
 

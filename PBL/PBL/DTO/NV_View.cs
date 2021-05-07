@@ -55,7 +55,7 @@ namespace PBL
 
         public static bool Compare_NamSinh(object o1, object o2)
         {
-            if (((NV_View)o1).NgaySinh > ((NV_View)o1).NgaySinh)
+            if (DateTime.Compare(((NV_View)o1).NgaySinh, ((NV_View)o2).NgaySinh) > 0)
             {
                 return true;
             }

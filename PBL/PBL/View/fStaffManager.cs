@@ -88,28 +88,35 @@ namespace PBL
         //Cap nhat chuc vu
         private void btnUpdateCV_Click(object sender, EventArgs e)
         {
-            if (txbChucVu.TextLength != 0 && txbQuyenHan.TextLength != 0)
+            try
             {
-                CHUCVU cv = new CHUCVU
+                if (txbChucVu.TextLength != 0 && txbQuyenHan.TextLength != 0)
                 {
-                    ChucVuID = dgvChucVu.SelectedRows[0].Cells["ChucVuID"].Value.ToString(),
-                    TenChucVu = txbChucVu.Text,
-                    MoTa = txbMota.Text,
-                    QuyenHan = Convert.ToInt32(txbQuyenHan.Text)
-                };
-                if (BLL_QLCV.Instance.UpdateChucVu(cv))
-                {
-                    MessageBox.Show("Cap nhat chuc vu thanh cong!");
-                    RefreshCV();
+                    CHUCVU cv = new CHUCVU
+                    {
+                        ChucVuID = dgvChucVu.SelectedRows[0].Cells["ChucVuID"].Value.ToString(),
+                        TenChucVu = txbChucVu.Text,
+                        MoTa = txbMota.Text,
+                        QuyenHan = Convert.ToInt32(txbQuyenHan.Text)
+                    };
+                    if (BLL_QLCV.Instance.UpdateChucVu(cv))
+                    {
+                        MessageBox.Show("Cap nhat chuc vu thanh cong!");
+                        RefreshCV();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cap nhat chuc vu that bai! Vui long kiem tra lai thong tin");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Cap nhat chuc vu that bai! Vui long kiem tra lai thong tin");
+                    MessageBox.Show("Vui long nhap day du thong tin chuc vu!");
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Vui long chon chuc vu va nhap day du thong tin chuc vu!");
+                MessageBox.Show("Vui long chon chuc vu can cap nhat!");
             }
         }
 
@@ -208,7 +215,7 @@ namespace PBL
         //Them nhan vien
         private void btnAddNV_Click(object sender, EventArgs e)
         {
-            if (txbName.TextLength != 0 && txbPhone.TextLength != 0 && txbCMND.TextLength != 0 && txbAddress.TextLength != 0)
+            if (txbName.TextLength != 0 && txbPhone.TextLength != 0 && txbPhone.TextLength != 0 && txbAddress.TextLength != 0)
             {
                 NHANVIEN nv = new NHANVIEN()
                 {
@@ -241,34 +248,41 @@ namespace PBL
         //Cap nhat nhan vien
         private void btnUpdateNV_Click(object sender, EventArgs e)
         {
-            if (txbName.TextLength != 0 && txbPhone.TextLength != 0 && txbCMND.TextLength != 0 && txbAddress.TextLength != 0)
+            try
             {
-                NHANVIEN nv = new NHANVIEN()
+                if (txbName.TextLength != 0 && txbPhone.TextLength != 0 && txbPhone.TextLength != 0 && txbAddress.TextLength != 0)
                 {
-                    NhanVienID = dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString(),
-                    Ten = txbName.Text,
-                    GioiTinh = (string.Compare(cbGender.SelectedItem.ToString(), "Nam") == 0) ? true : false,
-                    NgaySinh = dtpBirthday.Value,
-                    CMND = txbCMND.Text,
-                    SDT = txbPhone.Text,
-                    DiaChi = txbAddress.Text,
-                    ChucVuID = ((CBBItem)cbPosition.SelectedItem).Value,
-                    GhiChu = txbNote.Text,
-                };
-                if (BLL_QLNV.Instance.UpdateNhanVien(nv))
-                {
-                    MessageBox.Show("Cap nhat thong tin nhan vien thanh cong!");
-                    RefreshNV();
-                    ShowDgvStaff();
+                    NHANVIEN nv = new NHANVIEN()
+                    {
+                        NhanVienID = dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString(),
+                        Ten = txbName.Text,
+                        GioiTinh = (string.Compare(cbGender.SelectedItem.ToString(), "Nam") == 0) ? true : false,
+                        NgaySinh = dtpBirthday.Value,
+                        CMND = txbCMND.Text,
+                        SDT = txbPhone.Text,
+                        DiaChi = txbAddress.Text,
+                        ChucVuID = ((CBBItem)cbPosition.SelectedItem).Value,
+                        GhiChu = txbNote.Text,
+                    };
+                    if (BLL_QLNV.Instance.UpdateNhanVien(nv))
+                    {
+                        MessageBox.Show("Cap nhat thong tin nhan vien thanh cong!");
+                        RefreshNV();
+                        ShowDgvStaff();
+                    }
+                    else
+                    {
+                        MessageBox.Show("cap nhat thong tin nhan vien that bai! Vui long kiem tra lai thong tin");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("cap nhat thong tin nhan vien that bai! Vui long kiem tra lai thong tin");
+                    MessageBox.Show("Vui long nhap day du thong tin!");
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Vui long chon nhan vien va nhap day du thong tin!");
+                MessageBox.Show("Vui long chon nhan vien can cap nhat!");
             }
         }
 
@@ -350,7 +364,15 @@ namespace PBL
         {
             dgvStaff.ClearSelection();
         }
+
         #endregion
 
+        private void JustNumberKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

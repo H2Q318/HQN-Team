@@ -39,5 +39,36 @@ namespace PBL
                 }
             }
         }
+
+        public static bool Compare_TenNhanVien(object o1, object o2)
+        {
+            if (string.Compare(((NV_View)o1).Ten, ((NV_View)o2).Ten) > 0){
+                return true;
+            }
+            return false;
+        }
+
+        public static bool Compare_GioiTinh(object o1, object o2)
+        {
+            return (bool)(((NV_View)o1).GioiTinh);
+        }
+
+        public static bool Compare_NamSinh(object o1, object o2)
+        {
+            if (((NV_View)o1).NgaySinh > ((NV_View)o1).NgaySinh)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool Compare_Chucvu(object o1, object o2)
+        {
+            if (string.Compare(((NV_View)o1).TenChucVu, ((NV_View)o2).TenChucVu) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

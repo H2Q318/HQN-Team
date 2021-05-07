@@ -174,9 +174,6 @@
             "Theo tên nhân viên",
             "Theo giới tính",
             "Theo năm sinh",
-            "Theo SĐT",
-            "Theo CMND",
-            "Theo địa chỉ",
             "Theo chức vụ"});
             this.cbSortNV.Location = new System.Drawing.Point(4, 3);
             this.cbSortNV.Name = "cbSortNV";
@@ -192,6 +189,7 @@
             this.btnSortNV.TabIndex = 1;
             this.btnSortNV.Text = "Sắp xếp";
             this.btnSortNV.UseVisualStyleBackColor = true;
+            this.btnSortNV.Click += new System.EventHandler(this.btnSortNV_Click);
             // 
             // panel4
             // 
@@ -232,6 +230,7 @@
             this.btnClearNV.TabIndex = 13;
             this.btnClearNV.Text = "Clear";
             this.btnClearNV.UseVisualStyleBackColor = true;
+            this.btnClearNV.Click += new System.EventHandler(this.btnClearNV_Click);
             // 
             // btnDeleteNV
             // 
@@ -508,11 +507,9 @@
             this.cbSearchNV.FormattingEnabled = true;
             this.cbSearchNV.Items.AddRange(new object[] {
             "Theo tên",
-            "Theo năm sinh",
             "Theo SĐT",
             "Theo CMND",
-            "Theo địa chỉ",
-            "Theo chức vụ"});
+            "Theo địa chỉ"});
             this.cbSearchNV.Location = new System.Drawing.Point(4, 3);
             this.cbSearchNV.Name = "cbSearchNV";
             this.cbSearchNV.Size = new System.Drawing.Size(113, 25);
@@ -527,6 +524,7 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txbSearchNV
             // 
@@ -559,6 +557,8 @@
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(629, 487);
             this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
+            this.dgvStaff.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStaff_DataBindingComplete);
             // 
             // tabPage2
             // 
@@ -620,6 +620,7 @@
             this.dgvChucVu.Size = new System.Drawing.Size(632, 493);
             this.dgvChucVu.TabIndex = 31;
             this.dgvChucVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChucVu_CellClick);
+            this.dgvChucVu.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvChucVu_DataBindingComplete);
             // 
             // panel13
             // 

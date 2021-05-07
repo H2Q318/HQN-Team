@@ -347,11 +347,13 @@
             // 
             // dgvLoaiVatDung
             // 
+            this.dgvLoaiVatDung.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoaiVatDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiVatDung.Location = new System.Drawing.Point(5, 4);
             this.dgvLoaiVatDung.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiVatDung.Name = "dgvLoaiVatDung";
             this.dgvLoaiVatDung.RowHeadersWidth = 51;
+            this.dgvLoaiVatDung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiVatDung.Size = new System.Drawing.Size(916, 416);
             this.dgvLoaiVatDung.TabIndex = 0;
             this.dgvLoaiVatDung.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVatTu_CellClick);
@@ -581,6 +583,7 @@
             // 
             // dgvLoaiPhong
             // 
+            this.dgvLoaiPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiPhong.Location = new System.Drawing.Point(4, 4);
             this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
@@ -812,6 +815,7 @@
             // 
             // dgvBillDV
             // 
+            this.dgvBillDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBillDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillDV.Location = new System.Drawing.Point(4, 4);
             this.dgvBillDV.Margin = new System.Windows.Forms.Padding(4);
@@ -1097,6 +1101,7 @@
             // 
             // dgvDichVu
             // 
+            this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.Location = new System.Drawing.Point(3, 2);
             this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4);
@@ -1308,6 +1313,7 @@
             // 
             // dgvPhong
             // 
+            this.dgvPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhong.Location = new System.Drawing.Point(3, 2);
             this.dgvPhong.Margin = new System.Windows.Forms.Padding(4);

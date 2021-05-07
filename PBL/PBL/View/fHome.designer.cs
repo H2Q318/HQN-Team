@@ -48,6 +48,7 @@ namespace PBL
             this.panel6 = new System.Windows.Forms.Panel();
             this.tbMain = new System.Windows.Forms.TabControl();
             this.tpKhachHang = new System.Windows.Forms.TabPage();
+            this.txbKHSdt = new System.Windows.Forms.TextBox();
             this.btnResetKh = new System.Windows.Forms.Button();
             this.btnThemKh = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,11 +57,10 @@ namespace PBL
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.MsbKHDienThoai = new System.Windows.Forms.MaskedTextBox();
             this.ckbKHGioiTinh = new System.Windows.Forms.CheckBox();
             this.txbKHCMND = new System.Windows.Forms.TextBox();
             this.txbKHQuocTich = new System.Windows.Forms.TextBox();
-            this.txbKHDiaChi = new System.Windows.Forms.TextBox();
+            this.txbKHGhiChu = new System.Windows.Forms.TextBox();
             this.txbKHHoTen = new System.Windows.Forms.TextBox();
             this.tpBooking = new System.Windows.Forms.TabPage();
             this.dgvDPKhachHang = new System.Windows.Forms.DataGridView();
@@ -109,7 +109,7 @@ namespace PBL
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnThemDv = new System.Windows.Forms.Button();
             this.NbSoLuong = new System.Windows.Forms.NumericUpDown();
             this.DtNgayDat = new System.Windows.Forms.DateTimePicker();
             this.cbMenuDv = new System.Windows.Forms.ComboBox();
@@ -164,7 +164,7 @@ namespace PBL
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(1505, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1505, 30);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -270,7 +270,7 @@ namespace PBL
             this.flpRom.Location = new System.Drawing.Point(0, 0);
             this.flpRom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpRom.Name = "flpRom";
-            this.flpRom.Size = new System.Drawing.Size(881, 706);
+            this.flpRom.Size = new System.Drawing.Size(881, 704);
             this.flpRom.TabIndex = 6;
             // 
             // panel6
@@ -280,7 +280,7 @@ namespace PBL
             this.panel6.Location = new System.Drawing.Point(886, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(619, 706);
+            this.panel6.Size = new System.Drawing.Size(619, 704);
             this.panel6.TabIndex = 7;
             // 
             // tbMain
@@ -295,11 +295,12 @@ namespace PBL
             this.tbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMain.Name = "tbMain";
             this.tbMain.SelectedIndex = 0;
-            this.tbMain.Size = new System.Drawing.Size(619, 706);
+            this.tbMain.Size = new System.Drawing.Size(619, 704);
             this.tbMain.TabIndex = 0;
             // 
             // tpKhachHang
             // 
+            this.tpKhachHang.Controls.Add(this.txbKHSdt);
             this.tpKhachHang.Controls.Add(this.btnResetKh);
             this.tpKhachHang.Controls.Add(this.btnThemKh);
             this.tpKhachHang.Controls.Add(this.label7);
@@ -308,11 +309,10 @@ namespace PBL
             this.tpKhachHang.Controls.Add(this.label4);
             this.tpKhachHang.Controls.Add(this.label2);
             this.tpKhachHang.Controls.Add(this.label1);
-            this.tpKhachHang.Controls.Add(this.MsbKHDienThoai);
             this.tpKhachHang.Controls.Add(this.ckbKHGioiTinh);
             this.tpKhachHang.Controls.Add(this.txbKHCMND);
             this.tpKhachHang.Controls.Add(this.txbKHQuocTich);
-            this.tpKhachHang.Controls.Add(this.txbKHDiaChi);
+            this.tpKhachHang.Controls.Add(this.txbKHGhiChu);
             this.tpKhachHang.Controls.Add(this.txbKHHoTen);
             this.tpKhachHang.Location = new System.Drawing.Point(4, 25);
             this.tpKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -322,6 +322,15 @@ namespace PBL
             this.tpKhachHang.TabIndex = 0;
             this.tpKhachHang.Text = "Khách hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
+            // 
+            // txbKHSdt
+            // 
+            this.txbKHSdt.Location = new System.Drawing.Point(239, 290);
+            this.txbKHSdt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbKHSdt.MaxLength = 10;
+            this.txbKHSdt.Name = "txbKHSdt";
+            this.txbKHSdt.Size = new System.Drawing.Size(232, 22);
+            this.txbKHSdt.TabIndex = 17;
             // 
             // btnResetKh
             // 
@@ -342,11 +351,12 @@ namespace PBL
             this.btnThemKh.TabIndex = 15;
             this.btnThemKh.Text = "Thêm";
             this.btnThemKh.UseVisualStyleBackColor = true;
+            this.btnThemKh.Click += new System.EventHandler(this.btnThemKh_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(136, 295);
+            this.label7.Location = new System.Drawing.Point(136, 223);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 17);
             this.label7.TabIndex = 14;
@@ -355,7 +365,7 @@ namespace PBL
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(136, 439);
+            this.label6.Location = new System.Drawing.Point(136, 367);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 12;
@@ -364,7 +374,7 @@ namespace PBL
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(136, 367);
+            this.label5.Location = new System.Drawing.Point(136, 295);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 17);
             this.label5.TabIndex = 11;
@@ -373,11 +383,11 @@ namespace PBL
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(136, 224);
+            this.label4.Location = new System.Drawing.Point(136, 438);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.Size = new System.Drawing.Size(57, 17);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Địa Chỉ";
+            this.label4.Text = "Ghi chú";
             // 
             // label2
             // 
@@ -397,15 +407,6 @@ namespace PBL
             this.label1.TabIndex = 7;
             this.label1.Text = "Họ tên";
             // 
-            // MsbKHDienThoai
-            // 
-            this.MsbKHDienThoai.Location = new System.Drawing.Point(239, 363);
-            this.MsbKHDienThoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MsbKHDienThoai.Mask = "(999) 000-0000";
-            this.MsbKHDienThoai.Name = "MsbKHDienThoai";
-            this.MsbKHDienThoai.Size = new System.Drawing.Size(232, 22);
-            this.MsbKHDienThoai.TabIndex = 6;
-            // 
             // ckbKHGioiTinh
             // 
             this.ckbKHGioiTinh.AutoSize = true;
@@ -421,7 +422,7 @@ namespace PBL
             // 
             // txbKHCMND
             // 
-            this.txbKHCMND.Location = new System.Drawing.Point(239, 436);
+            this.txbKHCMND.Location = new System.Drawing.Point(239, 364);
             this.txbKHCMND.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbKHCMND.Name = "txbKHCMND";
             this.txbKHCMND.Size = new System.Drawing.Size(232, 22);
@@ -429,19 +430,19 @@ namespace PBL
             // 
             // txbKHQuocTich
             // 
-            this.txbKHQuocTich.Location = new System.Drawing.Point(239, 292);
+            this.txbKHQuocTich.Location = new System.Drawing.Point(239, 220);
             this.txbKHQuocTich.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbKHQuocTich.Name = "txbKHQuocTich";
             this.txbKHQuocTich.Size = new System.Drawing.Size(232, 22);
             this.txbKHQuocTich.TabIndex = 3;
             // 
-            // txbKHDiaChi
+            // txbKHGhiChu
             // 
-            this.txbKHDiaChi.Location = new System.Drawing.Point(239, 222);
-            this.txbKHDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbKHDiaChi.Name = "txbKHDiaChi";
-            this.txbKHDiaChi.Size = new System.Drawing.Size(232, 22);
-            this.txbKHDiaChi.TabIndex = 2;
+            this.txbKHGhiChu.Location = new System.Drawing.Point(239, 436);
+            this.txbKHGhiChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbKHGhiChu.Name = "txbKHGhiChu";
+            this.txbKHGhiChu.Size = new System.Drawing.Size(232, 22);
+            this.txbKHGhiChu.TabIndex = 2;
             // 
             // txbKHHoTen
             // 
@@ -456,10 +457,10 @@ namespace PBL
             this.tpBooking.Controls.Add(this.dgvDPKhachHang);
             this.tpBooking.Controls.Add(this.panel1);
             this.tpBooking.Location = new System.Drawing.Point(4, 25);
-            this.tpBooking.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpBooking.Margin = new System.Windows.Forms.Padding(4);
             this.tpBooking.Name = "tpBooking";
-            this.tpBooking.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpBooking.Size = new System.Drawing.Size(611, 675);
+            this.tpBooking.Padding = new System.Windows.Forms.Padding(4);
+            this.tpBooking.Size = new System.Drawing.Size(611, 677);
             this.tpBooking.TabIndex = 4;
             this.tpBooking.Text = "Đặt phòng";
             this.tpBooking.UseVisualStyleBackColor = true;
@@ -468,11 +469,12 @@ namespace PBL
             // 
             this.dgvDPKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDPKhachHang.Location = new System.Drawing.Point(4, 421);
-            this.dgvDPKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDPKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDPKhachHang.Name = "dgvDPKhachHang";
             this.dgvDPKhachHang.RowHeadersWidth = 51;
             this.dgvDPKhachHang.Size = new System.Drawing.Size(600, 247);
             this.dgvDPKhachHang.TabIndex = 23;
+            this.dgvDPKhachHang.Click += new System.EventHandler(this.dgvDPKhachHang_Click);
             // 
             // panel1
             // 
@@ -491,7 +493,7 @@ namespace PBL
             this.panel1.Controls.Add(this.txbDPMaKhach);
             this.panel1.Controls.Add(this.dtpDPNgayDen);
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 410);
             this.panel1.TabIndex = 22;
@@ -532,6 +534,7 @@ namespace PBL
             this.btnDatPhong.TabIndex = 32;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.UseVisualStyleBackColor = true;
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // label26
             // 
@@ -645,6 +648,7 @@ namespace PBL
             this.dgvCIKhachHang.RowTemplate.Height = 24;
             this.dgvCIKhachHang.Size = new System.Drawing.Size(597, 298);
             this.dgvCIKhachHang.TabIndex = 3;
+            this.dgvCIKhachHang.Click += new System.EventHandler(this.dgvCIKhachHang_Click);
             // 
             // panel2
             // 
@@ -756,6 +760,7 @@ namespace PBL
             this.txbCIMaNV.Name = "txbCIMaNV";
             this.txbCIMaNV.Size = new System.Drawing.Size(233, 22);
             this.txbCIMaNV.TabIndex = 2;
+            this.txbCIMaNV.Text = "NV070521003";
             // 
             // txbCIMaKhach
             // 
@@ -857,7 +862,7 @@ namespace PBL
             this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.label22);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Controls.Add(this.button5);
+            this.panel4.Controls.Add(this.btnThemDv);
             this.panel4.Controls.Add(this.NbSoLuong);
             this.panel4.Controls.Add(this.DtNgayDat);
             this.panel4.Controls.Add(this.cbMenuDv);
@@ -913,15 +918,16 @@ namespace PBL
             this.label21.TabIndex = 4;
             this.label21.Text = "Dịch vụ";
             // 
-            // button5
+            // btnThemDv
             // 
-            this.button5.Location = new System.Drawing.Point(325, 15);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(91, 66);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Thêm Dịch Vụ";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnThemDv.Location = new System.Drawing.Point(325, 15);
+            this.btnThemDv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemDv.Name = "btnThemDv";
+            this.btnThemDv.Size = new System.Drawing.Size(91, 66);
+            this.btnThemDv.TabIndex = 3;
+            this.btnThemDv.Text = "Thêm Dịch Vụ";
+            this.btnThemDv.UseVisualStyleBackColor = true;
+            this.btnThemDv.Click += new System.EventHandler(this.btnThemDv_Click);
             // 
             // NbSoLuong
             // 
@@ -957,7 +963,7 @@ namespace PBL
             this.tpCheckOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpCheckOut.Name = "tpCheckOut";
             this.tpCheckOut.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpCheckOut.Size = new System.Drawing.Size(611, 675);
+            this.tpCheckOut.Size = new System.Drawing.Size(611, 677);
             this.tpCheckOut.TabIndex = 3;
             this.tpCheckOut.Text = "CheckOut";
             this.tpCheckOut.UseVisualStyleBackColor = true;
@@ -1175,10 +1181,10 @@ namespace PBL
             this.panel7.Controls.Add(this.panel6);
             this.panel7.Controls.Add(this.flpRom);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 28);
+            this.panel7.Location = new System.Drawing.Point(0, 30);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1505, 706);
+            this.panel7.Size = new System.Drawing.Size(1505, 704);
             this.panel7.TabIndex = 8;
             // 
             // fHome
@@ -1248,11 +1254,10 @@ namespace PBL
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox MsbKHDienThoai;
         private System.Windows.Forms.CheckBox ckbKHGioiTinh;
         private System.Windows.Forms.TextBox txbKHCMND;
         private System.Windows.Forms.TextBox txbKHQuocTich;
-        private System.Windows.Forms.TextBox txbKHDiaChi;
+        private System.Windows.Forms.TextBox txbKHGhiChu;
         private System.Windows.Forms.TextBox txbKHHoTen;
         private System.Windows.Forms.TabPage tpBooking;
         private System.Windows.Forms.Panel panel1;
@@ -1267,8 +1272,6 @@ namespace PBL
         private System.Windows.Forms.TabPage tpCheckin;
         private System.Windows.Forms.DataGridView dgvCIKhachHang;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txbCIGhiChu;
         private System.Windows.Forms.Button btnCIReset;
         private System.Windows.Forms.Button btnCheckin;
         private System.Windows.Forms.Label label11;
@@ -1294,7 +1297,7 @@ namespace PBL
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnThemDv;
         private System.Windows.Forms.NumericUpDown NbSoLuong;
         private System.Windows.Forms.DateTimePicker DtNgayDat;
         private System.Windows.Forms.ComboBox cbMenuDv;
@@ -1325,7 +1328,10 @@ namespace PBL
         private System.Windows.Forms.Button btnDPReset;
         private System.Windows.Forms.Button btnDatPhong;
         private System.Windows.Forms.DataGridView dgvDPKhachHang;
+        private System.Windows.Forms.TextBox txbKHSdt;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txbCIGhiChu;
     }
 }

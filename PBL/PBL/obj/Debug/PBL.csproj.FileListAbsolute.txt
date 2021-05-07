@@ -9,11 +9,8 @@ D:\PBL3\HQN-Team\PBL\PBL\bin\Debug\PBL.pdb
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.exe
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.pdb
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fHome.resources
-D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fTableManager.resources
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fStaffManager.resources
-D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.MenuQuanLy.resources
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fBooking.resources
-D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fmaManageSupplies.resources
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fChangePassword.resources
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\PBL.exe.config
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\PBL.exe
@@ -57,3 +54,10 @@ C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlSer
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.xml
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete
+D:\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.dll
+D:\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.dll
+D:\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.xml
+D:\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.xml
+D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fManageSupplies.resources
+D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fMenuQuanLy.resources
+D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete

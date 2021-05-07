@@ -339,29 +339,6 @@ as
 	where PhongID = @pid and VatDungID = @vdid
 go
 
-/*procedure của bảng TRANGTHAIBOOK*/
-
-create or alter proc sp_Ins_TrangThaiBook(@ttbid nvarchar(50),
-									@Mota ntext)
-as
-	insert into trangthaibook
-	values(@ttbid, @Mota)
-go
-
-create or alter proc sp_Up_TrangThaiBook(@ttbid nvarchar(50),
-									@Mota ntext)
-as
-	update trangthaibook
-	set Mota = @Mota
-	where TrangThaiBookID = @ttbid
-go
-
-create or alter proc sp_Del_TrangThaiBook(@ttbid nvarchar(50))
-as
-	delete from trangthaibook
-	where trangthaibookid = @ttbid
-go
-
 /*procedure của bảng BOOK*/
 
 create or alter proc sp_Ins_Book(@phongid char(3), 
@@ -372,7 +349,6 @@ create or alter proc sp_Ins_Book(@phongid char(3),
 						@ngaycheckout datetime,
 						@ngaycheckint_tt datetime,
 						@ngaycheckout_tt datetime,
-						@trangthaibookid nvarchar(50),
 						@thanhtoan decimal)
 as
 	insert into BOOK(PhongID,
@@ -383,7 +359,6 @@ as
 					NgayCheckOut,
 					NgayCheckIn_ThucTe,
 					NgayCheckOut_ThucTe,
-					TrangThaiBookID,
 					ThanhToan)
 	values (@phongid,
 			@khid,
@@ -393,7 +368,6 @@ as
 			@ngaycheckout,
 			@ngaycheckint_tt,
 			@ngaycheckout_tt,
-			@trangthaibookid,
 			@thanhtoan)
 go
 
@@ -406,7 +380,6 @@ create or alter proc sp_Up_Book(@bookid nvarchar(12),
 						@ngaycheckout datetime,
 						@ngaycheckint_tt datetime,
 						@ngaycheckout_tt datetime,
-						@trangthaibookid nvarchar(50),
 						@thanhtoan decimal)
 as
 	update BOOK
@@ -418,7 +391,6 @@ as
 		NgayCheckOut = @ngaycheckout,
 		NgayCheckIn_ThucTe = @ngaycheckint_tt,
 		NgayCheckOut_ThucTe = @ngaycheckout_tt,
-		TrangThaiBookID = @trangthaibookid,
 		ThanhToan = @thanhtoan
 	where BookID = @bookid
 go

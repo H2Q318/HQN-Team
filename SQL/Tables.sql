@@ -184,14 +184,6 @@ create sequence seq_book
 	cycle
 go
 
-create table TRANGTHAIBOOK
-(
-	TrangThaiBookID nvarchar(50) not null,
-	Mota ntext null,
-	constraint pk_trangthaibook_trangthaibookid primary key (TrangThaiBookID)
-)
-go
-
 create table BOOK
 (
 	BookID nvarchar(12) not null

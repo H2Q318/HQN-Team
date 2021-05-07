@@ -64,6 +64,11 @@ namespace PBL
             fBooking f = new fBooking();
             f.ShowDialog();
         }
+
+        private void itemTaiKhoan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }

@@ -1371,6 +1371,7 @@
             this.txbMaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbMaPhong.MaxLength = 3;
             this.txbMaPhong.Name = "txbMaPhong";
+            this.txbMaPhong.ReadOnly = true;
             this.txbMaPhong.Size = new System.Drawing.Size(141, 22);
             this.txbMaPhong.TabIndex = 8;
             this.txbMaPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMaPhong_KeyPress);

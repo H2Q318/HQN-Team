@@ -174,9 +174,6 @@
             "Theo tên nhân viên",
             "Theo giới tính",
             "Theo năm sinh",
-            "Theo SĐT",
-            "Theo CMND",
-            "Theo địa chỉ",
             "Theo chức vụ"});
             this.cbSortNV.Location = new System.Drawing.Point(4, 3);
             this.cbSortNV.Name = "cbSortNV";
@@ -192,6 +189,7 @@
             this.btnSortNV.TabIndex = 1;
             this.btnSortNV.Text = "Sắp xếp";
             this.btnSortNV.UseVisualStyleBackColor = true;
+            this.btnSortNV.Click += new System.EventHandler(this.btnSortNV_Click);
             // 
             // panel4
             // 
@@ -232,6 +230,7 @@
             this.btnClearNV.TabIndex = 13;
             this.btnClearNV.Text = "Clear";
             this.btnClearNV.UseVisualStyleBackColor = true;
+            this.btnClearNV.Click += new System.EventHandler(this.btnClearNV_Click);
             // 
             // btnDeleteNV
             // 
@@ -362,9 +361,11 @@
             // 
             this.txbCMND.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCMND.Location = new System.Drawing.Point(148, 10);
+            this.txbCMND.MaxLength = 10;
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.Size = new System.Drawing.Size(245, 22);
             this.txbCMND.TabIndex = 1;
+            this.txbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JustNumberKeyPress);
             // 
             // lbCMND
             // 
@@ -389,9 +390,11 @@
             // 
             this.txbPhone.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPhone.Location = new System.Drawing.Point(148, 10);
+            this.txbPhone.MaxLength = 11;
             this.txbPhone.Name = "txbPhone";
             this.txbPhone.Size = new System.Drawing.Size(245, 22);
-            this.txbPhone.TabIndex = 4;
+            this.txbPhone.TabIndex = 2;
+            this.txbPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JustNumberKeyPress);
             // 
             // lbPhone
             // 
@@ -508,11 +511,9 @@
             this.cbSearchNV.FormattingEnabled = true;
             this.cbSearchNV.Items.AddRange(new object[] {
             "Theo tên",
-            "Theo năm sinh",
             "Theo SĐT",
             "Theo CMND",
-            "Theo địa chỉ",
-            "Theo chức vụ"});
+            "Theo địa chỉ"});
             this.cbSearchNV.Location = new System.Drawing.Point(4, 3);
             this.cbSearchNV.Name = "cbSearchNV";
             this.cbSearchNV.Size = new System.Drawing.Size(113, 25);
@@ -527,6 +528,7 @@
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txbSearchNV
             // 
@@ -559,6 +561,8 @@
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(629, 487);
             this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
+            this.dgvStaff.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStaff_DataBindingComplete);
             // 
             // tabPage2
             // 
@@ -620,6 +624,7 @@
             this.dgvChucVu.Size = new System.Drawing.Size(632, 493);
             this.dgvChucVu.TabIndex = 31;
             this.dgvChucVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChucVu_CellClick);
+            this.dgvChucVu.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvChucVu_DataBindingComplete);
             // 
             // panel13
             // 
@@ -741,6 +746,7 @@
             this.txbQuyenHan.Name = "txbQuyenHan";
             this.txbQuyenHan.Size = new System.Drawing.Size(242, 22);
             this.txbQuyenHan.TabIndex = 1;
+            this.txbQuyenHan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JustNumberKeyPress);
             // 
             // label
             // 
@@ -870,10 +876,8 @@
         private System.Windows.Forms.TextBox txbAddress;
         private System.Windows.Forms.Label lbAddress;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox txbCMND;
         private System.Windows.Forms.Label lbCMND;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txbPhone;
         private System.Windows.Forms.Label lbPhone;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DateTimePicker dtpBirthday;
@@ -917,5 +921,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ComboBox cbSortCV;
         private System.Windows.Forms.Button btnSortCV;
+        private System.Windows.Forms.TextBox txbCMND;
+        private System.Windows.Forms.TextBox txbPhone;
     }
 }

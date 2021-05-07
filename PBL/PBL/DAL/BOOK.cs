@@ -31,11 +31,13 @@ namespace PBL.DAL
         public Nullable<System.DateTime> NgayCheckOut { get; set; }
         public Nullable<System.DateTime> NgayCheckIn_ThucTe { get; set; }
         public Nullable<System.DateTime> NgayCheckOut_ThucTe { get; set; }
+        public string TrangThaiBookID { get; set; }
         public Nullable<decimal> ThanhToan { get; set; }
     
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
         public virtual PHONG PHONG { get; set; }
+        public virtual TRANGTHAIBOOK TRANGTHAIBOOK { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

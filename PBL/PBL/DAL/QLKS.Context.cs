@@ -38,6 +38,7 @@ namespace PBL.DAL
         public virtual DbSet<LOAIVATDUNG> LOAIVATDUNGs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHONG> PHONGs { get; set; }
+        public virtual DbSet<TRANGTHAIBOOK> TRANGTHAIBOOKs { get; set; }
         public virtual DbSet<TRANGTHAIVATDUNG> TRANGTHAIVATDUNGs { get; set; }
         public virtual DbSet<VATDUNGPHONG> VATDUNGPHONGs { get; set; }
     

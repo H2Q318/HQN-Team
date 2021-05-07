@@ -56,8 +56,11 @@
   <ItemGroup>
     <Compile Include="BLL\BLL_QLLP.cs" />
     <Compile Include="BLL\BLL_QLP.cs" />
+    <Compile Include="BLL\BLL_QLTTVD.cs" />
+    <Compile Include="BLL\BLL_QLVD.cs" />
     <Compile Include="BLL\BLL_QLNV.cs" />
     <Compile Include="BLL\BLL_QLCV.cs" />
+    <Compile Include="BLL\BLL_QLVDP.cs" />
     <Compile Include="DTO\DTO_ChucVu.cs" />
     <Compile Include="DAL\BOOK.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
@@ -123,7 +126,10 @@
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CBBItem.cs" />
+    <Compile Include="DTO\Keys.cs" />
+    <Compile Include="DTO\Phong_View.cs" />
     <Compile Include="DTO\NV_View.cs" />
+    <Compile Include="DTO\VatDungPhong_View.cs" />
     <Compile Include="View\fManageSupplies.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -184,14 +184,6 @@ create sequence seq_book
 	cycle
 go
 
-create table TRANGTHAIBOOK
-(
-	TrangThaiBookID nvarchar(50) not null,
-	Mota ntext null,
-	constraint pk_trangthaibook_trangthaibookid primary key (TrangThaiBookID)
-)
-go
-
 create table BOOK
 (
 	BookID nvarchar(12) not null
@@ -218,11 +210,7 @@ create table BOOK
 	on update cascade,
 	constraint fk_book_trangthaibookid foreign key (TrangThaiBookID) references trangthaibook(TrangThaiBookID)
 	on delete cascade
-	on update cascade,
-	constraint chk_ngaycheckin check(NgayCheckIn >= NgayDat),
-	constraint chk_ngaycheckout check(NgayCheckOut >= NgayCheckIn),
-	constraint chk_ngaycheckin_thucte check(NgayCheckIn_ThucTe >= NgayDat),
-	constraint chk_ngaycheckout_thucte check(NgayCheckOut_ThucTe >= NgayCheckIn_ThucTe)
+	on update cascade
 )
 go
 

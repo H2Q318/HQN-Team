@@ -204,7 +204,7 @@ namespace PBL
             // 
             this.itemVatTu.Name = "itemVatTu";
             this.itemVatTu.Size = new System.Drawing.Size(231, 26);
-            this.itemVatTu.Text = "Vật tư";
+            this.itemVatTu.Text = "Vật tư phòng";
             this.itemVatTu.Click += new System.EventHandler(this.itemVatTu_Click);
             // 
             // menuItemNhanVien

@@ -5,11 +5,12 @@ create trigger trg_Book_Ins
 on BOOK
 for insert
 as
-	update PHONG
-	set TrangThai = 0
-	from PHONG inner join inserted
-	on PHONG.PhongID = inserted.PhongID
-	where PHONG.PhongID = inserted.phongid
+	if (select NgayCheckIn_ThucTe from inserted) is not null
+		update PHONG
+		set TrangThai = 0
+		from PHONG inner join inserted
+		on PHONG.PhongID = inserted.PhongID
+		where PHONG.PhongID = inserted.phongid
 
 	declare @bookid nvarchar(12)
 	declare @khid nvarchar(13)
@@ -20,32 +21,35 @@ as
 	values (@khid, @bookid)
 go
 
-create trigger trg_Book_Del
-on Book
-for delete
-as
-	update PHONG
-	set TrangThai = 1
-	from PHONG inner join deleted
-	on PHONG.PhongID = deleted.PhongID
-	where PHONG.PhongID = deleted.PhongID
-go
-
 create trigger trg_Book_Up
 on BOOK
 for update
 as 
 	update PHONG
-	set TrangThai = 0
-	from PHONG inner join inserted
-	on PHONG.PhongID = inserted.PhongID
-	where PHONG.PhongID = inserted.PhongID
-
-	update PHONG
 	set TrangThai = 1
 	from PHONG inner join deleted
 	on PHONG.PhongID = deleted.PhongID
 	where PHONG.PhongID = deleted.PhongID
+
+	if (select NgayCheckIn_ThucTe from inserted) is not null
+		update PHONG
+		set TrangThai = 0
+		from PHONG inner join inserted
+		on PHONG.PhongID = inserted.PhongID
+		where PHONG.PhongID = inserted.PhongID
+	else
+		update PHONG
+		set TrangThai = 1
+		from PHONG inner join inserted
+		on PHONG.PhongID = inserted.PhongID
+		where PHONG.PhongID = inserted.PhongID
+
+	if (select NgayCheckOut_ThucTe from inserted) is not null
+		update PHONG
+		set TrangThai = 1
+		from PHONG inner join inserted
+		on PHONG.PhongID = inserted.PhongID
+		where PHONG.PhongID = inserted.PhongID
 go
 
 /*Trigger cập nhật cho bảng HOADON_DUNG_DICHVU tự tính tổng tiền*/

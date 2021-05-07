@@ -218,11 +218,7 @@ create table BOOK
 	on update cascade,
 	constraint fk_book_trangthaibookid foreign key (TrangThaiBookID) references trangthaibook(TrangThaiBookID)
 	on delete cascade
-	on update cascade,
-	constraint chk_ngaycheckin check(NgayCheckIn >= NgayDat),
-	constraint chk_ngaycheckout check(NgayCheckOut >= NgayCheckIn),
-	constraint chk_ngaycheckin_thucte check(NgayCheckIn_ThucTe >= NgayDat),
-	constraint chk_ngaycheckout_thucte check(NgayCheckOut_ThucTe >= NgayCheckIn_ThucTe)
+	on update cascade
 )
 go
 

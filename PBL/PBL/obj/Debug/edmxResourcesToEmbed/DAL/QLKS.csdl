@@ -19,7 +19,7 @@
     <Key>
       <PropertyRef Name="BookID" />
     </Key>
-    <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PhongID" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="KhachHangID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
@@ -61,7 +61,7 @@
     <Key>
       <PropertyRef Name="HoaDonID" />
     </Key>
-    <Property Name="HoaDonID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoaDonID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="NgayThanhToan" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="TienPhong" Type="Decimal" Precision="18" Scale="0" />
@@ -90,7 +90,7 @@
     <Key>
       <PropertyRef Name="KhachHangID" />
     </Key>
-    <Property Name="KhachHangID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KhachHangID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GioiTinh" Type="Boolean" />
     <Property Name="CMND" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
@@ -104,7 +104,7 @@
     <Key>
       <PropertyRef Name="DichVuID" />
     </Key>
-    <Property Name="DichVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DichVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenDichVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="GioMo" Type="Time" Precision="7" />
@@ -115,7 +115,7 @@
     <Key>
       <PropertyRef Name="LoaiPhongID" />
     </Key>
-    <Property Name="LoaiPhongID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoaiPhongID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenLoaiPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Gia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="SoNguoi" Type="Int32" Nullable="false" />
@@ -125,7 +125,7 @@
     <Key>
       <PropertyRef Name="VatDungID" />
     </Key>
-    <Property Name="VatDungID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VatDungID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenVatDung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="ThietBiCoDinh" Type="Boolean" />
@@ -135,7 +135,7 @@
     <Key>
       <PropertyRef Name="NhanVienID" />
     </Key>
-    <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ChucVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GioiTinh" Type="Boolean" />

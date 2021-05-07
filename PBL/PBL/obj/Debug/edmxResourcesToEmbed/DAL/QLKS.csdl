@@ -90,7 +90,7 @@
     <Key>
       <PropertyRef Name="KhachHangID" />
     </Key>
-    <Property Name="KhachHangID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="KhachHangID" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GioiTinh" Type="Boolean" />
     <Property Name="CMND" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />

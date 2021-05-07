@@ -24,7 +24,7 @@ namespace PBL
         }
         private BLL_QLP() { }
 
-        public List<PHONG> GetListPhong(string s)
+        public List<PHONG> GetListPhong(string s=null)
         {
             if (s == null)
             {
@@ -32,6 +32,12 @@ namespace PBL
             }
             return new QLKS().PHONGs.Where(p => p.PhongID == s).ToList();
         }
+
+        internal List<PHONG> GetAllPhong()
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddPhong(PHONG p)
         {
             QLKS db = new QLKS();

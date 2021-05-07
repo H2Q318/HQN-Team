@@ -62,7 +62,7 @@
     <Key>
       <PropertyRef Name="KhachHangID" />
     </Key>
-    <Property Name="KhachHangID" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="KhachHangID" Type="nvarchar" MaxLength="13" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Ten" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="GioiTinh" Type="bit" />
     <Property Name="CMND" Type="nvarchar" MaxLength="10" Nullable="false" />

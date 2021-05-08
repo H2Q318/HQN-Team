@@ -116,7 +116,7 @@ namespace PBL
             this.tpCheckOut = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
-            this.txtVatTu = new System.Windows.Forms.TextBox();
+            this.txbVatTu = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txbTotalRoom = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -222,7 +222,6 @@ namespace PBL
             this.itemTaiKhoan.Name = "itemTaiKhoan";
             this.itemTaiKhoan.Size = new System.Drawing.Size(215, 26);
             this.itemTaiKhoan.Text = "&Tài Khoản";
-            this.itemTaiKhoan.Click += new System.EventHandler(this.itemTaiKhoan_Click);
             // 
             // itemDoiMatKhau
             // 
@@ -524,6 +523,7 @@ namespace PBL
             this.btnDPReset.TabIndex = 33;
             this.btnDPReset.Text = "Reset";
             this.btnDPReset.UseVisualStyleBackColor = true;
+            this.btnDPReset.Click += new System.EventHandler(this.btnDPReset_Click);
             // 
             // btnDatPhong
             // 
@@ -633,7 +633,7 @@ namespace PBL
             this.tpCheckin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpCheckin.Name = "tpCheckin";
             this.tpCheckin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpCheckin.Size = new System.Drawing.Size(611, 675);
+            this.tpCheckin.Size = new System.Drawing.Size(611, 677);
             this.tpCheckin.TabIndex = 1;
             this.tpCheckin.Text = "Checkin";
             this.tpCheckin.UseVisualStyleBackColor = true;
@@ -963,7 +963,7 @@ namespace PBL
             this.tpCheckOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpCheckOut.Name = "tpCheckOut";
             this.tpCheckOut.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpCheckOut.Size = new System.Drawing.Size(611, 677);
+            this.tpCheckOut.Size = new System.Drawing.Size(611, 675);
             this.tpCheckOut.TabIndex = 3;
             this.tpCheckOut.Text = "CheckOut";
             this.tpCheckOut.UseVisualStyleBackColor = true;
@@ -971,7 +971,7 @@ namespace PBL
             // panel5
             // 
             this.panel5.Controls.Add(this.label25);
-            this.panel5.Controls.Add(this.txtVatTu);
+            this.panel5.Controls.Add(this.txbVatTu);
             this.panel5.Controls.Add(this.label20);
             this.panel5.Controls.Add(this.txbTotalRoom);
             this.panel5.Controls.Add(this.label18);
@@ -1005,14 +1005,14 @@ namespace PBL
             this.label25.TabIndex = 19;
             this.label25.Text = "Vật tư ";
             // 
-            // txtVatTu
+            // txbVatTu
             // 
-            this.txtVatTu.Location = new System.Drawing.Point(253, 394);
-            this.txtVatTu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtVatTu.Name = "txtVatTu";
-            this.txtVatTu.ReadOnly = true;
-            this.txtVatTu.Size = new System.Drawing.Size(227, 22);
-            this.txtVatTu.TabIndex = 18;
+            this.txbVatTu.Location = new System.Drawing.Point(253, 394);
+            this.txbVatTu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbVatTu.Name = "txbVatTu";
+            this.txbVatTu.ReadOnly = true;
+            this.txbVatTu.Size = new System.Drawing.Size(227, 22);
+            this.txbVatTu.TabIndex = 18;
             // 
             // label20
             // 
@@ -1085,6 +1085,7 @@ namespace PBL
             this.dtpNgayDi.Name = "dtpNgayDi";
             this.dtpNgayDi.Size = new System.Drawing.Size(227, 22);
             this.dtpNgayDi.TabIndex = 10;
+          
             // 
             // btnCheckOutReset
             // 
@@ -1095,6 +1096,7 @@ namespace PBL
             this.btnCheckOutReset.TabIndex = 9;
             this.btnCheckOutReset.Text = "Reset";
             this.btnCheckOutReset.UseVisualStyleBackColor = true;
+            this.btnCheckOutReset.Click += new System.EventHandler(this.btnCheckOutReset_Click);
             // 
             // btnCheckOut
             // 
@@ -1105,6 +1107,7 @@ namespace PBL
             this.btnCheckOut.TabIndex = 8;
             this.btnCheckOut.Text = "Checkout";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // label13
             // 
@@ -1304,7 +1307,7 @@ namespace PBL
         private System.Windows.Forms.TabPage tpCheckOut;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox txtVatTu;
+        private System.Windows.Forms.TextBox txbVatTu;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txbTotalRoom;
         private System.Windows.Forms.Label label18;

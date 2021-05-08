@@ -15,16 +15,16 @@ namespace PBL
 {
     public partial class fHome : Form
     {
-        String IDBook;
-        String IDPhong;
-        String MaLoaiPhong;
-        float TotalRoom = 0;
+        private string IDBook;
+        private string IDPhong;
+        private string MaLoaiPhong;
+        private string IDNhanVien;
         public fHome()
         {
             InitializeComponent();
             Load();
-
         }
+        
         #region Load
         private void Load() 
         {
@@ -63,17 +63,21 @@ namespace PBL
         {
             IDPhong = ((sender as Button).Tag as PHONG).PhongID;
             MaLoaiPhong = ((sender as Button).Tag as PHONG).LoaiPhongID;
-            TotalRoom = 0;
+           
             txbGia.Text = ((sender as Button).Tag as PHONG).LOAIPHONG.Gia.ToString();
-            TotalRoom += Convert.ToInt32(((sender as Button).Tag as PHONG).LOAIPHONG.Gia);
+           
             txbCIMaPhong.Text = IDPhong.ToString();
             txbMaPhongOut.Text = IDPhong.ToString();
+            txbDPMaPhong.Text = IDPhong.ToString();
             TxbRoom.Text = ((sender as Button).Tag as PHONG).PhongID;
             ShowBill(IDPhong);
-            if (true)
+            if (IDBook == "-1")
                 txbMaKhachOut.Text = "";
-           // else
-               // txbMaKhachOut.Text = CheckinDAO.Instance.MaKhach.ToString();
+            else
+            {
+                txbMaKhachOut.Text = IDBook;
+                dtpNgayDenOut.Value = BLL_QLBOOK.Instance.Find(IDBook).NgayCheckIn_ThucTe.Value;
+            }
         }
         void ShowBill(String IDPhong)
         {
@@ -91,11 +95,10 @@ namespace PBL
                 total += (int)item.ThanhTien;
                 lsvBillDichVu.Items.Add(lsvItems);
             }
-            TotalRoom += total;
-            txbTotalRoom.Text = TotalRoom.ToString();
             txbTotalBill.Text = total.ToString();
-            txbtotalcheckout.Text = total.ToString();
+           
         }
+        #region item_Click
         private void itemDangXuat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -127,10 +130,7 @@ namespace PBL
 
        
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void itemDatPhong_Click(object sender, EventArgs e)
         {
@@ -138,14 +138,11 @@ namespace PBL
             f.ShowDialog();
         }
 
-        private void itemTaiKhoan_Click(object sender, EventArgs e)
-        {
 
-        }
+        #endregion
 
-      
         #region Reset
-       
+
         private void ResetValuesKhachHang()
         {
             txbKHHoTen.Text = "";
@@ -153,6 +150,31 @@ namespace PBL
             txbKHQuocTich.Text = "";
             txbKHGhiChu.Text = "";
             txbKHSdt.Text = "";
+        }
+       
+        
+        private void ResetDatPhong()
+        {
+            txbDPMaPhong.Text = "";
+            txbDPMaKhach.Text = "";
+            dtpDPNgayDen.Value = DateTime.Now;
+            dtpDPNgayDi.Value = DateTime.Now;
+        }
+        private void ResetCheckout()
+        {
+            txbMaPhongOut.Text = "";
+            txbGia.Text = "";
+            txbTotalBill.Text = "";
+            txbtotalcheckout.Text = "";
+            txbVatTu.Text = "";
+            txbTotalRoom.Text = "";
+        }
+        private void ResetCheckin()
+        {
+            txbCIGhiChu.Text = "";
+            txbCIMaKhach.Text = "";
+            txbCIMaPhong.Text = "";
+            dtbNgayDenThucTe.Value = DateTime.Now;
         }
 
         #endregion
@@ -169,8 +191,20 @@ namespace PBL
         #region Button
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-
+            BOOK s = new BOOK()
+            {
+                KhachHangID = txbDPMaKhach.Text,
+                NhanVienID = txbDPMaNV.Text,
+                PhongID = txbDPMaPhong.Text,
+                NgayCheckIn = dtpDPNgayDen.Value,
+                NgayCheckOut=dtpDPNgayDen.Value,
+                NgayDat = DateTime.Now
+            };
+            BLL_QLBOOK.Instance.AddDatPhong(s);
+            LoadRoom();
+            ResetDatPhong();
         }
+     
         private void btnThemKh_Click(object sender, EventArgs e)
         {
             KHACHHANG s = new KHACHHANG()
@@ -185,7 +219,7 @@ namespace PBL
             };
             BLL_QLKH.Instance.AddKh(s);
             LoadDataGridView();
-            // MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
+            MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
 
             ResetValuesKhachHang();
 
@@ -202,6 +236,19 @@ namespace PBL
             };
             BLL_QLBOOK.Instance.AddBook(s);
             LoadRoom();
+            ResetCheckin();
+        }
+        private void btnDPReset_Click(object sender, EventArgs e)
+        {
+            ResetDatPhong();
+        }
+        private void btnCheckOutReset_Click(object sender, EventArgs e)
+        {
+            ResetCheckout();
+        }
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ResetCheckin();
         }
 
         #endregion
@@ -237,6 +284,24 @@ namespace PBL
             };
             BLL_QLDV.Instance.AddDichVu(them);
             ShowBill(IDPhong);
+        }
+
+        
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            if (IDBook == "-1")
+            {
+                MessageBox.Show("Phòng chưa checkin");
+                return;
+            }
+            HOADON s= BLL_QLBOOK.Instance.Checkout(IDBook,dtpNgayDi.Value);
+            txbGia.Text =s.TienPhong.ToString();
+            txbTotalRoom.Text =s.TongTien.ToString();
+            txbVatTu.Text =s.TienVatTu.ToString();
+            txbtotalcheckout.Text = s.TienDichVu.ToString();
+            LoadRoom();
+            ResetCheckout();
         }
     }
 

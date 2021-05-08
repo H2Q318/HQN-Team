@@ -13,7 +13,6 @@
     <Property Name="NgayCheckOut" Type="datetime" />
     <Property Name="NgayCheckIn_ThucTe" Type="datetime" />
     <Property Name="NgayCheckOut_ThucTe" Type="datetime" />
-    <Property Name="TrangThaiBookID" Type="nvarchar" MaxLength="50" />
     <Property Name="ThanhToan" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="CHUCVU">
@@ -346,7 +345,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="func_XemChiTietHoaDon_DichVu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="hoadonid" Type="nvarchar" Mode="In" />
     <ReturnType>

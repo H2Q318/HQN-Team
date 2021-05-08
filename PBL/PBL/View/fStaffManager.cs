@@ -374,5 +374,24 @@ namespace PBL
                 e.Handled = true;
             }
         }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (BLL_DangNhap.Instance.UpdatePassword(dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString()))
+                {
+                    MessageBox.Show("Khoi phuc mat khau thanh cong!");
+                }
+                else
+                {
+                    MessageBox.Show("khoi phuc mat khau khong thanh cong! Vui long kiem tra lai");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui long chon nhan vien can khoi phuc mat khau!");
+            }
+        }
     }
 }

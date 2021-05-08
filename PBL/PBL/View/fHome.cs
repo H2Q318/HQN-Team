@@ -19,8 +19,9 @@ namespace PBL
         private string IDPhong;
         private string MaLoaiPhong;
         private string IDNhanVien;
-        public fHome()
+        public fHome(string username)
         {
+            IDNhanVien = username;
             InitializeComponent();
             Load();
         }
@@ -106,7 +107,7 @@ namespace PBL
 
         private void itemDoiMatKhau_Click(object sender, EventArgs e)
         {
-            fChangePassword f = new fChangePassword();
+            fChangePassword f = new fChangePassword(IDNhanVien);
             f.ShowDialog();
         }
 

@@ -62,6 +62,8 @@
     <Compile Include="BLL\BLL_QLCV.cs" />
     <Compile Include="BLL\BLL_QLVDP.cs" />
     <Compile Include="BLL\BLL_QLDV.cs" />
+    <Compile Include="BLL\BLL_QLBOOK.cs" />
+    <Compile Include="BLL\BLL_QLKH.cs" />
     <Compile Include="DTO\DTO_ChucVu.cs" />
     <Compile Include="DAL\BOOK.cs">
       <DependentUpon>QLKS.tt</DependentUpon>

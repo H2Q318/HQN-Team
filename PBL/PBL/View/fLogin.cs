@@ -20,10 +20,19 @@ namespace PBL
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fHome f = new fHome();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            //if (BLL_DangNhap.Instance.CheckLogin(txbUserName.Text, txbPassword.Text))
+            //{
+                fHome f = new fHome(txbUserName.Text);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+                BLL_DangNhap.Instance.SetStatusAccount(txbUserName.Text, false);
+            //}
+            //else
+            //{
+            //    lbTB.Visible = true;
+            //    txbPassword.Clear();
+            //}
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -35,14 +44,6 @@ namespace PBL
             if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.OKCancel,MessageBoxIcon.Warning) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
-            }
-        }
-
-        private void txbUserName_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(txbUserName.Text, "[^0-9]"))
-            {
-                txbUserName.Text = "";
             }
         }
     }

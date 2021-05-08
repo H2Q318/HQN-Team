@@ -19,8 +19,9 @@ namespace PBL
         private string IDPhong;
         private string MaLoaiPhong;
         private string IDNhanVien;
-        public fHome()
+        public fHome(string username)
         {
+            IDNhanVien = username;
             InitializeComponent();
             Load();
         }
@@ -106,7 +107,7 @@ namespace PBL
 
         private void itemDoiMatKhau_Click(object sender, EventArgs e)
         {
-            fChangePassword f = new fChangePassword();
+            fChangePassword f = new fChangePassword(IDNhanVien);
             f.ShowDialog();
         }
 
@@ -286,7 +287,7 @@ namespace PBL
             ShowBill(IDPhong);
         }
 
-        
+
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
@@ -295,13 +296,12 @@ namespace PBL
                 MessageBox.Show("Phòng chưa checkin");
                 return;
             }
-            HOADON s= BLL_QLBOOK.Instance.Checkout(IDBook,dtpNgayDi.Value);
-            txbGia.Text =s.TienPhong.ToString();
-            txbTotalRoom.Text =s.TongTien.ToString();
-            txbVatTu.Text =s.TienVatTu.ToString();
+            HOADON s = BLL_QLBOOK.Instance.Checkout(IDBook, dtpNgayDi.Value);
+            txbGia.Text = s.TienPhong.ToString();
+            txbTotalRoom.Text = s.TongTien.ToString();
+            txbVatTu.Text = s.TienVatTu.ToString();
             txbtotalcheckout.Text = s.TienDichVu.ToString();
             LoadRoom();
-            ResetCheckout();
         }
     }
 

@@ -44,34 +44,41 @@ namespace PBL.BLL
         }
         public void AddBook(BOOK s)
         {
-            QLKS db = new QLKS();
-            if (db.BOOKs.Where(p => (p.PhongID == s.PhongID) && (p.NgayCheckIn_ThucTe != null) && (p.NgayCheckOut_ThucTe == null)).Select(p => p.BookID).ToList().Count > 0)
+            try
             {
-                MessageBox.Show("Phòng đang được book");
-                return;
-            }
-            var z = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null) && (p.KhachHangID == s.KhachHangID)).Select(p => p.BookID).ToList();
-            if (z.Count > 0)
-            {
-                db.BOOKs.Find(z[0]).NgayCheckIn_ThucTe = s.NgayCheckIn_ThucTe;
-                db.SaveChanges();
-            }
-            else
-            {
-                var t = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null)).Select(p => p.NgayCheckIn).ToList();
-                if (t.Count > 0)
+                QLKS db = new QLKS();
+                if (db.BOOKs.Where(p => (p.PhongID == s.PhongID) && (p.NgayCheckIn_ThucTe != null) && (p.NgayCheckOut_ThucTe == null)).Select(p => p.BookID).ToList().Count > 0)
                 {
-                    if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + t[0] + "\n Bạn có muốn tiếp tục Checkin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                    MessageBox.Show("Phòng đang được book");
+                    return;
+                }
+                var z = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null) && (p.KhachHangID == s.KhachHangID)).Select(p => p.BookID).ToList();
+                if (z.Count > 0)
+                {
+                    db.BOOKs.Find(z[0]).NgayCheckIn_ThucTe = s.NgayCheckIn_ThucTe;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    var t = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null)).Select(p => p.NgayCheckIn).ToList();
+                    if (t.Count > 0)
+                    {
+                        if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + t[0] + "\n Bạn có muốn tiếp tục Checkin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                        {
+                            db.BOOKs.Add(s);
+                            db.SaveChanges();
+                        }
+                    }
+                    else
                     {
                         db.BOOKs.Add(s);
                         db.SaveChanges();
                     }
                 }
-                else
-                {
-                    db.BOOKs.Add(s);
-                    db.SaveChanges();
-                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
             }
 
         }

@@ -220,6 +220,7 @@
             this.btnResetPassword.TabIndex = 9;
             this.btnResetPassword.Text = "Khôi phục mật khẩu";
             this.btnResetPassword.UseVisualStyleBackColor = true;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // btnClearNV
             // 

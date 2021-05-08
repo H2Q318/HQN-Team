@@ -96,14 +96,12 @@
             this.dgvBillDV = new System.Windows.Forms.DataGridView();
             this.panel24 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
-            this.txbMaCheckinBill = new System.Windows.Forms.TextBox();
-            this.txbTongBill = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
+            this.txbMaBook = new System.Windows.Forms.TextBox();
             this.txbGiaBill = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.dtbNgayDat = new System.Windows.Forms.DateTimePicker();
-            this.nbSoLuong = new System.Windows.Forms.NumericUpDown();
-            this.cbTenDv = new System.Windows.Forms.ComboBox();
+            this.dtpNgayDat = new System.Windows.Forms.DateTimePicker();
+            this.nUDSoLuong = new System.Windows.Forms.NumericUpDown();
+            this.cbTenDV = new System.Windows.Forms.ComboBox();
             this.txbMaBill = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -195,6 +193,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txbTongBill = new System.Windows.Forms.TextBox();
             this.tabPage5.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -217,7 +217,7 @@
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDV)).BeginInit();
             this.panel24.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbSoLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDSoLuong)).BeginInit();
             this.tpMenuDichVu.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -337,7 +337,7 @@
             this.panel34.Controls.Add(this.btnSortLoaiVD);
             this.panel34.Controls.Add(this.cbSortLoaiVD);
             this.panel34.Location = new System.Drawing.Point(4, 377);
-            this.panel34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel34.Margin = new System.Windows.Forms.Padding(4);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(353, 41);
             this.panel34.TabIndex = 20;
@@ -356,7 +356,7 @@
             // 
             this.cbSortLoaiVD.FormattingEnabled = true;
             this.cbSortLoaiVD.Location = new System.Drawing.Point(4, 9);
-            this.cbSortLoaiVD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortLoaiVD.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortLoaiVD.Name = "cbSortLoaiVD";
             this.cbSortLoaiVD.Size = new System.Drawing.Size(239, 24);
             this.cbSortLoaiVD.TabIndex = 0;
@@ -416,7 +416,7 @@
             this.dgvLoaiVatDung.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvLoaiVatDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiVatDung.Location = new System.Drawing.Point(5, 4);
-            this.dgvLoaiVatDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLoaiVatDung.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiVatDung.Name = "dgvLoaiVatDung";
             this.dgvLoaiVatDung.ReadOnly = true;
             this.dgvLoaiVatDung.RowHeadersWidth = 51;
@@ -605,7 +605,7 @@
             this.panel33.Controls.Add(this.btnSortLP);
             this.panel33.Controls.Add(this.cbSortLP);
             this.panel33.Location = new System.Drawing.Point(4, 377);
-            this.panel33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel33.Margin = new System.Windows.Forms.Padding(4);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(353, 41);
             this.panel33.TabIndex = 20;
@@ -624,7 +624,7 @@
             // 
             this.cbSortLP.FormattingEnabled = true;
             this.cbSortLP.Location = new System.Drawing.Point(4, 9);
-            this.cbSortLP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortLP.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortLP.Name = "cbSortLP";
             this.cbSortLP.Size = new System.Drawing.Size(239, 24);
             this.cbSortLP.TabIndex = 0;
@@ -684,7 +684,7 @@
             this.dgvLoaiPhong.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiPhong.Location = new System.Drawing.Point(4, 4);
-            this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.ReadOnly = true;
             this.dgvLoaiPhong.RowHeadersWidth = 51;
@@ -822,6 +822,7 @@
             this.btnResetBill.TabIndex = 3;
             this.btnResetBill.Text = "Reset";
             this.btnResetBill.UseVisualStyleBackColor = true;
+            this.btnResetBill.Click += new System.EventHandler(this.btnResetBill_Click);
             // 
             // btnXoaBill
             // 
@@ -832,6 +833,7 @@
             this.btnXoaBill.TabIndex = 2;
             this.btnXoaBill.Text = "Xóa";
             this.btnXoaBill.UseVisualStyleBackColor = true;
+            this.btnXoaBill.Click += new System.EventHandler(this.btnXoaBill_Click);
             // 
             // btnSuaBill
             // 
@@ -842,6 +844,7 @@
             this.btnSuaBill.TabIndex = 1;
             this.btnSuaBill.Text = "Sửa";
             this.btnSuaBill.UseVisualStyleBackColor = true;
+            this.btnSuaBill.Click += new System.EventHandler(this.btnSuaBill_Click);
             // 
             // btnThemBill
             // 
@@ -852,6 +855,7 @@
             this.btnThemBill.TabIndex = 0;
             this.btnThemBill.Text = "Thêm";
             this.btnThemBill.UseVisualStyleBackColor = true;
+            this.btnThemBill.Click += new System.EventHandler(this.btnThemBill_Click);
             // 
             // panel21
             // 
@@ -872,7 +876,7 @@
             this.panel32.Controls.Add(this.btnSortBillDV);
             this.panel32.Controls.Add(this.cbSortBillDV);
             this.panel32.Location = new System.Drawing.Point(5, 378);
-            this.panel32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel32.Margin = new System.Windows.Forms.Padding(4);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(353, 41);
             this.panel32.TabIndex = 20;
@@ -891,7 +895,7 @@
             // 
             this.cbSortBillDV.FormattingEnabled = true;
             this.cbSortBillDV.Location = new System.Drawing.Point(4, 9);
-            this.cbSortBillDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortBillDV.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortBillDV.Name = "cbSortBillDV";
             this.cbSortBillDV.Size = new System.Drawing.Size(239, 24);
             this.cbSortBillDV.TabIndex = 0;
@@ -905,6 +909,7 @@
             this.BtnResetSBill.TabIndex = 19;
             this.BtnResetSBill.Text = "Reset";
             this.BtnResetSBill.UseVisualStyleBackColor = true;
+            this.BtnResetSBill.Click += new System.EventHandler(this.BtnResetSBill_Click);
             // 
             // btnSearchBill
             // 
@@ -915,6 +920,7 @@
             this.btnSearchBill.TabIndex = 18;
             this.btnSearchBill.Text = "Tìm kiếm";
             this.btnSearchBill.UseVisualStyleBackColor = true;
+            this.btnSearchBill.Click += new System.EventHandler(this.btnSearchBill_Click);
             // 
             // txbSeachBill
             // 
@@ -927,11 +933,11 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(9, 33);
+            this.label19.Location = new System.Drawing.Point(22, 35);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(117, 17);
+            this.label19.Size = new System.Drawing.Size(100, 17);
             this.label19.TabIndex = 16;
-            this.label19.Text = "Nhập mã checkin";
+            this.label19.Text = "Nhập mã book";
             // 
             // panel23
             // 
@@ -945,28 +951,31 @@
             // 
             // dgvBillDV
             // 
+            this.dgvBillDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBillDV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvBillDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillDV.Location = new System.Drawing.Point(4, 4);
-            this.dgvBillDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvBillDV.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBillDV.Name = "dgvBillDV";
             this.dgvBillDV.ReadOnly = true;
             this.dgvBillDV.RowHeadersWidth = 51;
+            this.dgvBillDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBillDV.Size = new System.Drawing.Size(917, 415);
             this.dgvBillDV.TabIndex = 0;
+            this.dgvBillDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillDV_CellClick);
             // 
             // panel24
             // 
             this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel24.Controls.Add(this.label36);
-            this.panel24.Controls.Add(this.txbMaCheckinBill);
+            this.panel24.Controls.Add(this.txbMaBook);
             this.panel24.Controls.Add(this.txbTongBill);
             this.panel24.Controls.Add(this.label32);
             this.panel24.Controls.Add(this.txbGiaBill);
             this.panel24.Controls.Add(this.label33);
-            this.panel24.Controls.Add(this.dtbNgayDat);
-            this.panel24.Controls.Add(this.nbSoLuong);
-            this.panel24.Controls.Add(this.cbTenDv);
+            this.panel24.Controls.Add(this.dtpNgayDat);
+            this.panel24.Controls.Add(this.nUDSoLuong);
+            this.panel24.Controls.Add(this.cbTenDV);
             this.panel24.Controls.Add(this.txbMaBill);
             this.panel24.Controls.Add(this.label34);
             this.panel24.Controls.Add(this.label35);
@@ -983,35 +992,17 @@
             this.label36.AutoSize = true;
             this.label36.Location = new System.Drawing.Point(155, 20);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(79, 17);
+            this.label36.Size = new System.Drawing.Size(63, 17);
             this.label36.TabIndex = 27;
-            this.label36.Text = "Mã checkin";
+            this.label36.Text = "Mã Book";
             // 
-            // txbMaCheckinBill
+            // txbMaBook
             // 
-            this.txbMaCheckinBill.Location = new System.Drawing.Point(244, 16);
-            this.txbMaCheckinBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbMaCheckinBill.Name = "txbMaCheckinBill";
-            this.txbMaCheckinBill.Size = new System.Drawing.Size(75, 22);
-            this.txbMaCheckinBill.TabIndex = 26;
-            // 
-            // txbTongBill
-            // 
-            this.txbTongBill.Enabled = false;
-            this.txbTongBill.Location = new System.Drawing.Point(763, 70);
-            this.txbTongBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbTongBill.Name = "txbTongBill";
-            this.txbTongBill.Size = new System.Drawing.Size(143, 22);
-            this.txbTongBill.TabIndex = 25;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(715, 75);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(41, 17);
-            this.label32.TabIndex = 24;
-            this.label32.Text = "Tổng";
+            this.txbMaBook.Location = new System.Drawing.Point(244, 16);
+            this.txbMaBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbMaBook.Name = "txbMaBook";
+            this.txbMaBook.Size = new System.Drawing.Size(75, 22);
+            this.txbMaBook.TabIndex = 26;
             // 
             // txbGiaBill
             // 
@@ -1031,31 +1022,31 @@
             this.label33.TabIndex = 22;
             this.label33.Text = "Giá";
             // 
-            // dtbNgayDat
+            // dtpNgayDat
             // 
-            this.dtbNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtbNgayDat.Location = new System.Drawing.Point(445, 71);
-            this.dtbNgayDat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtbNgayDat.Name = "dtbNgayDat";
-            this.dtbNgayDat.Size = new System.Drawing.Size(221, 22);
-            this.dtbNgayDat.TabIndex = 21;
+            this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayDat.Location = new System.Drawing.Point(445, 71);
+            this.dtpNgayDat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpNgayDat.Name = "dtpNgayDat";
+            this.dtpNgayDat.Size = new System.Drawing.Size(221, 22);
+            this.dtpNgayDat.TabIndex = 21;
             // 
-            // nbSoLuong
+            // nUDSoLuong
             // 
-            this.nbSoLuong.Location = new System.Drawing.Point(445, 16);
-            this.nbSoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nbSoLuong.Name = "nbSoLuong";
-            this.nbSoLuong.Size = new System.Drawing.Size(131, 22);
-            this.nbSoLuong.TabIndex = 20;
+            this.nUDSoLuong.Location = new System.Drawing.Point(445, 16);
+            this.nUDSoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nUDSoLuong.Name = "nUDSoLuong";
+            this.nUDSoLuong.Size = new System.Drawing.Size(131, 22);
+            this.nUDSoLuong.TabIndex = 20;
             // 
-            // cbTenDv
+            // cbTenDV
             // 
-            this.cbTenDv.FormattingEnabled = true;
-            this.cbTenDv.Location = new System.Drawing.Point(96, 71);
-            this.cbTenDv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbTenDv.Name = "cbTenDv";
-            this.cbTenDv.Size = new System.Drawing.Size(223, 24);
-            this.cbTenDv.TabIndex = 19;
+            this.cbTenDV.FormattingEnabled = true;
+            this.cbTenDV.Location = new System.Drawing.Point(96, 71);
+            this.cbTenDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbTenDV.Name = "cbTenDV";
+            this.cbTenDV.Size = new System.Drawing.Size(223, 24);
+            this.cbTenDV.TabIndex = 19;
             // 
             // txbMaBill
             // 
@@ -1193,7 +1184,7 @@
             this.panel31.Controls.Add(this.btnSortDV);
             this.panel31.Controls.Add(this.cbSortDV);
             this.panel31.Location = new System.Drawing.Point(4, 377);
-            this.panel31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel31.Margin = new System.Windows.Forms.Padding(4);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(353, 41);
             this.panel31.TabIndex = 20;
@@ -1216,7 +1207,7 @@
             "Theo tên dịch vụ",
             "Theo giá"});
             this.cbSortDV.Location = new System.Drawing.Point(4, 9);
-            this.cbSortDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortDV.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortDV.Name = "cbSortDV";
             this.cbSortDV.Size = new System.Drawing.Size(239, 24);
             this.cbSortDV.TabIndex = 0;
@@ -1276,7 +1267,7 @@
             this.dgvDichVu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.Location = new System.Drawing.Point(3, 2);
-            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.ReadOnly = true;
             this.dgvDichVu.RowHeadersWidth = 51;
@@ -1304,7 +1295,7 @@
             this.panel20.Controls.Add(this.txbCloseDV);
             this.panel20.Controls.Add(this.label24);
             this.panel20.Location = new System.Drawing.Point(408, 64);
-            this.panel20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(308, 34);
             this.panel20.TabIndex = 16;
@@ -1312,7 +1303,7 @@
             // txbCloseDV
             // 
             this.txbCloseDV.Location = new System.Drawing.Point(131, 5);
-            this.txbCloseDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCloseDV.Margin = new System.Windows.Forms.Padding(4);
             this.txbCloseDV.Mask = "00:00";
             this.txbCloseDV.Name = "txbCloseDV";
             this.txbCloseDV.Size = new System.Drawing.Size(160, 22);
@@ -1333,7 +1324,7 @@
             this.panel19.Controls.Add(this.txbOpenDV);
             this.panel19.Controls.Add(this.label18);
             this.panel19.Location = new System.Drawing.Point(4, 64);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(308, 34);
             this.panel19.TabIndex = 15;
@@ -1341,7 +1332,7 @@
             // txbOpenDV
             // 
             this.txbOpenDV.Location = new System.Drawing.Point(131, 5);
-            this.txbOpenDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbOpenDV.Margin = new System.Windows.Forms.Padding(4);
             this.txbOpenDV.Mask = "00:00";
             this.txbOpenDV.Name = "txbOpenDV";
             this.txbOpenDV.Size = new System.Drawing.Size(160, 22);
@@ -1362,7 +1353,7 @@
             this.panel18.Controls.Add(this.txbGiaDV);
             this.panel18.Controls.Add(this.label9);
             this.panel18.Location = new System.Drawing.Point(408, 12);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(308, 34);
             this.panel18.TabIndex = 15;
@@ -1390,7 +1381,7 @@
             this.panel17.Controls.Add(this.txbTenDV);
             this.panel17.Controls.Add(this.label23);
             this.panel17.Location = new System.Drawing.Point(4, 12);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(308, 34);
             this.panel17.TabIndex = 14;
@@ -1446,7 +1437,7 @@
             this.panel30.Controls.Add(this.btnSortPhong);
             this.panel30.Controls.Add(this.cbSortPhong);
             this.panel30.Location = new System.Drawing.Point(3, 377);
-            this.panel30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel30.Margin = new System.Windows.Forms.Padding(4);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(353, 41);
             this.panel30.TabIndex = 20;
@@ -1465,7 +1456,7 @@
             // 
             this.cbSortPhong.FormattingEnabled = true;
             this.cbSortPhong.Location = new System.Drawing.Point(4, 9);
-            this.cbSortPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortPhong.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortPhong.Name = "cbSortPhong";
             this.cbSortPhong.Size = new System.Drawing.Size(239, 24);
             this.cbSortPhong.TabIndex = 0;
@@ -1582,7 +1573,7 @@
             this.dgvPhong.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhong.Location = new System.Drawing.Point(3, 2);
-            this.dgvPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.ReadOnly = true;
             this.dgvPhong.RowHeadersWidth = 51;
@@ -1712,7 +1703,7 @@
             this.panel29.Controls.Add(this.btnSortKH);
             this.panel29.Controls.Add(this.cbSortKH);
             this.panel29.Location = new System.Drawing.Point(4, 377);
-            this.panel29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel29.Margin = new System.Windows.Forms.Padding(4);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(353, 41);
             this.panel29.TabIndex = 16;
@@ -1731,7 +1722,7 @@
             // 
             this.cbSortKH.FormattingEnabled = true;
             this.cbSortKH.Location = new System.Drawing.Point(4, 9);
-            this.cbSortKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortKH.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortKH.Name = "cbSortKH";
             this.cbSortKH.Size = new System.Drawing.Size(239, 24);
             this.cbSortKH.TabIndex = 0;
@@ -1841,7 +1832,7 @@
             this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Location = new System.Drawing.Point(4, 4);
-            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.ReadOnly = true;
             this.dgvKhachHang.RowHeadersWidth = 51;
@@ -2013,13 +2004,31 @@
             this.tabcontrol.Size = new System.Drawing.Size(1315, 581);
             this.tabcontrol.TabIndex = 1;
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(715, 75);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(41, 17);
+            this.label32.TabIndex = 24;
+            this.label32.Text = "Tổng";
+            // 
+            // txbTongBill
+            // 
+            this.txbTongBill.Enabled = false;
+            this.txbTongBill.Location = new System.Drawing.Point(763, 70);
+            this.txbTongBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbTongBill.Name = "txbTongBill";
+            this.txbTongBill.Size = new System.Drawing.Size(143, 22);
+            this.txbTongBill.TabIndex = 25;
+            // 
             // fMenuQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 581);
             this.Controls.Add(this.tabcontrol);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fMenuQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu quản lý";
@@ -2051,7 +2060,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBillDV)).EndInit();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nbSoLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDSoLuong)).EndInit();
             this.tpMenuDichVu.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -2132,14 +2141,12 @@
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox txbMaCheckinBill;
-        private System.Windows.Forms.TextBox txbTongBill;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txbMaBook;
         private System.Windows.Forms.TextBox txbGiaBill;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.DateTimePicker dtbNgayDat;
-        private System.Windows.Forms.NumericUpDown nbSoLuong;
-        private System.Windows.Forms.ComboBox cbTenDv;
+        private System.Windows.Forms.DateTimePicker dtpNgayDat;
+        private System.Windows.Forms.NumericUpDown nUDSoLuong;
+        private System.Windows.Forms.ComboBox cbTenDV;
         private System.Windows.Forms.TextBox txbMaBill;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
@@ -2260,5 +2267,7 @@
         private System.Windows.Forms.ComboBox cbSortLoaiVD;
         private System.Windows.Forms.MaskedTextBox txbOpenDV;
         private System.Windows.Forms.MaskedTextBox txbCloseDV;
+        private System.Windows.Forms.TextBox txbTongBill;
+        private System.Windows.Forms.Label label32;
     }
 }

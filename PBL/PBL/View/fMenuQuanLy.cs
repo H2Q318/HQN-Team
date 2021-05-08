@@ -22,6 +22,7 @@ namespace PBL
             GUILoaiPhong();
             GUILoaiVatDung();
             GUIDichVu();
+            GUIBillDV();
         }
         #region Quản lý phòng
         private void GUIPhong()
@@ -569,6 +570,161 @@ namespace PBL
         private void dgvDichVu_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvDichVu.ClearSelection();
+        }
+        #endregion
+
+        #region Quản lý Bill dịch vụ
+        private void GUIBillDV()
+        {
+            foreach(LOAIDICHVU i in BLL_QLDV.Instance.GetAllDichVu())
+            {
+                cbTenDV.Items.Add(new CBBItem { Text = i.TenDichVu, Value = i.DichVuID });
+            }
+            cbTenDV.SelectedIndex = 0;
+            ShowDGVBillDV();
+        }
+        private void ShowDGVBillDV(string s = null)
+        {
+            dgvBillDV.DataSource = BLL_QLBillDV.Instance.GetListBillDV_View(BLL_QLBillDV.Instance.GetListBillDV(s));
+            dgvBillDV.Columns["ID"].Visible = false;
+        }
+        private void btnThemBill_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbMaBill.Text))
+            {
+                try
+                {
+                    HOADON_DUNG_DICHVU p = new HOADON_DUNG_DICHVU
+                    {
+                        BookID = txbMaBook.Text,
+                        DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value.Trim(),
+                        SoLuong = Convert.ToInt32(nUDSoLuong.Value),
+                        Ngay = dtpNgayDat.Value,
+                        NhanVienID = "NV070521003"
+
+                    };
+                    BLL_QLBillDV.Instance.AddBillDV(p);
+                    ShowDGVBillDV();
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin và kiểu dữ liệu !");
+                }
+            }
+            else
+            {
+                if (BLL_QLBillDV.Instance.FindBillDV(Convert.ToInt32(txbMaBill.Text)) != null)
+                {
+                    MessageBox.Show("Mã hoá đơn dịch vụ đã tồn tại !");
+                }
+                else
+                {
+                    try
+                    {
+                        HOADON_DUNG_DICHVU p = new HOADON_DUNG_DICHVU
+                        {
+                            BookID = txbMaBook.Text,
+                            DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value.Trim(),
+                            SoLuong = Convert.ToInt32(nUDSoLuong.Value),
+                            Ngay = dtpNgayDat.Value,
+                            NhanVienID = "NV070521003"
+                        };
+                        BLL_QLBillDV.Instance.AddBillDV(p);
+                        ShowDGVBillDV();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin và kiểu dữ liệu !");
+                    }
+                }
+            }
+            
+        }
+
+        private void btnSuaBill_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbMaBill.Text))
+            {
+                MessageBox.Show("Chọn duy nhất một dòng để sửa !");
+            }
+            else
+            {
+                try
+                {
+                    HOADON_DUNG_DICHVU p = new HOADON_DUNG_DICHVU
+                    {
+                        ID = Convert.ToInt32(txbMaBill.Text),
+                        BookID = txbMaBook.Text.Trim(),
+                        DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value,
+                        SoLuong = Convert.ToInt32(nUDSoLuong.Value),
+                        Ngay = dtpNgayDat.Value,
+                        NhanVienID = "NV070521003"
+                    };
+                    BLL_QLBillDV.Instance.UpdateBillDV(p);
+                    ShowDGVBillDV();
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin và kiểu dữ liệu !");
+                }
+            }
+        }
+        private List<int> GetListBillDVID()
+        {
+            List<int> data = new List<int>();
+            foreach(DataGridViewRow r in dgvBillDV.SelectedRows)
+            {
+                data.Add(Convert.ToInt32(r.Cells["ID"].Value.ToString()));
+            }
+            return data;
+        }
+
+        private void btnXoaBill_Click(object sender, EventArgs e)
+        {
+            BLL_QLBillDV.Instance.DeleteBillDV(GetListBillDVID());
+            ShowDGVBillDV();
+        }
+
+        private void btnResetBill_Click(object sender, EventArgs e)
+        {
+            txbMaBill.Clear();
+            txbMaBook.Clear();
+            txbTongBill.Clear();
+            nUDSoLuong.Value = 0;
+            cbTenDV.SelectedIndex = 0;
+        }
+
+        private void btnSearchBill_Click(object sender, EventArgs e)
+        {
+            ShowDGVBillDV(txbSeachBill.Text.Trim());
+        }
+
+        private void BtnResetSBill_Click(object sender, EventArgs e)
+        {
+            txbSeachBill.Clear();
+            ShowDGVBillDV();
+        }
+        private int cbTenDVIndexOf(string s)
+        {
+            for(int i = 0; i < cbTenDV.Items.Count; i++)
+            {
+                if (((CBBItem)cbTenDV.Items[i]).Value == s)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        private void dgvBillDV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HOADON_DUNG_DICHVU p = BLL_QLBillDV.Instance.FindBillDV(Convert.ToInt32(dgvBillDV.SelectedRows[0].Cells["ID"].Value.ToString()));
+            txbMaBill.Text = p.ID.ToString();
+            txbMaBook.Text = p.BookID;
+            cbTenDV.SelectedIndex = cbTenDVIndexOf(p.DichVuID);
+            nUDSoLuong.Value = p.SoLuong;
+            dtpNgayDat.Value = p.Ngay;
+            txbTongBill.Text = p.ThanhTien.ToString();
+            txbGiaBill.Text = p.LOAIDICHVU.DonGia.ToString();
         }
         #endregion
     }

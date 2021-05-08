@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_QLBillDV.cs" />
     <Compile Include="BLL\BLL_QLLP.cs" />
     <Compile Include="BLL\BLL_QLP.cs" />
     <Compile Include="BLL\BLL_QLTTVD.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="BLL\BLL_QLDV.cs" />
     <Compile Include="BLL\BLL_QLBOOK.cs" />
     <Compile Include="BLL\BLL_QLKH.cs" />
+    <Compile Include="DTO\BillDV_View.cs" />
     <Compile Include="BLL\BLL_DangNhap.cs" />
     <Compile Include="DTO\DTO_ChucVu.cs" />
     <Compile Include="DAL\BOOK.cs">

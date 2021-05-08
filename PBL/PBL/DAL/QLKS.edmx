@@ -133,13 +133,6 @@
           <Property Name="LoaiPhongID" Type="nvarchar" MaxLength="4" Nullable="false" />
           <Property Name="TrangThai" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="TRANGTHAIBOOK">
-          <Key>
-            <PropertyRef Name="TrangThaiBookID" />
-          </Key>
-          <Property Name="TrangThaiBookID" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Mota" Type="ntext" />
-        </EntityType>
         <EntityType Name="TRANGTHAIVATDUNG">
           <Key>
             <PropertyRef Name="TrangThaiVatDungID" />
@@ -197,20 +190,6 @@
             </Principal>
             <Dependent Role="BOOK">
               <PropertyRef Name="PhongID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_book_trangthaibookid">
-          <End Role="TRANGTHAIBOOK" Type="Self.TRANGTHAIBOOK" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TRANGTHAIBOOK">
-              <PropertyRef Name="TrangThaiBookID" />
-            </Principal>
-            <Dependent Role="BOOK">
-              <PropertyRef Name="TrangThaiBookID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -418,7 +397,6 @@
           <EntitySet Name="LOAIVATDUNG" EntityType="Self.LOAIVATDUNG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHONG" EntityType="Self.PHONG" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TRANGTHAIBOOK" EntityType="Self.TRANGTHAIBOOK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TRANGTHAIVATDUNG" EntityType="Self.TRANGTHAIVATDUNG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VATDUNGPHONG" EntityType="Self.VATDUNGPHONG" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk_book_khachhangid" Association="Self.fk_book_khachhangid">
@@ -431,10 +409,6 @@
           </AssociationSet>
           <AssociationSet Name="fk_book_phongid" Association="Self.fk_book_phongid">
             <End Role="PHONG" EntitySet="PHONG" />
-            <End Role="BOOK" EntitySet="BOOK" />
-          </AssociationSet>
-          <AssociationSet Name="fk_book_trangthaibookid" Association="Self.fk_book_trangthaibookid">
-            <End Role="TRANGTHAIBOOK" EntitySet="TRANGTHAIBOOK" />
             <End Role="BOOK" EntitySet="BOOK" />
           </AssociationSet>
           <AssociationSet Name="fk_dangnhap_nhanvienid" Association="Self.fk_dangnhap_nhanvienid">
@@ -519,12 +493,10 @@
           <Property Name="NgayCheckOut" Type="DateTime" Precision="3" />
           <Property Name="NgayCheckIn_ThucTe" Type="DateTime" Precision="3" />
           <Property Name="NgayCheckOut_ThucTe" Type="DateTime" Precision="3" />
-          <Property Name="TrangThaiBookID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ThanhToan" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="KHACHHANG" Relationship="Self.fk_book_khachhangid" FromRole="BOOK" ToRole="KHACHHANG" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_book_nhanvienid" FromRole="BOOK" ToRole="NHANVIEN" />
           <NavigationProperty Name="PHONG" Relationship="Self.fk_book_phongid" FromRole="BOOK" ToRole="PHONG" />
-          <NavigationProperty Name="TRANGTHAIBOOK" Relationship="Self.fk_book_trangthaibookid" FromRole="BOOK" ToRole="TRANGTHAIBOOK" />
           <NavigationProperty Name="HOADONs" Relationship="Self.fk_hoadon_bookid" FromRole="BOOK" ToRole="HOADON" />
           <NavigationProperty Name="HOADON_DUNG_DICHVU" Relationship="Self.fk_hoadon_dung_dichvu_bookid" FromRole="BOOK" ToRole="HOADON_DUNG_DICHVU" />
           <NavigationProperty Name="KHACHHANGs" Relationship="Self.KHACHHANG_BOOK" FromRole="BOOK" ToRole="KHACHHANG" />
@@ -651,14 +623,6 @@
           <NavigationProperty Name="LOAIPHONG" Relationship="Self.fk_phong_loaiphongid" FromRole="PHONG" ToRole="LOAIPHONG" />
           <NavigationProperty Name="VATDUNGPHONGs" Relationship="Self.fk_vatdungphong_phongid" FromRole="PHONG" ToRole="VATDUNGPHONG" />
         </EntityType>
-        <EntityType Name="TRANGTHAIBOOK">
-          <Key>
-            <PropertyRef Name="TrangThaiBookID" />
-          </Key>
-          <Property Name="TrangThaiBookID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Mota" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="BOOKs" Relationship="Self.fk_book_trangthaibookid" FromRole="TRANGTHAIBOOK" ToRole="BOOK" />
-        </EntityType>
         <EntityType Name="TRANGTHAIVATDUNG">
           <Key>
             <PropertyRef Name="TrangThaiVatDungID" />
@@ -720,20 +684,6 @@
             </Principal>
             <Dependent Role="BOOK">
               <PropertyRef Name="PhongID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_book_trangthaibookid">
-          <End Role="TRANGTHAIBOOK" Type="Self.TRANGTHAIBOOK" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TRANGTHAIBOOK">
-              <PropertyRef Name="TrangThaiBookID" />
-            </Principal>
-            <Dependent Role="BOOK">
-              <PropertyRef Name="TrangThaiBookID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -885,7 +835,6 @@
           <EntitySet Name="LOAIVATDUNGs" EntityType="Self.LOAIVATDUNG" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="PHONGs" EntityType="Self.PHONG" />
-          <EntitySet Name="TRANGTHAIBOOKs" EntityType="Self.TRANGTHAIBOOK" />
           <EntitySet Name="TRANGTHAIVATDUNGs" EntityType="Self.TRANGTHAIVATDUNG" />
           <EntitySet Name="VATDUNGPHONGs" EntityType="Self.VATDUNGPHONG" />
           <AssociationSet Name="fk_book_khachhangid" Association="Self.fk_book_khachhangid">
@@ -898,10 +847,6 @@
           </AssociationSet>
           <AssociationSet Name="fk_book_phongid" Association="Self.fk_book_phongid">
             <End Role="PHONG" EntitySet="PHONGs" />
-            <End Role="BOOK" EntitySet="BOOKs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_book_trangthaibookid" Association="Self.fk_book_trangthaibookid">
-            <End Role="TRANGTHAIBOOK" EntitySet="TRANGTHAIBOOKs" />
             <End Role="BOOK" EntitySet="BOOKs" />
           </AssociationSet>
           <AssociationSet Name="fk_hoadon_bookid" Association="Self.fk_hoadon_bookid">
@@ -976,7 +921,6 @@
                 <ScalarProperty Name="NgayCheckOut" ColumnName="NgayCheckOut" />
                 <ScalarProperty Name="NgayCheckIn_ThucTe" ColumnName="NgayCheckIn_ThucTe" />
                 <ScalarProperty Name="NgayCheckOut_ThucTe" ColumnName="NgayCheckOut_ThucTe" />
-                <ScalarProperty Name="TrangThaiBookID" ColumnName="TrangThaiBookID" />
                 <ScalarProperty Name="ThanhToan" ColumnName="ThanhToan" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1092,14 +1036,6 @@
                 <ScalarProperty Name="PhongID" ColumnName="PhongID" />
                 <ScalarProperty Name="LoaiPhongID" ColumnName="LoaiPhongID" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TRANGTHAIBOOKs">
-            <EntityTypeMapping TypeName="DHP_04Model.TRANGTHAIBOOK">
-              <MappingFragment StoreEntitySet="TRANGTHAIBOOK">
-                <ScalarProperty Name="TrangThaiBookID" ColumnName="TrangThaiBookID" />
-                <ScalarProperty Name="Mota" ColumnName="Mota" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

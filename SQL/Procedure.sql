@@ -549,6 +549,11 @@ as
 	select @tienvattu= ISNULL(@tienvattu, 0)
 
 	select @tongtien = @tienphong + @tiendichvu + @tienvattu
+
+	update BOOK
+	set ThanhToan = @tongtien
+	where BookID = @bookid
+
 	exec sp_Ins_HoaDon @bookid,
 						@today,
 						@tienphong,

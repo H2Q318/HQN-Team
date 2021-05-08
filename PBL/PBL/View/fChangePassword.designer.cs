@@ -67,6 +67,7 @@
             this.btnNotUpdatePassword.TabIndex = 7;
             this.btnNotUpdatePassword.Text = "Hủy";
             this.btnNotUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnNotUpdatePassword.Click += new System.EventHandler(this.btnNotUpdatePassword_Click);
             // 
             // btnUpdatePassword
             // 
@@ -77,6 +78,7 @@
             this.btnUpdatePassword.TabIndex = 6;
             this.btnUpdatePassword.Text = "Cập nhật";
             this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
             // 
             // txbNewPasswordAgain
             // 

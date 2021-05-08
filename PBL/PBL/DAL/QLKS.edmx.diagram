@@ -7,7 +7,7 @@
       <Diagram DiagramId="009f85dd304b4e7ba534e2daa3a1762d" Name="Diagram1">
         <EntityTypeShape EntityType="DHP_04Model.BOOK" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.CHUCVU" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DHP_04Model.DANGNHAP" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DHP_04Model.DANGNHAP" Width="1.5" PointX="1.875" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.HOADON" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.HOADON_DUNG_DICHVU" Width="1.5" PointX="10.5" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.KHACHHANG" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />

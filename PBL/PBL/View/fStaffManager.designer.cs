@@ -93,6 +93,7 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.txbMota = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -193,6 +194,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnCreateAccount);
             this.panel4.Controls.Add(this.btnResetPassword);
             this.panel4.Controls.Add(this.btnClearNV);
             this.panel4.Controls.Add(this.btnDeleteNV);
@@ -214,10 +216,10 @@
             // btnResetPassword
             // 
             this.btnResetPassword.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPassword.Location = new System.Drawing.Point(13, 433);
+            this.btnResetPassword.Location = new System.Drawing.Point(288, 8);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(132, 35);
-            this.btnResetPassword.TabIndex = 9;
+            this.btnResetPassword.TabIndex = 10;
             this.btnResetPassword.Text = "Khôi phục mật khẩu";
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
@@ -228,7 +230,7 @@
             this.btnClearNV.Location = new System.Drawing.Point(359, 433);
             this.btnClearNV.Name = "btnClearNV";
             this.btnClearNV.Size = new System.Drawing.Size(64, 35);
-            this.btnClearNV.TabIndex = 13;
+            this.btnClearNV.TabIndex = 14;
             this.btnClearNV.Text = "Clear";
             this.btnClearNV.UseVisualStyleBackColor = true;
             this.btnClearNV.Click += new System.EventHandler(this.btnClearNV_Click);
@@ -239,7 +241,7 @@
             this.btnDeleteNV.Location = new System.Drawing.Point(291, 433);
             this.btnDeleteNV.Name = "btnDeleteNV";
             this.btnDeleteNV.Size = new System.Drawing.Size(62, 35);
-            this.btnDeleteNV.TabIndex = 12;
+            this.btnDeleteNV.TabIndex = 13;
             this.btnDeleteNV.Text = "Xóa";
             this.btnDeleteNV.UseVisualStyleBackColor = true;
             this.btnDeleteNV.Click += new System.EventHandler(this.btnDeleteNV_Click);
@@ -250,7 +252,7 @@
             this.btnAddNV.Location = new System.Drawing.Point(151, 433);
             this.btnAddNV.Name = "btnAddNV";
             this.btnAddNV.Size = new System.Drawing.Size(60, 35);
-            this.btnAddNV.TabIndex = 10;
+            this.btnAddNV.TabIndex = 11;
             this.btnAddNV.Text = "Thêm";
             this.btnAddNV.UseVisualStyleBackColor = true;
             this.btnAddNV.Click += new System.EventHandler(this.btnAddNV_Click);
@@ -261,7 +263,7 @@
             this.btnUpdateNV.Location = new System.Drawing.Point(217, 433);
             this.btnUpdateNV.Name = "btnUpdateNV";
             this.btnUpdateNV.Size = new System.Drawing.Size(68, 35);
-            this.btnUpdateNV.TabIndex = 11;
+            this.btnUpdateNV.TabIndex = 12;
             this.btnUpdateNV.Text = "Cập nhật";
             this.btnUpdateNV.UseVisualStyleBackColor = true;
             this.btnUpdateNV.Click += new System.EventHandler(this.btnUpdateNV_Click);
@@ -808,6 +810,17 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Mô tả:";
             // 
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateAccount.Location = new System.Drawing.Point(150, 8);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(132, 35);
+            this.btnCreateAccount.TabIndex = 9;
+            this.btnCreateAccount.Text = "Tạo tài khoản";
+            this.btnCreateAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
+            // 
             // fStaffManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -924,5 +937,6 @@
         private System.Windows.Forms.Button btnSortCV;
         private System.Windows.Forms.TextBox txbCMND;
         private System.Windows.Forms.TextBox txbPhone;
+        private System.Windows.Forms.Button btnCreateAccount;
     }
 }

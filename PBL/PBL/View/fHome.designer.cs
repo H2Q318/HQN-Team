@@ -136,6 +136,7 @@ namespace PBL
             this.txbMaKhachOut = new System.Windows.Forms.TextBox();
             this.dtpNgayDenOut = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tbMain.SuspendLayout();
@@ -220,14 +221,14 @@ namespace PBL
             // itemTaiKhoan
             // 
             this.itemTaiKhoan.Name = "itemTaiKhoan";
-            this.itemTaiKhoan.Size = new System.Drawing.Size(180, 22);
+            this.itemTaiKhoan.Size = new System.Drawing.Size(171, 22);
             this.itemTaiKhoan.Text = "&Tài Khoản";
             this.itemTaiKhoan.Click += new System.EventHandler(this.itemTaiKhoan_Click);
             // 
             // itemDoiMatKhau
             // 
             this.itemDoiMatKhau.Name = "itemDoiMatKhau";
-            this.itemDoiMatKhau.Size = new System.Drawing.Size(180, 22);
+            this.itemDoiMatKhau.Size = new System.Drawing.Size(171, 22);
             this.itemDoiMatKhau.Text = "Đổi mật khẩu";
             this.itemDoiMatKhau.Click += new System.EventHandler(this.itemDoiMatKhau_Click);
             // 
@@ -235,7 +236,7 @@ namespace PBL
             // 
             this.itemDangXuat.Name = "itemDangXuat";
             this.itemDangXuat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.itemDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.itemDangXuat.Size = new System.Drawing.Size(171, 22);
             this.itemDangXuat.Text = "Đăng Xuất";
             this.itemDangXuat.Click += new System.EventHandler(this.itemDangXuat_Click);
             // 
@@ -989,6 +990,7 @@ namespace PBL
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnDetail);
             this.panel5.Controls.Add(this.label25);
             this.panel5.Controls.Add(this.txbVatTu);
             this.panel5.Controls.Add(this.label20);
@@ -1112,7 +1114,7 @@ namespace PBL
             // 
             // btnCheckOutReset
             // 
-            this.btnCheckOutReset.Location = new System.Drawing.Point(278, 475);
+            this.btnCheckOutReset.Location = new System.Drawing.Point(190, 475);
             this.btnCheckOutReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckOutReset.Name = "btnCheckOutReset";
             this.btnCheckOutReset.Size = new System.Drawing.Size(82, 32);
@@ -1217,6 +1219,17 @@ namespace PBL
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1129, 572);
             this.panel7.TabIndex = 8;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.Location = new System.Drawing.Point(279, 475);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(82, 32);
+            this.btnDetail.TabIndex = 20;
+            this.btnDetail.Text = "Chi tiết";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // fHome
             // 
@@ -1364,5 +1377,6 @@ namespace PBL
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txbCIGhiChu;
+        private System.Windows.Forms.Button btnDetail;
     }
 }

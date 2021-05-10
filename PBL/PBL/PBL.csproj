@@ -134,6 +134,12 @@
     <Compile Include="DTO\NV_View.cs" />
     <Compile Include="DTO\VatDungPhong_View.cs" />
     <Compile Include="DTO\DTO_DichVu.cs" />
+    <Compile Include="View\fBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fBill.Designer.cs">
+      <DependentUpon>fBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     <Compile Include="View\fStaffManager.designer.cs">
       <DependentUpon>fStaffManager.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\fBill.resx">
+      <DependentUpon>fBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
     </EmbeddedResource>

@@ -375,12 +375,31 @@ namespace PBL
                 }
                 else
                 {
-                    MessageBox.Show("khoi phuc mat khau khong thanh cong! Vui long kiem tra lai");
+                    MessageBox.Show("khoi phuc mat khau khong thanh cong! Vui long thu lai");
                 }
             }
             catch
             {
                 MessageBox.Show("Vui long chon nhan vien can khoi phuc mat khau!");
+            }
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (BLL_DangNhap.Instance.AddAccount(dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString()))
+                {
+                    MessageBox.Show("Tao tai khoan thanh cong!/n Tai khoan duoc tao voi mat khau mac dinh la 1");
+                }
+                else
+                {
+                    MessageBox.Show("Tao tai khoan khong thanh cong! Vui long thu lai");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui long chon nhan vien can tao tai khoan!");
             }
         }
 
@@ -393,5 +412,6 @@ namespace PBL
                 e.Handled = true;
             }
         }
+
     }
 }

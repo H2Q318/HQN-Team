@@ -68,6 +68,27 @@ namespace PBL
             catch { }
         }
 
+        public bool AddAccount(string username, string password = "1")
+        {
+            try
+            {
+                QLKS db = new QLKS();
+                DANGNHAP dn = new DANGNHAP
+                {
+                    NhanVienID = username,
+                    MatKhau = password,
+                    TrangThai = false
+                };
+                db.DANGNHAPs.Add(dn);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public bool UpdatePassword(string username, string password = "1")
         {
             try

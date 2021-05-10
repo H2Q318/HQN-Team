@@ -312,6 +312,12 @@ namespace PBL
             fAccount f = new fAccount(IDNhanVien);
             f.ShowDialog();
         }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            fBill f = new fBill(IDNhanVien);
+            f.ShowDialog();
+        }
     }
 
 }

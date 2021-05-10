@@ -146,7 +146,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fChangePassword";
+            this.Text = "Đổi mật khẩu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

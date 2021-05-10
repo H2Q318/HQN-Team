@@ -39,6 +39,18 @@ namespace PBL
             return data;
         }
 
+        public NHANVIEN GetNhanVienByID(string idNhanVien)
+        {
+            try
+            {
+                return new QLKS().NHANVIENs.Find(idNhanVien);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public List<NV_View> GetListNhanVien(string search, int searchcase)
         {
             List<NV_View> data = new List<NV_View>();

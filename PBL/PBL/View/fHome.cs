@@ -306,6 +306,12 @@ namespace PBL
             txbtotalcheckout.Text = s.TienDichVu.ToString();
             LoadRoom();
         }
+
+        private void itemTaiKhoan_Click(object sender, EventArgs e)
+        {
+            fAccount f = new fAccount(IDNhanVien);
+            f.ShowDialog();
+        }
     }
 
 }

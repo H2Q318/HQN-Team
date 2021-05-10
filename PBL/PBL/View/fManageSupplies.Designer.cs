@@ -83,7 +83,7 @@
             this.panel25.Controls.Add(this.txbSeachPhong);
             this.panel25.Controls.Add(this.label15);
             this.panel25.Location = new System.Drawing.Point(708, 105);
-            this.panel25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel25.Margin = new System.Windows.Forms.Padding(2);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(273, 344);
             this.panel25.TabIndex = 23;
@@ -91,7 +91,7 @@
             // btnResetSPhong
             // 
             this.btnResetSPhong.Location = new System.Drawing.Point(152, 78);
-            this.btnResetSPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetSPhong.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetSPhong.Name = "btnResetSPhong";
             this.btnResetSPhong.Size = new System.Drawing.Size(63, 33);
             this.btnResetSPhong.TabIndex = 19;
@@ -102,7 +102,7 @@
             // BtnSeachPhong
             // 
             this.BtnSeachPhong.Location = new System.Drawing.Point(55, 78);
-            this.BtnSeachPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSeachPhong.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSeachPhong.Name = "BtnSeachPhong";
             this.BtnSeachPhong.Size = new System.Drawing.Size(63, 33);
             this.BtnSeachPhong.TabIndex = 18;
@@ -113,7 +113,7 @@
             // txbSeachPhong
             // 
             this.txbSeachPhong.Location = new System.Drawing.Point(134, 29);
-            this.txbSeachPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSeachPhong.Margin = new System.Windows.Forms.Padding(2);
             this.txbSeachPhong.Name = "txbSeachPhong";
             this.txbSeachPhong.Size = new System.Drawing.Size(122, 20);
             this.txbSeachPhong.TabIndex = 17;
@@ -166,7 +166,7 @@
             this.panel26.Controls.Add(this.BtnSuaVt);
             this.panel26.Controls.Add(this.btnThemVt);
             this.panel26.Location = new System.Drawing.Point(708, 10);
-            this.panel26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel26.Margin = new System.Windows.Forms.Padding(2);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(273, 90);
             this.panel26.TabIndex = 22;
@@ -174,7 +174,7 @@
             // btnResetVt
             // 
             this.btnResetVt.Location = new System.Drawing.Point(152, 49);
-            this.btnResetVt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetVt.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetVt.Name = "btnResetVt";
             this.btnResetVt.Size = new System.Drawing.Size(63, 32);
             this.btnResetVt.TabIndex = 3;
@@ -185,7 +185,7 @@
             // BtnXoaVt
             // 
             this.BtnXoaVt.Location = new System.Drawing.Point(55, 49);
-            this.BtnXoaVt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnXoaVt.Margin = new System.Windows.Forms.Padding(2);
             this.BtnXoaVt.Name = "BtnXoaVt";
             this.BtnXoaVt.Size = new System.Drawing.Size(63, 32);
             this.BtnXoaVt.TabIndex = 2;
@@ -196,7 +196,7 @@
             // BtnSuaVt
             // 
             this.BtnSuaVt.Location = new System.Drawing.Point(152, 8);
-            this.BtnSuaVt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSuaVt.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSuaVt.Name = "BtnSuaVt";
             this.BtnSuaVt.Size = new System.Drawing.Size(63, 32);
             this.BtnSuaVt.TabIndex = 1;
@@ -207,7 +207,7 @@
             // btnThemVt
             // 
             this.btnThemVt.Location = new System.Drawing.Point(55, 8);
-            this.btnThemVt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemVt.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemVt.Name = "btnThemVt";
             this.btnThemVt.Size = new System.Drawing.Size(63, 32);
             this.btnThemVt.TabIndex = 0;
@@ -220,7 +220,7 @@
             this.cbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTrangThai.FormattingEnabled = true;
             this.cbTrangThai.Location = new System.Drawing.Point(519, 56);
-            this.cbTrangThai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTrangThai.Margin = new System.Windows.Forms.Padding(2);
             this.cbTrangThai.Name = "cbTrangThai";
             this.cbTrangThai.Size = new System.Drawing.Size(124, 21);
             this.cbTrangThai.TabIndex = 30;
@@ -238,7 +238,7 @@
             // nUDSLHienTai
             // 
             this.nUDSLHienTai.Location = new System.Drawing.Point(315, 55);
-            this.nUDSLHienTai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDSLHienTai.Margin = new System.Windows.Forms.Padding(2);
             this.nUDSLHienTai.Name = "nUDSLHienTai";
             this.nUDSLHienTai.Size = new System.Drawing.Size(90, 20);
             this.nUDSLHienTai.TabIndex = 28;
@@ -246,7 +246,7 @@
             // nUDSLBanDau
             // 
             this.nUDSLBanDau.Location = new System.Drawing.Point(315, 16);
-            this.nUDSLBanDau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDSLBanDau.Margin = new System.Windows.Forms.Padding(2);
             this.nUDSLBanDau.Name = "nUDSLBanDau";
             this.nUDSLBanDau.Size = new System.Drawing.Size(90, 20);
             this.nUDSLBanDau.TabIndex = 27;
@@ -256,7 +256,7 @@
             this.cbTenVatTu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTenVatTu.FormattingEnabled = true;
             this.cbTenVatTu.Location = new System.Drawing.Point(92, 54);
-            this.cbTenVatTu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTenVatTu.Margin = new System.Windows.Forms.Padding(2);
             this.cbTenVatTu.Name = "cbTenVatTu";
             this.cbTenVatTu.Size = new System.Drawing.Size(92, 21);
             this.cbTenVatTu.TabIndex = 26;
@@ -266,7 +266,7 @@
             this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel27.Controls.Add(this.dgvVatDungPhong);
             this.panel27.Location = new System.Drawing.Point(9, 105);
-            this.panel27.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel27.Margin = new System.Windows.Forms.Padding(2);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(694, 344);
             this.panel27.TabIndex = 21;
@@ -295,7 +295,7 @@
             this.panel28.Controls.Add(this.label41);
             this.panel28.Controls.Add(this.label42);
             this.panel28.Location = new System.Drawing.Point(9, 10);
-            this.panel28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel28.Margin = new System.Windows.Forms.Padding(2);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(694, 90);
             this.panel28.TabIndex = 20;
@@ -305,7 +305,7 @@
             this.cbPhongID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPhongID.FormattingEnabled = true;
             this.cbPhongID.Location = new System.Drawing.Point(92, 15);
-            this.cbPhongID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPhongID.Margin = new System.Windows.Forms.Padding(2);
             this.cbPhongID.Name = "cbPhongID";
             this.cbPhongID.Size = new System.Drawing.Size(92, 21);
             this.cbPhongID.TabIndex = 31;
@@ -318,7 +318,7 @@
             this.panel1.Controls.Add(this.panel28);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(991, 458);
             this.panel1.TabIndex = 1;
@@ -331,7 +331,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "fManageSupplies";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fManageSupplies";
+            this.Text = "Quản lý vật tư";
             ((System.ComponentModel.ISupportInitialize)(this.dgvVatDungPhong)).EndInit();
             this.panel25.ResumeLayout(false);
             this.panel25.PerformLayout();

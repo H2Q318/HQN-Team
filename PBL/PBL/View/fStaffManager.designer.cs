@@ -816,7 +816,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "fStaffManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fStaffManager";
+            this.Text = "Quản lý nhân viên và chức vụ";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

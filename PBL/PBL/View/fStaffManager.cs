@@ -365,16 +365,6 @@ namespace PBL
             dgvStaff.ClearSelection();
         }
 
-        #endregion
-
-        private void JustNumberKeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
             try
@@ -391,6 +381,16 @@ namespace PBL
             catch
             {
                 MessageBox.Show("Vui long chon nhan vien can khoi phuc mat khau!");
+            }
+        }
+
+        #endregion
+
+        private void JustNumberKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -32,6 +32,9 @@ namespace PBL
             LoadRoom();
             LoadDataGridView();
             LoadMenudv();
+            txbDPMaNV.Text = IDNhanVien;
+            txbCIMaNV.Text = IDNhanVien;
+            txbMaNvOut.Text = IDNhanVien;
         } 
         private void LoadRoom() 
         { 

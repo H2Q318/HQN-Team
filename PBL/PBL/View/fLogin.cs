@@ -18,21 +18,30 @@ namespace PBL
         {
             InitializeComponent();
         }
+
+        private void refreshLogin()
+        {
+            txbUserName.Clear();
+            txbPassword.Clear();
+            lbTB.Visible = false;
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //if (BLL_DangNhap.Instance.CheckLogin(txbUserName.Text, txbPassword.Text))
-            //{
+            if (BLL_DangNhap.Instance.CheckLogin(txbUserName.Text, txbPassword.Text))
+            {
                 fHome f = new fHome(txbUserName.Text);
                 this.Hide();
                 f.ShowDialog();
-                this.Show();
                 BLL_DangNhap.Instance.SetStatusAccount(txbUserName.Text, false);
-            //}
-            //else
-            //{
-            //    lbTB.Visible = true;
-            //    txbPassword.Clear();
-            //}
+                refreshLogin();
+                this.Show();
+            }
+            else
+            {
+                lbTB.Visible = true;
+                txbPassword.Clear();
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

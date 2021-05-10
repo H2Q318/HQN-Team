@@ -30,8 +30,9 @@ namespace PBL
             {
                 if (txbNewPassword.Text.Equals(txbNewPasswordAgain.Text))
                 {
-                    if (BLL_DangNhap.Instance.UpdatePassword(IDNhanVien, txbNewPassword.Text))
+                    if (BLL_DangNhap.Instance.CheckPassword(IDNhanVien, txbOldPassword.Text))
                     {
+                        BLL_DangNhap.Instance.UpdatePassword(IDNhanVien, txbNewPassword.Text);
                         MessageBox.Show("Doi mat khau thanh cong!");
                     }
                     else

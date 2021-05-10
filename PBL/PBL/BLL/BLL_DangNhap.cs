@@ -45,6 +45,17 @@ namespace PBL
             return false;
         }
 
+        public bool CheckPassword(string username, string password)
+        {
+            QLKS db = new QLKS();
+            var temp = db.DANGNHAPs.Find(username);
+            if (password.Equals(temp.MatKhau))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void SetStatusAccount(string username, bool status)
         {
             try

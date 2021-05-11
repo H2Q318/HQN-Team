@@ -115,6 +115,7 @@ namespace PBL
             this.cbMenuDv = new System.Windows.Forms.ComboBox();
             this.tpCheckOut = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.txbVatTu = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -136,7 +137,6 @@ namespace PBL
             this.txbMaKhachOut = new System.Windows.Forms.TextBox();
             this.dtpNgayDenOut = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.btnDetail = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tbMain.SuspendLayout();
@@ -245,6 +245,7 @@ namespace PBL
             this.menuItemThongKe.Name = "menuItemThongKe";
             this.menuItemThongKe.Size = new System.Drawing.Size(69, 20);
             this.menuItemThongKe.Text = "Thống Kê";
+            this.menuItemThongKe.Click += new System.EventHandler(this.menuItemThongKe_Click);
             // 
             // contextMenuStrip1
             // 
@@ -1017,6 +1018,17 @@ namespace PBL
             this.panel5.Size = new System.Drawing.Size(452, 542);
             this.panel5.TabIndex = 3;
             // 
+            // btnDetail
+            // 
+            this.btnDetail.Location = new System.Drawing.Point(279, 475);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(82, 32);
+            this.btnDetail.TabIndex = 20;
+            this.btnDetail.Text = "Chi tiết";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -1219,17 +1231,6 @@ namespace PBL
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1129, 572);
             this.panel7.TabIndex = 8;
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.Location = new System.Drawing.Point(279, 475);
-            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(82, 32);
-            this.btnDetail.TabIndex = 20;
-            this.btnDetail.Text = "Chi tiết";
-            this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // fHome
             // 

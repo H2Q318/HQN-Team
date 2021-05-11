@@ -63,3 +63,4 @@ D:\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.xml
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.fAccount.resources
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.fBill.resources
+C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.fThongKe.resources

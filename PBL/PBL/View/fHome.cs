@@ -318,6 +318,12 @@ namespace PBL
             fBill f = new fBill(IDNhanVien);
             f.ShowDialog();
         }
+
+        private void menuItemThongKe_Click(object sender, EventArgs e)
+        {
+            fThongKe f = new fThongKe();
+            f.ShowDialog();
+        }
     }
 
 }

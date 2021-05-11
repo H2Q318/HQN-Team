@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace PBL
 {
-    public partial class fBill : Form
+    public partial class fThongKe : Form
     {
-        private string IDNhanVien;
-        public fBill(string username)
+        public fThongKe()
         {
             InitializeComponent();
-            IDNhanVien = username;
+            SetGUI();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void SetGUI()
         {
-            this.Close();
+            cbType.SelectedIndex = 0;
         }
     }
 }

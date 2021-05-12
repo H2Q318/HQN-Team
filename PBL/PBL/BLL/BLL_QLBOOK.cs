@@ -102,10 +102,10 @@ namespace PBL.BLL
         public HOADON Checkout(string IDBook, DateTime t)
         {
             QLKS db = new QLKS();
-            db.sp_Cal_HoaDon(IDBook);
             db.BOOKs.Find(IDBook).NgayCheckOut_ThucTe = t;
-            var s = db.HOADONs.Where(p => p.BookID == IDBook).First();
             db.SaveChanges();
+            db.sp_Cal_HoaDon(IDBook);
+            var s = db.HOADONs.Where(p => p.BookID == IDBook).First();
             return s;
         }
     }

@@ -23,6 +23,7 @@ namespace PBL
             GUILoaiVatDung();
             GUIDichVu();
             GUIBillDV();
+            GuiKhachHang();
         }
         #region Quản lý phòng
         private void GUIPhong()
@@ -727,5 +728,121 @@ namespace PBL
             txbGiaBill.Text = p.LOAIDICHVU.DonGia.ToString();
         }
         #endregion
+        #region Quản lý Khách hàng
+        private void GuiKhachHang()
+        {
+            ShowDgvKh();
+            cbSortKH.Items.AddRange(new string[] { "Name", "ID" });
+            cbSortKH.SelectedIndex = 0;
+        }
+        private void ShowDgvKh()
+        {
+            dgvKhachHang.DataSource = BLL_QLKH.Instance.GetAlllKhView(BLL_QLKH.Instance.GetAllKhachHang());
+        }
+        private void btnThemKh_Click(object sender, EventArgs e)
+        {
+            KHACHHANG s = new KHACHHANG()
+            {
+
+                KhachHangID = txbMaKhach.Text,
+                Ten = txbHoTen.Text,
+                GioiTinh =cbGioiTinh.Checked,
+                CMND =txbCMND.Text,
+                SDT = txbDienThoai.Text,
+                QuocTich = txbQuocTich.Text,
+                GhiChu = txbGhiChu.Text
+            };
+            BLL_QLKH.Instance.AddKh(s);
+            ShowDgvKh();
+        }
+
+        private void btnSuaKh_Click(object sender, EventArgs e)
+        {
+            KHACHHANG s = new KHACHHANG()
+            {
+
+                KhachHangID = txbMaKhach.Text,
+                Ten = txbHoTen.Text,
+                GioiTinh = cbGioiTinh.Checked,
+                CMND = txbCMND.Text,
+                SDT = txbDienThoai.Text,
+                QuocTich = txbQuocTich.Text,
+                GhiChu = txbGhiChu.Text
+            };
+            BLL_QLKH.Instance.UpdateKh(s);
+            ShowDgvKh();
+        }
+
+        private void BtnXoaKh_Click(object sender, EventArgs e)
+        {
+
+            if (dgvKhachHang.SelectedRows.Count > 0)
+            {
+                BLL_QLKH.Instance.DeleteKh(GetListKh());
+                ShowDgvKh();
+            }
+            else
+            {
+                MessageBox.Show("Chon it nhat mot khach hang de xoa !");
+            }
+        }
+
+        private void btnResetKh_Click(object sender, EventArgs e)
+        {
+            txbMaKhach.Text = "";
+            txbHoTen.Text = "";
+            cbGioiTinh.Checked=true;
+            txbCMND.Text="";
+            txbDienThoai.Text="";
+            txbQuocTich.Text="";
+            txbGhiChu.Text="";
+        }
+
+        private void btnSearchKh_Click(object sender, EventArgs e)
+        {
+            dgvKhachHang.DataSource = BLL_QLKH.Instance.FindKhByName(txbSeachkh.Text);
+        }
+
+        private void btnResetSkh_Click(object sender, EventArgs e)
+        {
+            txbSeachkh.Text = "";
+        }
+        private List<string> GetListKh()
+        {
+            List<string> data = new List<string>();
+            foreach (DataGridViewRow r in dgvKhachHang.SelectedRows)
+            {
+                data.Add(r.Cells["KhachHangID"].Value.ToString());
+            }
+            return data;
+        }
+        private void dgvKhachHang_Click(object sender, EventArgs e)
+        {
+            KHACHHANG p = BLL_QLKH.Instance.FindKh(dgvKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString());
+            txbMaKhach.Text = p.KhachHangID;
+            txbHoTen.Text = p.Ten;
+            cbGioiTinh.Checked = (bool)p.GioiTinh;
+            txbCMND.Text = p.CMND;
+            txbDienThoai.Text = p.SDT;
+            txbQuocTich.Text = p.QuocTich;
+            txbGhiChu.Text = p.GhiChu;
+        }
+        private void btnSortKH_Click(object sender, EventArgs e)
+        {
+            List<KH_View> s=BLL_QLKH.Instance.FindKhByName(txbSeachkh.Text);
+            switch (cbSortKH.SelectedIndex)
+            {
+                case 0:                    
+                    BLL_QLKH.Instance.Sort(s,"Name");
+                    dgvKhachHang.DataSource = s;
+                    break;
+                case 1:
+                    BLL_QLKH.Instance.Sort(s, "ID");
+                    dgvKhachHang.DataSource = s;
+                    break;
+            }
+        }
+
+        #endregion  
     }
 }

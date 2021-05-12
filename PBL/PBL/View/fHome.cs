@@ -20,7 +20,7 @@ namespace PBL
         private string IDPhong;
         private string MaLoaiPhong;
         private string IDNhanVien;
-        private string HoaDonID;
+        private string HoaDonID = "-1";
         public fHome(string username)
         {
             IDNhanVien = username;
@@ -301,6 +301,11 @@ namespace PBL
                 MessageBox.Show("Phòng chưa checkin");
                 return;
             }
+            if(txbMaPhongOut.TextLength==0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần checkout");
+                return;
+            }    
             HOADON s = BLL_QLBOOK.Instance.Checkout(IDBook, dtpNgayDi.Value);
             HoaDonID = s.HoaDonID;
             //txbGia.Text = s.TienPhong.ToString();
@@ -319,8 +324,15 @@ namespace PBL
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            fBillDetail f = new fBillDetail(HoaDonID);
-            f.ShowDialog();
+            if (HoaDonID == "-1")
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+            else
+            {
+                fBillDetail f = new fBillDetail(HoaDonID);
+                f.ShowDialog();
+            }
         }
 
         private void menuItemThongKe_Click(object sender, EventArgs e)

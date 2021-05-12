@@ -68,3 +68,7 @@ D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fThongKe.reso
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fAccount.resources
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fBillDetail.resources
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fHoaDon.resources
+D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fThongKe.resources
+D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fBillDetail.resources
+D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fAccount.resources
+D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fHoaDon.resources

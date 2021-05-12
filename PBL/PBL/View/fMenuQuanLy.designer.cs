@@ -181,7 +181,6 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.txbGhiChu = new System.Windows.Forms.TextBox();
             this.txbQuocTich = new System.Windows.Forms.TextBox();
-            this.msbDienThoai = new System.Windows.Forms.MaskedTextBox();
             this.cbGioiTinh = new System.Windows.Forms.CheckBox();
             this.txbHoTen = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -195,6 +194,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txbDienThoai = new System.Windows.Forms.TextBox();
             this.tabPage5.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -1735,6 +1735,7 @@
             this.btnSortKH.TabIndex = 4;
             this.btnSortKH.Text = "Sắp xếp";
             this.btnSortKH.UseVisualStyleBackColor = true;
+            this.btnSortKH.Click += new System.EventHandler(this.btnSortKH_Click);
             // 
             // cbSortKH
             // 
@@ -1754,6 +1755,7 @@
             this.btnResetSkh.TabIndex = 15;
             this.btnResetSkh.Text = "Reset";
             this.btnResetSkh.UseVisualStyleBackColor = true;
+            this.btnResetSkh.Click += new System.EventHandler(this.btnResetSkh_Click);
             // 
             // btnSearchKh
             // 
@@ -1764,6 +1766,7 @@
             this.btnSearchKh.TabIndex = 14;
             this.btnSearchKh.Text = "Tìm kiếm";
             this.btnSearchKh.UseVisualStyleBackColor = true;
+            this.btnSearchKh.Click += new System.EventHandler(this.btnSearchKh_Click);
             // 
             // txbSeachkh
             // 
@@ -1804,6 +1807,7 @@
             this.btnResetKh.TabIndex = 3;
             this.btnResetKh.Text = "Reset";
             this.btnResetKh.UseVisualStyleBackColor = true;
+            this.btnResetKh.Click += new System.EventHandler(this.btnResetKh_Click);
             // 
             // BtnXoaKh
             // 
@@ -1814,6 +1818,7 @@
             this.BtnXoaKh.TabIndex = 2;
             this.BtnXoaKh.Text = "Xóa";
             this.BtnXoaKh.UseVisualStyleBackColor = true;
+            this.BtnXoaKh.Click += new System.EventHandler(this.BtnXoaKh_Click);
             // 
             // btnSuaKh
             // 
@@ -1824,6 +1829,7 @@
             this.btnSuaKh.TabIndex = 1;
             this.btnSuaKh.Text = "Sửa";
             this.btnSuaKh.UseVisualStyleBackColor = true;
+            this.btnSuaKh.Click += new System.EventHandler(this.btnSuaKh_Click);
             // 
             // btnThemKh
             // 
@@ -1834,6 +1840,7 @@
             this.btnThemKh.TabIndex = 0;
             this.btnThemKh.Text = "Thêm";
             this.btnThemKh.UseVisualStyleBackColor = true;
+            this.btnThemKh.Click += new System.EventHandler(this.btnThemKh_Click);
             // 
             // panel2
             // 
@@ -1856,13 +1863,14 @@
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.Size = new System.Drawing.Size(915, 414);
             this.dgvKhachHang.TabIndex = 0;
+            this.dgvKhachHang.Click += new System.EventHandler(this.dgvKhachHang_Click);
             // 
             // panel13
             // 
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.txbDienThoai);
             this.panel13.Controls.Add(this.txbGhiChu);
             this.panel13.Controls.Add(this.txbQuocTich);
-            this.panel13.Controls.Add(this.msbDienThoai);
             this.panel13.Controls.Add(this.cbGioiTinh);
             this.panel13.Controls.Add(this.txbHoTen);
             this.panel13.Controls.Add(this.label4);
@@ -1895,15 +1903,6 @@
             this.txbQuocTich.Name = "txbQuocTich";
             this.txbQuocTich.Size = new System.Drawing.Size(132, 22);
             this.txbQuocTich.TabIndex = 17;
-            // 
-            // msbDienThoai
-            // 
-            this.msbDienThoai.Location = new System.Drawing.Point(355, 68);
-            this.msbDienThoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.msbDienThoai.Mask = "(999) 000-0000";
-            this.msbDienThoai.Name = "msbDienThoai";
-            this.msbDienThoai.Size = new System.Drawing.Size(121, 22);
-            this.msbDienThoai.TabIndex = 16;
             // 
             // cbGioiTinh
             // 
@@ -2021,6 +2020,15 @@
             this.tabcontrol.SelectedIndex = 0;
             this.tabcontrol.Size = new System.Drawing.Size(1315, 581);
             this.tabcontrol.TabIndex = 1;
+            // 
+            // txbDienThoai
+            // 
+            this.txbDienThoai.Location = new System.Drawing.Point(355, 68);
+            this.txbDienThoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbDienThoai.MaxLength = 10;
+            this.txbDienThoai.Name = "txbDienThoai";
+            this.txbDienThoai.Size = new System.Drawing.Size(132, 22);
+            this.txbDienThoai.TabIndex = 19;
             // 
             // fMenuQuanLy
             // 
@@ -2193,7 +2201,6 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.TextBox txbGhiChu;
         private System.Windows.Forms.TextBox txbQuocTich;
-        private System.Windows.Forms.MaskedTextBox msbDienThoai;
         private System.Windows.Forms.CheckBox cbGioiTinh;
         private System.Windows.Forms.TextBox txbHoTen;
         private System.Windows.Forms.Label label4;
@@ -2269,5 +2276,6 @@
         private System.Windows.Forms.MaskedTextBox txbCloseDV;
         private System.Windows.Forms.TextBox txbTongBill;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txbDienThoai;
     }
 }

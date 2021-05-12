@@ -132,6 +132,7 @@
     </Compile>
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\Keys.cs" />
+    <Compile Include="DTO\KH_View.cs" />
     <Compile Include="DTO\Phong_View.cs" />
     <Compile Include="DTO\NV_View.cs" />
     <Compile Include="DTO\VatDungPhong_View.cs" />

@@ -36,6 +36,7 @@ namespace PBL
             this.itemBook = new System.Windows.Forms.ToolStripMenuItem();
             this.itemNhanVienVaChucVu = new System.Windows.Forms.ToolStripMenuItem();
             this.itemVatTu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.itemTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.itemDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,7 +138,6 @@ namespace PBL
             this.txbMaBook = new System.Windows.Forms.TextBox();
             this.dtpNgayDenOut = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.ItemHoaDon = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tbMain.SuspendLayout();
@@ -179,7 +179,7 @@ namespace PBL
             this.itemVatTu,
             this.ItemHoaDon});
             this.menuItemMenu.Name = "menuItemMenu";
-            this.menuItemMenu.Size = new System.Drawing.Size(73, 24);
+            this.menuItemMenu.Size = new System.Drawing.Size(73, 26);
             this.menuItemMenu.Text = "Quản lý";
             // 
             // itemMenuChinh
@@ -210,6 +210,13 @@ namespace PBL
             this.itemVatTu.Text = "Vật tư phòng";
             this.itemVatTu.Click += new System.EventHandler(this.itemVatTu_Click);
             // 
+            // ItemHoaDon
+            // 
+            this.ItemHoaDon.Name = "ItemHoaDon";
+            this.ItemHoaDon.Size = new System.Drawing.Size(231, 26);
+            this.ItemHoaDon.Text = "Hoá đơn";
+            this.ItemHoaDon.Click += new System.EventHandler(this.ItemHoaDon_Click);
+            // 
             // menuItemNhanVien
             // 
             this.menuItemNhanVien.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -217,7 +224,7 @@ namespace PBL
             this.itemDoiMatKhau,
             this.itemDangXuat});
             this.menuItemNhanVien.Name = "menuItemNhanVien";
-            this.menuItemNhanVien.Size = new System.Drawing.Size(91, 24);
+            this.menuItemNhanVien.Size = new System.Drawing.Size(91, 26);
             this.menuItemNhanVien.Text = "Nhân Viên";
             // 
             // itemTaiKhoan
@@ -245,7 +252,7 @@ namespace PBL
             // menuItemThongKe
             // 
             this.menuItemThongKe.Name = "menuItemThongKe";
-            this.menuItemThongKe.Size = new System.Drawing.Size(86, 24);
+            this.menuItemThongKe.Size = new System.Drawing.Size(86, 26);
             this.menuItemThongKe.Text = "Thống Kê";
             this.menuItemThongKe.Click += new System.EventHandler(this.menuItemThongKe_Click);
             // 
@@ -322,7 +329,7 @@ namespace PBL
             this.tpKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpKhachHang.Name = "tpKhachHang";
             this.tpKhachHang.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpKhachHang.Size = new System.Drawing.Size(611, 677);
+            this.tpKhachHang.Size = new System.Drawing.Size(611, 675);
             this.tpKhachHang.TabIndex = 0;
             this.tpKhachHang.Text = "Khách hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
@@ -464,7 +471,7 @@ namespace PBL
             this.tpBooking.Margin = new System.Windows.Forms.Padding(4);
             this.tpBooking.Name = "tpBooking";
             this.tpBooking.Padding = new System.Windows.Forms.Padding(4);
-            this.tpBooking.Size = new System.Drawing.Size(611, 677);
+            this.tpBooking.Size = new System.Drawing.Size(611, 675);
             this.tpBooking.TabIndex = 4;
             this.tpBooking.Text = "Đặt phòng";
             this.tpBooking.UseVisualStyleBackColor = true;
@@ -644,7 +651,7 @@ namespace PBL
             this.tpCheckin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpCheckin.Name = "tpCheckin";
             this.tpCheckin.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpCheckin.Size = new System.Drawing.Size(611, 677);
+            this.tpCheckin.Size = new System.Drawing.Size(611, 675);
             this.tpCheckin.TabIndex = 1;
             this.tpCheckin.Text = "Checkin";
             this.tpCheckin.UseVisualStyleBackColor = true;
@@ -1228,13 +1235,6 @@ namespace PBL
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1505, 706);
             this.panel7.TabIndex = 8;
-            // 
-            // ItemHoaDon
-            // 
-            this.ItemHoaDon.Name = "ItemHoaDon";
-            this.ItemHoaDon.Size = new System.Drawing.Size(231, 26);
-            this.ItemHoaDon.Text = "Hoá đơn";
-            this.ItemHoaDon.Click += new System.EventHandler(this.ItemHoaDon_Click);
             // 
             // fHome
             // 

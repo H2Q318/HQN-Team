@@ -97,6 +97,8 @@
             this.panel24 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
             this.txbMaBook = new System.Windows.Forms.TextBox();
+            this.txbTongBill = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.txbGiaBill = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.dtpNgayDat = new System.Windows.Forms.DateTimePicker();
@@ -193,8 +195,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txbTongBill = new System.Windows.Forms.TextBox();
             this.tabPage5.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -797,7 +797,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Size = new System.Drawing.Size(1307, 552);
             this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "BillDichVu";
+            this.tabPage1.Text = "Hoá đơn dịch vụ";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel22
@@ -1004,6 +1004,24 @@
             this.txbMaBook.Size = new System.Drawing.Size(75, 22);
             this.txbMaBook.TabIndex = 26;
             // 
+            // txbTongBill
+            // 
+            this.txbTongBill.Enabled = false;
+            this.txbTongBill.Location = new System.Drawing.Point(763, 70);
+            this.txbTongBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbTongBill.Name = "txbTongBill";
+            this.txbTongBill.Size = new System.Drawing.Size(143, 22);
+            this.txbTongBill.TabIndex = 25;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(715, 75);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(41, 17);
+            this.label32.TabIndex = 24;
+            this.label32.Text = "Tổng";
+            // 
             // txbGiaBill
             // 
             this.txbGiaBill.Enabled = false;
@@ -1105,7 +1123,7 @@
             this.tpMenuDichVu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpMenuDichVu.Size = new System.Drawing.Size(1307, 552);
             this.tpMenuDichVu.TabIndex = 2;
-            this.tpMenuDichVu.Text = "Dịch Vụ";
+            this.tpMenuDichVu.Text = "Loại dịch vụ";
             this.tpMenuDichVu.UseVisualStyleBackColor = true;
             // 
             // panel10
@@ -1992,8 +2010,8 @@
             // 
             this.tabcontrol.Controls.Add(this.tpKhachHang);
             this.tabcontrol.Controls.Add(this.tabPage2);
-            this.tabcontrol.Controls.Add(this.tpMenuDichVu);
             this.tabcontrol.Controls.Add(this.tabPage1);
+            this.tabcontrol.Controls.Add(this.tpMenuDichVu);
             this.tabcontrol.Controls.Add(this.tabPage3);
             this.tabcontrol.Controls.Add(this.tabPage5);
             this.tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2003,24 +2021,6 @@
             this.tabcontrol.SelectedIndex = 0;
             this.tabcontrol.Size = new System.Drawing.Size(1315, 581);
             this.tabcontrol.TabIndex = 1;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(715, 75);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(41, 17);
-            this.label32.TabIndex = 24;
-            this.label32.Text = "Tổng";
-            // 
-            // txbTongBill
-            // 
-            this.txbTongBill.Enabled = false;
-            this.txbTongBill.Location = new System.Drawing.Point(763, 70);
-            this.txbTongBill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txbTongBill.Name = "txbTongBill";
-            this.txbTongBill.Size = new System.Drawing.Size(143, 22);
-            this.txbTongBill.TabIndex = 25;
             // 
             // fMenuQuanLy
             // 

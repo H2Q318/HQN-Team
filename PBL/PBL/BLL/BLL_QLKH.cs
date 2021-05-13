@@ -1,9 +1,11 @@
 ﻿using PBL.DAL;
+using PBL.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PBL.BLL
 {
@@ -28,14 +30,35 @@ namespace PBL.BLL
         {
             return new QLKS().KHACHHANGs.ToList();
         }
+        public List<KH_View> GetAlllKhView(List<KHACHHANG> l)
+        {
+            return l.Select(p => new KH_View()
+            {
+                KhachHangID = p.KhachHangID,
+                Ten = p.Ten,
+                GioiTinh=p.GioiTinh,
+                CMND=p.CMND,
+                SDT=p.SDT,
+                QuocTich=p.QuocTich,
+                GhiChu=p.GhiChu
+            }).ToList();
+        }
         public void AddKh(KHACHHANG s)
         {
-            QLKS db = new QLKS();
-            db.KHACHHANGs.Add(s);
-            db.SaveChanges();
+            try
+            {
+                QLKS db = new QLKS();
+                db.KHACHHANGs.Add(s);
+                db.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng nhập thông tin đầy đủ");
+            }
         }
         public void UpdateKh(KHACHHANG p)
         {
+        
             QLKS db = new QLKS();
             var kh = db.KHACHHANGs.Find(p.KhachHangID);
             if (kh != null)
@@ -49,6 +72,20 @@ namespace PBL.BLL
                 db.SaveChanges();
             }
 
+        }
+        public List<KH_View> FindKhByName(string s)
+        {
+           
+            return new QLKS().KHACHHANGs.Where(p=>p.Ten.Contains(s)).ToList().Select(p => new KH_View()
+            {
+                KhachHangID = p.KhachHangID,
+                Ten = p.Ten,
+                GioiTinh = p.GioiTinh,
+                CMND = p.CMND,
+                SDT = p.SDT,
+                QuocTich = p.QuocTich,
+                GhiChu = p.GhiChu
+            }).ToList();
         }
         public KHACHHANG FindKh(string s)
         {
@@ -68,6 +105,27 @@ namespace PBL.BLL
                 db.KHACHHANGs.Remove(db.KHACHHANGs.Find(s));
                 db.SaveChanges();
             }
+        }
+        public void Sort(List<KH_View> listKH ,string sort)
+        {
+            if(sort =="Name")
+            {
+                Comparison<KH_View> KHcomparison = new Comparison<KH_View>(CompareName);
+                listKH.Sort(KHcomparison);
+            }
+            else
+            {
+                Comparison<KH_View> KHcomparison = new Comparison<KH_View>(CompareID);
+                listKH.Sort(KHcomparison);
+            }    
+        }
+        private static int CompareID(KH_View x, KH_View y)
+        {
+            return x.KhachHangID.CompareTo(y.KhachHangID);
+        }
+        private static int CompareName(KH_View x, KH_View y)
+        {
+            return x.Ten.CompareTo(y.Ten);
         }
     }
 }

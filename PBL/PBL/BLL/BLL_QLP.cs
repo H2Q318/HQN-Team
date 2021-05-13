@@ -73,5 +73,26 @@ namespace PBL
                 db.SaveChanges();
             }
         }
+        public List<PHONG> Sort(string s, List<string> l)
+        {
+            List<PHONG> data = new List<PHONG>();
+            foreach(string i in l)
+            {
+                data.Add(FindPhong(i));
+            }
+            switch (s)
+            {
+                case "Tên phòng":
+                    data = data.OrderByDescending(p => p.PhongID).ToList();
+                    break;
+                case "Tên loại phòng":
+                    data = data.OrderByDescending(p => p.LOAIPHONG.TenLoaiPhong).ToList();
+                    break;
+                case "Trạng thái":
+                    data = data.OrderByDescending(p => p.TrangThai).ToList();
+                    break;
+            }
+            return data;
+        }
     }
 }

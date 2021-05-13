@@ -32,9 +32,17 @@ namespace PBL.BLL
             }
             return new QLKS().LOAIVATDUNGs.ToList();
         }
-        public LOAIVATDUNG FindLoaiVatDung(string s)
+        public LOAIVATDUNG FindLoaiVatDung(string tenvatdung)
         {
-            return new QLKS().LOAIVATDUNGs.Find(s);
+            QLKS db = new QLKS();
+            foreach(LOAIVATDUNG i in db.LOAIVATDUNGs)
+            {
+                if (i.TenVatDung.Equals(tenvatdung))
+                {
+                    return i;
+                }
+            }
+            return null;
         }
         public void AddLoaiVatDung(LOAIVATDUNG lvd)
         {
@@ -59,6 +67,24 @@ namespace PBL.BLL
                 db.LOAIVATDUNGs.Remove(db.LOAIVATDUNGs.Find(s));
                 db.SaveChanges();
             }
+        }
+        public List<LOAIVATDUNG>  Sort(string s, List<string> l)
+        {
+            List<LOAIVATDUNG> data = new List<LOAIVATDUNG>();
+            foreach(string i in l)
+            {
+                data.Add(FindLoaiVatDung(i));
+            }
+            switch (s)
+            {
+                case "Tên vật dụng":
+                    data = data.OrderByDescending(p => p.TenVatDung).ToList();
+                    break;
+                case "Đơn giá":
+                    data = data.OrderByDescending(p => p.DonGia).ToList();
+                    break;
+            }
+            return data;
         }
     }
 }

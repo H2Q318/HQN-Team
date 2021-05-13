@@ -59,6 +59,10 @@ namespace PBL
         {
             dgvCIKhachHang.DataSource = BLL_QLKH.Instance.GetAllKhachHang();
             dgvDPKhachHang.DataSource= BLL_QLKH.Instance.GetAllKhachHang();
+            dgvCIKhachHang.Columns["BOOKs"].Visible = false;
+            dgvCIKhachHang.Columns["BOOKs1"].Visible = false;
+            dgvDPKhachHang.Columns["BOOKs"].Visible = false;
+            dgvDPKhachHang.Columns["BOOKs1"].Visible = false;
         }
         void LoadMenudv()
         {
@@ -124,7 +128,7 @@ namespace PBL
 
         private void itemMenuChinh_Click(object sender, EventArgs e)
         {
-            fMenuQuanLy f = new fMenuQuanLy();
+            fMenuQuanLy f = new fMenuQuanLy(IDNhanVien);
             f.ShowDialog();
         }
 
@@ -332,6 +336,7 @@ namespace PBL
             {
                 fBillDetail f = new fBillDetail(HoaDonID);
                 f.ShowDialog();
+                HoaDonID = "-1";
             }
         }
 

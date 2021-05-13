@@ -36,14 +36,14 @@ namespace PBL.View
             this.btXoa = new System.Windows.Forms.Button();
             this.btDetail = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.lbReset = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btReset = new System.Windows.Forms.Button();
             this.cbbSort = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btReset = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -53,7 +53,6 @@ namespace PBL.View
             // 
             // dgvHoaDon
             // 
-            this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Location = new System.Drawing.Point(4, 3);
             this.dgvHoaDon.Name = "dgvHoaDon";
@@ -111,6 +110,16 @@ namespace PBL.View
             this.panel3.Size = new System.Drawing.Size(236, 122);
             this.panel3.TabIndex = 3;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(77, 75);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(87, 33);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // lbReset
             // 
             this.lbReset.AutoSize = true;
@@ -150,6 +159,16 @@ namespace PBL.View
             this.panel4.Size = new System.Drawing.Size(236, 321);
             this.panel4.TabIndex = 4;
             // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(77, 74);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(87, 33);
+            this.btReset.TabIndex = 2;
+            this.btReset.Text = "Reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // cbbSort
             // 
             this.cbbSort.FormattingEnabled = true;
@@ -167,26 +186,6 @@ namespace PBL.View
             this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Sắp xếp theo:";
-            // 
-            // btReset
-            // 
-            this.btReset.Location = new System.Drawing.Point(77, 74);
-            this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(87, 33);
-            this.btReset.TabIndex = 2;
-            this.btReset.Text = "Reset";
-            this.btReset.UseVisualStyleBackColor = true;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(77, 75);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(87, 33);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Tìm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // fHoaDon
             // 

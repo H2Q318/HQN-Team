@@ -545,7 +545,7 @@ as
 			and TrangThaiVatDungID = N'Khách làm hư'
 
 	select @tiendichvu = ISNULL(@tiendichvu, 0)
-	select @tienphong = ISNULL(@tienphong, 0)
+	select @tienphong = ISNULL(@tienphong, @gia)
 	select @tienvattu= ISNULL(@tienvattu, 0)
 
 	select @tongtien = @tienphong + @tiendichvu + @tienvattu

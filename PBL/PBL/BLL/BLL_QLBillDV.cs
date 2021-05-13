@@ -77,5 +77,35 @@ namespace PBL.BLL
                 db.SaveChanges();
             }
         }
+        public List<HOADON_DUNG_DICHVU> Sort(string s, List<int> l)
+        {
+            List<HOADON_DUNG_DICHVU> data = new List<HOADON_DUNG_DICHVU>();
+            foreach(int i in l)
+            {
+                data.Add(FindBillDV(i));
+            }
+            switch(s)
+            {
+                case "Mã Book":
+                    data = data.OrderByDescending(p => p.ID).ToList();
+                    break;
+                case "Tên nhân viên":
+                    data = data.OrderByDescending(p => p.NHANVIEN.Ten).ToList();
+                    break;
+                case "Tên dịch vụ":
+                    data = data.OrderByDescending(p => p.LOAIDICHVU.TenDichVu).ToList();
+                    break;
+                case "Ngày":
+                    data = data.OrderByDescending(p => p.Ngay).ToList();
+                    break;
+                case "Số lượng":
+                    data = data.OrderByDescending(p => p.SoLuong).ToList();
+                    break;
+                case "Thành tiền":
+                    data = data.OrderByDescending(p => p.ThanhTien).ToList();
+                    break;
+            }
+            return data;
+        }
     }
 }

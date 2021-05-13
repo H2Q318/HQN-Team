@@ -81,9 +81,12 @@ namespace PBL.View
 
         private void cbbSort_DropDownClosed(object sender, EventArgs e)
         {
-            dgvHoaDon.DataSource = BLL_QLBill.Instance.Sort(cbbSort.SelectedItem.ToString(), GetAllHoaDonID());
-            dgvHoaDon.Columns["BOOK"].Visible = false;
-            dgvHoaDon.Columns["HoaDonID"].Visible = false;
+            if (cbbSort.SelectedIndex != -1)
+            {    
+                dgvHoaDon.DataSource = BLL_QLBill.Instance.Sort(cbbSort.SelectedItem.ToString(), GetAllHoaDonID());
+                dgvHoaDon.Columns["BOOK"].Visible = false;
+                dgvHoaDon.Columns["HoaDonID"].Visible = false;
+            }
         }
 
         private void btReset_Click(object sender, EventArgs e)

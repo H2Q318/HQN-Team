@@ -32,9 +32,17 @@ namespace PBL.BLL
             }
             return new QLKS().LOAIPHONGs.ToList();
         }
-        public LOAIPHONG FindLoaiPhong(string s)
+        public LOAIPHONG FindLoaiPhong(string tenloaiphong)
         {
-            return new QLKS().LOAIPHONGs.Find(s);
+            QLKS db = new QLKS();
+            foreach(LOAIPHONG i in db.LOAIPHONGs)
+            {
+                if (i.TenLoaiPhong.Equals(tenloaiphong))
+                {
+                    return i;
+                }
+            }
+            return null;
         }
         public void DeleteLoaiPhong(List<string> l)
         {
@@ -59,6 +67,27 @@ namespace PBL.BLL
             lp1.Gia = lp.Gia;
             lp1.SoNguoi = lp.SoNguoi;
             db.SaveChanges();
+        }
+        public List<LOAIPHONG> Sort(string s, List<string> l)
+        {
+            List<LOAIPHONG> data = new List<LOAIPHONG>();
+            foreach(string i in l)
+            {
+                data.Add(FindLoaiPhong(i));
+            }
+            switch(s)
+            {
+                case "Tên loại phòng":
+                    data = data.OrderByDescending(p => p.TenLoaiPhong).ToList();
+                    break;
+                case "Số người":
+                    data = data.OrderByDescending(p => p.SoNguoi).ToList();
+                    break;
+                case "Giá":
+                    data = data.OrderByDescending(p => p.Gia).ToList();
+                    break;
+            }
+            return data;
         }
     }
 }

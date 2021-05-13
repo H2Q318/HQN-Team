@@ -15,9 +15,11 @@ namespace PBL
 {
     public partial class fMenuQuanLy : Form
     {
-        public fMenuQuanLy()
+        private string NhanVienID;
+        public fMenuQuanLy(string nhanvienid)
         {
             InitializeComponent();
+            NhanVienID = nhanvienid;
             GUIPhong();
             GUILoaiPhong();
             GUILoaiVatDung();
@@ -37,6 +39,12 @@ namespace PBL
                     Value = i.LoaiPhongID
                 });
             }
+            cbSortPhong.Items.AddRange(new string[]
+            {
+                "Tên phòng",
+                "Tên loại phòng",
+                "Trạng thái"
+            });
             cbTenLoaiPhong.SelectedIndex = 0;
             ShowDGVPhong(null);
         }
@@ -163,7 +171,34 @@ namespace PBL
             rbtAvailable.Checked = p.TrangThai;
             rbtNotAvailable.Checked = !p.TrangThai;
         }
+        private List<string> GetAllPhong()
+        {
+            List<string> data = new List<string>();
+            foreach(DataGridViewRow r in dgvPhong.Rows)
+            {
+                data.Add(r.Cells["PhongID"].Value.ToString());
+            }
+            return data;
+        }
+        private void cbSortPhong_DropDownClosed(object sender, EventArgs e)
+        {
+            if(cbSortPhong.SelectedIndex != -1)
+            {
+                dgvPhong.DataSource = BLL_QLP.Instance.GetListPhong_View(BLL_QLP.Instance.Sort(cbSortPhong.SelectedItem.ToString(), GetAllPhong()));
+            }
+        }
 
+        private void btnSortPhong_Click(object sender, EventArgs e)
+        {
+            if (cbSortPhong.SelectedIndex != -1)
+            {
+                dgvPhong.DataSource = BLL_QLP.Instance.GetListPhong_View(BLL_QLP.Instance.Sort(cbSortPhong.SelectedItem.ToString(), GetAllPhong()));
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn mục để sắp xếp !");
+            }
+        }
         private void txbMaPhong_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = (!Char.IsDigit(e.KeyChar) && (e.KeyChar != 8));
@@ -174,6 +209,7 @@ namespace PBL
         #region Quản lý loại phòng
         private void GUILoaiPhong()
         {
+            cbSortLP.Items.AddRange(new string[] { "Tên loại phòng", "Số người", "Giá" });
             ShowDGVLoaiPhong(null);
         }
         private List <string> GetListLoaiPhongID()
@@ -194,56 +230,57 @@ namespace PBL
         }
         private void btnThemLP_Click(object sender, EventArgs e)
         {
-            if (BLL_QLLP.Instance.FindLoaiPhong(txbMaLoaiPhong.Text.Trim()) == null)
+            if (BLL_QLLP.Instance.FindLoaiPhong(txbTenLoaiPhong.Text.Trim()) == null)
             {
-                if (string.IsNullOrEmpty(txbTenLoaiPhong.Text.Trim()))
+                try
                 {
-                    MessageBox.Show("Tên loại phòng không được để trống !");
+                    LOAIPHONG lp = new LOAIPHONG
+                    {
+                        TenLoaiPhong = txbTenLoaiPhong.Text.Trim(),
+                        Gia = Convert.ToDecimal(txbGiaLP.Text.Trim()),
+                        SoNguoi = Convert.ToInt32(nUDSoNguoi.Value),
+                    };
+                    BLL_QLLP.Instance.AddLoaiPhong(lp);
+                    ShowDGVLoaiPhong(null);
                 }
-                else
+                catch
                 {
-                    try
-                    {
-                        LOAIPHONG lp = new LOAIPHONG
-                        {
-                            TenLoaiPhong = txbTenLoaiPhong.Text.Trim(),
-                            Gia = Convert.ToDecimal(txbGiaLP.Text.Trim()),
-                            SoNguoi = Convert.ToInt32(nUDSoNguoi.Value),
-                        };
-                        BLL_QLLP.Instance.AddLoaiPhong(lp);
-                        ShowDGVLoaiPhong(null);
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Vui long nhap day du thong tin !");
-                    }
+                    MessageBox.Show("Vui long nhap day du thong tin !");
                 }
             }
             else
             {
-                MessageBox.Show("Mã loại phòng đã tồn tại !");
+                MessageBox.Show("Tên loại phòng đã tồn tại !");
             }
             
         }
 
         private void btnSuaLP_Click(object sender, EventArgs e)
         {
-            if (BLL_QLLP.Instance.FindLoaiPhong(txbMaLoaiPhong.Text) != null)
+            if (dgvLoaiPhong.SelectedRows.Count == 1)
             {
-                LOAIPHONG lp = new LOAIPHONG
+                if (BLL_QLLP.Instance.FindLoaiPhong(txbTenLoaiPhong.Text.Trim()) != null)
                 {
-                    LoaiPhongID = txbMaLoaiPhong.Text,
-                    TenLoaiPhong = txbTenLoaiPhong.Text.Trim(),
-                    Gia = Convert.ToDecimal(txbGiaLP.Text.Trim()),
-                    SoNguoi = Convert.ToInt32(nUDSoNguoi.Value)
-                };
-                BLL_QLLP.Instance.UpdateLoaiPhong(lp);
-                ShowDGVLoaiPhong(null);
+                    LOAIPHONG lp = new LOAIPHONG
+                    {
+                        LoaiPhongID = dgvLoaiPhong.SelectedRows[0].Cells["LoaiPhongID"].Value.ToString(),
+                        TenLoaiPhong = txbTenLoaiPhong.Text.Trim(),
+                        Gia = Convert.ToDecimal(txbGiaLP.Text.Trim()),
+                        SoNguoi = Convert.ToInt32(nUDSoNguoi.Value)
+                    };
+                    BLL_QLLP.Instance.UpdateLoaiPhong(lp);
+                    ShowDGVLoaiPhong(null);
+                }
+                else
+                {
+                    MessageBox.Show("Tên loại phòng này không tồn tại !");
+                }
             }
             else
             {
-                MessageBox.Show("Ma loai phong khong ton tai, chon duy nhat mot loai phong de sua !");
+                MessageBox.Show("Chọn một dòng loại phòng duy nhất để sửa !");
             }
+            
         }
 
         private void btnXoaLP_Click(object sender, EventArgs e)
@@ -260,7 +297,6 @@ namespace PBL
 
         private void btnResetLP_Click(object sender, EventArgs e)
         {
-            txbMaLoaiPhong.Clear();
             txbGiaLP.Clear();
             txbTenLoaiPhong.Clear();
             nUDSoNguoi.Value = 0;
@@ -279,13 +315,42 @@ namespace PBL
 
         private void dgvLoaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            LOAIPHONG lp = BLL_QLLP.Instance.FindLoaiPhong(dgvLoaiPhong.SelectedRows[0].Cells["LoaiPhongID"].Value.ToString());
-            txbMaLoaiPhong.Text = lp.LoaiPhongID;
+            LOAIPHONG lp = BLL_QLLP.Instance.FindLoaiPhong(dgvLoaiPhong.SelectedRows[0].Cells["TenLoaiPhong"].Value.ToString());
             txbGiaLP.Text = lp.Gia.ToString();
             txbTenLoaiPhong.Text = lp.TenLoaiPhong;
             nUDSoNguoi.Value = lp.SoNguoi;
         }
-
+        private List<string> GetAllDGVTenLoaiPhong()
+        {
+            List<string> data = new List<string>();
+            foreach(DataGridViewRow r in dgvLoaiPhong.Rows)
+            {
+                data.Add(r.Cells["TenLoaiPhong"].Value.ToString());
+            }
+            return data;
+        }
+        private void cbSortLP_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbSortLP.SelectedIndex != -1)
+            {
+                dgvLoaiPhong.DataSource = BLL_QLLP.Instance.Sort(cbSortLP.SelectedItem.ToString(), GetAllDGVTenLoaiPhong());
+                dgvLoaiPhong.Columns["LoaiPhongID"].Visible = false;
+                dgvLoaiPhong.Columns["PHONGs"].Visible = false;
+            }
+        }
+        private void btnSortLP_Click(object sender, EventArgs e)
+        {
+            if (cbSortLP.SelectedIndex != -1)
+            {
+                dgvLoaiPhong.DataSource = BLL_QLLP.Instance.Sort(cbSortLP.SelectedItem.ToString(), GetAllDGVTenLoaiPhong());
+                dgvLoaiPhong.Columns["LoaiPhongID"].Visible = false;
+                dgvLoaiPhong.Columns["PHONGs"].Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn mục để sắp xếp !");
+            }
+        }
         private void txbGiaLP_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = (!Char.IsDigit(e.KeyChar) && (e.KeyChar != 8));
@@ -297,6 +362,7 @@ namespace PBL
 
         private void GUILoaiVatDung()
         {
+            cbSortLoaiVD.Items.AddRange(new string[] { "Tên vật dụng", "Đơn giá" });
             ShowDGVLoaiVatDung(null);
         }
         private void ShowDGVLoaiVatDung(string s)
@@ -314,9 +380,18 @@ namespace PBL
             }
             return data;
         }
+        private List<string> GetAllDGVTenVatDung()
+        {
+            List<string> data = new List<string>();
+            foreach(DataGridViewRow r in dgvLoaiVatDung.Rows)
+            {
+                data.Add(r.Cells["TenVatDung"].Value.ToString());
+            }
+            return data;
+        }
         private void btnThemVT_Click(object sender, EventArgs e)
         {
-            if (BLL_QLVD.Instance.FindLoaiVatDung(txbIDVt.Text.Trim()) == null)
+            if (BLL_QLVD.Instance.FindLoaiVatDung(txbTenVt.Text.Trim()) == null)
             {
                 try
                 {
@@ -336,25 +411,21 @@ namespace PBL
             }
             else
             {
-                MessageBox.Show("Mã vật dụng đã tồn tại !");
+                MessageBox.Show("Tên vật dụng đã tồn tại !");
             }
         }
 
         private void btnSuaVT_Click(object sender, EventArgs e)
         {
-            if (BLL_QLVD.Instance.FindLoaiVatDung(txbIDVt.Text) != null)
+            if(dgvLoaiVatDung.SelectedRows.Count == 1)
             {
-                if (string.IsNullOrEmpty(txbTenVt.Text.Trim()))
-                {
-                    MessageBox.Show("Tên vật dụng không được để trống !");
-                }
-                else
+                if (BLL_QLVD.Instance.FindLoaiVatDung(txbTenVt.Text.Trim()) != null)
                 {
                     try
                     {
                         LOAIVATDUNG lvd = new LOAIVATDUNG
                         {
-                            VatDungID = txbIDVt.Text,
+                            VatDungID = dgvLoaiVatDung.SelectedRows[0].Cells["VatDungID"].Value.ToString(),
                             TenVatDung = txbTenVt.Text.Trim(),
                             ThietBiCoDinh = checkBoxTBCoDinh.Checked,
                             DonGia = Convert.ToDecimal(txbDonGiaVt.Text.Trim())
@@ -367,11 +438,16 @@ namespace PBL
                         MessageBox.Show("Vui lòng nhập đầy đủ thông tin và đúng kiểu dữ liệu !");
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Tên vật dụng không tồn tại !");
+                }
             }
             else
             {
-                MessageBox.Show("Mã vật dụng không đúng, chọn duy nhất một dòng để sửa !");
+                MessageBox.Show("Chọn duy nhất một dòng để sửa !");
             }
+            
         }
 
         private void btnXoaVT_Click(object sender, EventArgs e)
@@ -382,7 +458,6 @@ namespace PBL
 
         private void btnResetVT_Click(object sender, EventArgs e)
         {
-            txbIDVt.Clear();
             txbTenVt.Clear();
             txbDonGiaVt.Clear();
             checkBoxTBCoDinh.Checked = false;
@@ -405,13 +480,33 @@ namespace PBL
 
         private void dgvVatTu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            LOAIVATDUNG lvd = BLL_QLVD.Instance.FindLoaiVatDung(dgvLoaiVatDung.SelectedRows[0].Cells["VatDungID"].Value.ToString());
+            LOAIVATDUNG lvd = BLL_QLVD.Instance.FindLoaiVatDung(dgvLoaiVatDung.SelectedRows[0].Cells["TenVatDung"].Value.ToString());
             txbTenVt.Text = lvd.TenVatDung;
-            txbIDVt.Text = lvd.VatDungID;
             checkBoxTBCoDinh.Checked = (bool)lvd.ThietBiCoDinh;
             txbDonGiaVt.Text = lvd.DonGia.ToString();
         }
-
+        private void cbSortLoaiVD_DropDownClosed(object sender, EventArgs e)
+        {
+            if(cbSortLoaiVD.SelectedIndex != -1)
+            {
+                dgvLoaiVatDung.DataSource = BLL_QLVD.Instance.Sort(cbSortLoaiVD.SelectedItem.ToString(), GetAllDGVTenVatDung());
+                dgvLoaiVatDung.Columns["VatDungID"].Visible = false;
+                dgvLoaiVatDung.Columns["VATDUNGPHONGs"].Visible = false;
+            }
+        }
+        private void btnSortLoaiVD_Click(object sender, EventArgs e)
+        {
+            if (cbSortLoaiVD.SelectedIndex != -1)
+            {
+                dgvLoaiVatDung.DataSource = BLL_QLVD.Instance.Sort(cbSortLoaiVD.SelectedItem.ToString(), GetAllDGVTenVatDung());
+                dgvLoaiVatDung.Columns["VatDungID"].Visible = false;
+                dgvLoaiVatDung.Columns["VATDUNGPHONGs"].Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa chọn mục để sắp xếp !");
+            }
+        }
         #endregion
 
         #region Quản lý dịch vụ
@@ -581,6 +676,15 @@ namespace PBL
             {
                 cbTenDV.Items.Add(new CBBItem { Text = i.TenDichVu, Value = i.DichVuID });
             }
+            cbSortBillDV.Items.AddRange(new string[]
+            {
+                "Mã Book",
+                "Tên nhân viên",
+                "Tên dịch vụ",
+                "Ngày",
+                "Số lượng",
+                "Thành tiền"
+            });
             cbTenDV.SelectedIndex = 0;
             ShowDGVBillDV();
         }
@@ -601,7 +705,7 @@ namespace PBL
                         DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value.Trim(),
                         SoLuong = Convert.ToInt32(nUDSoLuong.Value),
                         Ngay = dtpNgayDat.Value,
-                        NhanVienID = "NV070521003"
+                        NhanVienID = this.NhanVienID
 
                     };
                     BLL_QLBillDV.Instance.AddBillDV(p);
@@ -628,7 +732,7 @@ namespace PBL
                             DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value.Trim(),
                             SoLuong = Convert.ToInt32(nUDSoLuong.Value),
                             Ngay = dtpNgayDat.Value,
-                            NhanVienID = "NV070521003"
+                            NhanVienID = this.NhanVienID
                         };
                         BLL_QLBillDV.Instance.AddBillDV(p);
                         ShowDGVBillDV();
@@ -727,7 +831,38 @@ namespace PBL
             txbTongBill.Text = p.ThanhTien.ToString();
             txbGiaBill.Text = p.LOAIDICHVU.DonGia.ToString();
         }
+        private List<int> GetAllDGVHoaDonDichVuID()
+        {
+            List<int> data = new List<int>();
+            foreach(DataGridViewRow r in dgvBillDV.Rows)
+            {
+                data.Add(Convert.ToInt32(r.Cells["ID"].Value.ToString()));
+            }
+            return data;
+        }
+        private void cbSortBillDV_DropDownClosed(object sender, EventArgs e)
+        {
+            if(cbSortBillDV.SelectedIndex != -1)
+            {
+                dgvBillDV.DataSource = BLL_QLBillDV.Instance.GetListBillDV_View(
+                    BLL_QLBillDV.Instance.Sort(cbSortBillDV.SelectedItem.ToString(), GetAllDGVHoaDonDichVuID()));
+            }
+        }
+
+        private void btnSortBillDV_Click(object sender, EventArgs e)
+        {
+            if (cbSortBillDV.SelectedIndex != -1)
+            {
+                dgvBillDV.DataSource = BLL_QLBillDV.Instance.GetListBillDV_View(
+                    BLL_QLBillDV.Instance.Sort(cbSortBillDV.SelectedItem.ToString(), GetAllDGVHoaDonDichVuID()));
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một mục để sắp xếp !");
+            }
+        }
         #endregion
+
         #region Quản lý Khách hàng
         private void GuiKhachHang()
         {
@@ -843,6 +978,6 @@ namespace PBL
             }
         }
 
-        #endregion  
+        #endregion
     }
 }

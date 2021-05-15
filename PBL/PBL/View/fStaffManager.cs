@@ -241,6 +241,7 @@ namespace PBL
                 {
                     MessageBox.Show("Them nhan vien thanh cong!");
                     RefreshNV();
+                    ShowDgvStaff();
                 }
                 else
                 {
@@ -276,6 +277,7 @@ namespace PBL
                     {
                         MessageBox.Show("Cap nhat thong tin nhan vien thanh cong!");
                         RefreshNV();
+                        ShowDgvStaff();
                     }
                     else
                     {
@@ -303,6 +305,7 @@ namespace PBL
                 {
                     MessageBox.Show("Xoa nhan vien thanh cong!");
                     RefreshNV();
+                    ShowDgvStaff();
                 }
                 else
                 {

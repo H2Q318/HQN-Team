@@ -47,9 +47,13 @@ namespace PBL.BLL
             try
             {
                 QLKS db = new QLKS();
-                if (db.BOOKs.Where(p => (p.PhongID == s.PhongID) && (p.NgayCheckIn_ThucTe != null) && (p.NgayCheckOut_ThucTe == null)).Select(p => p.BookID).ToList().Count > 0)
+                var t = db.BOOKs.Where(p => (p.PhongID == s.PhongID) && (p.NgayCheckIn_ThucTe != null) &&
+                (p.NgayCheckOut_ThucTe == null)).Select(p => p.BookID).ToList();
+                if (t.Count > 0)
                 {
-                    MessageBox.Show("Phòng đang được book");
+                    db.BOOKs.Find(t[0]).KHACHHANGs.Add(db.KHACHHANGs.Find(s.KhachHangID));
+                   // db.KHACHHANGs.Find(s.KhachHangID).BOOKs1.Add(db.BOOKs.Find(t[0])); //cách 2
+                    db.SaveChanges();
                     return;
                 }
                 var z = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null) && (p.KhachHangID == s.KhachHangID)).Select(p => p.BookID).ToList();
@@ -60,10 +64,10 @@ namespace PBL.BLL
                 }
                 else
                 {
-                    var t = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null)).Select(p => p.NgayCheckIn).ToList();
-                    if (t.Count > 0)
+                    var v = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null)).Select(p => p.NgayCheckIn).ToList();
+                    if (v.Count > 0)
                     {
-                        if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + t[0] + "\n Bạn có muốn tiếp tục Checkin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                        if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + v[0] + "\n Bạn có muốn tiếp tục Checkin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
                         {
                             db.BOOKs.Add(s);
                             db.SaveChanges();
@@ -101,12 +105,12 @@ namespace PBL.BLL
         }
         public HOADON Checkout(string IDBook, DateTime t)
         {
-            QLKS db = new QLKS();
-            db.sp_Cal_HoaDon(IDBook);
-            db.BOOKs.Find(IDBook).NgayCheckOut_ThucTe = t;
-            var s = db.HOADONs.Where(p => p.BookID == IDBook).First();
-            db.SaveChanges();
-            return s;
+                QLKS db = new QLKS();
+                db.BOOKs.Find(IDBook).NgayCheckOut_ThucTe = t;
+                db.sp_Cal_HoaDon(IDBook);
+                db.SaveChanges();
+                var s = db.HOADONs.Where(p => p.BookID == IDBook).First();
+                return s;   
         }
     }
 }

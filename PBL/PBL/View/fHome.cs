@@ -1,6 +1,7 @@
 ﻿
 using PBL.BLL;
 using PBL.DAL;
+using PBL.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace PBL
         private string IDPhong;
         private string MaLoaiPhong;
         private string IDNhanVien;
+        private string HoaDonID = "-1";
         public fHome(string username)
         {
             IDNhanVien = username;
@@ -41,20 +43,26 @@ namespace PBL
             List<PHONG> listRoom = BLL_QLP.Instance.GetListPhong();
             flpRom.Controls.Clear(); 
             foreach (PHONG item in listRoom) 
-            { Button btn = new Button() { Width = 100, Height = 100 }; 
+            { 
+                Button btn = new Button() { Width = 100, Height = 100 }; 
                 btn.Text = item.PhongID + Environment.NewLine + item.TrangThai;
                 btn.Click += btn_Click;
                 btn.Tag = item;
                 if(item.TrangThai) 
                     btn.BackColor = Color.Aqua; 
                 else 
-                    btn.BackColor = Color.Red; flpRom.Controls.Add(btn); 
+                    btn.BackColor = Color.Red; 
+                flpRom.Controls.Add(btn); 
             } 
         }
         private void LoadDataGridView()
         {
             dgvCIKhachHang.DataSource = BLL_QLKH.Instance.GetAllKhachHang();
             dgvDPKhachHang.DataSource= BLL_QLKH.Instance.GetAllKhachHang();
+            dgvCIKhachHang.Columns["BOOKs"].Visible = false;
+            dgvCIKhachHang.Columns["BOOKs1"].Visible = false;
+            dgvDPKhachHang.Columns["BOOKs"].Visible = false;
+            dgvDPKhachHang.Columns["BOOKs1"].Visible = false;
         }
         void LoadMenudv()
         {
@@ -67,19 +75,17 @@ namespace PBL
         {
             IDPhong = ((sender as Button).Tag as PHONG).PhongID;
             MaLoaiPhong = ((sender as Button).Tag as PHONG).LoaiPhongID;
-           
-            txbGia.Text = ((sender as Button).Tag as PHONG).LOAIPHONG.Gia.ToString();
-           
+            txbGia.Text = ((sender as Button).Tag as PHONG).LOAIPHONG.Gia.ToString();         
             txbCIMaPhong.Text = IDPhong.ToString();
             txbMaPhongOut.Text = IDPhong.ToString();
             txbDPMaPhong.Text = IDPhong.ToString();
             TxbRoom.Text = ((sender as Button).Tag as PHONG).PhongID;
             ShowBill(IDPhong);
             if (IDBook == "-1")
-                txbMaKhachOut.Text = "";
+                txbMaBook.Text = "";
             else
             {
-                txbMaKhachOut.Text = IDBook;
+                txbMaBook.Text = IDBook;
                 dtpNgayDenOut.Value = BLL_QLBOOK.Instance.Find(IDBook).NgayCheckIn_ThucTe.Value;
             }
         }
@@ -280,7 +286,7 @@ namespace PBL
                 SoLuong = soluong,
                 BookID = idBook,
                 Ngay = ngaydat,
-                NhanVienID = "NV070521003"
+                NhanVienID = IDNhanVien
             };
             BLL_QLDV.Instance.AddDichVu(them);
             ShowBill(IDPhong);
@@ -295,8 +301,15 @@ namespace PBL
                 MessageBox.Show("Phòng chưa checkin");
                 return;
             }
+            if(txbMaPhongOut.TextLength==0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần checkout");
+                return;
+            }    
             HOADON s = BLL_QLBOOK.Instance.Checkout(IDBook, dtpNgayDi.Value);
-            txbGia.Text = s.TienPhong.ToString();
+            HoaDonID = s.HoaDonID;
+            //txbGia.Text = s.TienPhong.ToString();
+            //Chỉ hiển thị giá phòng, không hiển thị tổng tiền phòng.
             txbTotalRoom.Text = s.TongTien.ToString();
             txbVatTu.Text = s.TienVatTu.ToString();
             txbtotalcheckout.Text = s.TienDichVu.ToString();
@@ -311,13 +324,27 @@ namespace PBL
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            fBill f = new fBill(IDNhanVien);
-            f.ShowDialog();
+            if (HoaDonID == "-1")
+            {
+                MessageBox.Show("Không có dữ liệu");
+            }
+            else
+            {
+                fBillDetail f = new fBillDetail(HoaDonID);
+                f.ShowDialog();
+                HoaDonID = "-1";
+            }
         }
 
         private void menuItemThongKe_Click(object sender, EventArgs e)
         {
             fThongKe f = new fThongKe();
+            f.ShowDialog();
+        }
+
+        private void ItemHoaDon_Click(object sender, EventArgs e)
+        {
+            fHoaDon f = new fHoaDon(IDNhanVien);
             f.ShowDialog();
         }
     }

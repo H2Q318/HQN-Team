@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_QLBill.cs" />
     <Compile Include="BLL\BLL_QLBillDV.cs" />
     <Compile Include="BLL\BLL_QLLP.cs" />
     <Compile Include="BLL\BLL_QLP.cs" />
@@ -131,6 +132,7 @@
     </Compile>
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\Keys.cs" />
+    <Compile Include="DTO\KH_View.cs" />
     <Compile Include="DTO\Phong_View.cs" />
     <Compile Include="DTO\NV_View.cs" />
     <Compile Include="DTO\VatDungPhong_View.cs" />
@@ -141,17 +143,23 @@
     <Compile Include="View\fThongKe.Designer.cs">
       <DependentUpon>fThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\fBill.cs">
+    <Compile Include="View\fBillDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\fBill.Designer.cs">
-      <DependentUpon>fBill.cs</DependentUpon>
+    <Compile Include="View\fBillDetail.Designer.cs">
+      <DependentUpon>fBillDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="View\fAccount.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\fAccount.Designer.cs">
       <DependentUpon>fAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\fHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\fHoaDon.Designer.cs">
+      <DependentUpon>fHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="View\fManageSupplies.cs">
       <SubType>Form</SubType>
@@ -200,11 +208,14 @@
     <EmbeddedResource Include="View\fThongKe.resx">
       <DependentUpon>fThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\fBill.resx">
-      <DependentUpon>fBill.cs</DependentUpon>
+    <EmbeddedResource Include="View\fBillDetail.resx">
+      <DependentUpon>fBillDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\fAccount.resx">
       <DependentUpon>fAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\fHoaDon.resx">
+      <DependentUpon>fHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\fManageSupplies.resx">
       <DependentUpon>fManageSupplies.cs</DependentUpon>

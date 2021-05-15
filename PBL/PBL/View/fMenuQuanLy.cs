@@ -27,10 +27,33 @@ namespace PBL
             GUIBillDV();
             GuiKhachHang();
         }
+        private void RefreshGUIPhong()
+        {
+            cbTenLoaiPhong.Items.Clear();
+            cbTenLoaiPhong.ResetText(); 
+            foreach (LOAIPHONG i in BLL_QLLP.Instance.GetListLoaiPhong(null))
+            {
+                cbTenLoaiPhong.Items.Add(new CBBItem
+                {
+                    Text = i.TenLoaiPhong,
+                    Value = i.LoaiPhongID
+                });
+            }
+            ShowDGVPhong();
+        }
+        private void RefreshGUIBillDichVu()
+        {
+            cbTenDV.Items.Clear();
+            cbTenDV.ResetText();
+            foreach (LOAIDICHVU i in BLL_QLDV.Instance.GetAllDichVu())
+            {
+                cbTenDV.Items.Add(new CBBItem { Text = i.TenDichVu, Value = i.DichVuID });
+            }
+            ShowDGVBillDV();
+        }
         #region Quản lý phòng
         private void GUIPhong()
         {
-            ShowDGVPhong(null);
             foreach(LOAIPHONG i in BLL_QLLP.Instance.GetListLoaiPhong(null))
             {
                 cbTenLoaiPhong.Items.Add(new CBBItem
@@ -48,7 +71,7 @@ namespace PBL
             cbTenLoaiPhong.SelectedIndex = 0;
             ShowDGVPhong(null);
         }
-        private void ShowDGVPhong(string s)
+        private void ShowDGVPhong(string s = null)
         {
             dgvPhong.DataSource = BLL_QLP.Instance.GetListPhong_View(BLL_QLP.Instance.GetListPhong(s));
         }
@@ -221,7 +244,7 @@ namespace PBL
             }
             return data;
         }
-        private void ShowDGVLoaiPhong(string s)
+        private void ShowDGVLoaiPhong(string s = null)
         {
             dgvLoaiPhong.DataSource = BLL_QLLP.Instance.GetListLoaiPhong(s);
             dgvLoaiPhong.Columns["LoaiPhongID"].Visible = false;
@@ -242,6 +265,7 @@ namespace PBL
                     };
                     BLL_QLLP.Instance.AddLoaiPhong(lp);
                     ShowDGVLoaiPhong(null);
+                    RefreshGUIPhong();
                 }
                 catch
                 {
@@ -270,6 +294,7 @@ namespace PBL
                     };
                     BLL_QLLP.Instance.UpdateLoaiPhong(lp);
                     ShowDGVLoaiPhong(null);
+                    RefreshGUIPhong();
                 }
                 else
                 {
@@ -288,6 +313,8 @@ namespace PBL
             if (dgvLoaiPhong.SelectedRows.Count > 0)
             {
                 BLL_QLLP.Instance.DeleteLoaiPhong(GetListLoaiPhongID());
+                ShowDGVLoaiPhong();
+                RefreshGUIPhong();
             }
             else
             {
@@ -710,6 +737,7 @@ namespace PBL
                     };
                     BLL_QLBillDV.Instance.AddBillDV(p);
                     ShowDGVBillDV();
+                    RefreshGUIBillDichVu();
                 }
                 catch
                 {
@@ -736,6 +764,7 @@ namespace PBL
                         };
                         BLL_QLBillDV.Instance.AddBillDV(p);
                         ShowDGVBillDV();
+                        RefreshGUIBillDichVu();
                     }
                     catch
                     {
@@ -767,6 +796,7 @@ namespace PBL
                     };
                     BLL_QLBillDV.Instance.UpdateBillDV(p);
                     ShowDGVBillDV();
+                    RefreshGUIBillDichVu();
                 }
                 catch
                 {
@@ -786,8 +816,16 @@ namespace PBL
 
         private void btnXoaBill_Click(object sender, EventArgs e)
         {
-            BLL_QLBillDV.Instance.DeleteBillDV(GetListBillDVID());
-            ShowDGVBillDV();
+            if (dgvBillDV.SelectedRows.Count > 0)
+            {
+                BLL_QLBillDV.Instance.DeleteBillDV(GetListBillDVID());
+                ShowDGVBillDV();
+                RefreshGUIBillDichVu();
+            }
+            else
+            {
+                MessageBox.Show("Chọn ít nhất một dòng để xoá !");
+            }
         }
 
         private void btnResetBill_Click(object sender, EventArgs e)
@@ -979,5 +1017,6 @@ namespace PBL
         }
 
         #endregion
+
     }
 }

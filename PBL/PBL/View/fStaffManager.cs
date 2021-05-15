@@ -33,7 +33,13 @@ namespace PBL
             cbSortCV.SelectedIndex = 0;
             cbSearchCV.SelectedIndex = 0;
         }
-
+        private void RefreshGUINhanVien()
+        {
+            cbPosition.Items.Clear();
+            cbPosition.ResetText(); 
+            cbPosition.Items.AddRange(BLL_QLCV.Instance.GetListCBBChucVu().ToArray());
+            ShowDgvStaff();
+        }
         private void SetCBB()
         {
             cbPosition.Items.AddRange(BLL_QLCV.Instance.GetListCBBChucVu().ToArray());
@@ -73,6 +79,7 @@ namespace PBL
                 {
                     MessageBox.Show("Them chuc vu thanh cong!");
                     RefreshCV();
+                    RefreshGUINhanVien();
                 }
                 else
                 {
@@ -103,6 +110,7 @@ namespace PBL
                     {
                         MessageBox.Show("Cap nhat chuc vu thanh cong!");
                         RefreshCV();
+                        RefreshGUINhanVien();
                     }
                     else
                     {
@@ -131,6 +139,7 @@ namespace PBL
                 {
                     MessageBox.Show("Xoa chuc vu thanh cong!");
                     RefreshCV();
+                    RefreshGUINhanVien();
                 }
                 else
                 {

@@ -69,6 +69,7 @@
             this.dgvVatDungPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVatDungPhong.Location = new System.Drawing.Point(2, 2);
             this.dgvVatDungPhong.Name = "dgvVatDungPhong";
+            this.dgvVatDungPhong.ReadOnly = true;
             this.dgvVatDungPhong.RowHeadersWidth = 51;
             this.dgvVatDungPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVatDungPhong.Size = new System.Drawing.Size(688, 338);

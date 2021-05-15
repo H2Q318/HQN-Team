@@ -24,16 +24,28 @@ namespace PBL.BLL
         }
 
         private BLL_QLKH() { }
+
         public List<KHACHHANG> GetAllKhachHang()
         {
             return new QLKS().KHACHHANGs.ToList();
         }
+
+        public List<KHACHHANG> GetListKhachHang(string s)
+        {
+            if (s == null)
+            {
+                return GetAllKhachHang();
+            }
+            return new QLKS().KHACHHANGs.Where(p => (p.Ten.Contains(s))).ToList();
+        }
+
         public void AddKh(KHACHHANG s)
         {
             QLKS db = new QLKS();
             db.KHACHHANGs.Add(s);
             db.SaveChanges();
         }
+
         public void UpdateKh(KHACHHANG p)
         {
             QLKS db = new QLKS();
@@ -48,8 +60,8 @@ namespace PBL.BLL
                 kh.CMND = p.CMND;
                 db.SaveChanges();
             }
-
         }
+
         public KHACHHANG FindKh(string s)
         {
             return new QLKS().KHACHHANGs.Find(s);

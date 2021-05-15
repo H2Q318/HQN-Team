@@ -15,15 +15,162 @@ namespace PBL
 {
     public partial class fMenuQuanLy : Form
     {
-        public fMenuQuanLy()
+        private string IDNhanVien;
+        public fMenuQuanLy(string username)
         {
+            IDNhanVien = username;
             InitializeComponent();
+            GUIKhachHang();
             GUIPhong();
             GUILoaiPhong();
             GUILoaiVatDung();
             GUIDichVu();
             GUIBillDV();
         }
+
+        #region Quản lý khách hàng
+
+        private void GUIKhachHang()
+        {
+            ShowDgvKhachHang(null);
+            cbGioiTinh.SelectedIndex = 0;
+        }
+
+        private void RefreshKH()
+        {
+            txbMaKhach.Clear();
+            cbGioiTinh.SelectedIndex = 0;
+            txbQuocTich.Clear();
+            txbCMND.Clear();
+            txbHoTen.Clear();
+            txbSDT.Clear();
+            txbGhiChu.Clear();
+            ShowDgvKhachHang(null);
+        }
+
+        private void ShowDgvKhachHang(string s)
+        {
+            dgvKhachHang.DataSource = BLL_QLKH.Instance.GetListKhachHang(s);
+            dgvKhachHang.Columns["KhachHangID"].Visible = false;
+            dgvKhachHang.Columns["BOOKs"].Visible = false;
+            dgvKhachHang.Columns["BOOKs1"].Visible = false;
+        }
+
+        private void btnThemKh_Click(object sender, EventArgs e)
+        {
+            if (txbHoTen.TextLength != 0 && txbSDT.TextLength != 0 && txbQuocTich.TextLength != 0 && txbCMND.TextLength != 0)
+            {
+                KHACHHANG s = new KHACHHANG()
+                {
+                    Ten = txbHoTen.Text.Trim(),
+                    GioiTinh = (cbGioiTinh.SelectedIndex == 0) ? true : false,
+                    GhiChu = txbGhiChu.Text.Trim(),
+                    QuocTich = txbQuocTich.Text.Trim(),
+                    CMND = txbCMND.Text.Trim(),
+                    SDT = txbSDT.Text.Trim()
+                };
+                BLL_QLKH.Instance.AddKh(s);
+                MessageBox.Show("Thêm khách hàng thành công!");
+                RefreshKH();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin khách hàng!");
+            }
+        }
+
+        private void btnSuaKh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txbHoTen.TextLength != 0 && txbSDT.TextLength != 0 && txbQuocTich.TextLength != 0 && txbCMND.TextLength != 0)
+                {
+                    KHACHHANG s = new KHACHHANG()
+                    {
+                        KhachHangID = dgvKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString(),
+                        Ten = txbHoTen.Text.Trim(),
+                        GioiTinh = (cbGioiTinh.SelectedIndex == 0) ? true : false,
+                        GhiChu = txbGhiChu.Text.Trim(),
+                        QuocTich = txbQuocTich.Text.Trim(),
+                        CMND = txbCMND.Text.Trim(),
+                        SDT = txbSDT.Text.Trim()
+                    };
+                    BLL_QLKH.Instance.UpdateKh(s);
+                    MessageBox.Show("Cập nhật khách hàng thành công!");
+                    RefreshKH();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin khách hàng!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần cập nhật thông tin!");
+            }
+        }
+
+        private void BtnXoaKh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<string> list = new List<string>();
+                for (int i = 0; i < dgvKhachHang.SelectedRows.Count; i++)
+                {
+                    list.Add(dgvKhachHang.SelectedRows[i].Cells["KhachHangID"].Value.ToString());
+                }
+                BLL_QLKH.Instance.DeleteKh(list);
+                MessageBox.Show("Xóa khách hàng thành công!");
+                RefreshKH();
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần xóa");
+            }
+        }
+
+        private void btnResetKh_Click(object sender, EventArgs e)
+        {
+            RefreshKH();
+        }
+
+        private void btnSearchKh_Click(object sender, EventArgs e)
+        {
+            ShowDgvKhachHang(txbSeachkh.Text);
+        }
+
+        private void btnResetSkh_Click(object sender, EventArgs e)
+        {
+            txbSeachkh.Clear();
+        }
+
+        private void btnSortKH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txbMaKhach.Text = dgvKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString();
+                txbHoTen.Text = dgvKhachHang.SelectedRows[0].Cells["Ten"].Value.ToString();
+                cbGioiTinh.SelectedIndex = ((bool)dgvKhachHang.SelectedRows[0].Cells["GioiTinh"].Value) ? 0 : 1;
+                txbSDT.Text = dgvKhachHang.SelectedRows[0].Cells["SDT"].Value.ToString();
+                txbQuocTich.Text = dgvKhachHang.SelectedRows[0].Cells["QuocTich"].Value.ToString();
+                txbCMND.Text = dgvKhachHang.SelectedRows[0].Cells["CMND"].Value.ToString();
+                txbGhiChu.Text = dgvKhachHang.SelectedRows[0].Cells["GhiChu"].Value.ToString();
+            }
+            catch { };
+        }
+
+        private void dgvKhachHang_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvKhachHang.ClearSelection();
+        }
+
+        #endregion
+
         #region Quản lý phòng
         private void GUIPhong()
         {
@@ -600,7 +747,7 @@ namespace PBL
                         DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value.Trim(),
                         SoLuong = Convert.ToInt32(nUDSoLuong.Value),
                         Ngay = dtpNgayDat.Value,
-                        NhanVienID = "NV070521003"
+                        NhanVienID = IDNhanVien
 
                     };
                     BLL_QLBillDV.Instance.AddBillDV(p);
@@ -627,7 +774,7 @@ namespace PBL
                             DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value.Trim(),
                             SoLuong = Convert.ToInt32(nUDSoLuong.Value),
                             Ngay = dtpNgayDat.Value,
-                            NhanVienID = "NV070521003"
+                            NhanVienID = IDNhanVien
                         };
                         BLL_QLBillDV.Instance.AddBillDV(p);
                         ShowDGVBillDV();
@@ -658,7 +805,7 @@ namespace PBL
                         DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value,
                         SoLuong = Convert.ToInt32(nUDSoLuong.Value),
                         Ngay = dtpNgayDat.Value,
-                        NhanVienID = "NV070521003"
+                        NhanVienID = IDNhanVien
                     };
                     BLL_QLBillDV.Instance.UpdateBillDV(p);
                     ShowDGVBillDV();
@@ -727,5 +874,14 @@ namespace PBL
             txbGiaBill.Text = p.LOAIDICHVU.DonGia.ToString();
         }
         #endregion
+
+        private void JustNumberKeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }

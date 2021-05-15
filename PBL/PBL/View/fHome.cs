@@ -122,7 +122,7 @@ namespace PBL
 
         private void itemMenuChinh_Click(object sender, EventArgs e)
         {
-            fMenuQuanLy f = new fMenuQuanLy();
+            fMenuQuanLy f = new fMenuQuanLy(IDNhanVien);
             f.ShowDialog();
         }
 
@@ -131,10 +131,6 @@ namespace PBL
             fManageSupplies f = new fManageSupplies();
             f.ShowDialog();
         }
-
-       
-
-  
 
         private void itemDatPhong_Click(object sender, EventArgs e)
         {

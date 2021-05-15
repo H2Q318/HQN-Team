@@ -991,14 +991,18 @@ namespace PBL
         }
         private void dgvKhachHang_Click(object sender, EventArgs e)
         {
-            KHACHHANG p = BLL_QLKH.Instance.FindKh(dgvKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString());
-            txbMaKhach.Text = p.KhachHangID;
-            txbHoTen.Text = p.Ten;
-            cbGioiTinh.Checked = (bool)p.GioiTinh;
-            txbCMND.Text = p.CMND;
-            txbDienThoai.Text = p.SDT;
-            txbQuocTich.Text = p.QuocTich;
-            txbGhiChu.Text = p.GhiChu;
+            try
+            {
+                KHACHHANG p = BLL_QLKH.Instance.FindKh(dgvKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString());
+                txbMaKhach.Text = p.KhachHangID;
+                txbHoTen.Text = p.Ten;
+                cbGioiTinh.Checked = (bool)p.GioiTinh;
+                txbCMND.Text = p.CMND;
+                txbDienThoai.Text = p.SDT;
+                txbQuocTich.Text = p.QuocTich;
+                txbGhiChu.Text = p.GhiChu;
+            }
+            catch { }
         }
         private void btnSortKH_Click(object sender, EventArgs e)
         {

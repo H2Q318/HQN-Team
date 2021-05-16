@@ -99,6 +99,42 @@ namespace PBL.BLL
                 MessageBox.Show("Đặt phòng không thành công");
             }
         }
+        
+        public bool UpdateDatPhong(BOOK b)
+        {
+            try
+            {
+                QLKS db = new QLKS();
+                var book = db.BOOKs.Find(b.BookID);
+                book.NgayDat = b.NgayDat;
+                book.NgayCheckIn = b.NgayCheckIn;
+                book.NgayCheckOut = b.NgayCheckOut;
+                book.NgayCheckIn_ThucTe = b.NgayCheckIn_ThucTe;
+                book.NgayCheckOut_ThucTe = b.NgayCheckOut_ThucTe;
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteDatPhong(string b)
+        {
+            try
+            {
+                QLKS db = new QLKS();
+                var book = db.BOOKs.Remove(db.BOOKs.Find(b));
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public BOOK Find(string s)
         {
             return new QLKS().BOOKs.Find(s);
@@ -111,6 +147,22 @@ namespace PBL.BLL
                 db.SaveChanges();
                 var s = db.HOADONs.Where(p => p.BookID == IDBook).First();
                 return s;   
+        }
+
+        public List<Book_View> GetAllBook()
+        {
+            QLKS db = new QLKS();
+            List<Book_View> data = new List<Book_View>();
+            foreach(BOOK item in db.BOOKs.ToList())
+            {
+                data.Add(new Book_View(item));
+            }
+            return data;
+        }
+
+        public List<Book_View> GetListBook()
+        {
+
         }
     }
 }

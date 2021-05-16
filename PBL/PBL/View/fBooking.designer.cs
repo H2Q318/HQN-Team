@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataBookRoom = new System.Windows.Forms.DataGridView();
+            this.dgvBooking = new System.Windows.Forms.DataGridView();
             this.panel18 = new System.Windows.Forms.Panel();
             this.lbSearch = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -40,24 +40,27 @@
             this.txbNote = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.txbCustomerID = new System.Windows.Forms.TextBox();
+            this.txbMaKH = new System.Windows.Forms.TextBox();
             this.lbCustomer = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbNationality = new System.Windows.Forms.Label();
-            this.txbNationality = new System.Windows.Forms.TextBox();
+            this.txbQuocTich = new System.Windows.Forms.TextBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.lbPhoneNum = new System.Windows.Forms.Label();
-            this.txbPhoneNum = new System.Windows.Forms.TextBox();
+            this.txbSDT = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.lbCMND = new System.Windows.Forms.Label();
             this.txbCMND = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.cbGender = new System.Windows.Forms.ComboBox();
+            this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.lbGender = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.lbNameCustomer = new System.Windows.Forms.Label();
-            this.txbCustomerName = new System.Windows.Forms.TextBox();
+            this.txbTenKH = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
             this.dtpNgayDen = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,20 +69,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbMaNhanVien = new System.Windows.Forms.TextBox();
+            this.txbTenNhanVien = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txbMaCheckIn = new System.Windows.Forms.TextBox();
+            this.txbBookID = new System.Windows.Forms.TextBox();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.dtpBookDay = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayDat = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.lbTitleBook = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.lbTotalCost = new System.Windows.Forms.Label();
-            this.txbTotalCost = new System.Windows.Forms.TextBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.lbSumDay = new System.Windows.Forms.Label();
-            this.txbSumDay = new System.Windows.Forms.TextBox();
+            this.txbThanhToan = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
             this.lbCheckOut = new System.Windows.Forms.Label();
@@ -88,17 +88,14 @@
             this.lbCheckIn = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbCost = new System.Windows.Forms.Label();
-            this.txbCost = new System.Windows.Forms.TextBox();
+            this.txbGia = new System.Windows.Forms.TextBox();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.txbTypeRoom = new System.Windows.Forms.TextBox();
+            this.txbLoaiPhong = new System.Windows.Forms.TextBox();
             this.lbTypeRoom = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
             this.lbID = new System.Windows.Forms.Label();
-            this.txbID = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataBookRoom)).BeginInit();
+            this.txbPhongID = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -115,7 +112,6 @@
             this.panel2.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -123,17 +119,21 @@
             this.panel23.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataBookRoom
+            // dgvBooking
             // 
-            this.dataBookRoom.AllowUserToAddRows = false;
-            this.dataBookRoom.AllowUserToDeleteRows = false;
-            this.dataBookRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataBookRoom.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataBookRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBookRoom.Location = new System.Drawing.Point(12, 431);
-            this.dataBookRoom.Name = "dataBookRoom";
-            this.dataBookRoom.Size = new System.Drawing.Size(1086, 233);
-            this.dataBookRoom.TabIndex = 20;
+            this.dgvBooking.AllowUserToAddRows = false;
+            this.dgvBooking.AllowUserToDeleteRows = false;
+            this.dgvBooking.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBooking.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooking.Location = new System.Drawing.Point(12, 431);
+            this.dgvBooking.Name = "dgvBooking";
+            this.dgvBooking.ReadOnly = true;
+            this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBooking.Size = new System.Drawing.Size(1086, 233);
+            this.dgvBooking.TabIndex = 20;
+            this.dgvBooking.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooking_CellClick);
+            this.dgvBooking.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvBooking_DataBindingComplete);
             // 
             // panel18
             // 
@@ -167,6 +167,7 @@
             this.btnSearch.TabIndex = 19;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txbSearch
             // 
@@ -182,7 +183,9 @@
             this.cbSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSearch.FormattingEnabled = true;
             this.cbSearch.Items.AddRange(new object[] {
-            "Theo mã phòng"});
+            "Theo mã phòng",
+            "Theo tên khách hàng",
+            "Theo tên nhân viên"});
             this.cbSearch.Location = new System.Drawing.Point(131, 17);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.Size = new System.Drawing.Size(196, 24);
@@ -234,7 +237,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.txbCustomerID);
+            this.panel4.Controls.Add(this.txbMaKH);
             this.panel4.Location = new System.Drawing.Point(13, 57);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(340, 34);
@@ -250,14 +253,14 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Mã khách hàng:";
             // 
-            // txbCustomerID
+            // txbMaKH
             // 
-            this.txbCustomerID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCustomerID.Location = new System.Drawing.Point(138, 6);
-            this.txbCustomerID.Name = "txbCustomerID";
-            this.txbCustomerID.ReadOnly = true;
-            this.txbCustomerID.Size = new System.Drawing.Size(189, 22);
-            this.txbCustomerID.TabIndex = 0;
+            this.txbMaKH.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMaKH.Location = new System.Drawing.Point(138, 6);
+            this.txbMaKH.Name = "txbMaKH";
+            this.txbMaKH.ReadOnly = true;
+            this.txbMaKH.Size = new System.Drawing.Size(189, 22);
+            this.txbMaKH.TabIndex = 0;
             // 
             // lbCustomer
             // 
@@ -272,7 +275,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.lbNationality);
-            this.panel5.Controls.Add(this.txbNationality);
+            this.panel5.Controls.Add(this.txbQuocTich);
             this.panel5.Location = new System.Drawing.Point(13, 257);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(340, 34);
@@ -288,18 +291,18 @@
             this.lbNationality.TabIndex = 1;
             this.lbNationality.Text = "Quốc tịch:";
             // 
-            // txbNationality
+            // txbQuocTich
             // 
-            this.txbNationality.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbNationality.Location = new System.Drawing.Point(138, 6);
-            this.txbNationality.Name = "txbNationality";
-            this.txbNationality.Size = new System.Drawing.Size(189, 22);
-            this.txbNationality.TabIndex = 0;
+            this.txbQuocTich.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbQuocTich.Location = new System.Drawing.Point(138, 6);
+            this.txbQuocTich.Name = "txbQuocTich";
+            this.txbQuocTich.Size = new System.Drawing.Size(189, 22);
+            this.txbQuocTich.TabIndex = 0;
             // 
             // panel16
             // 
             this.panel16.Controls.Add(this.lbPhoneNum);
-            this.panel16.Controls.Add(this.txbPhoneNum);
+            this.panel16.Controls.Add(this.txbSDT);
             this.panel16.Location = new System.Drawing.Point(13, 217);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(340, 34);
@@ -315,13 +318,13 @@
             this.lbPhoneNum.TabIndex = 1;
             this.lbPhoneNum.Text = "SĐT:";
             // 
-            // txbPhoneNum
+            // txbSDT
             // 
-            this.txbPhoneNum.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPhoneNum.Location = new System.Drawing.Point(138, 6);
-            this.txbPhoneNum.Name = "txbPhoneNum";
-            this.txbPhoneNum.Size = new System.Drawing.Size(189, 22);
-            this.txbPhoneNum.TabIndex = 0;
+            this.txbSDT.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSDT.Location = new System.Drawing.Point(138, 6);
+            this.txbSDT.Name = "txbSDT";
+            this.txbSDT.Size = new System.Drawing.Size(189, 22);
+            this.txbSDT.TabIndex = 0;
             // 
             // panel15
             // 
@@ -352,25 +355,25 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.cbGender);
+            this.panel14.Controls.Add(this.cbGioiTinh);
             this.panel14.Controls.Add(this.lbGender);
             this.panel14.Location = new System.Drawing.Point(13, 137);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(340, 34);
             this.panel14.TabIndex = 9;
             // 
-            // cbGender
+            // cbGioiTinh
             // 
-            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGender.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.Items.AddRange(new object[] {
+            this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGioiTinh.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGioiTinh.FormattingEnabled = true;
+            this.cbGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbGender.Location = new System.Drawing.Point(138, 6);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(189, 23);
-            this.cbGender.TabIndex = 2;
+            this.cbGioiTinh.Location = new System.Drawing.Point(138, 6);
+            this.cbGioiTinh.Name = "cbGioiTinh";
+            this.cbGioiTinh.Size = new System.Drawing.Size(189, 23);
+            this.cbGioiTinh.TabIndex = 2;
             // 
             // lbGender
             // 
@@ -385,7 +388,7 @@
             // panel13
             // 
             this.panel13.Controls.Add(this.lbNameCustomer);
-            this.panel13.Controls.Add(this.txbCustomerName);
+            this.panel13.Controls.Add(this.txbTenKH);
             this.panel13.Location = new System.Drawing.Point(13, 97);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(340, 34);
@@ -401,13 +404,13 @@
             this.lbNameCustomer.TabIndex = 1;
             this.lbNameCustomer.Text = "Tên khách hàng:";
             // 
-            // txbCustomerName
+            // txbTenKH
             // 
-            this.txbCustomerName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCustomerName.Location = new System.Drawing.Point(138, 6);
-            this.txbCustomerName.Name = "txbCustomerName";
-            this.txbCustomerName.Size = new System.Drawing.Size(189, 22);
-            this.txbCustomerName.TabIndex = 0;
+            this.txbTenKH.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenKH.Location = new System.Drawing.Point(138, 6);
+            this.txbTenKH.Name = "txbTenKH";
+            this.txbTenKH.Size = new System.Drawing.Size(189, 22);
+            this.txbTenKH.TabIndex = 0;
             // 
             // panel6
             // 
@@ -422,7 +425,6 @@
             this.panel6.Controls.Add(this.panel21);
             this.panel6.Controls.Add(this.lbTitleBook);
             this.panel6.Controls.Add(this.panel12);
-            this.panel6.Controls.Add(this.panel11);
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.panel8);
@@ -433,11 +435,41 @@
             this.panel6.Size = new System.Drawing.Size(710, 345);
             this.panel6.TabIndex = 17;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(605, 306);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 28);
+            this.btnReset.TabIndex = 13;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(524, 306);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 28);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(443, 306);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 28);
+            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // panel20
             // 
             this.panel20.Controls.Add(this.dtpNgayDen);
             this.panel20.Controls.Add(this.label8);
-            this.panel20.Location = new System.Drawing.Point(382, 63);
+            this.panel20.Location = new System.Drawing.Point(382, 103);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(298, 34);
             this.panel20.TabIndex = 7;
@@ -466,7 +498,7 @@
             // 
             this.panel17.Controls.Add(this.dtpNgayDi);
             this.panel17.Controls.Add(this.label7);
-            this.panel17.Location = new System.Drawing.Point(382, 103);
+            this.panel17.Location = new System.Drawing.Point(382, 143);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(298, 34);
             this.panel17.TabIndex = 6;
@@ -494,7 +526,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.txbMaNhanVien);
+            this.panel7.Controls.Add(this.txbTenNhanVien);
             this.panel7.Location = new System.Drawing.Point(16, 103);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(301, 34);
@@ -506,23 +538,23 @@
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(9, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
+            this.label3.Size = new System.Drawing.Size(91, 16);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Mã nhân viên:";
+            this.label3.Text = "Tên nhân viên:";
             // 
-            // txbMaNhanVien
+            // txbTenNhanVien
             // 
-            this.txbMaNhanVien.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaNhanVien.Location = new System.Drawing.Point(118, 6);
-            this.txbMaNhanVien.Name = "txbMaNhanVien";
-            this.txbMaNhanVien.ReadOnly = true;
-            this.txbMaNhanVien.Size = new System.Drawing.Size(176, 22);
-            this.txbMaNhanVien.TabIndex = 0;
+            this.txbTenNhanVien.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTenNhanVien.Location = new System.Drawing.Point(118, 6);
+            this.txbTenNhanVien.Name = "txbTenNhanVien";
+            this.txbTenNhanVien.ReadOnly = true;
+            this.txbTenNhanVien.Size = new System.Drawing.Size(176, 22);
+            this.txbTenNhanVien.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txbMaCheckIn);
+            this.panel2.Controls.Add(this.txbBookID);
             this.panel2.Location = new System.Drawing.Point(16, 63);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 34);
@@ -534,43 +566,43 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 16);
+            this.label1.Size = new System.Drawing.Size(91, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Mã check in:";
+            this.label1.Text = "Mã đặt phòng:";
             // 
-            // txbMaCheckIn
+            // txbBookID
             // 
-            this.txbMaCheckIn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMaCheckIn.Location = new System.Drawing.Point(118, 6);
-            this.txbMaCheckIn.Name = "txbMaCheckIn";
-            this.txbMaCheckIn.ReadOnly = true;
-            this.txbMaCheckIn.Size = new System.Drawing.Size(176, 22);
-            this.txbMaCheckIn.TabIndex = 0;
+            this.txbBookID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbBookID.Location = new System.Drawing.Point(118, 6);
+            this.txbBookID.Name = "txbBookID";
+            this.txbBookID.ReadOnly = true;
+            this.txbBookID.Size = new System.Drawing.Size(176, 22);
+            this.txbBookID.TabIndex = 0;
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.dtpBookDay);
+            this.panel21.Controls.Add(this.dtpNgayDat);
             this.panel21.Controls.Add(this.label6);
-            this.panel21.Location = new System.Drawing.Point(16, 263);
+            this.panel21.Location = new System.Drawing.Point(382, 63);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(301, 34);
             this.panel21.TabIndex = 5;
             // 
-            // dtpBookDay
+            // dtpNgayDat
             // 
-            this.dtpBookDay.CustomFormat = "dd/MM/yyyy";
-            this.dtpBookDay.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookDay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookDay.Location = new System.Drawing.Point(118, 6);
-            this.dtpBookDay.Name = "dtpBookDay";
-            this.dtpBookDay.Size = new System.Drawing.Size(176, 21);
-            this.dtpBookDay.TabIndex = 2;
+            this.dtpNgayDat.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDat.Location = new System.Drawing.Point(118, 6);
+            this.dtpNgayDat.Name = "dtpNgayDat";
+            this.dtpNgayDat.Size = new System.Drawing.Size(176, 21);
+            this.dtpNgayDat.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 9);
+            this.label6.Location = new System.Drawing.Point(3, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 1;
@@ -589,7 +621,7 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.lbTotalCost);
-            this.panel12.Controls.Add(this.txbTotalCost);
+            this.panel12.Controls.Add(this.txbThanhToan);
             this.panel12.Location = new System.Drawing.Point(382, 263);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(298, 34);
@@ -605,56 +637,28 @@
             this.lbTotalCost.TabIndex = 1;
             this.lbTotalCost.Text = "Thành tiền:";
             // 
-            // txbTotalCost
+            // txbThanhToan
             // 
-            this.txbTotalCost.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTotalCost.Location = new System.Drawing.Point(118, 6);
-            this.txbTotalCost.Name = "txbTotalCost";
-            this.txbTotalCost.ReadOnly = true;
-            this.txbTotalCost.Size = new System.Drawing.Size(170, 22);
-            this.txbTotalCost.TabIndex = 3;
-            this.txbTotalCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.lbSumDay);
-            this.panel11.Controls.Add(this.txbSumDay);
-            this.panel11.Location = new System.Drawing.Point(382, 223);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(298, 34);
-            this.panel11.TabIndex = 6;
-            // 
-            // lbSumDay
-            // 
-            this.lbSumDay.AutoSize = true;
-            this.lbSumDay.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSumDay.Location = new System.Drawing.Point(3, 9);
-            this.lbSumDay.Name = "lbSumDay";
-            this.lbSumDay.Size = new System.Drawing.Size(73, 16);
-            this.lbSumDay.TabIndex = 1;
-            this.lbSumDay.Text = "Số ngày ở:";
-            // 
-            // txbSumDay
-            // 
-            this.txbSumDay.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSumDay.Location = new System.Drawing.Point(118, 6);
-            this.txbSumDay.Name = "txbSumDay";
-            this.txbSumDay.ReadOnly = true;
-            this.txbSumDay.Size = new System.Drawing.Size(170, 22);
-            this.txbSumDay.TabIndex = 0;
+            this.txbThanhToan.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbThanhToan.Location = new System.Drawing.Point(118, 6);
+            this.txbThanhToan.Name = "txbThanhToan";
+            this.txbThanhToan.ReadOnly = true;
+            this.txbThanhToan.Size = new System.Drawing.Size(170, 22);
+            this.txbThanhToan.TabIndex = 3;
+            this.txbThanhToan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.dtpCheckOut);
             this.panel10.Controls.Add(this.lbCheckOut);
-            this.panel10.Location = new System.Drawing.Point(382, 183);
+            this.panel10.Location = new System.Drawing.Point(382, 223);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(298, 34);
             this.panel10.TabIndex = 5;
             // 
             // dtpCheckOut
             // 
-            this.dtpCheckOut.CustomFormat = "dd/MM/yyyy";
+            this.dtpCheckOut.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.dtpCheckOut.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpCheckOut.Location = new System.Drawing.Point(118, 7);
@@ -676,14 +680,14 @@
             // 
             this.panel9.Controls.Add(this.dtpCheckIn);
             this.panel9.Controls.Add(this.lbCheckIn);
-            this.panel9.Location = new System.Drawing.Point(382, 143);
+            this.panel9.Location = new System.Drawing.Point(382, 183);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(298, 34);
             this.panel9.TabIndex = 4;
             // 
             // dtpCheckIn
             // 
-            this.dtpCheckIn.CustomFormat = "dd/MM/yyyy";
+            this.dtpCheckIn.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.dtpCheckIn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpCheckIn.Location = new System.Drawing.Point(118, 6);
@@ -704,7 +708,7 @@
             // panel8
             // 
             this.panel8.Controls.Add(this.lbCost);
-            this.panel8.Controls.Add(this.txbCost);
+            this.panel8.Controls.Add(this.txbGia);
             this.panel8.Location = new System.Drawing.Point(16, 223);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(301, 34);
@@ -720,38 +724,38 @@
             this.lbCost.TabIndex = 1;
             this.lbCost.Text = "Giá phòng:";
             // 
-            // txbCost
+            // txbGia
             // 
-            this.txbCost.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCost.Location = new System.Drawing.Point(118, 6);
-            this.txbCost.Name = "txbCost";
-            this.txbCost.ReadOnly = true;
-            this.txbCost.Size = new System.Drawing.Size(176, 22);
-            this.txbCost.TabIndex = 0;
+            this.txbGia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbGia.Location = new System.Drawing.Point(118, 6);
+            this.txbGia.Name = "txbGia";
+            this.txbGia.ReadOnly = true;
+            this.txbGia.Size = new System.Drawing.Size(176, 22);
+            this.txbGia.TabIndex = 0;
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.txbTypeRoom);
+            this.panel22.Controls.Add(this.txbLoaiPhong);
             this.panel22.Controls.Add(this.lbTypeRoom);
             this.panel22.Location = new System.Drawing.Point(16, 183);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(301, 34);
             this.panel22.TabIndex = 1;
             // 
-            // txbTypeRoom
+            // txbLoaiPhong
             // 
-            this.txbTypeRoom.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbTypeRoom.Location = new System.Drawing.Point(118, 6);
-            this.txbTypeRoom.Name = "txbTypeRoom";
-            this.txbTypeRoom.ReadOnly = true;
-            this.txbTypeRoom.Size = new System.Drawing.Size(176, 22);
-            this.txbTypeRoom.TabIndex = 2;
+            this.txbLoaiPhong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbLoaiPhong.Location = new System.Drawing.Point(118, 6);
+            this.txbLoaiPhong.Name = "txbLoaiPhong";
+            this.txbLoaiPhong.ReadOnly = true;
+            this.txbLoaiPhong.Size = new System.Drawing.Size(176, 22);
+            this.txbLoaiPhong.TabIndex = 2;
             // 
             // lbTypeRoom
             // 
             this.lbTypeRoom.AutoSize = true;
             this.lbTypeRoom.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTypeRoom.Location = new System.Drawing.Point(9, 11);
+            this.lbTypeRoom.Location = new System.Drawing.Point(9, 9);
             this.lbTypeRoom.Name = "lbTypeRoom";
             this.lbTypeRoom.Size = new System.Drawing.Size(75, 16);
             this.lbTypeRoom.TabIndex = 1;
@@ -760,7 +764,7 @@
             // panel23
             // 
             this.panel23.Controls.Add(this.lbID);
-            this.panel23.Controls.Add(this.txbID);
+            this.panel23.Controls.Add(this.txbPhongID);
             this.panel23.Location = new System.Drawing.Point(16, 143);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(301, 34);
@@ -776,41 +780,14 @@
             this.lbID.TabIndex = 1;
             this.lbID.Text = "Mã phòng:";
             // 
-            // txbID
+            // txbPhongID
             // 
-            this.txbID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbID.Location = new System.Drawing.Point(118, 6);
-            this.txbID.Name = "txbID";
-            this.txbID.ReadOnly = true;
-            this.txbID.Size = new System.Drawing.Size(176, 22);
-            this.txbID.TabIndex = 0;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(443, 306);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 28);
-            this.btnUpdate.TabIndex = 11;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(524, 306);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 28);
-            this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(605, 306);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 28);
-            this.btnReset.TabIndex = 13;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.txbPhongID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPhongID.Location = new System.Drawing.Point(118, 6);
+            this.txbPhongID.Name = "txbPhongID";
+            this.txbPhongID.ReadOnly = true;
+            this.txbPhongID.Size = new System.Drawing.Size(176, 22);
+            this.txbPhongID.TabIndex = 0;
             // 
             // fBooking
             // 
@@ -818,7 +795,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1110, 674);
-            this.Controls.Add(this.dataBookRoom);
+            this.Controls.Add(this.dgvBooking);
             this.Controls.Add(this.panel18);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
@@ -828,7 +805,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đặt phòng";
-            ((System.ComponentModel.ISupportInitialize)(this.dataBookRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -861,8 +838,6 @@
             this.panel21.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -878,7 +853,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataBookRoom;
+        private System.Windows.Forms.DataGridView dgvBooking;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label lbSearch;
         private System.Windows.Forms.Button btnSearch;
@@ -890,34 +865,31 @@
         private System.Windows.Forms.TextBox txbNote;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txbCustomerID;
+        private System.Windows.Forms.TextBox txbMaKH;
         private System.Windows.Forms.Label lbCustomer;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lbNationality;
-        private System.Windows.Forms.TextBox txbNationality;
+        private System.Windows.Forms.TextBox txbQuocTich;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label lbPhoneNum;
-        private System.Windows.Forms.TextBox txbPhoneNum;
+        private System.Windows.Forms.TextBox txbSDT;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label lbCMND;
         private System.Windows.Forms.TextBox txbCMND;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.ComboBox cbGender;
+        private System.Windows.Forms.ComboBox cbGioiTinh;
         private System.Windows.Forms.Label lbGender;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label lbNameCustomer;
-        private System.Windows.Forms.TextBox txbCustomerName;
+        private System.Windows.Forms.TextBox txbTenKH;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.DateTimePicker dtpBookDay;
+        private System.Windows.Forms.DateTimePicker dtpNgayDat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbTitleBook;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label lbTotalCost;
-        private System.Windows.Forms.TextBox txbTotalCost;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label lbSumDay;
-        private System.Windows.Forms.TextBox txbSumDay;
+        private System.Windows.Forms.TextBox txbThanhToan;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DateTimePicker dtpCheckOut;
         private System.Windows.Forms.Label lbCheckOut;
@@ -926,19 +898,19 @@
         private System.Windows.Forms.Label lbCheckIn;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label lbCost;
-        private System.Windows.Forms.TextBox txbCost;
+        private System.Windows.Forms.TextBox txbGia;
         private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.TextBox txbTypeRoom;
+        private System.Windows.Forms.TextBox txbLoaiPhong;
         private System.Windows.Forms.Label lbTypeRoom;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label lbID;
-        private System.Windows.Forms.TextBox txbID;
+        private System.Windows.Forms.TextBox txbPhongID;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbMaNhanVien;
+        private System.Windows.Forms.TextBox txbTenNhanVien;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbMaCheckIn;
+        private System.Windows.Forms.TextBox txbBookID;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.DateTimePicker dtpNgayDen;
         private System.Windows.Forms.Label label8;

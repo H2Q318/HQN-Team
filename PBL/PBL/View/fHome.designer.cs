@@ -279,7 +279,7 @@ namespace PBL
             this.flpRom.AutoScroll = true;
             this.flpRom.Dock = System.Windows.Forms.DockStyle.Left;
             this.flpRom.Location = new System.Drawing.Point(0, 0);
-            this.flpRom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flpRom.Margin = new System.Windows.Forms.Padding(2);
             this.flpRom.Name = "flpRom";
             this.flpRom.Size = new System.Drawing.Size(661, 572);
             this.flpRom.TabIndex = 6;
@@ -289,7 +289,7 @@ namespace PBL
             this.panel6.Controls.Add(this.tbMain);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(665, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(464, 572);
             this.panel6.TabIndex = 7;
@@ -303,7 +303,7 @@ namespace PBL
             this.tbMain.Controls.Add(this.tpCheckOut);
             this.tbMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbMain.Location = new System.Drawing.Point(0, 0);
-            this.tbMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbMain.Margin = new System.Windows.Forms.Padding(2);
             this.tbMain.Name = "tbMain";
             this.tbMain.SelectedIndex = 0;
             this.tbMain.Size = new System.Drawing.Size(464, 572);
@@ -326,9 +326,9 @@ namespace PBL
             this.tpKhachHang.Controls.Add(this.txbKHGhiChu);
             this.tpKhachHang.Controls.Add(this.txbKHHoTen);
             this.tpKhachHang.Location = new System.Drawing.Point(4, 22);
-            this.tpKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.tpKhachHang.Name = "tpKhachHang";
-            this.tpKhachHang.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpKhachHang.Padding = new System.Windows.Forms.Padding(2);
             this.tpKhachHang.Size = new System.Drawing.Size(456, 546);
             this.tpKhachHang.TabIndex = 0;
             this.tpKhachHang.Text = "Khách hàng";
@@ -337,7 +337,7 @@ namespace PBL
             // txbKHSdt
             // 
             this.txbKHSdt.Location = new System.Drawing.Point(179, 236);
-            this.txbKHSdt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbKHSdt.Margin = new System.Windows.Forms.Padding(2);
             this.txbKHSdt.MaxLength = 10;
             this.txbKHSdt.Name = "txbKHSdt";
             this.txbKHSdt.Size = new System.Drawing.Size(175, 20);
@@ -346,7 +346,7 @@ namespace PBL
             // btnResetKh
             // 
             this.btnResetKh.Location = new System.Drawing.Point(262, 463);
-            this.btnResetKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetKh.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetKh.Name = "btnResetKh";
             this.btnResetKh.Size = new System.Drawing.Size(92, 31);
             this.btnResetKh.TabIndex = 16;
@@ -356,7 +356,7 @@ namespace PBL
             // btnThemKh
             // 
             this.btnThemKh.Location = new System.Drawing.Point(105, 463);
-            this.btnThemKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemKh.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemKh.Name = "btnThemKh";
             this.btnThemKh.Size = new System.Drawing.Size(93, 31);
             this.btnThemKh.TabIndex = 15;
@@ -430,7 +430,7 @@ namespace PBL
             this.ckbKHGioiTinh.Checked = true;
             this.ckbKHGioiTinh.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbKHGioiTinh.Location = new System.Drawing.Point(179, 124);
-            this.ckbKHGioiTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ckbKHGioiTinh.Margin = new System.Windows.Forms.Padding(2);
             this.ckbKHGioiTinh.Name = "ckbKHGioiTinh";
             this.ckbKHGioiTinh.Size = new System.Drawing.Size(48, 17);
             this.ckbKHGioiTinh.TabIndex = 5;
@@ -440,7 +440,7 @@ namespace PBL
             // txbKHCMND
             // 
             this.txbKHCMND.Location = new System.Drawing.Point(179, 296);
-            this.txbKHCMND.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbKHCMND.Margin = new System.Windows.Forms.Padding(2);
             this.txbKHCMND.Name = "txbKHCMND";
             this.txbKHCMND.Size = new System.Drawing.Size(175, 20);
             this.txbKHCMND.TabIndex = 4;
@@ -448,7 +448,7 @@ namespace PBL
             // txbKHQuocTich
             // 
             this.txbKHQuocTich.Location = new System.Drawing.Point(179, 179);
-            this.txbKHQuocTich.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbKHQuocTich.Margin = new System.Windows.Forms.Padding(2);
             this.txbKHQuocTich.Name = "txbKHQuocTich";
             this.txbKHQuocTich.Size = new System.Drawing.Size(175, 20);
             this.txbKHQuocTich.TabIndex = 3;
@@ -456,7 +456,7 @@ namespace PBL
             // txbKHGhiChu
             // 
             this.txbKHGhiChu.Location = new System.Drawing.Point(179, 354);
-            this.txbKHGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbKHGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txbKHGhiChu.Name = "txbKHGhiChu";
             this.txbKHGhiChu.Size = new System.Drawing.Size(175, 20);
             this.txbKHGhiChu.TabIndex = 2;
@@ -464,7 +464,7 @@ namespace PBL
             // txbKHHoTen
             // 
             this.txbKHHoTen.Location = new System.Drawing.Point(179, 64);
-            this.txbKHHoTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbKHHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txbKHHoTen.Name = "txbKHHoTen";
             this.txbKHHoTen.Size = new System.Drawing.Size(175, 20);
             this.txbKHHoTen.TabIndex = 0;
@@ -475,7 +475,7 @@ namespace PBL
             this.tpBooking.Controls.Add(this.panel1);
             this.tpBooking.Location = new System.Drawing.Point(4, 22);
             this.tpBooking.Name = "tpBooking";
-            this.tpBooking.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpBooking.Padding = new System.Windows.Forms.Padding(3);
             this.tpBooking.Size = new System.Drawing.Size(456, 546);
             this.tpBooking.TabIndex = 4;
             this.tpBooking.Text = "Đặt phòng";
@@ -525,7 +525,7 @@ namespace PBL
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(179, 255);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(176, 20);
             this.textBox1.TabIndex = 34;
@@ -533,7 +533,7 @@ namespace PBL
             // btnDPReset
             // 
             this.btnDPReset.Location = new System.Drawing.Point(264, 298);
-            this.btnDPReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDPReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnDPReset.Name = "btnDPReset";
             this.btnDPReset.Size = new System.Drawing.Size(91, 28);
             this.btnDPReset.TabIndex = 33;
@@ -544,7 +544,7 @@ namespace PBL
             // btnDatPhong
             // 
             this.btnDatPhong.Location = new System.Drawing.Point(120, 298);
-            this.btnDatPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDatPhong.Margin = new System.Windows.Forms.Padding(2);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.Size = new System.Drawing.Size(91, 28);
             this.btnDatPhong.TabIndex = 32;
@@ -567,7 +567,7 @@ namespace PBL
             this.dtpDPNgayDi.CustomFormat = "dd/MM/yyyy";
             this.dtpDPNgayDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDPNgayDi.Location = new System.Drawing.Point(179, 207);
-            this.dtpDPNgayDi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDPNgayDi.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDPNgayDi.Name = "dtpDPNgayDi";
             this.dtpDPNgayDi.Size = new System.Drawing.Size(176, 20);
             this.dtpDPNgayDi.TabIndex = 30;
@@ -616,7 +616,7 @@ namespace PBL
             // 
             this.txbDPMaPhong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbDPMaPhong.Location = new System.Drawing.Point(179, 115);
-            this.txbDPMaPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDPMaPhong.Margin = new System.Windows.Forms.Padding(2);
             this.txbDPMaPhong.Name = "txbDPMaPhong";
             this.txbDPMaPhong.ReadOnly = true;
             this.txbDPMaPhong.Size = new System.Drawing.Size(175, 20);
@@ -626,7 +626,7 @@ namespace PBL
             // 
             this.txbDPMaNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbDPMaNV.Location = new System.Drawing.Point(179, 69);
-            this.txbDPMaNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDPMaNV.Margin = new System.Windows.Forms.Padding(2);
             this.txbDPMaNV.Name = "txbDPMaNV";
             this.txbDPMaNV.ReadOnly = true;
             this.txbDPMaNV.Size = new System.Drawing.Size(175, 20);
@@ -636,7 +636,7 @@ namespace PBL
             // 
             this.txbDPMaKhach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbDPMaKhach.Location = new System.Drawing.Point(179, 24);
-            this.txbDPMaKhach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDPMaKhach.Margin = new System.Windows.Forms.Padding(2);
             this.txbDPMaKhach.Name = "txbDPMaKhach";
             this.txbDPMaKhach.ReadOnly = true;
             this.txbDPMaKhach.Size = new System.Drawing.Size(175, 20);
@@ -647,7 +647,7 @@ namespace PBL
             this.dtpDPNgayDen.CustomFormat = "dd/MM/yyyy";
             this.dtpDPNgayDen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDPNgayDen.Location = new System.Drawing.Point(179, 161);
-            this.dtpDPNgayDen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDPNgayDen.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDPNgayDen.Name = "dtpDPNgayDen";
             this.dtpDPNgayDen.Size = new System.Drawing.Size(176, 20);
             this.dtpDPNgayDen.TabIndex = 22;
@@ -657,9 +657,9 @@ namespace PBL
             this.tpCheckin.Controls.Add(this.dgvCIKhachHang);
             this.tpCheckin.Controls.Add(this.panel2);
             this.tpCheckin.Location = new System.Drawing.Point(4, 22);
-            this.tpCheckin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpCheckin.Margin = new System.Windows.Forms.Padding(2);
             this.tpCheckin.Name = "tpCheckin";
-            this.tpCheckin.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpCheckin.Padding = new System.Windows.Forms.Padding(2);
             this.tpCheckin.Size = new System.Drawing.Size(456, 546);
             this.tpCheckin.TabIndex = 1;
             this.tpCheckin.Text = "Checkin";
@@ -669,7 +669,7 @@ namespace PBL
             // 
             this.dgvCIKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCIKhachHang.Location = new System.Drawing.Point(4, 300);
-            this.dgvCIKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCIKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.dgvCIKhachHang.Name = "dgvCIKhachHang";
             this.dgvCIKhachHang.RowHeadersWidth = 51;
             this.dgvCIKhachHang.RowTemplate.Height = 24;
@@ -692,7 +692,7 @@ namespace PBL
             this.panel2.Controls.Add(this.txbCIMaKhach);
             this.panel2.Controls.Add(this.dtbNgayDenThucTe);
             this.panel2.Location = new System.Drawing.Point(4, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(448, 292);
             this.panel2.TabIndex = 2;
@@ -710,7 +710,7 @@ namespace PBL
             // txbCIGhiChu
             // 
             this.txbCIGhiChu.Location = new System.Drawing.Point(180, 209);
-            this.txbCIGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCIGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txbCIGhiChu.Name = "txbCIGhiChu";
             this.txbCIGhiChu.Size = new System.Drawing.Size(176, 20);
             this.txbCIGhiChu.TabIndex = 10;
@@ -718,7 +718,7 @@ namespace PBL
             // btnCIReset
             // 
             this.btnCIReset.Location = new System.Drawing.Point(254, 255);
-            this.btnCIReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCIReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnCIReset.Name = "btnCIReset";
             this.btnCIReset.Size = new System.Drawing.Size(91, 28);
             this.btnCIReset.TabIndex = 9;
@@ -729,7 +729,7 @@ namespace PBL
             // btnCheckin
             // 
             this.btnCheckin.Location = new System.Drawing.Point(110, 255);
-            this.btnCheckin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckin.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckin.Name = "btnCheckin";
             this.btnCheckin.Size = new System.Drawing.Size(91, 28);
             this.btnCheckin.TabIndex = 8;
@@ -781,7 +781,7 @@ namespace PBL
             // 
             this.txbCIMaPhong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbCIMaPhong.Location = new System.Drawing.Point(180, 117);
-            this.txbCIMaPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCIMaPhong.Margin = new System.Windows.Forms.Padding(2);
             this.txbCIMaPhong.Name = "txbCIMaPhong";
             this.txbCIMaPhong.ReadOnly = true;
             this.txbCIMaPhong.Size = new System.Drawing.Size(175, 20);
@@ -791,7 +791,7 @@ namespace PBL
             // 
             this.txbCIMaNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbCIMaNV.Location = new System.Drawing.Point(180, 71);
-            this.txbCIMaNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCIMaNV.Margin = new System.Windows.Forms.Padding(2);
             this.txbCIMaNV.Name = "txbCIMaNV";
             this.txbCIMaNV.ReadOnly = true;
             this.txbCIMaNV.Size = new System.Drawing.Size(175, 20);
@@ -801,7 +801,7 @@ namespace PBL
             // 
             this.txbCIMaKhach.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbCIMaKhach.Location = new System.Drawing.Point(180, 26);
-            this.txbCIMaKhach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCIMaKhach.Margin = new System.Windows.Forms.Padding(2);
             this.txbCIMaKhach.Name = "txbCIMaKhach";
             this.txbCIMaKhach.ReadOnly = true;
             this.txbCIMaKhach.Size = new System.Drawing.Size(175, 20);
@@ -809,10 +809,10 @@ namespace PBL
             // 
             // dtbNgayDenThucTe
             // 
-            this.dtbNgayDenThucTe.CustomFormat = "dd/MM/yyyy";
+            this.dtbNgayDenThucTe.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.dtbNgayDenThucTe.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtbNgayDenThucTe.Location = new System.Drawing.Point(180, 163);
-            this.dtbNgayDenThucTe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtbNgayDenThucTe.Margin = new System.Windows.Forms.Padding(2);
             this.dtbNgayDenThucTe.Name = "dtbNgayDenThucTe";
             this.dtbNgayDenThucTe.Size = new System.Drawing.Size(176, 20);
             this.dtbNgayDenThucTe.TabIndex = 0;
@@ -824,9 +824,9 @@ namespace PBL
             this.tpBillDichVu.Controls.Add(this.label12);
             this.tpBillDichVu.Controls.Add(this.panel4);
             this.tpBillDichVu.Location = new System.Drawing.Point(4, 22);
-            this.tpBillDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBillDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.tpBillDichVu.Name = "tpBillDichVu";
-            this.tpBillDichVu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBillDichVu.Padding = new System.Windows.Forms.Padding(2);
             this.tpBillDichVu.Size = new System.Drawing.Size(456, 546);
             this.tpBillDichVu.TabIndex = 2;
             this.tpBillDichVu.Text = "Bill Dịch Vụ";
@@ -842,7 +842,7 @@ namespace PBL
             this.columnHeader5});
             this.lsvBillDichVu.HideSelection = false;
             this.lsvBillDichVu.Location = new System.Drawing.Point(4, 118);
-            this.lsvBillDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvBillDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.lsvBillDichVu.Name = "lsvBillDichVu";
             this.lsvBillDichVu.Size = new System.Drawing.Size(447, 375);
             this.lsvBillDichVu.TabIndex = 0;
@@ -876,7 +876,7 @@ namespace PBL
             // txbTotalBill
             // 
             this.txbTotalBill.Location = new System.Drawing.Point(337, 510);
-            this.txbTotalBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTotalBill.Margin = new System.Windows.Forms.Padding(2);
             this.txbTotalBill.Name = "txbTotalBill";
             this.txbTotalBill.ReadOnly = true;
             this.txbTotalBill.Size = new System.Drawing.Size(111, 20);
@@ -905,7 +905,7 @@ namespace PBL
             this.panel4.Controls.Add(this.DtNgayDat);
             this.panel4.Controls.Add(this.cbMenuDv);
             this.panel4.Location = new System.Drawing.Point(4, 3);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(446, 111);
             this.panel4.TabIndex = 1;
@@ -923,7 +923,7 @@ namespace PBL
             // 
             this.TxbRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxbRoom.Location = new System.Drawing.Point(386, 9);
-            this.TxbRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TxbRoom.Margin = new System.Windows.Forms.Padding(2);
             this.TxbRoom.Name = "TxbRoom";
             this.TxbRoom.ReadOnly = true;
             this.TxbRoom.Size = new System.Drawing.Size(57, 20);
@@ -962,7 +962,7 @@ namespace PBL
             // btnThemDv
             // 
             this.btnThemDv.Location = new System.Drawing.Point(244, 12);
-            this.btnThemDv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemDv.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemDv.Name = "btnThemDv";
             this.btnThemDv.Size = new System.Drawing.Size(68, 54);
             this.btnThemDv.TabIndex = 3;
@@ -973,7 +973,7 @@ namespace PBL
             // NbSoLuong
             // 
             this.NbSoLuong.Location = new System.Drawing.Point(71, 83);
-            this.NbSoLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NbSoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.NbSoLuong.Name = "NbSoLuong";
             this.NbSoLuong.Size = new System.Drawing.Size(34, 20);
             this.NbSoLuong.TabIndex = 2;
@@ -983,7 +983,7 @@ namespace PBL
             this.DtNgayDat.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.DtNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DtNgayDat.Location = new System.Drawing.Point(71, 46);
-            this.DtNgayDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DtNgayDat.Margin = new System.Windows.Forms.Padding(2);
             this.DtNgayDat.Name = "DtNgayDat";
             this.DtNgayDat.Size = new System.Drawing.Size(169, 20);
             this.DtNgayDat.TabIndex = 1;
@@ -992,7 +992,7 @@ namespace PBL
             // 
             this.cbMenuDv.FormattingEnabled = true;
             this.cbMenuDv.Location = new System.Drawing.Point(71, 12);
-            this.cbMenuDv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMenuDv.Margin = new System.Windows.Forms.Padding(2);
             this.cbMenuDv.Name = "cbMenuDv";
             this.cbMenuDv.Size = new System.Drawing.Size(169, 21);
             this.cbMenuDv.TabIndex = 0;
@@ -1001,9 +1001,9 @@ namespace PBL
             // 
             this.tpCheckOut.Controls.Add(this.panel5);
             this.tpCheckOut.Location = new System.Drawing.Point(4, 22);
-            this.tpCheckOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpCheckOut.Margin = new System.Windows.Forms.Padding(2);
             this.tpCheckOut.Name = "tpCheckOut";
-            this.tpCheckOut.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpCheckOut.Padding = new System.Windows.Forms.Padding(2);
             this.tpCheckOut.Size = new System.Drawing.Size(456, 546);
             this.tpCheckOut.TabIndex = 3;
             this.tpCheckOut.Text = "CheckOut";
@@ -1033,7 +1033,7 @@ namespace PBL
             this.panel5.Controls.Add(this.txbMaBook);
             this.panel5.Controls.Add(this.dtpNgayDenOut);
             this.panel5.Location = new System.Drawing.Point(2, 2);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(452, 542);
             this.panel5.TabIndex = 3;
@@ -1041,7 +1041,7 @@ namespace PBL
             // btnDetail
             // 
             this.btnDetail.Location = new System.Drawing.Point(279, 475);
-            this.btnDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(82, 32);
             this.btnDetail.TabIndex = 20;
@@ -1063,7 +1063,7 @@ namespace PBL
             // 
             this.txbVatTu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbVatTu.Location = new System.Drawing.Point(190, 320);
-            this.txbVatTu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbVatTu.Margin = new System.Windows.Forms.Padding(2);
             this.txbVatTu.Name = "txbVatTu";
             this.txbVatTu.ReadOnly = true;
             this.txbVatTu.Size = new System.Drawing.Size(170, 20);
@@ -1083,7 +1083,7 @@ namespace PBL
             // 
             this.txbTotalRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbTotalRoom.Location = new System.Drawing.Point(190, 416);
-            this.txbTotalRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTotalRoom.Margin = new System.Windows.Forms.Padding(2);
             this.txbTotalRoom.Name = "txbTotalRoom";
             this.txbTotalRoom.ReadOnly = true;
             this.txbTotalRoom.Size = new System.Drawing.Size(170, 20);
@@ -1113,7 +1113,7 @@ namespace PBL
             // 
             this.txbtotalcheckout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbtotalcheckout.Location = new System.Drawing.Point(190, 367);
-            this.txbtotalcheckout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbtotalcheckout.Margin = new System.Windows.Forms.Padding(2);
             this.txbtotalcheckout.Name = "txbtotalcheckout";
             this.txbtotalcheckout.ReadOnly = true;
             this.txbtotalcheckout.Size = new System.Drawing.Size(170, 20);
@@ -1123,7 +1123,7 @@ namespace PBL
             // 
             this.txbGia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbGia.Location = new System.Drawing.Point(190, 273);
-            this.txbGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbGia.Margin = new System.Windows.Forms.Padding(2);
             this.txbGia.Name = "txbGia";
             this.txbGia.ReadOnly = true;
             this.txbGia.Size = new System.Drawing.Size(170, 20);
@@ -1144,7 +1144,7 @@ namespace PBL
             this.dtpNgayDi.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.dtpNgayDi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDi.Location = new System.Drawing.Point(189, 225);
-            this.dtpNgayDi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayDi.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayDi.Name = "dtpNgayDi";
             this.dtpNgayDi.Size = new System.Drawing.Size(171, 20);
             this.dtpNgayDi.TabIndex = 10;
@@ -1152,7 +1152,7 @@ namespace PBL
             // btnCheckOutReset
             // 
             this.btnCheckOutReset.Location = new System.Drawing.Point(190, 475);
-            this.btnCheckOutReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckOutReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckOutReset.Name = "btnCheckOutReset";
             this.btnCheckOutReset.Size = new System.Drawing.Size(82, 32);
             this.btnCheckOutReset.TabIndex = 9;
@@ -1163,7 +1163,7 @@ namespace PBL
             // btnCheckOut
             // 
             this.btnCheckOut.Location = new System.Drawing.Point(103, 475);
-            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(82, 32);
             this.btnCheckOut.TabIndex = 8;
@@ -1215,7 +1215,7 @@ namespace PBL
             // 
             this.txbMaPhongOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbMaPhongOut.Location = new System.Drawing.Point(189, 129);
-            this.txbMaPhongOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaPhongOut.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaPhongOut.Name = "txbMaPhongOut";
             this.txbMaPhongOut.ReadOnly = true;
             this.txbMaPhongOut.Size = new System.Drawing.Size(170, 20);
@@ -1225,7 +1225,7 @@ namespace PBL
             // 
             this.txbMaNvOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbMaNvOut.Location = new System.Drawing.Point(189, 83);
-            this.txbMaNvOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaNvOut.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaNvOut.Name = "txbMaNvOut";
             this.txbMaNvOut.ReadOnly = true;
             this.txbMaNvOut.Size = new System.Drawing.Size(170, 20);
@@ -1235,7 +1235,7 @@ namespace PBL
             // 
             this.txbMaBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txbMaBook.Location = new System.Drawing.Point(189, 37);
-            this.txbMaBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaBook.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaBook.Name = "txbMaBook";
             this.txbMaBook.ReadOnly = true;
             this.txbMaBook.Size = new System.Drawing.Size(170, 20);
@@ -1246,7 +1246,7 @@ namespace PBL
             this.dtpNgayDenOut.CustomFormat = "dd/MM/yyyy hh:mm tt";
             this.dtpNgayDenOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDenOut.Location = new System.Drawing.Point(189, 177);
-            this.dtpNgayDenOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayDenOut.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayDenOut.Name = "dtpNgayDenOut";
             this.dtpNgayDenOut.Size = new System.Drawing.Size(171, 20);
             this.dtpNgayDenOut.TabIndex = 0;
@@ -1257,7 +1257,7 @@ namespace PBL
             this.panel7.Controls.Add(this.flpRom);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 24);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1129, 572);
             this.panel7.TabIndex = 8;
@@ -1269,7 +1269,7 @@ namespace PBL
             this.ClientSize = new System.Drawing.Size(1129, 596);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.menuStrip2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khách sạn";

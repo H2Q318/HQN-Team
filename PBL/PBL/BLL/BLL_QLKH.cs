@@ -56,13 +56,12 @@ namespace PBL.BLL
                 MessageBox.Show("Vui lòng nhập thông tin đầy đủ");
             }
         }
-        public void UpdateKh(KHACHHANG p)
+        public bool UpdateKh(KHACHHANG p)
         {
-        
-            QLKS db = new QLKS();
-            var kh = db.KHACHHANGs.Find(p.KhachHangID);
-            if (kh != null)
+            try
             {
+                QLKS db = new QLKS();
+                var kh = db.KHACHHANGs.Find(p.KhachHangID);
                 kh.Ten = p.Ten;
                 kh.SDT = p.SDT;
                 kh.QuocTich = p.QuocTich;
@@ -70,6 +69,11 @@ namespace PBL.BLL
                 kh.GhiChu = p.GhiChu;
                 kh.CMND = p.CMND;
                 db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
 
         }

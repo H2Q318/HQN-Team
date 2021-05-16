@@ -44,6 +44,12 @@ namespace PBL.BLL
             }
             return null;
         }
+
+        public LOAIPHONG FindLoaiPhongByID(string id)
+        {
+            return new QLKS().LOAIPHONGs.Find(id);
+        }
+
         public void DeleteLoaiPhong(List<string> l)
         {
             QLKS db = new QLKS();

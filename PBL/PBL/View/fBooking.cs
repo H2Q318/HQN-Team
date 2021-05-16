@@ -26,7 +26,6 @@ namespace PBL
         {
             ShowDgvBooking();
             cbSearch.SelectedIndex = 0;
-            cbGioiTinh.SelectedIndex = 0;
         }
 
         private void RefreshBook()
@@ -42,13 +41,6 @@ namespace PBL
             dtpCheckIn.CustomFormat = " ";
             dtpCheckOut.CustomFormat = " ";
             txbThanhToan.Clear();
-            txbMaKH.Clear();
-            txbTenKH.Clear();
-            cbGioiTinh.SelectedIndex = 0;
-            txbCMND.Clear();
-            txbSDT.Clear();
-            txbQuocTich.Clear();
-            txbNote.Clear();
             cbSearch.SelectedIndex = 0;
             txbSearch.Clear();
             ShowDgvBooking();
@@ -65,40 +57,23 @@ namespace PBL
         {
             try
             {
-                if (txbTenKH.TextLength != 0 && txbCMND.TextLength != 0 && txbSDT.TextLength != 0 && txbQuocTich.TextLength != 0)
+                BOOK b = new BOOK
                 {
-                    BOOK b = new BOOK
-                    {
-                        BookID = dgvBooking.SelectedRows[0].Cells["BookID"].Value.ToString(),
-                        NgayDat = (DateTime)dtpNgayDat.Value,
-                        NgayCheckIn = (DateTime)dtpNgayDen.Value,
-                        NgayCheckOut = (DateTime)dtpNgayDi.Value,
-                        NgayCheckIn_ThucTe = (DateTime)dtpCheckIn.Value,
-                        NgayCheckOut_ThucTe = (DateTime)dtpCheckOut.Value
-                    };
-                    KHACHHANG kh = new KHACHHANG
-                    {
-                        KhachHangID = txbMaKH.Text,
-                        Ten = txbTenKH.Text,
-                        GioiTinh = (cbGioiTinh.SelectedIndex == 0) ? true : false,
-                        CMND = txbCMND.Text,
-                        SDT = txbSDT.Text,
-                        QuocTich = txbQuocTich.Text,
-                        GhiChu = txbNote.Text
-                    };
-                    if (BLL_QLBOOK.Instance.UpdateDatPhong(b) && BLL_QLKH.Instance.UpdateKh(kh))
-                    {
-                        MessageBox.Show("Cập nhật thông tin thành công!");
-                        RefreshBook();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật không thành công!");
-                    }
+                    BookID = dgvBooking.SelectedRows[0].Cells["BookID"].Value.ToString(),
+                    NgayDat = (DateTime)dtpNgayDat.Value,
+                    NgayCheckIn = (DateTime)dtpNgayDen.Value,
+                    NgayCheckOut = (DateTime)dtpNgayDi.Value,
+                    NgayCheckIn_ThucTe = (DateTime)dtpCheckIn.Value,
+                    NgayCheckOut_ThucTe = (DateTime)dtpCheckOut.Value
+                };
+                if (BLL_QLBOOK.Instance.UpdateDatPhong(b))
+                {
+                    MessageBox.Show("Cập nhật thông tin thành công!");
+                    RefreshBook();
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                    MessageBox.Show("Cập nhật không thành công!");
                 }
             }
             catch
@@ -130,6 +105,19 @@ namespace PBL
         private void btnReset_Click(object sender, EventArgs e)
         {
             RefreshBook();
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fChiTietKhachHang f = new fChiTietKhachHang(dgvKhachHangTrongPhong.SelectedRows[0].Cells["KhachHangID"].Value.ToString());
+                f.ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần xem chi tiết!");
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -172,20 +160,12 @@ namespace PBL
             }
 
             txbThanhToan.Text = data.Cells["ThanhToan"].Value.ToString();
-            txbMaKH.Text = data.Cells["KhachHangID"].Value.ToString();
-
-            KHACHHANG kh = BLL_QLKH.Instance.FindKh(txbMaKH.Text);
-            txbTenKH.Text = kh.Ten;
-            cbGioiTinh.SelectedIndex = (kh.GioiTinh == true) ? 0 : 1;
-            txbCMND.Text = kh.CMND;
-            txbSDT.Text = kh.SDT;
-            txbQuocTich.Text = kh.QuocTich;
-            txbNote.Text = kh.GhiChu;
         }   
 
         private void dgvBooking_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dgvBooking.ClearSelection();
         }
+
     }
 }

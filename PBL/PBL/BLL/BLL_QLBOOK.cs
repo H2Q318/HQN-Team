@@ -159,10 +159,5 @@ namespace PBL.BLL
             }
             return data;
         }
-
-        public List<Book_View> GetListBook()
-        {
-
-        }
     }
 }

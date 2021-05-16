@@ -15,7 +15,6 @@ D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fChangePassword.resources
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\PBL.exe.config
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\PBL.exe
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\bin\Debug\PBL.pdb
-C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csprojAssemblyReference.cache
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.Properties.Resources.resources
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.fBooking.resources
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.fChangePassword.resources

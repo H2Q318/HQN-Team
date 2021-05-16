@@ -84,5 +84,44 @@ namespace PBL.BLL
             }
             return data;
         }
+
+        public decimal[] GetRevenueDataInYear()
+        {
+            QLKS db = new QLKS();
+            decimal[] data = new decimal[12];
+            foreach (HOADON item in db.HOADONs.ToList())
+            {
+                if (item.TongTien != null)
+                {
+                    data[item.NgayThanhToan.Month - 1] += (decimal)item.TongTien;
+                }
+                else
+                {
+                    data[item.NgayThanhToan.Month - 1] += 0;
+                }
+            }
+            return data;
+        }
+
+        public decimal[] GetRevenueDataInMonth(int month)
+        {
+            QLKS db = new QLKS();
+            decimal[] data = new decimal[DateTime.DaysInMonth(DateTime.Now.Year, month)];
+            foreach (HOADON item in db.HOADONs.ToList())
+            {
+                if (item.NgayThanhToan.Month == month)
+                {
+                    if (item.TongTien != null)
+                    {
+                        data[item.NgayThanhToan.Day - 1] += (decimal)item.TongTien;
+                    }
+                    else
+                    {
+                        data[item.NgayThanhToan.Day - 1] += 0;
+                    }
+                } 
+            }
+            return data;
+        }
     }
 }

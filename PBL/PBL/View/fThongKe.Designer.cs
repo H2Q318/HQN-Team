@@ -32,11 +32,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // chartRevenue
@@ -48,22 +46,14 @@
             this.chartRevenue.Location = new System.Drawing.Point(12, 12);
             this.chartRevenue.Name = "chartRevenue";
             series1.ChartArea = "ChartArea1";
+            series1.IsValueShownAsLabel = true;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Doanh thu";
             series1.YValuesPerPoint = 4;
             this.chartRevenue.Series.Add(series1);
-            this.chartRevenue.Size = new System.Drawing.Size(760, 300);
+            this.chartRevenue.Size = new System.Drawing.Size(760, 441);
             this.chartRevenue.TabIndex = 0;
             this.chartRevenue.Text = "Thống kê doanh thu";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 318);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(760, 213);
-            this.dataGridView1.TabIndex = 1;
             // 
             // cbType
             // 
@@ -83,16 +73,17 @@
             "Tháng 10",
             "Tháng 11",
             "Tháng 12"});
-            this.cbType.Location = new System.Drawing.Point(613, 537);
+            this.cbType.Location = new System.Drawing.Point(614, 459);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(159, 21);
             this.cbType.TabIndex = 3;
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(487, 538);
+            this.label1.Location = new System.Drawing.Point(488, 460);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 16);
             this.label1.TabIndex = 4;
@@ -103,16 +94,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(785, 565);
+            this.ClientSize = new System.Drawing.Size(785, 492);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbType);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.chartRevenue);
             this.Name = "fThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê";
             ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,7 +110,6 @@
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label label1;
     }

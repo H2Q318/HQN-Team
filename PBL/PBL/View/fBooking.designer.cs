@@ -35,6 +35,8 @@
             this.txbSearch = new System.Windows.Forms.TextBox();
             this.cbSearch = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
+            this.dgvKhachHangTrongPhong = new System.Windows.Forms.DataGridView();
             this.lbCustomer = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
@@ -74,11 +76,10 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.lbID = new System.Windows.Forms.Label();
             this.txbPhongID = new System.Windows.Forms.TextBox();
-            this.dgvKhachHangTrongPhong = new System.Windows.Forms.DataGridView();
-            this.btnDetail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHangTrongPhong)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -91,7 +92,6 @@
             this.panel8.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHangTrongPhong)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvBooking
@@ -176,6 +176,28 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(430, 345);
             this.panel3.TabIndex = 18;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.Location = new System.Drawing.Point(331, 306);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(94, 28);
+            this.btnDetail.TabIndex = 14;
+            this.btnDetail.Text = "Xem chi tiết";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
+            // dgvKhachHangTrongPhong
+            // 
+            this.dgvKhachHangTrongPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKhachHangTrongPhong.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvKhachHangTrongPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachHangTrongPhong.Location = new System.Drawing.Point(3, 63);
+            this.dgvKhachHangTrongPhong.Name = "dgvKhachHangTrongPhong";
+            this.dgvKhachHangTrongPhong.ReadOnly = true;
+            this.dgvKhachHangTrongPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvKhachHangTrongPhong.Size = new System.Drawing.Size(422, 234);
+            this.dgvKhachHangTrongPhong.TabIndex = 12;
             // 
             // lbCustomer
             // 
@@ -360,7 +382,7 @@
             this.panel21.Controls.Add(this.label6);
             this.panel21.Location = new System.Drawing.Point(333, 63);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(301, 34);
+            this.panel21.Size = new System.Drawing.Size(298, 34);
             this.panel21.TabIndex = 5;
             // 
             // dtpNgayDat
@@ -370,7 +392,7 @@
             this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDat.Location = new System.Drawing.Point(118, 6);
             this.dtpNgayDat.Name = "dtpNgayDat";
-            this.dtpNgayDat.Size = new System.Drawing.Size(176, 21);
+            this.dtpNgayDat.Size = new System.Drawing.Size(170, 21);
             this.dtpNgayDat.TabIndex = 2;
             // 
             // label6
@@ -564,28 +586,6 @@
             this.txbPhongID.Size = new System.Drawing.Size(176, 22);
             this.txbPhongID.TabIndex = 0;
             // 
-            // dgvKhachHangTrongPhong
-            // 
-            this.dgvKhachHangTrongPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvKhachHangTrongPhong.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvKhachHangTrongPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachHangTrongPhong.Location = new System.Drawing.Point(3, 63);
-            this.dgvKhachHangTrongPhong.Name = "dgvKhachHangTrongPhong";
-            this.dgvKhachHangTrongPhong.ReadOnly = true;
-            this.dgvKhachHangTrongPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhachHangTrongPhong.Size = new System.Drawing.Size(422, 234);
-            this.dgvKhachHangTrongPhong.TabIndex = 12;
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.Location = new System.Drawing.Point(331, 306);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(94, 28);
-            this.btnDetail.TabIndex = 14;
-            this.btnDetail.Text = "Xem chi tiết";
-            this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
-            // 
             // fBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,6 +607,7 @@
             this.panel18.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHangTrongPhong)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -631,7 +632,6 @@
             this.panel22.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHangTrongPhong)).EndInit();
             this.ResumeLayout(false);
 
         }

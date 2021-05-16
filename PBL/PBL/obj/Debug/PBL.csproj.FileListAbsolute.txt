@@ -99,3 +99,4 @@ C:\Users\ACER\Downloads\PBL\PBL\obj\Debug\PBL.exe
 C:\Users\ACER\Downloads\PBL\PBL\obj\Debug\PBL.pdb
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.fChiTietKhachHang.resources
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fChiTietKhachHang.resources
+C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csprojAssemblyReference.cache

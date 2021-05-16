@@ -17,8 +17,8 @@ namespace PBL
         public string NhanVienID { get; set; }
         public string TenNhanVien { get; set; }
         public DateTime NgayDat { get; set; }
-        public DateTime NgayCheckIn { get; set; }
-        public DateTime NgayCheckOut { get; set; }
+        public Nullable<DateTime> NgayCheckIn { get; set; }
+        public Nullable<DateTime> NgayCheckOut { get; set; }
         public Nullable<DateTime> NgayCheckIn_ThucTe { get; set; }
         public Nullable<DateTime> NgayCheckOut_ThucTe { get; set; }
         public Decimal ThanhToan { get; set; }
@@ -33,8 +33,25 @@ namespace PBL
             NhanVienID = b.NhanVienID;
             TenNhanVien = b.NHANVIEN.Ten;
             NgayDat = b.NgayDat;
-            NgayCheckIn = (DateTime)b.NgayCheckIn;
-            NgayCheckOut = (DateTime)b.NgayCheckOut;
+
+            if (b.NgayCheckIn != null)
+            {
+                NgayCheckIn = (DateTime)b.NgayCheckIn;
+            }
+            else
+            {
+                NgayCheckIn = null;
+            }
+
+            if (b.NgayCheckOut != null)
+            {
+                NgayCheckOut = (DateTime)b.NgayCheckOut;
+            }
+            else
+            {
+                NgayCheckOut = null;
+            }
+
             if (b.NgayCheckIn_ThucTe != null)
             {
                 NgayCheckIn_ThucTe = (DateTime)b.NgayCheckIn_ThucTe;

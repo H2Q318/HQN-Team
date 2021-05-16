@@ -146,8 +146,26 @@ namespace PBL
             txbLoaiPhong.Text = lp.TenLoaiPhong;
             txbGia.Text = lp.Gia.ToString();
             dtpNgayDat.Value = (DateTime)data.Cells["NgayDat"].Value;
-            dtpNgayDen.Value = (DateTime)data.Cells["NgayCheckIn"].Value;
-            dtpNgayDi.Value = (DateTime)data.Cells["NgayCheckOut"].Value;
+
+            if (data.Cells["NgayCheckIn"].Value != null)
+            {
+                dtpNgayDen.CustomFormat = "dd/MM/yyyy";
+                dtpNgayDen.Value = (DateTime)data.Cells["NgayCheckIn"].Value;
+            }
+            else
+            {
+                dtpNgayDen.CustomFormat = " ";
+            }
+
+            if (data.Cells["NgayCheckOut"].Value != null)
+            {
+                dtpNgayDi.CustomFormat = "dd/MM/yyyy";
+                dtpNgayDi.Value = (DateTime)data.Cells["NgayCheckOut"].Value;
+            }
+            else
+            {
+                dtpNgayDi.CustomFormat = " ";
+            }
 
             if (data.Cells["NgayCheckIn_ThucTe"].Value != null)
             {

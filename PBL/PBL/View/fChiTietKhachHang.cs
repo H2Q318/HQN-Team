@@ -14,19 +14,19 @@ namespace PBL
 {
     public partial class fChiTietKhachHang : Form
     {
-        private string IDKhachHang { get; set; }
-        public fChiTietKhachHang(string khachHangId)
+        private string KhachHangID { get; set; }
+        public fChiTietKhachHang(string id)
         {
             InitializeComponent();
-            IDKhachHang = khachHangId;
+            KhachHangID = id;
             GUI();
         }
         private void GUI()
         {
-            KHACHHANG kh = BLL_QLKH.Instance.FindKh(IDKhachHang);
-            txbMaKH.Text = IDKhachHang;
+            KHACHHANG kh = BLL_QLKH.Instance.FindKh(KhachHangID);
+            txbMaKH.Text = kh.KhachHangID;
             txbTenKH.Text = kh.Ten;
-            cbGioiTinh.SelectedIndex = (kh.GioiTinh == true) ? 0 : 1;
+            txbGender.Text = (bool)kh.GioiTinh ? "Nam" : "Nữ";
             txbCMND.Text = kh.CMND;
             txbSDT.Text = kh.SDT;
             txbQuocTich.Text = kh.QuocTich;

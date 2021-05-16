@@ -45,14 +45,27 @@ namespace PBL
             txbSearch.Clear();
             ShowDgvBooking();
         }
-
+        private void RefreshKhachHang()
+        {
+            dgvKhachHang.DataSource = null;
+            dgvKhachHang.Rows.Clear();
+            btnDetail.Enabled = false;
+            btXoaKH.Enabled = false;
+        }
         private void ShowDgvBooking()
         {
             dgvBooking.DataSource = BLL_QLBOOK.Instance.GetAllBook();
             dgvBooking.Columns["KhachHangID"].Visible = false;
             dgvBooking.Columns["NhanVienID"].Visible = false;
         }
-
+        private void ShowDGVKhachHang()
+        {
+            BOOK b = BLL_QLBOOK.Instance.Find(dgvBooking.SelectedRows[0].Cells["BookID"].Value.ToString());
+            dgvKhachHang.DataSource = b.KHACHHANGs.ToList();
+            dgvKhachHang.Columns["KhachHangID"].Visible = false;
+            dgvKhachHang.Columns["BOOKs"].Visible = false;
+            dgvKhachHang.Columns["BOOKs1"].Visible = false;
+        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -105,13 +118,14 @@ namespace PBL
         private void btnReset_Click(object sender, EventArgs e)
         {
             RefreshBook();
+            RefreshKhachHang();
         }
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
             try
             {
-                fChiTietKhachHang f = new fChiTietKhachHang(dgvKhachHangTrongPhong.SelectedRows[0].Cells["KhachHangID"].Value.ToString());
+                fChiTietKhachHang f = new fChiTietKhachHang(dgvKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString());
                 f.ShowDialog();
             }
             catch
@@ -120,13 +134,9 @@ namespace PBL
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvBooking_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            ShowDGVKhachHang();
             DataGridViewRow data = dgvBooking.SelectedRows[0];
             txbBookID.Text = data.Cells["BookID"].Value.ToString();
             txbTenNhanVien.Text = data.Cells["TenNhanVien"].Value.ToString();
@@ -167,5 +177,55 @@ namespace PBL
             dgvBooking.ClearSelection();
         }
 
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btXoaKH.Enabled = true;
+            btnDetail.Enabled = true;
+        }
+        private List<string> GetDGVKhachHangID()
+        {
+            List<string> data = new List<string>();
+            if (dgvKhachHang.SelectedRows.Count > 0)
+            {
+                foreach(DataGridViewRow r in dgvKhachHang.SelectedRows)
+                {
+                    data.Add(r.Cells["KhachHangID"].Value.ToString());
+                }
+            }
+            return data;
+        }
+        private void btXoaKH_Click(object sender, EventArgs e)
+        {
+            if (dgvKhachHang.SelectedRows.Count > 0)
+            {
+                BLL_QLBOOK.Instance.DeleteKhachHangFromBook(GetDGVKhachHangID(), txbBookID.Text.Trim());
+                ShowDGVKhachHang();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn ít nhất một khách hàng để xoá !");
+            }
+        }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (cbSearch.SelectedIndex != -1)
+            {
+                dgvBooking.DataSource = BLL_QLBOOK.Instance.SearchBook(txbSearch.Text.Trim(), cbSearch.SelectedItem.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn mục cần tìm kiếm trước !");
+            }
+        }
+
+        private void dgvKhachHang_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvKhachHang.ClearSelection();
+        }
+
+        private void txbSearch_TextChanged(object sender, EventArgs e)
+        {
+            btnSearch.PerformClick();
+        }
     }
 }

@@ -22,15 +22,16 @@ namespace PBL
         public Nullable<DateTime> NgayCheckIn_ThucTe { get; set; }
         public Nullable<DateTime> NgayCheckOut_ThucTe { get; set; }
         public Decimal ThanhToan { get; set; }
-
+        public Book_View()
+        { }
         public Book_View(BOOK b)
         {
             BookID = b.BookID;
             PhongID = b.PhongID;
             KhachHangID = b.KhachHangID;
-            TenKhachHang = BLL_QLKH.Instance.FindKh(b.KhachHangID).Ten;
+            TenKhachHang = b.KHACHHANG.Ten;
             NhanVienID = b.NhanVienID;
-            TenNhanVien = BLL_QLNV.Instance.GetNhanVienByID(b.NhanVienID).Ten;
+            TenNhanVien = b.NHANVIEN.Ten;
             NgayDat = b.NgayDat;
             NgayCheckIn = (DateTime)b.NgayCheckIn;
             NgayCheckOut = (DateTime)b.NgayCheckOut;
@@ -51,7 +52,7 @@ namespace PBL
             {
                 NgayCheckOut_ThucTe = null;
             }
-
+            ThanhToan = b.ThanhToan == null ? 0 : (decimal)b.ThanhToan;
         }
     }
 }

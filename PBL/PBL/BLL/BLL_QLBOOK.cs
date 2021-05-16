@@ -159,5 +159,75 @@ namespace PBL.BLL
             }
             return data;
         }
+        public void DeleteKhachHangFromBook(List<string> l, string bookid)
+        {
+            QLKS db = new QLKS();
+            BOOK b = db.BOOKs.Find(bookid);
+            foreach(string s in l)
+            {
+                db.KHACHHANGs.Find(s).BOOKs1.Remove(b);
+            }
+            db.SaveChanges();
+        }
+        public List<Book_View> SearchBook(string s, string a)
+        {
+            QLKS db = new QLKS();
+            switch (a)
+            {
+                case "Theo mã phòng":
+                    return db.BOOKs.Where(p => p.PhongID.Contains(s))
+                        .Select(p => new Book_View
+                        {
+                            BookID = p.BookID,
+                            PhongID = p.PhongID,
+                            NhanVienID = p.NhanVienID,
+                            TenNhanVien = p.NHANVIEN.Ten,
+                            KhachHangID = p.KhachHangID,
+                            TenKhachHang = p.KHACHHANG.Ten,
+                            NgayDat = p.NgayDat,
+                            NgayCheckIn = (DateTime)p.NgayCheckIn,
+                            NgayCheckOut = (DateTime)p.NgayCheckOut,
+                            NgayCheckIn_ThucTe = p.NgayCheckIn_ThucTe,
+                            NgayCheckOut_ThucTe = p.NgayCheckOut_ThucTe,
+                            ThanhToan = p.ThanhToan == null ? 0 : (decimal)p.ThanhToan
+                        })
+                        .ToList();
+                case "Theo tên khách hàng":
+                    return db.BOOKs.Where(p => p.KHACHHANG.Ten.Contains(s))
+                        .Select(p => new Book_View
+                        {
+                            BookID = p.BookID,
+                            PhongID = p.PhongID,
+                            NhanVienID = p.NhanVienID,
+                            TenNhanVien = p.NHANVIEN.Ten,
+                            KhachHangID = p.KhachHangID,
+                            TenKhachHang = p.KHACHHANG.Ten,
+                            NgayDat = p.NgayDat,
+                            NgayCheckIn = (DateTime)p.NgayCheckIn,
+                            NgayCheckOut = (DateTime)p.NgayCheckOut,
+                            NgayCheckIn_ThucTe = p.NgayCheckIn_ThucTe,
+                            NgayCheckOut_ThucTe = p.NgayCheckOut_ThucTe,
+                            ThanhToan = p.ThanhToan == null ? 0 : (decimal)p.ThanhToan
+                        })
+                        .ToList();
+            }
+            return db.BOOKs.Where(p => p.NHANVIEN.Ten.Contains(s))
+                        .Select(p => new Book_View
+                        {
+                            BookID = p.BookID,
+                            PhongID = p.PhongID,
+                            NhanVienID = p.NhanVienID,
+                            TenNhanVien = p.NHANVIEN.Ten,
+                            KhachHangID = p.KhachHangID,
+                            TenKhachHang = p.KHACHHANG.Ten,
+                            NgayDat = p.NgayDat,
+                            NgayCheckIn = (DateTime)p.NgayCheckIn,
+                            NgayCheckOut = (DateTime)p.NgayCheckOut,
+                            NgayCheckIn_ThucTe = p.NgayCheckIn_ThucTe,
+                            NgayCheckOut_ThucTe = p.NgayCheckOut_ThucTe,
+                            ThanhToan = p.ThanhToan == null ? 0 : (decimal)p.ThanhToan
+                        })
+                        .ToList(); ;
+        }
     }
 }

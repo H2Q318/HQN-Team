@@ -27,30 +27,6 @@ namespace PBL
             GUIBillDV();
             GuiKhachHang();
         }
-        private void RefreshGUIPhong()
-        {
-            cbTenLoaiPhong.Items.Clear();
-            cbTenLoaiPhong.ResetText(); 
-            foreach (LOAIPHONG i in BLL_QLLP.Instance.GetListLoaiPhong(null))
-            {
-                cbTenLoaiPhong.Items.Add(new CBBItem
-                {
-                    Text = i.TenLoaiPhong,
-                    Value = i.LoaiPhongID
-                });
-            }
-            ShowDGVPhong();
-        }
-        private void RefreshGUIBillDichVu()
-        {
-            cbTenDV.Items.Clear();
-            cbTenDV.ResetText();
-            foreach (LOAIDICHVU i in BLL_QLDV.Instance.GetAllDichVu())
-            {
-                cbTenDV.Items.Add(new CBBItem { Text = i.TenDichVu, Value = i.DichVuID });
-            }
-            ShowDGVBillDV();
-        }
         #region Quản lý phòng
         private void GUIPhong()
         {
@@ -75,7 +51,20 @@ namespace PBL
         {
             dgvPhong.DataSource = BLL_QLP.Instance.GetListPhong_View(BLL_QLP.Instance.GetListPhong(s));
         }
-
+        private void RefreshGUIPhong()
+        {
+            cbTenLoaiPhong.Items.Clear();
+            cbTenLoaiPhong.ResetText();
+            foreach (LOAIPHONG i in BLL_QLLP.Instance.GetListLoaiPhong(null))
+            {
+                cbTenLoaiPhong.Items.Add(new CBBItem
+                {
+                    Text = i.TenLoaiPhong,
+                    Value = i.LoaiPhongID
+                });
+            }
+            ShowDGVPhong();
+        }
         private void btnThemPh_Click(object sender, EventArgs e)
         {
             if (BLL_QLP.Instance.FindPhong(txbMaPhong.Text.Trim()) == null)
@@ -574,6 +563,7 @@ namespace PBL
                 {
                     MessageBox.Show("Them dich vu thanh cong!");
                     RefreshDV();
+                    RefreshGUIBillDichVu();
                 }
                 else
                 {
@@ -604,6 +594,7 @@ namespace PBL
                     {
                         MessageBox.Show("Cap nhat dich vu thanh cong!");
                         RefreshDV();
+                        RefreshGUIBillDichVu();
                     }
                     else
                     {
@@ -630,6 +621,7 @@ namespace PBL
                 {
                     MessageBox.Show("Xoa dich vu thanh cong!");
                     RefreshDV();
+                    RefreshGUIBillDichVu();
                 }
                 else
                 {
@@ -715,6 +707,16 @@ namespace PBL
             cbTenDV.SelectedIndex = 0;
             ShowDGVBillDV();
         }
+        private void RefreshGUIBillDichVu()
+        {
+            cbTenDV.Items.Clear();
+            cbTenDV.ResetText();
+            foreach (LOAIDICHVU i in BLL_QLDV.Instance.GetAllDichVu())
+            {
+                cbTenDV.Items.Add(new CBBItem { Text = i.TenDichVu, Value = i.DichVuID });
+            }
+            ShowDGVBillDV();
+        }
         private void ShowDGVBillDV(string s = null)
         {
             dgvBillDV.DataSource = BLL_QLBillDV.Instance.GetListBillDV_View(BLL_QLBillDV.Instance.GetListBillDV(s));
@@ -722,64 +724,49 @@ namespace PBL
         }
         private void btnThemBill_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txbMaBill.Text))
+            int billid = -1;
+            Int32.TryParse(txbMaBill.Text, out billid);
+            if (BLL_QLBillDV.Instance.FindBillDV(billid) != null)
+            {
+                MessageBox.Show("Mã hoá đơn dịch vụ đã tồn tại !");
+            }
+            else if (BLL_QLBOOK.Instance.Find(txbMaBook.Text.Trim()) == null)
+            {
+                MessageBox.Show("Mã Book không tồn tại !");
+            }
+            else
             {
                 try
                 {
                     HOADON_DUNG_DICHVU p = new HOADON_DUNG_DICHVU
                     {
-                        BookID = txbMaBook.Text,
+                        BookID = txbMaBook.Text.Trim(),
                         DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value.Trim(),
                         SoLuong = Convert.ToInt32(nUDSoLuong.Value),
                         Ngay = dtpNgayDat.Value,
                         NhanVienID = this.NhanVienID
-
                     };
                     BLL_QLBillDV.Instance.AddBillDV(p);
                     ShowDGVBillDV();
-                    RefreshGUIBillDichVu();
                 }
                 catch
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin và kiểu dữ liệu !");
                 }
-            }
-            else
-            {
-                if (BLL_QLBillDV.Instance.FindBillDV(Convert.ToInt32(txbMaBill.Text)) != null)
-                {
-                    MessageBox.Show("Mã hoá đơn dịch vụ đã tồn tại !");
-                }
-                else
-                {
-                    try
-                    {
-                        HOADON_DUNG_DICHVU p = new HOADON_DUNG_DICHVU
-                        {
-                            BookID = txbMaBook.Text,
-                            DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value.Trim(),
-                            SoLuong = Convert.ToInt32(nUDSoLuong.Value),
-                            Ngay = dtpNgayDat.Value,
-                            NhanVienID = this.NhanVienID
-                        };
-                        BLL_QLBillDV.Instance.AddBillDV(p);
-                        ShowDGVBillDV();
-                        RefreshGUIBillDichVu();
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin và kiểu dữ liệu !");
-                    }
-                }
-            }
-            
+            }          
         }
 
         private void btnSuaBill_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txbMaBill.Text))
+            int billid = -1;
+            Int32.TryParse(txbMaBill.Text, out billid);
+            if (BLL_QLBillDV.Instance.FindBillDV(billid) == null)
             {
-                MessageBox.Show("Chọn duy nhất một dòng để sửa !");
+                MessageBox.Show("Mã hoá đơn dịch vụ không tồn tại !");
+            }
+            else if (BLL_QLBOOK.Instance.Find(txbMaBook.Text.Trim()) == null)
+            {
+                MessageBox.Show("Mã Book không tồn tại !");
             }
             else
             {
@@ -787,16 +774,15 @@ namespace PBL
                 {
                     HOADON_DUNG_DICHVU p = new HOADON_DUNG_DICHVU
                     {
-                        ID = Convert.ToInt32(txbMaBill.Text),
+                        ID = billid,
                         BookID = txbMaBook.Text.Trim(),
                         DichVuID = ((CBBItem)cbTenDV.SelectedItem).Value,
                         SoLuong = Convert.ToInt32(nUDSoLuong.Value),
                         Ngay = dtpNgayDat.Value,
-                        NhanVienID = "NV070521003"
+                        NhanVienID = this.NhanVienID
                     };
                     BLL_QLBillDV.Instance.UpdateBillDV(p);
                     ShowDGVBillDV();
-                    RefreshGUIBillDichVu();
                 }
                 catch
                 {
@@ -820,7 +806,6 @@ namespace PBL
             {
                 BLL_QLBillDV.Instance.DeleteBillDV(GetListBillDVID());
                 ShowDGVBillDV();
-                RefreshGUIBillDichVu();
             }
             else
             {

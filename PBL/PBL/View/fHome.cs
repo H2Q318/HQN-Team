@@ -351,6 +351,15 @@ namespace PBL
             fHoaDon f = new fHoaDon(IDNhanVien);
             f.ShowDialog();
         }
+
+        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!Char.IsDigit(e.KeyChar) && (e.KeyChar != 8));
+        }
+        private void OnlyCharacter(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8) && (!Char.IsWhiteSpace(e.KeyChar)));
+        }
     }
 
 }

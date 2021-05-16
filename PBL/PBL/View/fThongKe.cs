@@ -25,6 +25,7 @@ namespace PBL
         }
         private void fillChart(int month)
         {
+            chartRevenue.Series["Doanh thu"].Points.Clear();
             if (month == 0)
             {
                 chartRevenue.ChartAreas[0].AxisX.Minimum = 1;
@@ -38,6 +39,9 @@ namespace PBL
             else
             {
                 decimal[] data = BLL_QLBill.Instance.GetRevenueDataInMonth(cbType.SelectedIndex);
+                chartRevenue.ChartAreas[0].AxisX.Minimum = 1;
+                chartRevenue.ChartAreas[0].AxisX.Maximum = data.Length;
+                chartRevenue.ChartAreas[0].AxisX.Interval = 1;
                 for (int i = 0; i < data.Length; i++)
                 {
                     chartRevenue.Series["Doanh thu"].Points.AddXY(i + 1, data[i]);

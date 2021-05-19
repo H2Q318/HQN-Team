@@ -455,7 +455,7 @@
             this.txbDonGiaVt.Name = "txbDonGiaVt";
             this.txbDonGiaVt.Size = new System.Drawing.Size(149, 22);
             this.txbDonGiaVt.TabIndex = 32;
-            this.txbDonGiaVt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbDonGiaVt_KeyPress);
+            this.txbDonGiaVt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // txbTenVt
             // 
@@ -725,7 +725,7 @@
             this.txbGiaLP.Name = "txbGiaLP";
             this.txbGiaLP.Size = new System.Drawing.Size(159, 22);
             this.txbGiaLP.TabIndex = 11;
-            this.txbGiaLP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbGiaLP_KeyPress);
+            this.txbGiaLP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label10
             // 
@@ -1346,7 +1346,7 @@
             this.txbGiaDV.Name = "txbGiaDV";
             this.txbGiaDV.Size = new System.Drawing.Size(160, 22);
             this.txbGiaDV.TabIndex = 13;
-            this.txbGiaDV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbGiaDV_KeyPress);
+            this.txbGiaDV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label9
             // 
@@ -1622,7 +1622,7 @@
             this.txbMaPhong.Name = "txbMaPhong";
             this.txbMaPhong.Size = new System.Drawing.Size(141, 22);
             this.txbMaPhong.TabIndex = 8;
-            this.txbMaPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMaPhong_KeyPress);
+            this.txbMaPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // label11
             // 
@@ -1862,6 +1862,7 @@
             this.txbDienThoai.Name = "txbDienThoai";
             this.txbDienThoai.Size = new System.Drawing.Size(132, 22);
             this.txbDienThoai.TabIndex = 19;
+            this.txbDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // txbGhiChu
             // 
@@ -1878,6 +1879,7 @@
             this.txbQuocTich.Name = "txbQuocTich";
             this.txbQuocTich.Size = new System.Drawing.Size(132, 22);
             this.txbQuocTich.TabIndex = 17;
+            this.txbQuocTich.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyCharacter);
             // 
             // cbGioiTinh
             // 
@@ -1899,6 +1901,7 @@
             this.txbHoTen.Name = "txbHoTen";
             this.txbHoTen.Size = new System.Drawing.Size(160, 22);
             this.txbHoTen.TabIndex = 13;
+            this.txbHoTen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyCharacter);
             // 
             // label4
             // 
@@ -1913,9 +1916,11 @@
             // 
             this.txbCMND.Location = new System.Drawing.Point(799, 16);
             this.txbCMND.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txbCMND.MaxLength = 9;
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.Size = new System.Drawing.Size(121, 22);
             this.txbCMND.TabIndex = 11;
+            this.txbCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // txbMaKhach
             // 

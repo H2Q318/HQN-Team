@@ -211,10 +211,6 @@ namespace PBL
                 MessageBox.Show("Bạn chưa chọn mục để sắp xếp !");
             }
         }
-        private void txbMaPhong_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = (!Char.IsDigit(e.KeyChar) && (e.KeyChar != 8));
-        }
 
         #endregion
 
@@ -367,10 +363,6 @@ namespace PBL
                 MessageBox.Show("Bạn chưa chọn mục để sắp xếp !");
             }
         }
-        private void txbGiaLP_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = (!Char.IsDigit(e.KeyChar) && (e.KeyChar != 8));
-        }
 
         #endregion
 
@@ -489,10 +481,6 @@ namespace PBL
             ShowDGVLoaiVatDung(null);
         }
 
-        private void txbDonGiaVt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = (!Char.IsDigit(e.KeyChar) && (e.KeyChar != 8));
-        }
 
         private void dgvVatTu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -674,13 +662,6 @@ namespace PBL
             txbCloseDV.Text = dgvDichVu.SelectedRows[0].Cells["GioDong"].Value.ToString();
         }
 
-        private void txbGiaDV_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void dgvDichVu_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -1006,6 +987,13 @@ namespace PBL
         }
 
         #endregion
-
+        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!Char.IsDigit(e.KeyChar) && (e.KeyChar != 8));
+        }
+        private void OnlyCharacter(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8) && (!Char.IsWhiteSpace(e.KeyChar)));
+        }
     }
 }

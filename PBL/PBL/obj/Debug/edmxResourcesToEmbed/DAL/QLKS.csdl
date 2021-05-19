@@ -146,6 +146,7 @@
     <NavigationProperty Name="CHUCVU" Relationship="Self.fk_nhanvien_chucvuid" FromRole="NHANVIEN" ToRole="CHUCVU" />
     <NavigationProperty Name="DANGNHAP" Relationship="Self.fk_dangnhap_nhanvienid" FromRole="NHANVIEN" ToRole="DANGNHAP" />
     <NavigationProperty Name="HOADON_DUNG_DICHVU" Relationship="Self.fk_hoadon_dung_dichvu_nhanvienid" FromRole="NHANVIEN" ToRole="HOADON_DUNG_DICHVU" />
+    <NavigationProperty Name="LICHSUDANGNHAPs" Relationship="DHP_04Model.fk_lichsudangnhap_nhanvienid" FromRole="NHANVIEN" ToRole="LICHSUDANGNHAP" />
   </EntityType>
   <EntityType Name="PHONG">
     <Key>
@@ -437,5 +438,33 @@
     <FunctionImport Name="sp_Cal_HoaDon">
       <Parameter Name="bookid" Mode="In" Type="String" />
     </FunctionImport>
+    <EntitySet Name="LICHSUDANGNHAPs" EntityType="DHP_04Model.LICHSUDANGNHAP" />
+    <AssociationSet Name="fk_lichsudangnhap_nhanvienid" Association="DHP_04Model.fk_lichsudangnhap_nhanvienid">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="LICHSUDANGNHAP" EntitySet="LICHSUDANGNHAPs" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="LICHSUDANGNHAP">
+    <Key>
+      <PropertyRef Name="NhanVienID" />
+      <PropertyRef Name="TrangThai" />
+      <PropertyRef Name="ThoiGian" />
+    </Key>
+    <Property Name="NhanVienID" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ThoiGian" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="NHANVIEN" Relationship="DHP_04Model.fk_lichsudangnhap_nhanvienid" FromRole="LICHSUDANGNHAP" ToRole="NHANVIEN" />
+  </EntityType>
+  <Association Name="fk_lichsudangnhap_nhanvienid">
+    <End Type="DHP_04Model.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+    <End Type="DHP_04Model.LICHSUDANGNHAP" Role="LICHSUDANGNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="NhanVienID" />
+      </Principal>
+      <Dependent Role="LICHSUDANGNHAP">
+        <PropertyRef Name="NhanVienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

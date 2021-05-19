@@ -26,8 +26,7 @@ namespace PBL
             IDNhanVien = username;
             InitializeComponent();
             Load();
-        }
-        
+        }      
         #region Load
         private void Load() 
         {
@@ -71,24 +70,6 @@ namespace PBL
             cbMenuDv.DisplayMember = "TenDichVu";
         }
         #endregion 
-        void btn_Click(object sender, EventArgs e) 
-        {
-            IDPhong = ((sender as Button).Tag as PHONG).PhongID;
-            MaLoaiPhong = ((sender as Button).Tag as PHONG).LoaiPhongID;
-            txbGia.Text = ((sender as Button).Tag as PHONG).LOAIPHONG.Gia.ToString();         
-            txbCIMaPhong.Text = IDPhong.ToString();
-            txbMaPhongOut.Text = IDPhong.ToString();
-            txbDPMaPhong.Text = IDPhong.ToString();
-            TxbRoom.Text = ((sender as Button).Tag as PHONG).PhongID;
-            ShowBill(IDPhong);
-            if (IDBook == "-1")
-                txbMaBook.Text = "";
-            else
-            {
-                txbMaBook.Text = IDBook;
-                dtpNgayDenOut.Value = BLL_QLBOOK.Instance.Find(IDBook).NgayCheckIn_ThucTe.Value;
-            }
-        }
         void ShowBill(String IDPhong)
         {
             lsvBillDichVu.Items.Clear();
@@ -113,44 +94,52 @@ namespace PBL
         {
             this.Close();
         }
-
         private void itemDoiMatKhau_Click(object sender, EventArgs e)
         {
             fChangePassword f = new fChangePassword(IDNhanVien);
             f.ShowDialog();
         }
-
         private void itemNhanVienVaChucVu_Click(object sender, EventArgs e)
         {
             fStaffManager f = new fStaffManager();
             f.ShowDialog();
         }
-
         private void itemMenuChinh_Click(object sender, EventArgs e)
         {
             fMenuQuanLy f = new fMenuQuanLy(IDNhanVien);
             f.ShowDialog();
         }
-
         private void itemVatTu_Click(object sender, EventArgs e)
         {
             fManageSupplies f = new fManageSupplies();
             f.ShowDialog();
         }
-
-       
-
-  
-
         private void itemDatPhong_Click(object sender, EventArgs e)
         {
             fBooking f = new fBooking();
             f.ShowDialog();
         }
-
-
+        private void ItemNhanVien_Click(object sender, EventArgs e)
+        {
+            fAccount f = new fAccount(IDNhanVien);
+            f.ShowDialog();
+        }
+        private void ItemThongKe_Click(object sender, EventArgs e)
+        {
+            fThongKe f = new fThongKe();
+            f.ShowDialog();
+        }
+        private void ItemHoaDon_Click(object sender, EventArgs e)
+        {
+            fHoaDon f = new fHoaDon(IDNhanVien);
+            f.ShowDialog();
+        }
+        private void ItemTaiKhoan_Click(object sender, EventArgs e)
+        {
+            fTaiKhoan f = new fTaiKhoan();
+            f.ShowDialog();
+        }
         #endregion
-
         #region Reset
 
         private void ResetValuesKhachHang()
@@ -188,17 +177,35 @@ namespace PBL
         }
 
         #endregion
-
+        #region dgv
         private void dgvCIKhachHang_Click(object sender, EventArgs e)
         {
             txbCIMaKhach.Text = dgvCIKhachHang.CurrentRow.Cells["KhachHangID"].Value.ToString();
         }
-
         private void dgvDPKhachHang_Click(object sender, EventArgs e)
         {
             txbDPMaKhach.Text = dgvDPKhachHang.CurrentRow.Cells["KhachHangID"].Value.ToString();
         }
+        #endregion
         #region Button
+        void btn_Click(object sender, EventArgs e)
+        {
+            IDPhong = ((sender as Button).Tag as PHONG).PhongID;
+            MaLoaiPhong = ((sender as Button).Tag as PHONG).LoaiPhongID;
+            txbGia.Text = ((sender as Button).Tag as PHONG).LOAIPHONG.Gia.ToString();
+            txbCIMaPhong.Text = IDPhong.ToString();
+            txbMaPhongOut.Text = IDPhong.ToString();
+            txbDPMaPhong.Text = IDPhong.ToString();
+            TxbRoom.Text = ((sender as Button).Tag as PHONG).PhongID;
+            ShowBill(IDPhong);
+            if (IDBook == "-1")
+                txbMaBook.Text = "";
+            else
+            {
+                txbMaBook.Text = IDBook;
+                dtpNgayDenOut.Value = BLL_QLBOOK.Instance.Find(IDBook).NgayCheckIn_ThucTe.Value;
+            }
+        }
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             BOOK s = new BOOK()
@@ -214,7 +221,6 @@ namespace PBL
             LoadRoom();
             ResetDatPhong();
         }
-     
         private void btnThemKh_Click(object sender, EventArgs e)
         {
             KHACHHANG s = new KHACHHANG()
@@ -259,9 +265,6 @@ namespace PBL
         {
             ResetCheckin();
         }
-
-        #endregion
-
         private void btnThemDv_Click(object sender, EventArgs e)
         {
             if (NbSoLuong.Value == 0)
@@ -294,9 +297,6 @@ namespace PBL
             BLL_QLDV.Instance.AddDichVu(them);
             ShowBill(IDPhong);
         }
-
-
-
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             if (IDBook == "-1")
@@ -311,20 +311,11 @@ namespace PBL
             }    
             HOADON s = BLL_QLBOOK.Instance.Checkout(IDBook, dtpNgayDi.Value);
             HoaDonID = s.HoaDonID;
-            //txbGia.Text = s.TienPhong.ToString();
-            //Chỉ hiển thị giá phòng, không hiển thị tổng tiền phòng.
             txbTotalRoom.Text = s.TongTien.ToString();
             txbVatTu.Text = s.TienVatTu.ToString();
             txbtotalcheckout.Text = s.TienDichVu.ToString();
             LoadRoom();
         }
-
-        private void itemTaiKhoan_Click(object sender, EventArgs e)
-        {
-            fAccount f = new fAccount(IDNhanVien);
-            f.ShowDialog();
-        }
-
         private void btnDetail_Click(object sender, EventArgs e)
         {
             if (HoaDonID == "-1")
@@ -339,18 +330,8 @@ namespace PBL
             }
         }
 
-        private void menuItemThongKe_Click(object sender, EventArgs e)
-        {
-            fThongKe f = new fThongKe();
-            f.ShowDialog();
-        }
-
-        private void ItemHoaDon_Click(object sender, EventArgs e)
-        {
-            fHoaDon f = new fHoaDon(IDNhanVien);
-            f.ShowDialog();
-        }
-
+        #endregion
+        #region Check
         private void OnlyNumber(object sender, KeyPressEventArgs e)
         {
             e.Handled = (!Char.IsDigit(e.KeyChar) && (e.KeyChar != 8));
@@ -359,7 +340,6 @@ namespace PBL
         {
             e.Handled = (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8) && (!Char.IsWhiteSpace(e.KeyChar)));
         }
-
         private void dtpNgayDi_ValueChanged(object sender, EventArgs e)
         {
             if (CheckNgayThang(dtpNgayDenOut.Value, dtpNgayDi.Value))
@@ -391,8 +371,7 @@ namespace PBL
         {
             return DateTime.Compare(x, y) > 0 ? true : false;
         }
-
-        
+        #endregion
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using PBL.DAL;
+using PBL.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,6 +104,20 @@ namespace PBL
             {
                 return false;
             }
+        }
+        public List<Account_View> GetListAccount_View()
+        {
+            return GetAllDangNhap().Select(p => new Account_View
+            {
+                NhanVienID = p.NhanVienID,
+                Ten = p.NHANVIEN.Ten,
+                ChucVu = p.NHANVIEN.CHUCVU.TenChucVu,
+                TrangThai = p.TrangThai
+            }).ToList();
+        }
+        public List<LICHSUDANGNHAP> GetListLichSuDangNhap(string nhanvienid)
+        {
+            return new QLKS().LICHSUDANGNHAPs.Where(p => p.NhanVienID == nhanvienid).OrderBy(p => p.ThoiGian).ToList();
         }
     }
 }

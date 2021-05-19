@@ -32,6 +32,8 @@
         <AssociationConnector Association="DHP_04Model.fk_vatdungphong_phongid" ManuallyRouted="false" />
         <AssociationConnector Association="DHP_04Model.fk_vatdungphong_trangthaivatdungid" ManuallyRouted="false" />
         <AssociationConnector Association="DHP_04Model.KHACHHANG_BOOK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DHP_04Model.LICHSUDANGNHAP" Width="1.5" PointX="5.25" PointY="12.375" />
+        <AssociationConnector Association="DHP_04Model.fk_lichsudangnhap_nhanvienid" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

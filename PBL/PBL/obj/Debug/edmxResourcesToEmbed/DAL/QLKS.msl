@@ -182,5 +182,14 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_Cal_HoaDon" FunctionName="DHP_04Model.Store.sp_Cal_HoaDon" />
+    <EntitySetMapping Name="LICHSUDANGNHAPs">
+      <EntityTypeMapping TypeName="DHP_04Model.LICHSUDANGNHAP">
+        <MappingFragment StoreEntitySet="LICHSUDANGNHAP">
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="NhanVienID" ColumnName="NhanVienID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

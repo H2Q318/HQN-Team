@@ -28,7 +28,9 @@ namespace PBL.BLL
         private BLL_QLKH() { }
         public List<KHACHHANG> GetAllKhachHang()
         {
-            return new QLKS().KHACHHANGs.ToList();
+            List<KHACHHANG> data = new QLKS().KHACHHANGs.ToList();
+            data.Reverse();
+            return data;
         }
         public List<KH_View> GetAlllKhView(List<KHACHHANG> l)
         {

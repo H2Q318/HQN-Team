@@ -138,6 +138,7 @@ namespace PBL
             this.txbMaBook = new System.Windows.Forms.TextBox();
             this.dtpNgayDenOut = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tbMain.SuspendLayout();
@@ -177,7 +178,8 @@ namespace PBL
             this.itemBook,
             this.itemNhanVienVaChucVu,
             this.itemVatTu,
-            this.ItemHoaDon});
+            this.ItemHoaDon,
+            this.tàiKhoảnToolStripMenuItem});
             this.menuItemMenu.Name = "menuItemMenu";
             this.menuItemMenu.Size = new System.Drawing.Size(73, 24);
             this.menuItemMenu.Text = "Quản lý";
@@ -232,7 +234,7 @@ namespace PBL
             this.itemTaiKhoan.Name = "itemTaiKhoan";
             this.itemTaiKhoan.Size = new System.Drawing.Size(215, 26);
             this.itemTaiKhoan.Text = "&Tài Khoản";
-            this.itemTaiKhoan.Click += new System.EventHandler(this.itemTaiKhoan_Click);
+            this.itemTaiKhoan.Click += new System.EventHandler(this.ItemNhanVien_Click);
             // 
             // itemDoiMatKhau
             // 
@@ -254,7 +256,7 @@ namespace PBL
             this.menuItemThongKe.Name = "menuItemThongKe";
             this.menuItemThongKe.Size = new System.Drawing.Size(86, 24);
             this.menuItemThongKe.Text = "Thống Kê";
-            this.menuItemThongKe.Click += new System.EventHandler(this.menuItemThongKe_Click);
+            this.menuItemThongKe.Click += new System.EventHandler(this.ItemThongKe_Click);
             // 
             // contextMenuStrip1
             // 
@@ -822,7 +824,7 @@ namespace PBL
             this.tpBillDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpBillDichVu.Name = "tpBillDichVu";
             this.tpBillDichVu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpBillDichVu.Size = new System.Drawing.Size(611, 675);
+            this.tpBillDichVu.Size = new System.Drawing.Size(611, 677);
             this.tpBillDichVu.TabIndex = 2;
             this.tpBillDichVu.Text = "Bill Dịch Vụ";
             this.tpBillDichVu.UseVisualStyleBackColor = true;
@@ -1252,6 +1254,13 @@ namespace PBL
             this.panel7.Size = new System.Drawing.Size(1505, 706);
             this.panel7.TabIndex = 8;
             // 
+            // tàiKhoảnToolStripMenuItem
+            // 
+            this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
+            this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.ItemTaiKhoan_Click);
+            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1400,5 +1409,6 @@ namespace PBL
         private System.Windows.Forms.TextBox txbCIGhiChu;
         private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.ToolStripMenuItem ItemHoaDon;
+        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
     }
 }

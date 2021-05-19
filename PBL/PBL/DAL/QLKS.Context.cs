@@ -40,6 +40,7 @@ namespace PBL.DAL
         public virtual DbSet<PHONG> PHONGs { get; set; }
         public virtual DbSet<TRANGTHAIVATDUNG> TRANGTHAIVATDUNGs { get; set; }
         public virtual DbSet<VATDUNGPHONG> VATDUNGPHONGs { get; set; }
+        public virtual DbSet<LICHSUDANGNHAP> LICHSUDANGNHAPs { get; set; }
     
         [DbFunction("QLKS", "func_XemChiTietHoaDon_DichVu")]
         public virtual IQueryable<func_XemChiTietHoaDon_DichVu_Result> func_XemChiTietHoaDon_DichVu(string hoadonid)

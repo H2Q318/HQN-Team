@@ -75,43 +75,15 @@ as
 	where HOADON_DUNG_DICHVU.ID = inserted.ID
 go
 
-/*Trigger cho bảng hoá đơn khi bảng hoá đơn dùng dịch vụ thay đổi dữ liệu
-create trigger trg_HoaDon_Dung_DichVu_Ins
-on HOADON_DUNG_DICHVU
-for insert
-as
-	update HOADON
-	set TienDichVu = TienDichVu + (select DonGia from LOAIDICHVU where LOAIDICHVU.DichVuID = inserted.DichVuID) * inserted.SoLuong
-	from HOADON_DUNG_DICHVU inner join inserted
-	on HOADON_DUNG_DICHVU.ID = inserted.ID
-	where hoadon.BookID = inserted.BookID
-go
-
-create trigger trg_HoaDon_Dung_DichVu_Del
-on hoadon_dung_dichvu
-for delete
-as
-	update HOADON
-	set TienDichVu = TienDichVu - (select dongia from LOAIDICHVU where LOAIDICHVU.DichVuID = deleted.dichvuid)
-	from HOADON_DUNG_DICHVU inner join deleted
-	on HOADON_DUNG_DICHVU.ID = deleted.ID
-	where HOADON.BookID = deleted.BookID
-go
-
-create trigger trg_HoaDon_Dung_DichVu_Up
-on hoadon_dung_dichvu
+create trigger trg_dangnhap_up
+on dangnhap
 for update
 as
-	update HOADON
-	set TienDichVu = TienDichVu + (select DonGia from LOAIDICHVU where LOAIDICHVU.DichVuID = inserted.DichVuID) * inserted.SoLuong
-	from HOADON_DUNG_DICHVU inner join inserted
-	on HOADON_DUNG_DICHVU.ID = inserted.ID
-	where hoadon.BookID = inserted.BookID
-
-	update HOADON
-	set TienDichVu = TienDichVu - (select dongia from LOAIDICHVU where LOAIDICHVU.DichVuID = deleted.dichvuid)
-	from HOADON_DUNG_DICHVU inner join deleted
-	on HOADON_DUNG_DICHVU.ID = deleted.ID
-	where HOADON.BookID = deleted.BookID
-go*/
-	
+	declare @nhanvienid nvarchar(11)
+	declare @trangthai bit
+	select @nhanvienid = nhanvienid, @trangthai = trangthai from inserted
+	insert into lichsudangnhap
+	values (@nhanvienid,
+	case when @trangthai = 0 then N'Đăng xuất' else N'Đăng nhập' end,
+	GETDATE())
+go

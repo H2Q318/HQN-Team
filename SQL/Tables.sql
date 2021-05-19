@@ -278,3 +278,13 @@ create table HOADON
 	constraint fk_hoadon_bookid foreign key (bookid) references book(bookid)
 )
 go
+
+create table LICHSUDANGNHAP
+(
+	NhanVienID nvarchar(11) not null,
+	TrangThai nvarchar(50) not null,
+	ThoiGian datetime not null,
+	constraint pk_lichsudangnhap_nhanvienid_trangthai_thoigian primary key (nhanvienid, trangthai, thoigian),
+	constraint fk_lichsudangnhap_nhanvienid foreign key (NhanVienID) references nhanvien(nhanvienid)
+)
+go

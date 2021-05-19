@@ -19,6 +19,7 @@ namespace PBL.DAL
         {
             this.BOOKs = new HashSet<BOOK>();
             this.HOADON_DUNG_DICHVU = new HashSet<HOADON_DUNG_DICHVU>();
+            this.LICHSUDANGNHAPs = new HashSet<LICHSUDANGNHAP>();
         }
     
         public string NhanVienID { get; set; }
@@ -37,5 +38,7 @@ namespace PBL.DAL
         public virtual DANGNHAP DANGNHAP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON_DUNG_DICHVU> HOADON_DUNG_DICHVU { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LICHSUDANGNHAP> LICHSUDANGNHAPs { get; set; }
     }
 }

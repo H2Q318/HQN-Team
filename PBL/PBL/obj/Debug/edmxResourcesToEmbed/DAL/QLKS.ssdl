@@ -77,6 +77,16 @@
     <Property Name="KhachHangID" Type="nvarchar" MaxLength="13" Nullable="false" />
     <Property Name="BookID" Type="nvarchar" MaxLength="12" Nullable="false" />
   </EntityType>
+  <EntityType Name="LICHSUDANGNHAP">
+    <Key>
+      <PropertyRef Name="NhanVienID" />
+      <PropertyRef Name="TrangThai" />
+      <PropertyRef Name="ThoiGian" />
+    </Key>
+    <Property Name="NhanVienID" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ThoiGian" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="LOAIDICHVU">
     <Key>
       <PropertyRef Name="DichVuID" />
@@ -275,6 +285,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_lichsudangnhap_nhanvienid">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="LICHSUDANGNHAP" Type="Self.LICHSUDANGNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="NhanVienID" />
+      </Principal>
+      <Dependent Role="LICHSUDANGNHAP">
+        <PropertyRef Name="NhanVienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_nhanvien_chucvuid">
     <End Role="CHUCVU" Type="Self.CHUCVU" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -385,6 +407,7 @@
     <EntitySet Name="HOADON_DUNG_DICHVU" EntityType="Self.HOADON_DUNG_DICHVU" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG_BOOK" EntityType="Self.KHACHHANG_BOOK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LICHSUDANGNHAP" EntityType="Self.LICHSUDANGNHAP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAIDICHVU" EntityType="Self.LOAIDICHVU" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAIPHONG" EntityType="Self.LOAIPHONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAIVATDUNG" EntityType="Self.LOAIVATDUNG" Schema="dbo" store:Type="Tables" />
@@ -431,6 +454,10 @@
     <AssociationSet Name="fk_khachhang_book_khachhangid" Association="Self.fk_khachhang_book_khachhangid">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="KHACHHANG_BOOK" EntitySet="KHACHHANG_BOOK" />
+    </AssociationSet>
+    <AssociationSet Name="fk_lichsudangnhap_nhanvienid" Association="Self.fk_lichsudangnhap_nhanvienid">
+      <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+      <End Role="LICHSUDANGNHAP" EntitySet="LICHSUDANGNHAP" />
     </AssociationSet>
     <AssociationSet Name="fk_nhanvien_chucvuid" Association="Self.fk_nhanvien_chucvuid">
       <End Role="CHUCVU" EntitySet="CHUCVU" />

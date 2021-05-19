@@ -225,7 +225,6 @@ namespace PBL
                 QuocTich = txbKHQuocTich.Text.Trim(),
                 CMND = txbKHCMND.Text.Trim(),
                 SDT = txbKHSdt.Text.Trim(),
-                // KhachHangID=""
             };
             BLL_QLKH.Instance.AddKh(s);
             LoadDataGridView();
@@ -360,6 +359,40 @@ namespace PBL
         {
             e.Handled = (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8) && (!Char.IsWhiteSpace(e.KeyChar)));
         }
+
+        private void dtpNgayDi_ValueChanged(object sender, EventArgs e)
+        {
+            if (CheckNgayThang(dtpNgayDenOut.Value, dtpNgayDi.Value))
+            {
+                MessageBox.Show("Vui lòng nhập lại ngày đi");
+                dtpNgayDi.Value = DateTime.Now;
+            }
+            
+        }
+        private void dtpDPNgayDi_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (CheckNgayThang(dtpDPNgayDen.Value, dtpDPNgayDi.Value))
+            {
+                MessageBox.Show("Ngày đi không hợp lệ");
+                dtpDPNgayDi.Value = DateTime.Now;
+            }
+          
+        }
+        private void dtpDPNgayDen_ValueChanged(object sender, EventArgs e)
+        {
+            if (CheckNgayThang(DateTime.Now, dtpDPNgayDen.Value))
+            {
+                MessageBox.Show("Ngày đến không hợp lệ");
+                dtpDPNgayDen.Value = DateTime.Now;
+            }
+        }
+        private bool CheckNgayThang(DateTime x, DateTime y)
+        {
+            return DateTime.Compare(x, y) > 0 ? true : false;
+        }
+
+        
     }
 
 }

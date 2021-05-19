@@ -572,6 +572,7 @@ namespace PBL
             this.dtpDPNgayDi.Name = "dtpDPNgayDi";
             this.dtpDPNgayDi.Size = new System.Drawing.Size(233, 22);
             this.dtpDPNgayDi.TabIndex = 30;
+            this.dtpDPNgayDi.ValueChanged += new System.EventHandler(this.dtpDPNgayDi_ValueChanged);
             // 
             // label27
             // 
@@ -648,6 +649,7 @@ namespace PBL
             this.dtpDPNgayDen.Name = "dtpDPNgayDen";
             this.dtpDPNgayDen.Size = new System.Drawing.Size(233, 22);
             this.dtpDPNgayDen.TabIndex = 22;
+            this.dtpDPNgayDen.ValueChanged += new System.EventHandler(this.dtpDPNgayDen_ValueChanged);
             // 
             // tpCheckin
             // 
@@ -820,7 +822,7 @@ namespace PBL
             this.tpBillDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpBillDichVu.Name = "tpBillDichVu";
             this.tpBillDichVu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpBillDichVu.Size = new System.Drawing.Size(611, 677);
+            this.tpBillDichVu.Size = new System.Drawing.Size(611, 675);
             this.tpBillDichVu.TabIndex = 2;
             this.tpBillDichVu.Text = "Bill Dịch Vụ";
             this.tpBillDichVu.UseVisualStyleBackColor = true;
@@ -1138,6 +1140,7 @@ namespace PBL
             this.dtpNgayDi.Name = "dtpNgayDi";
             this.dtpNgayDi.Size = new System.Drawing.Size(227, 22);
             this.dtpNgayDi.TabIndex = 10;
+            this.dtpNgayDi.ValueChanged += new System.EventHandler(this.dtpNgayDi_ValueChanged);
             // 
             // btnCheckOutReset
             // 
@@ -1230,6 +1233,7 @@ namespace PBL
             // dtpNgayDenOut
             // 
             this.dtpNgayDenOut.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dtpNgayDenOut.Enabled = false;
             this.dtpNgayDenOut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayDenOut.Location = new System.Drawing.Point(252, 218);
             this.dtpNgayDenOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -117,7 +117,7 @@ namespace PBL
         }
         public List<LICHSUDANGNHAP> GetListLichSuDangNhap(string nhanvienid)
         {
-            return new QLKS().LICHSUDANGNHAPs.Where(p => p.NhanVienID == nhanvienid).OrderBy(p => p.ThoiGian).ToList();
+            return new QLKS().LICHSUDANGNHAPs.Where(p => p.NhanVienID == nhanvienid).OrderByDescending(p => p.ThoiGian).ToList();
         }
     }
 }

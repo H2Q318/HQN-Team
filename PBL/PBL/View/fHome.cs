@@ -57,11 +57,24 @@ namespace PBL
         private void LoadDataGridView()
         {
             dgvCIKhachHang.DataSource = BLL_QLKH.Instance.GetAllKhachHang();
-            dgvDPKhachHang.DataSource= BLL_QLKH.Instance.GetAllKhachHang();
             dgvCIKhachHang.Columns["BOOKs"].Visible = false;
             dgvCIKhachHang.Columns["BOOKs1"].Visible = false;
+            dgvCIKhachHang.Columns["KhachHangID"].HeaderText = "Mã khách hàng";
+            dgvCIKhachHang.Columns["Ten"].HeaderText = "Tên khách hàng";
+            dgvCIKhachHang.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dgvCIKhachHang.Columns["SDT"].HeaderText = "SĐT";
+            dgvCIKhachHang.Columns["QuocTich"].HeaderText = "Quốc tịch";
+            dgvCIKhachHang.Columns["GhiChu"].HeaderText = "Ghi chú";
+
+            dgvDPKhachHang.DataSource= BLL_QLKH.Instance.GetAllKhachHang();
             dgvDPKhachHang.Columns["BOOKs"].Visible = false;
             dgvDPKhachHang.Columns["BOOKs1"].Visible = false;
+            dgvDPKhachHang.Columns["KhachHangID"].HeaderText = "Mã khách hàng";
+            dgvDPKhachHang.Columns["Ten"].HeaderText = "Tên khách hàng";
+            dgvDPKhachHang.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dgvDPKhachHang.Columns["SDT"].HeaderText = "SĐT";
+            dgvDPKhachHang.Columns["QuocTich"].HeaderText = "Quốc tịch";
+            dgvDPKhachHang.Columns["GhiChu"].HeaderText = "Ghi chú";
         }
         void LoadMenudv()
         {

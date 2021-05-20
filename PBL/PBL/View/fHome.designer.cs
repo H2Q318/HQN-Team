@@ -37,6 +37,7 @@ namespace PBL
             this.itemNhanVienVaChucVu = new System.Windows.Forms.ToolStripMenuItem();
             this.itemVatTu = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemHoaDon = new System.Windows.Forms.ToolStripMenuItem();
+            this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.itemTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.itemDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,7 +139,6 @@ namespace PBL
             this.txbMaBook = new System.Windows.Forms.TextBox();
             this.dtpNgayDenOut = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tbMain.SuspendLayout();
@@ -218,6 +218,13 @@ namespace PBL
             this.ItemHoaDon.Size = new System.Drawing.Size(231, 26);
             this.ItemHoaDon.Text = "Hoá đơn";
             this.ItemHoaDon.Click += new System.EventHandler(this.ItemHoaDon_Click);
+            // 
+            // tàiKhoảnToolStripMenuItem
+            // 
+            this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
+            this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
+            this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.ItemTaiKhoan_Click);
             // 
             // menuItemNhanVien
             // 
@@ -490,7 +497,10 @@ namespace PBL
             this.dgvDPKhachHang.Location = new System.Drawing.Point(4, 421);
             this.dgvDPKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDPKhachHang.Name = "dgvDPKhachHang";
+            this.dgvDPKhachHang.ReadOnly = true;
+            this.dgvDPKhachHang.RowHeadersVisible = false;
             this.dgvDPKhachHang.RowHeadersWidth = 51;
+            this.dgvDPKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDPKhachHang.Size = new System.Drawing.Size(600, 247);
             this.dgvDPKhachHang.TabIndex = 23;
             this.dgvDPKhachHang.Click += new System.EventHandler(this.dgvDPKhachHang_Click);
@@ -673,8 +683,11 @@ namespace PBL
             this.dgvCIKhachHang.Location = new System.Drawing.Point(5, 369);
             this.dgvCIKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCIKhachHang.Name = "dgvCIKhachHang";
+            this.dgvCIKhachHang.ReadOnly = true;
+            this.dgvCIKhachHang.RowHeadersVisible = false;
             this.dgvCIKhachHang.RowHeadersWidth = 51;
             this.dgvCIKhachHang.RowTemplate.Height = 24;
+            this.dgvCIKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCIKhachHang.Size = new System.Drawing.Size(597, 298);
             this.dgvCIKhachHang.TabIndex = 3;
             this.dgvCIKhachHang.Click += new System.EventHandler(this.dgvCIKhachHang_Click);
@@ -1253,13 +1266,6 @@ namespace PBL
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1505, 706);
             this.panel7.TabIndex = 8;
-            // 
-            // tàiKhoảnToolStripMenuItem
-            // 
-            this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
-            this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.ItemTaiKhoan_Click);
             // 
             // fHome
             // 

@@ -45,6 +45,7 @@ namespace PBL.View
             this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLog.Location = new System.Drawing.Point(6, 21);
             this.dgvLog.Name = "dgvLog";
+            this.dgvLog.ReadOnly = true;
             this.dgvLog.RowHeadersVisible = false;
             this.dgvLog.RowHeadersWidth = 51;
             this.dgvLog.RowTemplate.Height = 24;
@@ -58,6 +59,7 @@ namespace PBL.View
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccount.Location = new System.Drawing.Point(6, 21);
             this.dgvAccount.Name = "dgvAccount";
+            this.dgvAccount.ReadOnly = true;
             this.dgvAccount.RowHeadersVisible = false;
             this.dgvAccount.RowHeadersWidth = 51;
             this.dgvAccount.RowTemplate.Height = 24;

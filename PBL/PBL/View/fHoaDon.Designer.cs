@@ -59,6 +59,8 @@ namespace PBL.View
             this.dgvHoaDon.Location = new System.Drawing.Point(4, 2);
             this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvHoaDon.Name = "dgvHoaDon";
+            this.dgvHoaDon.ReadOnly = true;
+            this.dgvHoaDon.RowHeadersVisible = false;
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

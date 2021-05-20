@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PBL.DAL;
+using PBL.DTO;
 
 namespace PBL.BLL
 {
@@ -45,9 +46,9 @@ namespace PBL.BLL
         {
             return new QLKS().HOADONs.Find(hoadonid);
         }
-        public IQueryable<func_XemChiTietHoaDon_DichVu_Result> BillService(string hoadonid)
+        public List<BillDV_View> BillService(string hoadonid)
         {
-            return new QLKS().func_XemChiTietHoaDon_DichVu(hoadonid);
+            return BLL_QLBillDV.Instance.GetListBillDV_View(BLL_QLBillDV.Instance.GetListBillDV(new QLKS().HOADONs.Find(hoadonid).BookID));
         }
         public IQueryable<func_XemChiTietHoaDon_VatTu_Result> BillRoomSupplies(string hoadonid)
         {

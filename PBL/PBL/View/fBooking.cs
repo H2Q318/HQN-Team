@@ -57,6 +57,16 @@ namespace PBL
             dgvBooking.DataSource = BLL_QLBOOK.Instance.GetAllBook();
             dgvBooking.Columns["KhachHangID"].Visible = false;
             dgvBooking.Columns["NhanVienID"].Visible = false;
+            dgvBooking.Columns["BookID"].HeaderText = "Mã Book";
+            dgvBooking.Columns["PhongID"].HeaderText = "Phòng";
+            dgvBooking.Columns["TenKhachHang"].HeaderText = "Tên khách";
+            dgvBooking.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
+            dgvBooking.Columns["NgayDat"].HeaderText = "Ngày đặt";
+            dgvBooking.Columns["NgayCheckIn"].HeaderText = "Ngày check in";
+            dgvBooking.Columns["NgayCheckOut"].HeaderText = "Ngày check out";
+            dgvBooking.Columns["NgayCheckIn_ThucTe"].HeaderText = "Ngày check in thực tế";
+            dgvBooking.Columns["NgayCheckOut_ThucTe"].HeaderText = "Ngày check out thực tế";
+            dgvBooking.Columns["ThanhToan"].HeaderText = "Thanh toán";
         }
         private void ShowDGVKhachHang()
         {
@@ -65,6 +75,11 @@ namespace PBL
             dgvKhachHang.Columns["KhachHangID"].Visible = false;
             dgvKhachHang.Columns["BOOKs"].Visible = false;
             dgvKhachHang.Columns["BOOKs1"].Visible = false;
+            dgvKhachHang.Columns["Ten"].HeaderText = "Tên khách hàng";
+            dgvKhachHang.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dgvKhachHang.Columns["SDT"].HeaderText = "SĐT";
+            dgvKhachHang.Columns["QuocTich"].HeaderText = "Quốc tịch";
+            dgvKhachHang.Columns["GhiChu"].HeaderText = "Ghi chú";
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {

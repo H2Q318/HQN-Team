@@ -417,6 +417,7 @@
             this.dgvLoaiVatDung.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiVatDung.Name = "dgvLoaiVatDung";
             this.dgvLoaiVatDung.ReadOnly = true;
+            this.dgvLoaiVatDung.RowHeadersVisible = false;
             this.dgvLoaiVatDung.RowHeadersWidth = 51;
             this.dgvLoaiVatDung.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiVatDung.Size = new System.Drawing.Size(916, 446);
@@ -667,6 +668,7 @@
             this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.ReadOnly = true;
+            this.dgvLoaiPhong.RowHeadersVisible = false;
             this.dgvLoaiPhong.RowHeadersWidth = 51;
             this.dgvLoaiPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLoaiPhong.Size = new System.Drawing.Size(917, 434);
@@ -920,6 +922,7 @@
             this.dgvBillDV.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBillDV.Name = "dgvBillDV";
             this.dgvBillDV.ReadOnly = true;
+            this.dgvBillDV.RowHeadersVisible = false;
             this.dgvBillDV.RowHeadersWidth = 51;
             this.dgvBillDV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBillDV.Size = new System.Drawing.Size(917, 415);
@@ -1251,6 +1254,7 @@
             this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.ReadOnly = true;
+            this.dgvDichVu.RowHeadersVisible = false;
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDichVu.Size = new System.Drawing.Size(916, 415);
@@ -1559,6 +1563,7 @@
             this.dgvPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.ReadOnly = true;
+            this.dgvPhong.RowHeadersVisible = false;
             this.dgvPhong.RowHeadersWidth = 51;
             this.dgvPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhong.Size = new System.Drawing.Size(916, 415);
@@ -1825,6 +1830,7 @@
             this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.ReadOnly = true;
+            this.dgvKhachHang.RowHeadersVisible = false;
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhachHang.Size = new System.Drawing.Size(915, 414);

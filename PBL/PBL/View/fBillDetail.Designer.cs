@@ -51,6 +51,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txbMaHoaDon = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.txbCheckOut = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -162,6 +164,7 @@
             this.dgvService.Location = new System.Drawing.Point(4, 39);
             this.dgvService.Margin = new System.Windows.Forms.Padding(4);
             this.dgvService.Name = "dgvService";
+            this.dgvService.RowHeadersVisible = false;
             this.dgvService.RowHeadersWidth = 51;
             this.dgvService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvService.Size = new System.Drawing.Size(1013, 158);
@@ -216,6 +219,7 @@
             this.dgvRoomSupplies.Location = new System.Drawing.Point(4, 38);
             this.dgvRoomSupplies.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRoomSupplies.Name = "dgvRoomSupplies";
+            this.dgvRoomSupplies.RowHeadersVisible = false;
             this.dgvRoomSupplies.RowHeadersWidth = 51;
             this.dgvRoomSupplies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRoomSupplies.Size = new System.Drawing.Size(1013, 118);
@@ -331,6 +335,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txbMaHoaDon);
+            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.panel14);
             this.panel1.Controls.Add(this.panel13);
             this.panel1.Controls.Add(this.panel12);
@@ -345,6 +351,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1023, 238);
             this.panel1.TabIndex = 8;
+            // 
+            // txbMaHoaDon
+            // 
+            this.txbMaHoaDon.Location = new System.Drawing.Point(837, 5);
+            this.txbMaHoaDon.Margin = new System.Windows.Forms.Padding(4);
+            this.txbMaHoaDon.Name = "txbMaHoaDon";
+            this.txbMaHoaDon.ReadOnly = true;
+            this.txbMaHoaDon.Size = new System.Drawing.Size(125, 22);
+            this.txbMaHoaDon.TabIndex = 2;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(804, 6);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(34, 19);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "No.";
             // 
             // panel14
             // 
@@ -668,5 +694,7 @@
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.TextBox txbRoomCost;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txbMaHoaDon;
+        private System.Windows.Forms.Label label16;
     }
 }

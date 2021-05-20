@@ -15,9 +15,10 @@ namespace PBL.View
         public fTaiKhoan()
         {
             InitializeComponent();
+            GUI();
             Timer MyTimer = new Timer
             {
-                Interval = 2000
+                Interval = 10000
             };
             MyTimer.Tick += new EventHandler(Timer_Tick);
             MyTimer.Start();
@@ -34,12 +35,17 @@ namespace PBL.View
         {
             dgvAccount.DataSource = BLL_DangNhap.Instance.GetListAccount_View();
             dgvAccount.Columns["TrangThai"].Visible = false;
+            dgvAccount.Columns[0].HeaderText = "Mã nhân viên";
+            dgvAccount.Columns[1].HeaderText = "Tên nhân viên";
+            dgvAccount.Columns[2].HeaderText = "Chức vụ";
         }
         private void ShowDGVLog(string nhanvienid)
         {
             dgvLog.DataSource = BLL_DangNhap.Instance.GetListLichSuDangNhap(nhanvienid);
             dgvLog.Columns["NHANVIEN"].Visible = false;
             dgvLog.Columns["NhanVienID"].Visible = false;
+            dgvLog.Columns["TrangThai"].HeaderText = "Trạng thái";
+            dgvLog.Columns["ThoiGian"].HeaderText = "Thời gian";
         }
 
         private void dgvAccount_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)

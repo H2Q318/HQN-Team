@@ -62,6 +62,9 @@ namespace PBL
             dgvChucVu.Rows[0].Selected = false;
             dgvChucVu.Columns["ChucVuID"].Visible = false;
             dgvChucVu.Columns["NHANVIENs"].Visible = false;
+            dgvChucVu.Columns["TenChucVu"].HeaderText = "Tên chức vụ";
+            dgvChucVu.Columns["MoTa"].HeaderText = "Mô tả";
+            dgvChucVu.Columns["QuyenHan"].HeaderText = "Quyền hạn";
         }
 
         //Them chuc vu
@@ -217,8 +220,15 @@ namespace PBL
         {
             dgvStaff.DataSource = BLL_QLNV.Instance.GetAllNhanVien();
             dgvStaff.ClearSelection();
-            dgvStaff.Columns["NhanVienID"].Visible = false;
             dgvStaff.Columns["ChucVuID"].Visible = false;
+            dgvStaff.Columns["Ten"].HeaderText = "Tên";
+            dgvStaff.Columns["NhanVienID"].HeaderText = "Mã nhân viên";
+            dgvStaff.Columns["TenChucVu"].HeaderText = "Chức vụ";
+            dgvStaff.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dgvStaff.Columns["SDT"].HeaderText = "SĐT";
+            dgvStaff.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            dgvStaff.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            dgvStaff.Columns["GhiChu"].HeaderText = "Ghi chú";
         }
 
         //Them nhan vien

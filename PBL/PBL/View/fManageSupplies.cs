@@ -44,6 +44,11 @@ namespace PBL
         {
             dgvVatDungPhong.DataSource = BLL_QLVDP.Instance.GetListVatDungPhong_View(BLL_QLVDP.Instance.GetListVatDungPhong(s));
             dgvVatDungPhong.Columns["VatDungID"].Visible = false;
+            dgvVatDungPhong.Columns["Phong"].HeaderText = "Phòng";
+            dgvVatDungPhong.Columns["TenVatDung"].HeaderText = "Tên vật dụng";
+            dgvVatDungPhong.Columns["SoLuongBanDau"].HeaderText = "Số lượng ban đầu";
+            dgvVatDungPhong.Columns["SoLuongHienTai"].HeaderText = "Số lượng hiện tại";
+            dgvVatDungPhong.Columns["TrangThai"].HeaderText = "Trạng thái";
         }
         private List<DTO.Keys> GetListVatDungPhongID()
         {

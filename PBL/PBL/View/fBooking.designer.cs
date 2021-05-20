@@ -99,13 +99,14 @@
             // 
             this.dgvBooking.AllowUserToAddRows = false;
             this.dgvBooking.AllowUserToDeleteRows = false;
-            this.dgvBooking.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBooking.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBooking.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBooking.Location = new System.Drawing.Point(16, 530);
             this.dgvBooking.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBooking.Name = "dgvBooking";
             this.dgvBooking.ReadOnly = true;
+            this.dgvBooking.RowHeadersVisible = false;
             this.dgvBooking.RowHeadersWidth = 51;
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooking.Size = new System.Drawing.Size(1448, 287);
@@ -221,6 +222,7 @@
             this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.ReadOnly = true;
+            this.dgvKhachHang.RowHeadersVisible = false;
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhachHang.Size = new System.Drawing.Size(563, 369);

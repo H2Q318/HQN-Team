@@ -25,6 +25,13 @@ namespace PBL.View
             dgvHoaDon.DataSource = BLL_QLBill.Instance.GetListHoaDon(bookid);
             dgvHoaDon.Columns["BOOK"].Visible = false;
             dgvHoaDon.Columns["HoaDonID"].Visible = false;
+            dgvHoaDon.Columns["BookID"].HeaderText = "Mã Book";
+            dgvHoaDon.Columns["NgayThanhToan"].HeaderText = "Ngày thanh toán";
+            dgvHoaDon.Columns["TienPhong"].HeaderText = "Tiền phòng";
+            dgvHoaDon.Columns["TienDichVu"].HeaderText = "Tiền dịch vụ";
+            dgvHoaDon.Columns["TienVatTu"].HeaderText = "Tiền vật tư";
+            dgvHoaDon.Columns["TongTien"].HeaderText = "Tổng tiền";
+            dgvHoaDon.Columns["GhiChu"].HeaderText = "Ghi chú";
         }
         private void lbReset_Click(object sender, EventArgs e)
         {

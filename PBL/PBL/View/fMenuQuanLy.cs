@@ -50,6 +50,9 @@ namespace PBL
         private void ShowDGVPhong(string s = null)
         {
             dgvPhong.DataSource = BLL_QLP.Instance.GetListPhong_View(BLL_QLP.Instance.GetListPhong(s));
+            dgvPhong.Columns["PhongID"].HeaderText = "Tên phòng";
+            dgvPhong.Columns["TenLoaiPhong"].HeaderText = "Loại phòng";
+            dgvPhong.Columns["TrangThai"].HeaderText = "Trạng thái";
         }
         private void RefreshGUIPhong()
         {
@@ -234,6 +237,9 @@ namespace PBL
             dgvLoaiPhong.DataSource = BLL_QLLP.Instance.GetListLoaiPhong(s);
             dgvLoaiPhong.Columns["LoaiPhongID"].Visible = false;
             dgvLoaiPhong.Columns["PHONGs"].Visible = false;
+            dgvLoaiPhong.Columns["Gia"].HeaderText = "Giá";
+            dgvLoaiPhong.Columns["SoNguoi"].HeaderText = "Số người";
+            dgvLoaiPhong.Columns["TenLoaiPhong"].HeaderText = "Tên loại phòng";
 
         }
         private void btnThemLP_Click(object sender, EventArgs e)
@@ -378,6 +384,9 @@ namespace PBL
             dgvLoaiVatDung.DataSource = BLL_QLVD.Instance.GetListLoaiVatDung(s);
             dgvLoaiVatDung.Columns["VatDungID"].Visible = false;
             dgvLoaiVatDung.Columns["VATDUNGPHONGs"].Visible = false;
+            dgvLoaiVatDung.Columns["TenVatDung"].HeaderText = "Tên vật dụng";
+            dgvLoaiVatDung.Columns["DonGia"].HeaderText = "Đơn giá";
+            dgvLoaiVatDung.Columns["ThietBiCoDinh"].HeaderText = "Thiết bị cố định";
         }
         private List<string> GetListVatDungID()
         {
@@ -525,6 +534,10 @@ namespace PBL
             dgvDichVu.DataSource = BLL_QLDV.Instance.GetAllDichVu();
             dgvDichVu.Columns["DichVuID"].Visible = false;
             dgvDichVu.Columns["HOADON_DUNG_DICHVU"].Visible = false;
+            dgvDichVu.Columns["TenDichVu"].HeaderText = "Tên dịch vụ";
+            dgvDichVu.Columns["DonGia"].HeaderText = "Đơn giá";
+            dgvDichVu.Columns["GioMo"].HeaderText = "Giờ mở";
+            dgvDichVu.Columns["GioDong"].HeaderText = "Giờ đóng";
         }
 
         private void RefreshDV()
@@ -702,6 +715,12 @@ namespace PBL
         {
             dgvBillDV.DataSource = BLL_QLBillDV.Instance.GetListBillDV_View(BLL_QLBillDV.Instance.GetListBillDV(s));
             dgvBillDV.Columns["ID"].Visible = false;
+            dgvBillDV.Columns["BookID"].HeaderText = "Mã Book";
+            dgvBillDV.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
+            dgvBillDV.Columns["TenDichVu"].HeaderText = "Tên dịch vụ";
+            dgvBillDV.Columns["Ngay"].HeaderText = "Ngày";
+            dgvBillDV.Columns["SoLuong"].HeaderText = "Số lượng";
+            dgvBillDV.Columns["ThanhTien"].HeaderText = "Thành tiền";
         }
         private void btnThemBill_Click(object sender, EventArgs e)
         {
@@ -877,6 +896,12 @@ namespace PBL
         private void ShowDgvKh()
         {
             dgvKhachHang.DataSource = BLL_QLKH.Instance.GetAlllKhView(BLL_QLKH.Instance.GetAllKhachHang());
+            dgvKhachHang.Columns["KhachHangID"].HeaderText = "Mã khách hàng";
+            dgvKhachHang.Columns["Ten"].HeaderText = "Tên khách hàng";
+            dgvKhachHang.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dgvKhachHang.Columns["SDT"].HeaderText = "SĐT";
+            dgvKhachHang.Columns["QuocTich"].HeaderText = "Quốc tịch";
+            dgvKhachHang.Columns["GhiChu"].HeaderText = "Ghi chú";
         }
         private void btnThemKh_Click(object sender, EventArgs e)
         {

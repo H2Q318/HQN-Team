@@ -80,18 +80,18 @@ namespace PBL
                 };
                 if (BLL_QLCV.Instance.AddChucVu(cv))
                 {
-                    MessageBox.Show("Them chuc vu thanh cong!");
+                    MessageBox.Show("Thêm chức vụ thành công!");
                     RefreshCV();
                     RefreshGUINhanVien();
                 }
                 else
                 {
-                    MessageBox.Show("Them chuc vu that bai! Vui long kiem tra lai thong tin");
+                    MessageBox.Show("Thêm chức vụ không thành công! Vui lòng kiểm tra lại thông tin");
                 }
             }
             else
             {
-                MessageBox.Show("Vui long nhap day du thong tin !");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
             }
         }
 
@@ -111,23 +111,23 @@ namespace PBL
                     };
                     if (BLL_QLCV.Instance.UpdateChucVu(cv))
                     {
-                        MessageBox.Show("Cap nhat chuc vu thanh cong!");
+                        MessageBox.Show("Cập nhật chức vụ thành công!");
                         RefreshCV();
                         RefreshGUINhanVien();
                     }
                     else
                     {
-                        MessageBox.Show("Cap nhat chuc vu that bai! Vui long kiem tra lai thong tin");
+                        MessageBox.Show("Cập nhật chức vụ không thành công! Vui lòng kiểm tra lại thông tin");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui long nhap day du thong tin chuc vu!");
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 }
             }
             catch
             {
-                MessageBox.Show("Vui long chon chuc vu can cap nhat!");
+                MessageBox.Show("Vui lòng chọn chức vụ cần cập nhật!");
             }
         }
 
@@ -140,18 +140,18 @@ namespace PBL
                 string cvid = dgvChucVu.SelectedRows[0].Cells["ChucVuID"].Value.ToString();
                 if (BLL_QLCV.Instance.DeleteChucVu(cvid))
                 {
-                    MessageBox.Show("Xoa chuc vu thanh cong!");
+                    MessageBox.Show("Xóa chức vụ thành công!");
                     RefreshCV();
                     RefreshGUINhanVien();
                 }
                 else
                 {
-                    MessageBox.Show("Chuc vu khong the xoa! Vui long kiem tra lai");
+                    MessageBox.Show("Chức vụ không thể xóa! Vui lòng kiểm tra lại");
                 }
             }
             catch
             {
-                MessageBox.Show("Vui long chon chuc vu can xoa!");
+                MessageBox.Show("Vui lòng chọn chức vụ cần xóa!");
             }
         }
 
@@ -190,7 +190,7 @@ namespace PBL
             }
             else
             {
-                MessageBox.Show("Vui long chon kieu sap xep!");
+                MessageBox.Show("Vui lòng chọn kiểu sắp xếp!");
             }
         }
 
@@ -249,18 +249,18 @@ namespace PBL
                 };
                 if (BLL_QLNV.Instance.AddNhanVien(nv))
                 {
-                    MessageBox.Show("Them nhan vien thanh cong!");
+                    MessageBox.Show("Thêm nhân viên thành công!");
                     RefreshNV();
                     ShowDgvStaff();
                 }
                 else
                 {
-                    MessageBox.Show("Them nhan vien that bai! Vui long kiem tra lai thong tin");
+                    MessageBox.Show("Thêm nhân viên không thành công! Vui lòng kiểm tra lại thông tin");
                 }
             }
             else
             {
-                MessageBox.Show("Vui long nhap day du thong tin!");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
             }
         }
 
@@ -285,23 +285,23 @@ namespace PBL
                     };
                     if (BLL_QLNV.Instance.UpdateNhanVien(nv))
                     {
-                        MessageBox.Show("Cap nhat thong tin nhan vien thanh cong!");
+                        MessageBox.Show("Cập nhật thông tin nhân viên thành công!");
                         RefreshNV();
                         ShowDgvStaff();
                     }
                     else
                     {
-                        MessageBox.Show("cap nhat thong tin nhan vien that bai! Vui long kiem tra lai thong tin");
+                        MessageBox.Show("Cập nhật thông tin không thành công! Vui lòng kiểm tra lại");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui long nhap day du thong tin!");
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 }
             }
             catch
             {
-                MessageBox.Show("Vui long chon nhan vien can cap nhat!");
+                MessageBox.Show("Vui lòng chọn nhân viên cần cập nhật!");
             }
         }
 
@@ -313,18 +313,18 @@ namespace PBL
                 string nvid = dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString();
                 if (BLL_QLNV.Instance.DeleteNhanVien(nvid))
                 {
-                    MessageBox.Show("Xoa nhan vien thanh cong!");
+                    MessageBox.Show("Xóa nhân viên thành công!");
                     RefreshNV();
                     ShowDgvStaff();
                 }
                 else
                 {
-                    MessageBox.Show("Nhan vien khong the xoa! Vui long kiem tra lai");
+                    MessageBox.Show("Nhân viên không thể xóa! Vui lòng kiểm tra lại");
                 }
             }
             catch
             {
-                MessageBox.Show("Vui long chon nhan vien can xoa!");
+                MessageBox.Show("Vui lòng chọn nhân viên cần xóa!");
             }
         }
 
@@ -374,7 +374,7 @@ namespace PBL
             }
             else
             {
-                MessageBox.Show("Vui long chon kieu sap xep!");
+                MessageBox.Show("Vui lòng chọn kiểu sắp xếp!");
             }
         }
 
@@ -390,35 +390,43 @@ namespace PBL
             {
                 if (BLL_DangNhap.Instance.UpdatePassword(dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString()))
                 {
-                    MessageBox.Show("Khoi phuc mat khau thanh cong!");
+                    MessageBox.Show("Khôi phục mật khẩu thành công! Mật khẩu mới là 1");
                 }
                 else
                 {
-                    MessageBox.Show("khoi phuc mat khau khong thanh cong! Vui long thu lai");
+                    MessageBox.Show("Khôi phục mật khẩu không thành công! Vui lòng thử lại");
                 }
             }
             catch
             {
-                MessageBox.Show("Vui long chon nhan vien can khoi phuc mat khau!");
+                MessageBox.Show("Vui lòng chọn nhân viên cần khôi phục mật khẩu!");
             }
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
+            string nhanvienid = dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString();
             try
             {
-                if (BLL_DangNhap.Instance.AddAccount(dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString()))
+                if (BLL_QLNV.Instance.GetQuyenHanByNhanVienID(nhanvienid) != -1)
                 {
-                    MessageBox.Show("Tao tai khoan thanh cong!/n Tai khoan duoc tao voi mat khau mac dinh la 1");
+                    if (BLL_DangNhap.Instance.AddAccount(nhanvienid))
+                    {
+                        MessageBox.Show("Tạo tài khoản thành công!/n Tài khoản được tạo với mật khẩu mặc định là 1");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tạo tài khoản không thành công! Vui lòng thử lại");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Tao tai khoan khong thanh cong! Vui long thu lai");
+                    MessageBox.Show("Nhân viên này không thể tạo tài khoản!");
                 }
             }
             catch
             {
-                MessageBox.Show("Vui long chon nhan vien can tao tai khoan!");
+                MessageBox.Show("Vui lòng chọn nhân viên cần tạo tài khoản!");
             }
         }
 

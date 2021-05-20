@@ -36,6 +36,34 @@ namespace PBL
             txbDPMaNV.Text = IDNhanVien;
             txbCIMaNV.Text = IDNhanVien;
             txbMaNvOut.Text = IDNhanVien;
+            switch(BLL_QLNV.Instance.GetQuyenHanByNhanVienID(IDNhanVien))
+            {
+                case 1:
+                    itemNhanVienVaChucVu.Enabled = false;
+                    itemVatTu.Enabled = false;
+                    itemQLTaiKhoan.Enabled = false;
+                    menuItemThongKe.Enabled = false;
+                    break;
+                case 2:
+                    itemMenuChinh.Enabled = false;
+                    itemBook.Enabled = false;
+                    itemVatTu.Enabled = false;
+                    ItemHoaDon.Enabled = false;
+                    itemQLTaiKhoan.Enabled = false;
+                    menuItemThongKe.Enabled = false;
+                    break;
+                case 3:
+                    itemMenuChinh.Enabled = false;
+                    itemBook.Enabled = false;
+                    itemNhanVienVaChucVu.Enabled = false;
+                    ItemHoaDon.Enabled = false;
+                    itemQLTaiKhoan.Enabled = false;
+                    menuItemThongKe.Enabled = false;
+                    break;
+                case 4:
+                    menuItemMenu.Enabled = false;
+                    break;
+            }
         } 
         private void LoadRoom() 
         { 

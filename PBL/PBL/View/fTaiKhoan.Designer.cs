@@ -42,29 +42,33 @@ namespace PBL.View
             // dgvLog
             // 
             this.dgvLog.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLog.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLog.Location = new System.Drawing.Point(6, 21);
+            this.dgvLog.Location = new System.Drawing.Point(4, 17);
+            this.dgvLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvLog.Name = "dgvLog";
             this.dgvLog.ReadOnly = true;
             this.dgvLog.RowHeadersVisible = false;
             this.dgvLog.RowHeadersWidth = 51;
             this.dgvLog.RowTemplate.Height = 24;
             this.dgvLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLog.Size = new System.Drawing.Size(374, 380);
+            this.dgvLog.Size = new System.Drawing.Size(280, 309);
             this.dgvLog.TabIndex = 0;
             // 
             // dgvAccount
             // 
             this.dgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAccount.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAccount.Location = new System.Drawing.Point(6, 21);
+            this.dgvAccount.Location = new System.Drawing.Point(4, 17);
+            this.dgvAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvAccount.Name = "dgvAccount";
             this.dgvAccount.ReadOnly = true;
             this.dgvAccount.RowHeadersVisible = false;
             this.dgvAccount.RowHeadersWidth = 51;
             this.dgvAccount.RowTemplate.Height = 24;
             this.dgvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAccount.Size = new System.Drawing.Size(508, 380);
+            this.dgvAccount.Size = new System.Drawing.Size(381, 309);
             this.dgvAccount.TabIndex = 0;
             this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
             this.dgvAccount.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvAccount_DataBindingComplete);
@@ -73,9 +77,11 @@ namespace PBL.View
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvAccount);
-            this.groupBox1.Location = new System.Drawing.Point(10, 12);
+            this.groupBox1.Location = new System.Drawing.Point(8, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(520, 410);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(390, 333);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách tài khoản";
@@ -83,23 +89,26 @@ namespace PBL.View
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvLog);
-            this.groupBox2.Location = new System.Drawing.Point(536, 12);
+            this.groupBox2.Location = new System.Drawing.Point(402, 10);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(386, 410);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(290, 333);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lịch sử truy cập";
             // 
             // fTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 434);
+            this.ClientSize = new System.Drawing.Size(700, 353);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "fTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fTaiKhoan";
+            this.Text = "Quản lý tài khoản";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
             this.groupBox1.ResumeLayout(false);

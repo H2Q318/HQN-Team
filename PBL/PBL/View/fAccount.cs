@@ -58,16 +58,16 @@ namespace PBL
                 };
                 if (BLL_QLNV.Instance.UpdateNhanVien(nv))
                 {
-                    MessageBox.Show("Cap nhat thong tin thanh cong!");
+                    MessageBox.Show("Cập nhật thông tin thành công!");
                 } 
                 else
                 {
-                    MessageBox.Show("Cap nhat khong thanh cong! Vui long kiem tra lai thong tin");
+                    MessageBox.Show("Cập nhật thông tin không thành công! Vui lòng kiểm tra lại");
                 }
             }
             else
             {
-                MessageBox.Show("Vui long dien day du thong tin ca nhan!");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin cá nhân!");
             }
         }
 

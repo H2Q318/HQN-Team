@@ -33,21 +33,21 @@ namespace PBL
                     if (BLL_DangNhap.Instance.CheckPassword(IDNhanVien, txbOldPassword.Text))
                     {
                         BLL_DangNhap.Instance.UpdatePassword(IDNhanVien, txbNewPassword.Text);
-                        MessageBox.Show("Doi mat khau thanh cong!");
+                        MessageBox.Show("Đổi mật khẩu thành công!");
                     }
                     else
                     {
-                        MessageBox.Show("Doi mat khau khong thanh cong! Vui long kiem tra lai");
+                        MessageBox.Show("Đổi mật khẩu không thành công! Vui lòng kiểm tra lại");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Mat khau moi khong khop! Vui long kiem tra lai");
+                    MessageBox.Show("Mật khẩu không khớp! Vui lòng kiểm tra lại");
                 }
             }
             else
             {
-                MessageBox.Show("Vui long nhap day du thong tin!");
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
             }
         }
         #endregion

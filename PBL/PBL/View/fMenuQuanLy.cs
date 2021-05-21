@@ -26,7 +26,25 @@ namespace PBL
             GUIDichVu();
             GUIBillDV();
             GuiKhachHang();
+            Load();
         }
+
+        #region Load
+
+        private void Load()
+        {
+            if (BLL_QLNV.Instance.GetQuyenHanByNhanVienID(NhanVienID) == 1)
+            {
+                tabcontrol.TabPages.Remove(tpKhachHang);
+                tabcontrol.TabPages.Remove(tpPhong);
+                tabcontrol.TabPages.Remove(tpLoaiDV);
+                tabcontrol.TabPages.Remove(tpLoaiPhong);
+                tabcontrol.TabPages.Remove(tpLoaiVatDung);
+            }
+        }
+
+        #endregion
+
         #region Quản lý phòng
         private void GUIPhong()
         {
@@ -91,13 +109,13 @@ namespace PBL
                     }
                     catch
                     {
-                        MessageBox.Show("Vui long nhap day du va dung kieu du lieu cua thong tin !");
+                        MessageBox.Show("Vui lòng nhập đầy đủ và đúng kiểu dữ liệu của thông tin !");
                     }
                 }       
             }
             else
             {
-                MessageBox.Show("Ma phong da ton tai !");
+                MessageBox.Show("Mã phòng đã tồn tại!");
             }
             
         }
@@ -119,12 +137,12 @@ namespace PBL
                 }
                 catch
                 {
-                    MessageBox.Show("Vui long nhap day du va dung kieu du lieu cua thong tin !");
+                    MessageBox.Show("Vui lòng nhập đầy đủ và đúng kiểu dữ liệu của thông tin !");
                 }
             }
             else
             {
-                MessageBox.Show("Ma phong khong ton tai !");
+                MessageBox.Show("Mã phòng không tồn tại!");
             }
             
         }
@@ -137,7 +155,7 @@ namespace PBL
             }
             else
             {
-                MessageBox.Show("Chon it nhat mot dong de xoa !");
+                MessageBox.Show("Chọn ít nhất một dòng để xóa !");
             }
         }
 
@@ -260,7 +278,7 @@ namespace PBL
                 }
                 catch
                 {
-                    MessageBox.Show("Vui long nhap day du thong tin !");
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin !");
                 }
             }
             else
@@ -309,7 +327,7 @@ namespace PBL
             }
             else
             {
-                MessageBox.Show("Vui long chon it nhat mot dong de xoa !");
+                MessageBox.Show("Vui lòng chọn ít nhất một dòng để xóa!");
             }
         }
 
@@ -562,18 +580,18 @@ namespace PBL
                 };
                 if (BLL_QLDV.Instance.AddDichVu(dv))
                 {
-                    MessageBox.Show("Them dich vu thanh cong!");
+                    MessageBox.Show("Thêm dịch vụ thành công!");
                     RefreshDV();
                     RefreshGUIBillDichVu();
                 }
                 else
                 {
-                    MessageBox.Show("Them dich vu that bai! Vui long kiem tra lai thong tin");
+                    MessageBox.Show("Thêm dịch vụ không thành công! Vui lòng kiểm tra lại thông tin");
                 }
             }
             else
             {
-                MessageBox.Show("Vui long nhap ten va gia dich vu!");
+                MessageBox.Show("Vui lòng nhập tên và giá dịch vụ!");
             }
         }
 
@@ -593,23 +611,23 @@ namespace PBL
                     };
                     if (BLL_QLDV.Instance.UpdateDichVu(dv))
                     {
-                        MessageBox.Show("Cap nhat dich vu thanh cong!");
+                        MessageBox.Show("Cập nhật dịch vụ thành công!");
                         RefreshDV();
                         RefreshGUIBillDichVu();
                     }
                     else
                     {
-                        MessageBox.Show("Cap nhat dich vu that bai! Vui long kiem tra lai thong tin");
+                        MessageBox.Show("Cập nhật dịch vụ không thành công! Vui lòng kiểm tra lại thông tin");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Vui long nhap day du thong tin dich vu!");
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin dịch vụ!");
                 }
             }
             catch
             {
-                MessageBox.Show("Vui long chon dich vu can cap nhat!");
+                MessageBox.Show("Vui lòng chọn dịch vụ cần cập nhật!");
             }
         }
 
@@ -620,18 +638,18 @@ namespace PBL
                 string dvid = dgvDichVu.SelectedRows[0].Cells["DichVuID"].Value.ToString();
                 if (BLL_QLDV.Instance.DeleteDichVu(dvid))
                 {
-                    MessageBox.Show("Xoa dich vu thanh cong!");
+                    MessageBox.Show("Xóa dịch vụ thành công!");
                     RefreshDV();
                     RefreshGUIBillDichVu();
                 }
                 else
                 {
-                    MessageBox.Show("Dich vu khong the xoa! Vui long kiem tra lai");
+                    MessageBox.Show("Dịch vụ không thể xóa! Vui lòng kiểm tra lại");
                 }
             }
             catch
             {
-                MessageBox.Show("Vui long chon dich vu can xoa!");
+                MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!");
             }
         }
 
@@ -663,7 +681,7 @@ namespace PBL
             }
             else
             {
-                MessageBox.Show("Vui long chon kieu sap xep!");
+                MessageBox.Show("Vui lòng chọn kiểu sắp xếp!");
             }
         }
 
@@ -947,7 +965,7 @@ namespace PBL
             }
             else
             {
-                MessageBox.Show("Chon it nhat mot khach hang de xoa !");
+                MessageBox.Show("Chọn ít nhất một khách hàng để xóa!");
             }
         }
 

@@ -71,8 +71,9 @@ namespace PBL
             flpRom.Controls.Clear(); 
             foreach (PHONG item in listRoom) 
             { 
-                Button btn = new Button() { Width = 100, Height = 100 }; 
-                btn.Text = item.PhongID + Environment.NewLine + item.TrangThai;
+                Button btn = new Button() { Width = 100, Height = 100 };
+                string s= (!item.TrangThai) ?"Có người":"Trống";
+                btn.Text = item.PhongID + Environment.NewLine + s;
                 btn.Click += btn_Click;
                 btn.Tag = item;
                 if(item.TrangThai) 

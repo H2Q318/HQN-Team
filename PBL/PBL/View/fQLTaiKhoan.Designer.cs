@@ -1,7 +1,7 @@
 ﻿
 namespace PBL.View
 {
-    partial class fTaiKhoan
+    partial class fQLTaiKhoan
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,7 @@ namespace PBL.View
             this.dgvLog.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLog.Location = new System.Drawing.Point(4, 17);
-            this.dgvLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvLog.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLog.Name = "dgvLog";
             this.dgvLog.ReadOnly = true;
             this.dgvLog.RowHeadersVisible = false;
@@ -61,7 +61,7 @@ namespace PBL.View
             this.dgvAccount.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccount.Location = new System.Drawing.Point(4, 17);
-            this.dgvAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAccount.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAccount.Name = "dgvAccount";
             this.dgvAccount.ReadOnly = true;
             this.dgvAccount.RowHeadersVisible = false;
@@ -78,9 +78,9 @@ namespace PBL.View
             // 
             this.groupBox1.Controls.Add(this.dgvAccount);
             this.groupBox1.Location = new System.Drawing.Point(8, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(390, 333);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -90,9 +90,9 @@ namespace PBL.View
             // 
             this.groupBox2.Controls.Add(this.dgvLog);
             this.groupBox2.Location = new System.Drawing.Point(402, 10);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(290, 333);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
@@ -105,8 +105,10 @@ namespace PBL.View
             this.ClientSize = new System.Drawing.Size(700, 353);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fTaiKhoan";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý tài khoản";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();

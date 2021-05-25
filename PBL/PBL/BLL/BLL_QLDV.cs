@@ -9,9 +9,6 @@ namespace PBL
 {
     class BLL_QLDV
     {
-        public delegate bool Compare(object o1, object o2);
-        public Compare cmp { get; set; }
-
         private static BLL_QLDV _instance;
         public static BLL_QLDV Instance
         {
@@ -94,40 +91,18 @@ namespace PBL
             }
         }
 
-        public void Sort(ref List<object> data, Compare cmp)
+        public List<LOAIDICHVU> GetListDichVuSorted(List<string> LdvId, int sortcase)
         {
-            for (int i = 0; i < data.Count - 1; i++)
-            {
-                for (int j = i + 1; j < data.Count; j++)
-                {
-                    if (cmp(data[i], data[j]))
-                    {
-                        object temp = data[i];
-                        data[i] = data[j];
-                        data[j] = temp;
-                    }
-                }
-            }
-        }
-
-        public List<object> GetListDichVuSorted(List<string> LdvId, int sortcase)
-        {
-            List<LOAIDICHVU> ldv = GetListDichVuByID(LdvId);
-            List<object> data = new List<object>();
-            foreach(LOAIDICHVU item in ldv)
-            {
-                data.Add(item);
-            }
+            List<LOAIDICHVU> data = GetListDichVuByID(LdvId);
             switch (sortcase)
             {
                 case 0: //Theo ten dich vu
-                    cmp = DTO_DichVu.Compare_TenDichVu;
+                    data = data.OrderBy(p => p.TenDichVu).ToList();
                     break;
                 case 1: //Theo gia
-                    cmp = DTO_DichVu.Compare_Gia;
+                    data = data.OrderBy(p => p.DonGia).ToList();
                     break;
             }
-            Sort(ref data, cmp);
             return data;
         }
 

@@ -102,5 +102,5 @@ D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fChiTietKhach
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csprojAssemblyReference.cache
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fChiTietKhachHang.resources
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fTaiKhoan.resources
-C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fTaiKhoan.resources
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fTaiKhoan.resources
+C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fQLTaiKhoan.resources

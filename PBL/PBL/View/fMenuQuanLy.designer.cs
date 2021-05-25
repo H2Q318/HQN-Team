@@ -249,9 +249,9 @@
             this.tpLoaiVatDung.Controls.Add(this.panel27);
             this.tpLoaiVatDung.Controls.Add(this.panel28);
             this.tpLoaiVatDung.Location = new System.Drawing.Point(4, 22);
-            this.tpLoaiVatDung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoaiVatDung.Margin = new System.Windows.Forms.Padding(2);
             this.tpLoaiVatDung.Name = "tpLoaiVatDung";
-            this.tpLoaiVatDung.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoaiVatDung.Padding = new System.Windows.Forms.Padding(2);
             this.tpLoaiVatDung.Size = new System.Drawing.Size(978, 446);
             this.tpLoaiVatDung.TabIndex = 6;
             this.tpLoaiVatDung.Text = "Loại vật dụng";
@@ -265,7 +265,7 @@
             this.panel26.Controls.Add(this.btnSuaVT);
             this.panel26.Controls.Add(this.btnThemVT);
             this.panel26.Location = new System.Drawing.Point(701, 4);
-            this.panel26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel26.Margin = new System.Windows.Forms.Padding(2);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(273, 90);
             this.panel26.TabIndex = 12;
@@ -273,7 +273,7 @@
             // btnResetVT
             // 
             this.btnResetVT.Location = new System.Drawing.Point(161, 50);
-            this.btnResetVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetVT.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetVT.Name = "btnResetVT";
             this.btnResetVT.Size = new System.Drawing.Size(71, 28);
             this.btnResetVT.TabIndex = 3;
@@ -284,7 +284,7 @@
             // btnXoaVT
             // 
             this.btnXoaVT.Location = new System.Drawing.Point(47, 50);
-            this.btnXoaVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaVT.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaVT.Name = "btnXoaVT";
             this.btnXoaVT.Size = new System.Drawing.Size(75, 28);
             this.btnXoaVT.TabIndex = 2;
@@ -295,7 +295,7 @@
             // btnSuaVT
             // 
             this.btnSuaVT.Location = new System.Drawing.Point(161, 9);
-            this.btnSuaVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaVT.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaVT.Name = "btnSuaVT";
             this.btnSuaVT.Size = new System.Drawing.Size(71, 29);
             this.btnSuaVT.TabIndex = 1;
@@ -306,7 +306,7 @@
             // btnThemVT
             // 
             this.btnThemVT.Location = new System.Drawing.Point(47, 8);
-            this.btnThemVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemVT.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemVT.Name = "btnThemVT";
             this.btnThemVT.Size = new System.Drawing.Size(75, 29);
             this.btnThemVT.TabIndex = 0;
@@ -323,7 +323,7 @@
             this.panel25.Controls.Add(this.txbSeachVD);
             this.panel25.Controls.Add(this.label15);
             this.panel25.Location = new System.Drawing.Point(701, 98);
-            this.panel25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel25.Margin = new System.Windows.Forms.Padding(2);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(273, 344);
             this.panel25.TabIndex = 19;
@@ -340,7 +340,7 @@
             // btnSortLoaiVD
             // 
             this.btnSortLoaiVD.Location = new System.Drawing.Point(188, 2);
-            this.btnSortLoaiVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSortLoaiVD.Margin = new System.Windows.Forms.Padding(2);
             this.btnSortLoaiVD.Name = "btnSortLoaiVD";
             this.btnSortLoaiVD.Size = new System.Drawing.Size(75, 29);
             this.btnSortLoaiVD.TabIndex = 4;
@@ -360,7 +360,7 @@
             // btnResetSVT
             // 
             this.btnResetSVT.Location = new System.Drawing.Point(161, 71);
-            this.btnResetSVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetSVT.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetSVT.Name = "btnResetSVT";
             this.btnResetSVT.Size = new System.Drawing.Size(71, 32);
             this.btnResetSVT.TabIndex = 19;
@@ -371,7 +371,7 @@
             // BtnSearchVT
             // 
             this.BtnSearchVT.Location = new System.Drawing.Point(47, 71);
-            this.BtnSearchVT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSearchVT.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSearchVT.Name = "BtnSearchVT";
             this.BtnSearchVT.Size = new System.Drawing.Size(75, 32);
             this.BtnSearchVT.TabIndex = 18;
@@ -382,7 +382,7 @@
             // txbSeachVD
             // 
             this.txbSeachVD.Location = new System.Drawing.Point(119, 26);
-            this.txbSeachVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSeachVD.Margin = new System.Windows.Forms.Padding(2);
             this.txbSeachVD.Name = "txbSeachVD";
             this.txbSeachVD.Size = new System.Drawing.Size(140, 20);
             this.txbSeachVD.TabIndex = 17;
@@ -402,7 +402,7 @@
             this.panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel27.Controls.Add(this.dgvLoaiVatDung);
             this.panel27.Location = new System.Drawing.Point(4, 72);
-            this.panel27.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel27.Margin = new System.Windows.Forms.Padding(2);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(694, 370);
             this.panel27.TabIndex = 17;
@@ -432,7 +432,7 @@
             this.panel28.Controls.Add(this.label40);
             this.panel28.Controls.Add(this.label41);
             this.panel28.Location = new System.Drawing.Point(4, 4);
-            this.panel28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel28.Margin = new System.Windows.Forms.Padding(2);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(694, 65);
             this.panel28.TabIndex = 16;
@@ -441,7 +441,7 @@
             // 
             this.checkBoxTBCoDinh.AutoSize = true;
             this.checkBoxTBCoDinh.Location = new System.Drawing.Point(560, 28);
-            this.checkBoxTBCoDinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxTBCoDinh.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxTBCoDinh.Name = "checkBoxTBCoDinh";
             this.checkBoxTBCoDinh.Size = new System.Drawing.Size(15, 14);
             this.checkBoxTBCoDinh.TabIndex = 33;
@@ -450,7 +450,7 @@
             // txbDonGiaVt
             // 
             this.txbDonGiaVt.Location = new System.Drawing.Point(305, 24);
-            this.txbDonGiaVt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDonGiaVt.Margin = new System.Windows.Forms.Padding(2);
             this.txbDonGiaVt.Name = "txbDonGiaVt";
             this.txbDonGiaVt.Size = new System.Drawing.Size(113, 20);
             this.txbDonGiaVt.TabIndex = 32;
@@ -459,7 +459,7 @@
             // txbTenVt
             // 
             this.txbTenVt.Location = new System.Drawing.Point(85, 24);
-            this.txbTenVt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTenVt.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenVt.Name = "txbTenVt";
             this.txbTenVt.Size = new System.Drawing.Size(100, 20);
             this.txbTenVt.TabIndex = 31;
@@ -501,9 +501,9 @@
             this.tpLoaiPhong.Controls.Add(this.panel15);
             this.tpLoaiPhong.Controls.Add(this.panel16);
             this.tpLoaiPhong.Location = new System.Drawing.Point(4, 22);
-            this.tpLoaiPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoaiPhong.Margin = new System.Windows.Forms.Padding(2);
             this.tpLoaiPhong.Name = "tpLoaiPhong";
-            this.tpLoaiPhong.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoaiPhong.Padding = new System.Windows.Forms.Padding(2);
             this.tpLoaiPhong.Size = new System.Drawing.Size(978, 446);
             this.tpLoaiPhong.TabIndex = 4;
             this.tpLoaiPhong.Text = "Loại Phòng";
@@ -517,7 +517,7 @@
             this.panel14.Controls.Add(this.btnSuaLP);
             this.panel14.Controls.Add(this.btnThemLP);
             this.panel14.Location = new System.Drawing.Point(701, 4);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(273, 90);
             this.panel14.TabIndex = 11;
@@ -525,7 +525,7 @@
             // btnResetLP
             // 
             this.btnResetLP.Location = new System.Drawing.Point(161, 50);
-            this.btnResetLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetLP.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetLP.Name = "btnResetLP";
             this.btnResetLP.Size = new System.Drawing.Size(71, 28);
             this.btnResetLP.TabIndex = 3;
@@ -536,7 +536,7 @@
             // btnXoaLP
             // 
             this.btnXoaLP.Location = new System.Drawing.Point(47, 50);
-            this.btnXoaLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaLP.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaLP.Name = "btnXoaLP";
             this.btnXoaLP.Size = new System.Drawing.Size(75, 28);
             this.btnXoaLP.TabIndex = 2;
@@ -547,7 +547,7 @@
             // btnSuaLP
             // 
             this.btnSuaLP.Location = new System.Drawing.Point(161, 9);
-            this.btnSuaLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaLP.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaLP.Name = "btnSuaLP";
             this.btnSuaLP.Size = new System.Drawing.Size(71, 29);
             this.btnSuaLP.TabIndex = 1;
@@ -558,7 +558,7 @@
             // btnThemLP
             // 
             this.btnThemLP.Location = new System.Drawing.Point(47, 8);
-            this.btnThemLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemLP.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemLP.Name = "btnThemLP";
             this.btnThemLP.Size = new System.Drawing.Size(75, 29);
             this.btnThemLP.TabIndex = 0;
@@ -575,7 +575,7 @@
             this.panel1.Controls.Add(this.txbSeachLp);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Location = new System.Drawing.Point(702, 98);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(273, 344);
             this.panel1.TabIndex = 15;
@@ -592,7 +592,7 @@
             // btnSortLP
             // 
             this.btnSortLP.Location = new System.Drawing.Point(188, 2);
-            this.btnSortLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSortLP.Margin = new System.Windows.Forms.Padding(2);
             this.btnSortLP.Name = "btnSortLP";
             this.btnSortLP.Size = new System.Drawing.Size(75, 29);
             this.btnSortLP.TabIndex = 4;
@@ -612,7 +612,7 @@
             // btnResetSLp
             // 
             this.btnResetSLp.Location = new System.Drawing.Point(160, 72);
-            this.btnResetSLp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetSLp.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetSLp.Name = "btnResetSLp";
             this.btnResetSLp.Size = new System.Drawing.Size(71, 32);
             this.btnResetSLp.TabIndex = 19;
@@ -623,7 +623,7 @@
             // btnSearchLP
             // 
             this.btnSearchLP.Location = new System.Drawing.Point(46, 72);
-            this.btnSearchLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchLP.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchLP.Name = "btnSearchLP";
             this.btnSearchLP.Size = new System.Drawing.Size(75, 32);
             this.btnSearchLP.TabIndex = 18;
@@ -634,7 +634,7 @@
             // txbSeachLp
             // 
             this.txbSeachLp.Location = new System.Drawing.Point(125, 29);
-            this.txbSeachLp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSeachLp.Margin = new System.Windows.Forms.Padding(2);
             this.txbSeachLp.Name = "txbSeachLp";
             this.txbSeachLp.Size = new System.Drawing.Size(131, 20);
             this.txbSeachLp.TabIndex = 17;
@@ -654,7 +654,7 @@
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel15.Controls.Add(this.dgvLoaiPhong);
             this.panel15.Location = new System.Drawing.Point(4, 72);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(694, 371);
             this.panel15.TabIndex = 13;
@@ -684,7 +684,7 @@
             this.panel16.Controls.Add(this.label10);
             this.panel16.Controls.Add(this.label20);
             this.panel16.Location = new System.Drawing.Point(4, 4);
-            this.panel16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(694, 65);
             this.panel16.TabIndex = 12;
@@ -702,7 +702,7 @@
             // nUDSoNguoi
             // 
             this.nUDSoNguoi.Location = new System.Drawing.Point(302, 24);
-            this.nUDSoNguoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDSoNguoi.Margin = new System.Windows.Forms.Padding(2);
             this.nUDSoNguoi.Maximum = new decimal(new int[] {
             10,
             0,
@@ -715,7 +715,7 @@
             // txbTenLoaiPhong
             // 
             this.txbTenLoaiPhong.Location = new System.Drawing.Point(84, 24);
-            this.txbTenLoaiPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTenLoaiPhong.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenLoaiPhong.Name = "txbTenLoaiPhong";
             this.txbTenLoaiPhong.Size = new System.Drawing.Size(121, 20);
             this.txbTenLoaiPhong.TabIndex = 13;
@@ -723,7 +723,7 @@
             // txbGiaLP
             // 
             this.txbGiaLP.Location = new System.Drawing.Point(475, 24);
-            this.txbGiaLP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbGiaLP.Margin = new System.Windows.Forms.Padding(2);
             this.txbGiaLP.Name = "txbGiaLP";
             this.txbGiaLP.Size = new System.Drawing.Size(120, 20);
             this.txbGiaLP.TabIndex = 11;
@@ -756,9 +756,9 @@
             this.tpHoaDonDV.Controls.Add(this.panel23);
             this.tpHoaDonDV.Controls.Add(this.panel24);
             this.tpHoaDonDV.Location = new System.Drawing.Point(4, 22);
-            this.tpHoaDonDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpHoaDonDV.Margin = new System.Windows.Forms.Padding(2);
             this.tpHoaDonDV.Name = "tpHoaDonDV";
-            this.tpHoaDonDV.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpHoaDonDV.Padding = new System.Windows.Forms.Padding(2);
             this.tpHoaDonDV.Size = new System.Drawing.Size(978, 446);
             this.tpHoaDonDV.TabIndex = 3;
             this.tpHoaDonDV.Text = "Hoá đơn dịch vụ";
@@ -772,7 +772,7 @@
             this.panel22.Controls.Add(this.btnSuaBill);
             this.panel22.Controls.Add(this.btnThemBill);
             this.panel22.Location = new System.Drawing.Point(701, 4);
-            this.panel22.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(273, 90);
             this.panel22.TabIndex = 16;
@@ -780,7 +780,7 @@
             // btnResetBill
             // 
             this.btnResetBill.Location = new System.Drawing.Point(161, 50);
-            this.btnResetBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetBill.Name = "btnResetBill";
             this.btnResetBill.Size = new System.Drawing.Size(71, 28);
             this.btnResetBill.TabIndex = 3;
@@ -791,7 +791,7 @@
             // btnXoaBill
             // 
             this.btnXoaBill.Location = new System.Drawing.Point(47, 50);
-            this.btnXoaBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaBill.Name = "btnXoaBill";
             this.btnXoaBill.Size = new System.Drawing.Size(75, 28);
             this.btnXoaBill.TabIndex = 2;
@@ -802,7 +802,7 @@
             // btnSuaBill
             // 
             this.btnSuaBill.Location = new System.Drawing.Point(161, 9);
-            this.btnSuaBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaBill.Name = "btnSuaBill";
             this.btnSuaBill.Size = new System.Drawing.Size(71, 29);
             this.btnSuaBill.TabIndex = 1;
@@ -813,7 +813,7 @@
             // btnThemBill
             // 
             this.btnThemBill.Location = new System.Drawing.Point(47, 8);
-            this.btnThemBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemBill.Name = "btnThemBill";
             this.btnThemBill.Size = new System.Drawing.Size(75, 29);
             this.btnThemBill.TabIndex = 0;
@@ -830,7 +830,7 @@
             this.panel21.Controls.Add(this.txbSeachBill);
             this.panel21.Controls.Add(this.label19);
             this.panel21.Location = new System.Drawing.Point(701, 98);
-            this.panel21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel21.Margin = new System.Windows.Forms.Padding(2);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(274, 344);
             this.panel21.TabIndex = 15;
@@ -847,7 +847,7 @@
             // btnSortBillDV
             // 
             this.btnSortBillDV.Location = new System.Drawing.Point(188, 2);
-            this.btnSortBillDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSortBillDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnSortBillDV.Name = "btnSortBillDV";
             this.btnSortBillDV.Size = new System.Drawing.Size(75, 29);
             this.btnSortBillDV.TabIndex = 4;
@@ -867,7 +867,7 @@
             // BtnResetSBill
             // 
             this.BtnResetSBill.Location = new System.Drawing.Point(161, 80);
-            this.BtnResetSBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnResetSBill.Margin = new System.Windows.Forms.Padding(2);
             this.BtnResetSBill.Name = "BtnResetSBill";
             this.BtnResetSBill.Size = new System.Drawing.Size(71, 30);
             this.BtnResetSBill.TabIndex = 19;
@@ -878,7 +878,7 @@
             // btnSearchBill
             // 
             this.btnSearchBill.Location = new System.Drawing.Point(47, 80);
-            this.btnSearchBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchBill.Name = "btnSearchBill";
             this.btnSearchBill.Size = new System.Drawing.Size(75, 30);
             this.btnSearchBill.TabIndex = 18;
@@ -889,7 +889,7 @@
             // txbSeachBill
             // 
             this.txbSeachBill.Location = new System.Drawing.Point(107, 24);
-            this.txbSeachBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSeachBill.Margin = new System.Windows.Forms.Padding(2);
             this.txbSeachBill.Name = "txbSeachBill";
             this.txbSeachBill.Size = new System.Drawing.Size(154, 20);
             this.txbSeachBill.TabIndex = 17;
@@ -909,7 +909,7 @@
             this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel23.Controls.Add(this.dgvBillDV);
             this.panel23.Location = new System.Drawing.Point(4, 98);
-            this.panel23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(694, 344);
             this.panel23.TabIndex = 13;
@@ -947,7 +947,7 @@
             this.panel24.Controls.Add(this.label38);
             this.panel24.Controls.Add(this.label39);
             this.panel24.Location = new System.Drawing.Point(4, 4);
-            this.panel24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel24.Margin = new System.Windows.Forms.Padding(2);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(694, 90);
             this.panel24.TabIndex = 12;
@@ -965,16 +965,16 @@
             // txbMaBook
             // 
             this.txbMaBook.Location = new System.Drawing.Point(183, 13);
-            this.txbMaBook.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaBook.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaBook.Name = "txbMaBook";
-            this.txbMaBook.Size = new System.Drawing.Size(57, 20);
+            this.txbMaBook.Size = new System.Drawing.Size(122, 20);
             this.txbMaBook.TabIndex = 26;
             // 
             // txbTongBill
             // 
             this.txbTongBill.Enabled = false;
             this.txbTongBill.Location = new System.Drawing.Point(572, 57);
-            this.txbTongBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTongBill.Margin = new System.Windows.Forms.Padding(2);
             this.txbTongBill.Name = "txbTongBill";
             this.txbTongBill.Size = new System.Drawing.Size(108, 20);
             this.txbTongBill.TabIndex = 25;
@@ -993,7 +993,7 @@
             // 
             this.txbGiaBill.Enabled = false;
             this.txbGiaBill.Location = new System.Drawing.Point(572, 13);
-            this.txbGiaBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbGiaBill.Margin = new System.Windows.Forms.Padding(2);
             this.txbGiaBill.Name = "txbGiaBill";
             this.txbGiaBill.Size = new System.Drawing.Size(108, 20);
             this.txbGiaBill.TabIndex = 23;
@@ -1011,16 +1011,16 @@
             // dtpNgayDat
             // 
             this.dtpNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayDat.Location = new System.Drawing.Point(334, 58);
-            this.dtpNgayDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayDat.Location = new System.Drawing.Point(405, 58);
+            this.dtpNgayDat.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayDat.Name = "dtpNgayDat";
-            this.dtpNgayDat.Size = new System.Drawing.Size(167, 20);
+            this.dtpNgayDat.Size = new System.Drawing.Size(98, 20);
             this.dtpNgayDat.TabIndex = 21;
             // 
             // nUDSoLuong
             // 
-            this.nUDSoLuong.Location = new System.Drawing.Point(334, 13);
-            this.nUDSoLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDSoLuong.Location = new System.Drawing.Point(405, 13);
+            this.nUDSoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.nUDSoLuong.Name = "nUDSoLuong";
             this.nUDSoLuong.Size = new System.Drawing.Size(98, 20);
             this.nUDSoLuong.TabIndex = 20;
@@ -1029,16 +1029,16 @@
             // 
             this.cbTenDV.FormattingEnabled = true;
             this.cbTenDV.Location = new System.Drawing.Point(72, 58);
-            this.cbTenDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTenDV.Margin = new System.Windows.Forms.Padding(2);
             this.cbTenDV.Name = "cbTenDV";
-            this.cbTenDV.Size = new System.Drawing.Size(168, 21);
+            this.cbTenDV.Size = new System.Drawing.Size(233, 21);
             this.cbTenDV.TabIndex = 19;
             // 
             // txbMaBill
             // 
             this.txbMaBill.Enabled = false;
             this.txbMaBill.Location = new System.Drawing.Point(71, 13);
-            this.txbMaBill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaBill.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaBill.Name = "txbMaBill";
             this.txbMaBill.ReadOnly = true;
             this.txbMaBill.Size = new System.Drawing.Size(41, 20);
@@ -1047,7 +1047,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(268, 62);
+            this.label34.Location = new System.Drawing.Point(339, 62);
             this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(52, 13);
@@ -1057,7 +1057,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(268, 16);
+            this.label35.Location = new System.Drawing.Point(339, 16);
             this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(53, 13);
@@ -1091,9 +1091,9 @@
             this.tpLoaiDV.Controls.Add(this.panel11);
             this.tpLoaiDV.Controls.Add(this.panel12);
             this.tpLoaiDV.Location = new System.Drawing.Point(4, 22);
-            this.tpLoaiDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoaiDV.Margin = new System.Windows.Forms.Padding(2);
             this.tpLoaiDV.Name = "tpLoaiDV";
-            this.tpLoaiDV.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpLoaiDV.Padding = new System.Windows.Forms.Padding(2);
             this.tpLoaiDV.Size = new System.Drawing.Size(978, 446);
             this.tpLoaiDV.TabIndex = 2;
             this.tpLoaiDV.Text = "Loại dịch vụ";
@@ -1107,7 +1107,7 @@
             this.panel10.Controls.Add(this.btnSuaDV);
             this.panel10.Controls.Add(this.btnThemDV);
             this.panel10.Location = new System.Drawing.Point(702, 4);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(272, 90);
             this.panel10.TabIndex = 12;
@@ -1115,7 +1115,7 @@
             // btnResetDV
             // 
             this.btnResetDV.Location = new System.Drawing.Point(158, 52);
-            this.btnResetDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetDV.Name = "btnResetDV";
             this.btnResetDV.Size = new System.Drawing.Size(71, 28);
             this.btnResetDV.TabIndex = 7;
@@ -1126,7 +1126,7 @@
             // btnXoaDV
             // 
             this.btnXoaDV.Location = new System.Drawing.Point(44, 52);
-            this.btnXoaDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaDV.Name = "btnXoaDV";
             this.btnXoaDV.Size = new System.Drawing.Size(75, 28);
             this.btnXoaDV.TabIndex = 6;
@@ -1137,7 +1137,7 @@
             // btnSuaDV
             // 
             this.btnSuaDV.Location = new System.Drawing.Point(158, 11);
-            this.btnSuaDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaDV.Name = "btnSuaDV";
             this.btnSuaDV.Size = new System.Drawing.Size(71, 29);
             this.btnSuaDV.TabIndex = 5;
@@ -1148,7 +1148,7 @@
             // btnThemDV
             // 
             this.btnThemDV.Location = new System.Drawing.Point(44, 10);
-            this.btnThemDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemDV.Name = "btnThemDV";
             this.btnThemDV.Size = new System.Drawing.Size(75, 29);
             this.btnThemDV.TabIndex = 4;
@@ -1165,7 +1165,7 @@
             this.panel9.Controls.Add(this.txbSeachDv);
             this.panel9.Controls.Add(this.label17);
             this.panel9.Location = new System.Drawing.Point(702, 98);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(272, 344);
             this.panel9.TabIndex = 11;
@@ -1182,7 +1182,7 @@
             // btnSortDV
             // 
             this.btnSortDV.Location = new System.Drawing.Point(188, 2);
-            this.btnSortDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSortDV.Margin = new System.Windows.Forms.Padding(2);
             this.btnSortDV.Name = "btnSortDV";
             this.btnSortDV.Size = new System.Drawing.Size(75, 29);
             this.btnSortDV.TabIndex = 4;
@@ -1204,7 +1204,7 @@
             // btnResetSDv
             // 
             this.btnResetSDv.Location = new System.Drawing.Point(158, 81);
-            this.btnResetSDv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetSDv.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetSDv.Name = "btnResetSDv";
             this.btnResetSDv.Size = new System.Drawing.Size(71, 34);
             this.btnResetSDv.TabIndex = 19;
@@ -1215,7 +1215,7 @@
             // btnSearchDv
             // 
             this.btnSearchDv.Location = new System.Drawing.Point(44, 81);
-            this.btnSearchDv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchDv.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchDv.Name = "btnSearchDv";
             this.btnSearchDv.Size = new System.Drawing.Size(75, 34);
             this.btnSearchDv.TabIndex = 18;
@@ -1226,7 +1226,7 @@
             // txbSeachDv
             // 
             this.txbSeachDv.Location = new System.Drawing.Point(95, 30);
-            this.txbSeachDv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSeachDv.Margin = new System.Windows.Forms.Padding(2);
             this.txbSeachDv.Name = "txbSeachDv";
             this.txbSeachDv.Size = new System.Drawing.Size(161, 20);
             this.txbSeachDv.TabIndex = 17;
@@ -1246,7 +1246,7 @@
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Controls.Add(this.dgvDichVu);
             this.panel11.Location = new System.Drawing.Point(4, 98);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(694, 344);
             this.panel11.TabIndex = 9;
@@ -1275,7 +1275,7 @@
             this.panel12.Controls.Add(this.panel18);
             this.panel12.Controls.Add(this.panel17);
             this.panel12.Location = new System.Drawing.Point(4, 4);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(694, 90);
             this.panel12.TabIndex = 8;
@@ -1348,7 +1348,7 @@
             // txbGiaDV
             // 
             this.txbGiaDV.Location = new System.Drawing.Point(98, 4);
-            this.txbGiaDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbGiaDV.Margin = new System.Windows.Forms.Padding(2);
             this.txbGiaDV.Name = "txbGiaDV";
             this.txbGiaDV.Size = new System.Drawing.Size(121, 20);
             this.txbGiaDV.TabIndex = 13;
@@ -1376,7 +1376,7 @@
             // txbTenDV
             // 
             this.txbTenDV.Location = new System.Drawing.Point(98, 4);
-            this.txbTenDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTenDV.Margin = new System.Windows.Forms.Padding(2);
             this.txbTenDV.Name = "txbTenDV";
             this.txbTenDV.Size = new System.Drawing.Size(121, 20);
             this.txbTenDV.TabIndex = 13;
@@ -1398,9 +1398,9 @@
             this.tpPhong.Controls.Add(this.panel7);
             this.tpPhong.Controls.Add(this.panel8);
             this.tpPhong.Location = new System.Drawing.Point(4, 22);
-            this.tpPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpPhong.Margin = new System.Windows.Forms.Padding(2);
             this.tpPhong.Name = "tpPhong";
-            this.tpPhong.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpPhong.Padding = new System.Windows.Forms.Padding(2);
             this.tpPhong.Size = new System.Drawing.Size(978, 446);
             this.tpPhong.TabIndex = 1;
             this.tpPhong.Text = "Phòng";
@@ -1415,7 +1415,7 @@
             this.panel5.Controls.Add(this.txbSeachP);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Location = new System.Drawing.Point(702, 98);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(272, 344);
             this.panel5.TabIndex = 7;
@@ -1432,7 +1432,7 @@
             // btnSortPhong
             // 
             this.btnSortPhong.Location = new System.Drawing.Point(188, 2);
-            this.btnSortPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSortPhong.Margin = new System.Windows.Forms.Padding(2);
             this.btnSortPhong.Name = "btnSortPhong";
             this.btnSortPhong.Size = new System.Drawing.Size(75, 29);
             this.btnSortPhong.TabIndex = 4;
@@ -1452,7 +1452,7 @@
             // btnResetSp
             // 
             this.btnResetSp.Location = new System.Drawing.Point(158, 87);
-            this.btnResetSp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetSp.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetSp.Name = "btnResetSp";
             this.btnResetSp.Size = new System.Drawing.Size(71, 34);
             this.btnResetSp.TabIndex = 19;
@@ -1463,7 +1463,7 @@
             // btnSearchP
             // 
             this.btnSearchP.Location = new System.Drawing.Point(47, 87);
-            this.btnSearchP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchP.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchP.Name = "btnSearchP";
             this.btnSearchP.Size = new System.Drawing.Size(72, 34);
             this.btnSearchP.TabIndex = 18;
@@ -1474,7 +1474,7 @@
             // txbSeachP
             // 
             this.txbSeachP.Location = new System.Drawing.Point(99, 37);
-            this.txbSeachP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSeachP.Margin = new System.Windows.Forms.Padding(2);
             this.txbSeachP.Name = "txbSeachP";
             this.txbSeachP.Size = new System.Drawing.Size(159, 20);
             this.txbSeachP.TabIndex = 17;
@@ -1497,7 +1497,7 @@
             this.panel6.Controls.Add(this.btnSuaPh);
             this.panel6.Controls.Add(this.btnThemPh);
             this.panel6.Location = new System.Drawing.Point(702, 4);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(272, 90);
             this.panel6.TabIndex = 6;
@@ -1505,7 +1505,7 @@
             // btnResetPh
             // 
             this.btnResetPh.Location = new System.Drawing.Point(158, 52);
-            this.btnResetPh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetPh.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetPh.Name = "btnResetPh";
             this.btnResetPh.Size = new System.Drawing.Size(71, 28);
             this.btnResetPh.TabIndex = 7;
@@ -1516,7 +1516,7 @@
             // btnXoaPh
             // 
             this.btnXoaPh.Location = new System.Drawing.Point(44, 52);
-            this.btnXoaPh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaPh.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaPh.Name = "btnXoaPh";
             this.btnXoaPh.Size = new System.Drawing.Size(75, 28);
             this.btnXoaPh.TabIndex = 6;
@@ -1527,7 +1527,7 @@
             // btnSuaPh
             // 
             this.btnSuaPh.Location = new System.Drawing.Point(158, 11);
-            this.btnSuaPh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaPh.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaPh.Name = "btnSuaPh";
             this.btnSuaPh.Size = new System.Drawing.Size(71, 29);
             this.btnSuaPh.TabIndex = 5;
@@ -1538,7 +1538,7 @@
             // btnThemPh
             // 
             this.btnThemPh.Location = new System.Drawing.Point(44, 10);
-            this.btnThemPh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemPh.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemPh.Name = "btnThemPh";
             this.btnThemPh.Size = new System.Drawing.Size(75, 29);
             this.btnThemPh.TabIndex = 4;
@@ -1551,7 +1551,7 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.dgvPhong);
             this.panel7.Location = new System.Drawing.Point(4, 98);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(694, 344);
             this.panel7.TabIndex = 5;
@@ -1582,7 +1582,7 @@
             this.panel8.Controls.Add(this.label12);
             this.panel8.Controls.Add(this.label16);
             this.panel8.Location = new System.Drawing.Point(4, 4);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(694, 90);
             this.panel8.TabIndex = 4;
@@ -1591,7 +1591,7 @@
             // 
             this.rbtNotAvailable.AutoSize = true;
             this.rbtNotAvailable.Location = new System.Drawing.Point(365, 58);
-            this.rbtNotAvailable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbtNotAvailable.Margin = new System.Windows.Forms.Padding(2);
             this.rbtNotAvailable.Name = "rbtNotAvailable";
             this.rbtNotAvailable.Size = new System.Drawing.Size(88, 17);
             this.rbtNotAvailable.TabIndex = 16;
@@ -1603,7 +1603,7 @@
             // 
             this.rbtAvailable.AutoSize = true;
             this.rbtAvailable.Location = new System.Drawing.Point(365, 12);
-            this.rbtAvailable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbtAvailable.Margin = new System.Windows.Forms.Padding(2);
             this.rbtAvailable.Name = "rbtAvailable";
             this.rbtAvailable.Size = new System.Drawing.Size(68, 17);
             this.rbtAvailable.TabIndex = 15;
@@ -1615,7 +1615,7 @@
             // 
             this.cbTenLoaiPhong.FormattingEnabled = true;
             this.cbTenLoaiPhong.Location = new System.Drawing.Point(100, 57);
-            this.cbTenLoaiPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTenLoaiPhong.Margin = new System.Windows.Forms.Padding(2);
             this.cbTenLoaiPhong.Name = "cbTenLoaiPhong";
             this.cbTenLoaiPhong.Size = new System.Drawing.Size(107, 21);
             this.cbTenLoaiPhong.TabIndex = 14;
@@ -1623,7 +1623,7 @@
             // txbMaPhong
             // 
             this.txbMaPhong.Location = new System.Drawing.Point(100, 11);
-            this.txbMaPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaPhong.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaPhong.MaxLength = 3;
             this.txbMaPhong.Name = "txbMaPhong";
             this.txbMaPhong.Size = new System.Drawing.Size(107, 20);
@@ -1667,9 +1667,9 @@
             this.tpKhachHang.Controls.Add(this.panel2);
             this.tpKhachHang.Controls.Add(this.panel13);
             this.tpKhachHang.Location = new System.Drawing.Point(4, 22);
-            this.tpKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.tpKhachHang.Name = "tpKhachHang";
-            this.tpKhachHang.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpKhachHang.Padding = new System.Windows.Forms.Padding(2);
             this.tpKhachHang.Size = new System.Drawing.Size(978, 446);
             this.tpKhachHang.TabIndex = 0;
             this.tpKhachHang.Text = "Khách Hàng";
@@ -1684,7 +1684,7 @@
             this.panel4.Controls.Add(this.txbSeachkh);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Location = new System.Drawing.Point(701, 98);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(273, 344);
             this.panel4.TabIndex = 11;
@@ -1701,7 +1701,7 @@
             // btnSortKH
             // 
             this.btnSortKH.Location = new System.Drawing.Point(188, 2);
-            this.btnSortKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSortKH.Margin = new System.Windows.Forms.Padding(2);
             this.btnSortKH.Name = "btnSortKH";
             this.btnSortKH.Size = new System.Drawing.Size(75, 29);
             this.btnSortKH.TabIndex = 4;
@@ -1720,7 +1720,7 @@
             // btnResetSkh
             // 
             this.btnResetSkh.Location = new System.Drawing.Point(161, 96);
-            this.btnResetSkh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetSkh.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetSkh.Name = "btnResetSkh";
             this.btnResetSkh.Size = new System.Drawing.Size(76, 30);
             this.btnResetSkh.TabIndex = 15;
@@ -1731,7 +1731,7 @@
             // btnSearchKh
             // 
             this.btnSearchKh.Location = new System.Drawing.Point(47, 96);
-            this.btnSearchKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchKh.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchKh.Name = "btnSearchKh";
             this.btnSearchKh.Size = new System.Drawing.Size(75, 30);
             this.btnSearchKh.TabIndex = 14;
@@ -1742,7 +1742,7 @@
             // txbSeachkh
             // 
             this.txbSeachkh.Location = new System.Drawing.Point(99, 42);
-            this.txbSeachkh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbSeachkh.Margin = new System.Windows.Forms.Padding(2);
             this.txbSeachkh.Name = "txbSeachkh";
             this.txbSeachkh.Size = new System.Drawing.Size(161, 20);
             this.txbSeachkh.TabIndex = 13;
@@ -1765,7 +1765,7 @@
             this.panel3.Controls.Add(this.btnSuaKh);
             this.panel3.Controls.Add(this.btnThemKh);
             this.panel3.Location = new System.Drawing.Point(701, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(273, 90);
             this.panel3.TabIndex = 10;
@@ -1773,7 +1773,7 @@
             // btnResetKh
             // 
             this.btnResetKh.Location = new System.Drawing.Point(161, 50);
-            this.btnResetKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnResetKh.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetKh.Name = "btnResetKh";
             this.btnResetKh.Size = new System.Drawing.Size(71, 28);
             this.btnResetKh.TabIndex = 3;
@@ -1784,7 +1784,7 @@
             // BtnXoaKh
             // 
             this.BtnXoaKh.Location = new System.Drawing.Point(47, 50);
-            this.BtnXoaKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnXoaKh.Margin = new System.Windows.Forms.Padding(2);
             this.BtnXoaKh.Name = "BtnXoaKh";
             this.BtnXoaKh.Size = new System.Drawing.Size(75, 28);
             this.BtnXoaKh.TabIndex = 2;
@@ -1795,7 +1795,7 @@
             // btnSuaKh
             // 
             this.btnSuaKh.Location = new System.Drawing.Point(161, 9);
-            this.btnSuaKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaKh.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaKh.Name = "btnSuaKh";
             this.btnSuaKh.Size = new System.Drawing.Size(71, 29);
             this.btnSuaKh.TabIndex = 1;
@@ -1806,7 +1806,7 @@
             // btnThemKh
             // 
             this.btnThemKh.Location = new System.Drawing.Point(47, 8);
-            this.btnThemKh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemKh.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemKh.Name = "btnThemKh";
             this.btnThemKh.Size = new System.Drawing.Size(75, 29);
             this.btnThemKh.TabIndex = 0;
@@ -1819,14 +1819,14 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dgvKhachHang);
             this.panel2.Location = new System.Drawing.Point(4, 98);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(694, 344);
             this.panel2.TabIndex = 9;
             // 
             // dgvKhachHang
             // 
-            this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Location = new System.Drawing.Point(3, 3);
@@ -1857,7 +1857,7 @@
             this.panel13.Controls.Add(this.label2);
             this.panel13.Controls.Add(this.label1);
             this.panel13.Location = new System.Drawing.Point(4, 4);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(694, 90);
             this.panel13.TabIndex = 8;
@@ -1865,7 +1865,7 @@
             // txbDienThoai
             // 
             this.txbDienThoai.Location = new System.Drawing.Point(266, 55);
-            this.txbDienThoai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbDienThoai.Margin = new System.Windows.Forms.Padding(2);
             this.txbDienThoai.MaxLength = 10;
             this.txbDienThoai.Name = "txbDienThoai";
             this.txbDienThoai.Size = new System.Drawing.Size(100, 20);
@@ -1875,7 +1875,7 @@
             // txbGhiChu
             // 
             this.txbGhiChu.Location = new System.Drawing.Point(431, 55);
-            this.txbGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txbGhiChu.Name = "txbGhiChu";
             this.txbGhiChu.Size = new System.Drawing.Size(260, 20);
             this.txbGhiChu.TabIndex = 18;
@@ -1883,7 +1883,7 @@
             // txbQuocTich
             // 
             this.txbQuocTich.Location = new System.Drawing.Point(431, 13);
-            this.txbQuocTich.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbQuocTich.Margin = new System.Windows.Forms.Padding(2);
             this.txbQuocTich.Name = "txbQuocTich";
             this.txbQuocTich.Size = new System.Drawing.Size(100, 20);
             this.txbQuocTich.TabIndex = 17;
@@ -1895,7 +1895,7 @@
             this.cbGioiTinh.Checked = true;
             this.cbGioiTinh.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbGioiTinh.Location = new System.Drawing.Point(266, 16);
-            this.cbGioiTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbGioiTinh.Margin = new System.Windows.Forms.Padding(2);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Size = new System.Drawing.Size(48, 17);
             this.cbGioiTinh.TabIndex = 14;
@@ -1905,7 +1905,7 @@
             // txbHoTen
             // 
             this.txbHoTen.Location = new System.Drawing.Point(61, 55);
-            this.txbHoTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txbHoTen.Name = "txbHoTen";
             this.txbHoTen.Size = new System.Drawing.Size(121, 20);
             this.txbHoTen.TabIndex = 13;
@@ -1924,7 +1924,7 @@
             // txbCMND
             // 
             this.txbCMND.Location = new System.Drawing.Point(599, 13);
-            this.txbCMND.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCMND.Margin = new System.Windows.Forms.Padding(2);
             this.txbCMND.MaxLength = 9;
             this.txbCMND.Name = "txbCMND";
             this.txbCMND.Size = new System.Drawing.Size(92, 20);
@@ -1935,7 +1935,7 @@
             // 
             this.txbMaKhach.Enabled = false;
             this.txbMaKhach.Location = new System.Drawing.Point(61, 13);
-            this.txbMaKhach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbMaKhach.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaKhach.Name = "txbMaKhach";
             this.txbMaKhach.Size = new System.Drawing.Size(121, 20);
             this.txbMaKhach.TabIndex = 8;
@@ -2010,7 +2010,7 @@
             this.tabcontrol.Controls.Add(this.tpLoaiVatDung);
             this.tabcontrol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabcontrol.Location = new System.Drawing.Point(0, 0);
-            this.tabcontrol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabcontrol.Margin = new System.Windows.Forms.Padding(2);
             this.tabcontrol.Name = "tabcontrol";
             this.tabcontrol.SelectedIndex = 0;
             this.tabcontrol.Size = new System.Drawing.Size(986, 472);
@@ -2023,6 +2023,8 @@
             this.ClientSize = new System.Drawing.Size(986, 472);
             this.Controls.Add(this.tabcontrol);
             this.Name = "fMenuQuanLy";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu quản lý";
             this.tpLoaiVatDung.ResumeLayout(false);

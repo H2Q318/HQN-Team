@@ -9,9 +9,6 @@ namespace PBL
 {
     class BLL_QLNV
     {
-        public delegate bool Compare(object o1, object o2);
-        public Compare cmp { get; set; }
-
         private static BLL_QLNV _instance;
         public static BLL_QLNV Instance
         {
@@ -140,46 +137,24 @@ namespace PBL
             }
         }
 
-        public void Sort(ref List<object> data, Compare cmp)
+        public List<NV_View> GetListNhanVienSorted(List<string> LnvID, int sortcase)
         {
-            for (int i = 0; i < data.Count - 1; i++)
-            {
-                for (int j = i + 1; j < data.Count; j++)
-                {
-                    if (cmp(data[i], data[j]))
-                    {
-                        object temp = data[i];
-                        data[i] = data[j];
-                        data[j] = temp;
-                    }
-                }
-            }
-        }
-
-        public List<object> GetListNhanVienSorted(List<string> LnvID, int sortcase)
-        {
-            List<NV_View> lnv = GetListNhanVienByID(LnvID);
-            List<object> data = new List<object>();
-            foreach(NV_View item in lnv)
-            {
-                data.Add(item);
-            }
+            List<NV_View> data = GetListNhanVienByID(LnvID);
             switch(sortcase)
             {
                 case 0: //ten
-                    cmp = NV_View.Compare_TenNhanVien;
+                    data = data.OrderBy(p => p.Ten).ToList();
                     break;
                 case 1: //gioi tinh
-                    cmp = NV_View.Compare_GioiTinh;
+                    data = data.OrderBy(p => p.GioiTinh).ToList();
                     break;
-                case 2: //nam sinh
-                    cmp = NV_View.Compare_NamSinh;
+                case 2: //ngay sinh
+                    data = data.OrderBy(p => p.NgaySinh).ToList();
                     break;
-                case 3: //chuc vu
-                    cmp = NV_View.Compare_Chucvu;
+                case 3: //ten chuc vu
+                    data = data.OrderBy(p => p.TenChucVu).ToList();
                     break;
             }
-            Sort(ref data, cmp);
             return data;
         }
 

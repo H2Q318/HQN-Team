@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PBL.View
 {
-    public partial class fTaiKhoan : Form
+    public partial class fQLTaiKhoan : Form
     {
-        public fTaiKhoan()
+        public fQLTaiKhoan()
         {
             InitializeComponent();
             GUI();

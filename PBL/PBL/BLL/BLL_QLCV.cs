@@ -10,9 +10,6 @@ namespace PBL
 {
     class BLL_QLCV
     {
-        public delegate bool Compare(object o1, object o2);
-        public Compare cmp { get; set; }
-
         private static BLL_QLCV _instance;
         public static BLL_QLCV Instance
         {
@@ -95,40 +92,18 @@ namespace PBL
             }
         }
 
-        public void Sort(ref List<object> data, Compare cmp)
+        public List<CHUCVU> GetListChucVuSorted(List<string> LcvID, int sortcase)
         {
-            for (int i = 0; i < data.Count - 1; i++)
-            {
-                for (int j = i + 1; j < data.Count; j++)
-                {
-                    if (cmp(data[i], data[j]))
-                    {
-                        object temp = data[i];
-                        data[i] = data[j];
-                        data[j] = temp;
-                    }
-                }
-            }
-        }
-
-        public List<object> GetListChucVuSorted(List<string> LcvID, int sortcase)
-        {
-            List<CHUCVU> lcv = GetListChucVuByID(LcvID);
-            List<object> data = new List<object>();
-            foreach(CHUCVU item in lcv)
-            {
-                data.Add(item);
-            }
+            List<CHUCVU> data = GetListChucVuByID(LcvID);
             switch (sortcase)
             {
                 case 0:
-                    cmp = DTO_ChucVu.Compare_TenChucVu;
+                    data = data.OrderBy(p => p.TenChucVu).ToList();
                     break;
                 case 1:
-                    cmp = DTO_ChucVu.Compare_QuyenHan;
+                    data = data.OrderBy(p => p.QuyenHan).ToList();
                     break;
             }
-            Sort(ref data, cmp);
             return data;
         }
 

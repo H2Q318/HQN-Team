@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBooking));
             this.dgvBooking = new System.Windows.Forms.DataGridView();
             this.panel18 = new System.Windows.Forms.Panel();
             this.lbSearch = new System.Windows.Forms.Label();
@@ -617,6 +618,7 @@
             this.Controls.Add(this.panel18);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "fBooking";
             this.ShowIcon = false;

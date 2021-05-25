@@ -356,6 +356,8 @@
             this.ClientSize = new System.Drawing.Size(395, 370);
             this.Controls.Add(this.panel3);
             this.Name = "fChiTietKhachHang";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chi tiết khách hàng trong phòng";
             this.panel3.ResumeLayout(false);

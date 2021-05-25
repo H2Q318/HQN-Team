@@ -74,7 +74,6 @@
     <Compile Include="DTO\Book_View.cs" />
     <Compile Include="DTO\BillDV_View.cs" />
     <Compile Include="BLL\BLL_DangNhap.cs" />
-    <Compile Include="DTO\DTO_ChucVu.cs" />
     <Compile Include="DAL\BOOK.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
@@ -141,18 +140,17 @@
     <Compile Include="DTO\Phong_View.cs" />
     <Compile Include="DTO\NV_View.cs" />
     <Compile Include="DTO\VatDungPhong_View.cs" />
-    <Compile Include="DTO\DTO_DichVu.cs" />
     <Compile Include="View\fChiTietKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\fChiTietKhachHang.Designer.cs">
       <DependentUpon>fChiTietKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\fTaiKhoan.cs">
+    <Compile Include="View\fQLTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\fTaiKhoan.Designer.cs">
-      <DependentUpon>fTaiKhoan.cs</DependentUpon>
+    <Compile Include="View\fQLTaiKhoan.Designer.cs">
+      <DependentUpon>fQLTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="View\fThongKe.cs">
       <SubType>Form</SubType>
@@ -225,8 +223,8 @@
     <EmbeddedResource Include="View\fChiTietKhachHang.resx">
       <DependentUpon>fChiTietKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\fTaiKhoan.resx">
-      <DependentUpon>fTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="View\fQLTaiKhoan.resx">
+      <DependentUpon>fQLTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\fThongKe.resx">
       <DependentUpon>fThongKe.cs</DependentUpon>

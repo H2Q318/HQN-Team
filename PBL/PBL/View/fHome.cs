@@ -178,7 +178,7 @@ namespace PBL
         }
         private void ItemTaiKhoan_Click(object sender, EventArgs e)
         {
-            fTaiKhoan f = new fTaiKhoan();
+            fQLTaiKhoan f = new fQLTaiKhoan();
             f.ShowDialog();
         }
         #endregion

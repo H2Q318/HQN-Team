@@ -1,15 +1,9 @@
-﻿
-using PBL.BLL;
+﻿using PBL.BLL;
 using PBL.DAL;
 using PBL.View;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PBL
@@ -25,10 +19,10 @@ namespace PBL
         {
             IDNhanVien = username;
             InitializeComponent();
-            Load();
+            HomeLoad();
         }      
         #region Load
-        private void Load() 
+        private void HomeLoad() 
         {
             LoadRoom();
             LoadDataGridView();

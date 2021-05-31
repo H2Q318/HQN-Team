@@ -34,7 +34,6 @@ D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.d
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.dll
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.xml
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.xml
-D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.csprojAssemblyReference.cache
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fManageSupplies.resources
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fMenuQuanLy.resources
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fChangePassword.resources
@@ -101,6 +100,7 @@ C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.fChiTietKhachHang.
 D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fChiTietKhachHang.resources
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csprojAssemblyReference.cache
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.fChiTietKhachHang.resources
-D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fTaiKhoan.resources
 D:\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fTaiKhoan.resources
 C:\Users\ACER\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fQLTaiKhoan.resources
+D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.AssemblyReference.cache
+D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fQLTaiKhoan.resources

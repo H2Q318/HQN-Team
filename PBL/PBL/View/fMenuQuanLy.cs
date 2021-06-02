@@ -15,6 +15,8 @@ namespace PBL
 {
     public partial class fMenuQuanLy : Form
     {
+        public delegate void Delegate_fHome();
+        public Delegate_fHome Send { get; set; }
         private string NhanVienID;
         public fMenuQuanLy(string nhanvienid)
         {
@@ -35,11 +37,16 @@ namespace PBL
         {
             if (BLL_QLNV.Instance.GetQuyenHanByNhanVienID(NhanVienID) == 1)
             {
-                tabcontrol.TabPages.Remove(tpKhachHang);
                 tabcontrol.TabPages.Remove(tpPhong);
                 tabcontrol.TabPages.Remove(tpLoaiDV);
                 tabcontrol.TabPages.Remove(tpLoaiPhong);
                 tabcontrol.TabPages.Remove(tpLoaiVatDung);
+            }
+            else if (BLL_QLNV.Instance.GetQuyenHanByNhanVienID(NhanVienID) == 4)
+            {
+                tabcontrol.TabPages.Remove(tpKhachHang);
+                tabcontrol.TabPages.Remove(tpHoaDonDV);
+                tabcontrol.TabPages.Remove(tpLoaiDV);
             }
         }
 
@@ -583,6 +590,7 @@ namespace PBL
                     MessageBox.Show("Thêm dịch vụ thành công!");
                     RefreshDV();
                     RefreshGUIBillDichVu();
+                    Send();
                 }
                 else
                 {
@@ -614,6 +622,7 @@ namespace PBL
                         MessageBox.Show("Cập nhật dịch vụ thành công!");
                         RefreshDV();
                         RefreshGUIBillDichVu();
+                        Send();
                     }
                     else
                     {
@@ -641,6 +650,7 @@ namespace PBL
                     MessageBox.Show("Xóa dịch vụ thành công!");
                     RefreshDV();
                     RefreshGUIBillDichVu();
+                    Send();
                 }
                 else
                 {
@@ -936,6 +946,7 @@ namespace PBL
             };
             BLL_QLKH.Instance.AddKh(s);
             ShowDgvKh();
+            Send();
         }
 
         private void btnSuaKh_Click(object sender, EventArgs e)
@@ -953,6 +964,7 @@ namespace PBL
             };
             BLL_QLKH.Instance.UpdateKh(s);
             ShowDgvKh();
+            Send();
         }
 
         private void BtnXoaKh_Click(object sender, EventArgs e)
@@ -962,6 +974,7 @@ namespace PBL
             {
                 BLL_QLKH.Instance.DeleteKh(GetListKh());
                 ShowDgvKh();
+                Send();
             }
             else
             {

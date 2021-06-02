@@ -105,11 +105,18 @@ namespace PBL.BLL
         }
         public void DeleteKh(List<string> l)
         {
-            QLKS db = new QLKS();
-            foreach (string s in l)
+            try
             {
-                db.KHACHHANGs.Remove(db.KHACHHANGs.Find(s));
-                db.SaveChanges();
+                QLKS db = new QLKS();
+                foreach (string s in l)
+                {
+                    db.KHACHHANGs.Remove(db.KHACHHANGs.Find(s));
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Khách hàng không thể xóa. Vui lòng thử lại!");
             }
         }
         public void Sort(List<KH_View> listKH ,string sort)

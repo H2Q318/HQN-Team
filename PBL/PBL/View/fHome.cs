@@ -45,17 +45,23 @@ namespace PBL
                     ItemHoaDon.Enabled = false;
                     itemQLTaiKhoan.Enabled = false;
                     menuItemThongKe.Enabled = false;
+                    DisableButton();
                     break;
                 case 3:
                     itemMenuChinh.Enabled = false;
                     itemBook.Enabled = false;
                     itemNhanVienVaChucVu.Enabled = false;
-                    ItemHoaDon.Enabled = false;
+                    itemVatTu.Enabled = false;
                     itemQLTaiKhoan.Enabled = false;
-                    menuItemThongKe.Enabled = false;
+                    DisableButton();
                     break;
                 case 4:
-                    menuItemMenu.Enabled = false;
+                    menuItemThongKe.Enabled = false;
+                    itemBook.Enabled = false;
+                    itemNhanVienVaChucVu.Enabled = false;
+                    ItemHoaDon.Enabled = false;
+                    itemQLTaiKhoan.Enabled = false;
+                    DisableButton();
                     break;
             }
         } 
@@ -99,7 +105,7 @@ namespace PBL
             dgvDPKhachHang.Columns["QuocTich"].HeaderText = "Quốc tịch";
             dgvDPKhachHang.Columns["GhiChu"].HeaderText = "Ghi chú";
         }
-        void LoadMenudv()
+        private void LoadMenudv()
         {
             List<LOAIDICHVU> listloaidv = BLL_QLDV.Instance.GetAllDichVu();
             cbMenuDv.DataSource = listloaidv;
@@ -143,6 +149,8 @@ namespace PBL
         private void itemMenuChinh_Click(object sender, EventArgs e)
         {
             fMenuQuanLy f = new fMenuQuanLy(IDNhanVien);
+            f.Send += new fMenuQuanLy.Delegate_fHome(LoadDataGridView);
+            f.Send += new fMenuQuanLy.Delegate_fHome(LoadMenudv);
             f.ShowDialog();
         }
         private void itemVatTu_Click(object sender, EventArgs e)
@@ -259,21 +267,27 @@ namespace PBL
         }
         private void btnThemKh_Click(object sender, EventArgs e)
         {
-            KHACHHANG s = new KHACHHANG()
+            if (txbKHHoTen.Text.Trim() != "" && txbKHQuocTich.Text.Trim() != "" && txbKHCMND.Text.Trim() != "" && txbKHSdt.Text.Trim() != "")
             {
-                Ten = txbKHHoTen.Text.Trim(),
-                GioiTinh = ckbKHGioiTinh.Checked,
-                GhiChu = txbKHGhiChu.Text.Trim(),
-                QuocTich = txbKHQuocTich.Text.Trim(),
-                CMND = txbKHCMND.Text.Trim(),
-                SDT = txbKHSdt.Text.Trim(),
-            };
-            BLL_QLKH.Instance.AddKh(s);
-            LoadDataGridView();
-            MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
+                KHACHHANG s = new KHACHHANG()
+                {
+                    Ten = txbKHHoTen.Text.Trim(),
+                    GioiTinh = ckbKHGioiTinh.Checked,
+                    GhiChu = txbKHGhiChu.Text.Trim(),
+                    QuocTich = txbKHQuocTich.Text.Trim(),
+                    CMND = txbKHCMND.Text.Trim(),
+                    SDT = txbKHSdt.Text.Trim(),
+                };
+                BLL_QLKH.Instance.AddKh(s);
+                LoadDataGridView();
+                MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
 
-            ResetValuesKhachHang();
-
+                ResetValuesKhachHang();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin khách hàng", "Thông báo", MessageBoxButtons.OK);
+            }
         }
         private void btnCheckin_Click(object sender, EventArgs e)
         {
@@ -408,6 +422,16 @@ namespace PBL
             return DateTime.Compare(x, y) > 0 ? true : false;
         }
         #endregion
+        #region Disable Button
+        private void DisableButton()
+        {
+            btnThemKh.Enabled = false;
+            btnDatPhong.Enabled = false;
+            btnCheckin.Enabled = false;
+            btnThemDv.Enabled = false;
+            btnCheckOut.Enabled = false;
+            btnDetail.Enabled = false;
+        }
+        #endregion
     }
-
 }

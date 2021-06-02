@@ -32,6 +32,7 @@ namespace PBL
             cbPosition.SelectedIndex = 0;
             cbSortCV.SelectedIndex = 0;
             cbSearchCV.SelectedIndex = 0;
+
         }
         private void RefreshGUINhanVien()
         {
@@ -405,9 +406,9 @@ namespace PBL
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            string nhanvienid = dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString();
             try
             {
+                string nhanvienid = dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString();
                 if (BLL_QLNV.Instance.GetQuyenHanByNhanVienID(nhanvienid) != -1)
                 {
                     if (BLL_DangNhap.Instance.AddAccount(nhanvienid))

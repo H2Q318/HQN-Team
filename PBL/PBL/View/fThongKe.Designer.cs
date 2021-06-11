@@ -76,7 +76,7 @@
             this.cbType.Location = new System.Drawing.Point(778, 462);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(159, 21);
-            this.cbType.TabIndex = 3;
+            this.cbType.TabIndex = 0;
             this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // label1

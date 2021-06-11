@@ -131,7 +131,7 @@
             // lbOldPassword
             // 
             this.lbOldPassword.AutoSize = true;
-            this.lbOldPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.lbOldPassword.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbOldPassword.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbOldPassword.Location = new System.Drawing.Point(81, 18);
             this.lbOldPassword.Name = "lbOldPassword";
@@ -141,8 +141,11 @@
             // 
             // fChangePassword
             // 
+            this.AcceptButton = this.btnUpdatePassword;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.CancelButton = this.btnNotUpdatePassword;
             this.ClientSize = new System.Drawing.Size(441, 233);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

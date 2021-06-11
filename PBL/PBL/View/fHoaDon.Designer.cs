@@ -103,7 +103,7 @@ namespace PBL.View
             this.btDetail.Margin = new System.Windows.Forms.Padding(2);
             this.btDetail.Name = "btDetail";
             this.btDetail.Size = new System.Drawing.Size(65, 27);
-            this.btDetail.TabIndex = 0;
+            this.btDetail.TabIndex = 2;
             this.btDetail.Text = "Chi tiết";
             this.btDetail.UseVisualStyleBackColor = true;
             this.btDetail.Click += new System.EventHandler(this.btDetail_Click);
@@ -192,7 +192,7 @@ namespace PBL.View
             this.cbbSort.Margin = new System.Windows.Forms.Padding(2);
             this.cbbSort.Name = "cbbSort";
             this.cbbSort.Size = new System.Drawing.Size(151, 21);
-            this.cbbSort.TabIndex = 4;
+            this.cbbSort.TabIndex = 0;
             this.cbbSort.DropDownClosed += new System.EventHandler(this.cbbSort_DropDownClosed);
             // 
             // label2

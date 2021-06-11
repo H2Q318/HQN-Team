@@ -139,7 +139,7 @@
             this.panel2.Location = new System.Drawing.Point(12, 262);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(768, 163);
-            this.panel2.TabIndex = 9;
+            this.panel2.TabIndex = 10;
             // 
             // label13
             // 
@@ -171,7 +171,7 @@
             this.panel3.Location = new System.Drawing.Point(12, 431);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(768, 44);
-            this.panel3.TabIndex = 10;
+            this.panel3.TabIndex = 11;
             // 
             // txbServicesCost
             // 
@@ -231,7 +231,7 @@
             this.panel5.Location = new System.Drawing.Point(12, 617);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(768, 44);
-            this.panel5.TabIndex = 12;
+            this.panel5.TabIndex = 13;
             // 
             // txbSuppliesCost
             // 
@@ -259,7 +259,7 @@
             this.panel6.Location = new System.Drawing.Point(12, 667);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(768, 44);
-            this.panel6.TabIndex = 13;
+            this.panel6.TabIndex = 14;
             // 
             // txbTotal
             // 
@@ -282,6 +282,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(683, 717);
             this.btnClose.Name = "btnClose";
@@ -299,7 +300,7 @@
             this.panel4.Location = new System.Drawing.Point(12, 481);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(768, 130);
-            this.panel4.TabIndex = 11;
+            this.panel4.TabIndex = 12;
             // 
             // label6
             // 
@@ -336,7 +337,7 @@
             this.txbMaHoaDon.Name = "txbMaHoaDon";
             this.txbMaHoaDon.ReadOnly = true;
             this.txbMaHoaDon.Size = new System.Drawing.Size(95, 20);
-            this.txbMaHoaDon.TabIndex = 2;
+            this.txbMaHoaDon.TabIndex = 0;
             // 
             // label16
             // 
@@ -552,7 +553,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(793, 807);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(793, 757);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);

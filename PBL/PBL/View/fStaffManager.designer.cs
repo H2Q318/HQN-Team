@@ -126,7 +126,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1110, 594);
@@ -136,9 +136,9 @@
             // 
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1102, 568);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhân viên";
@@ -164,7 +164,7 @@
             this.panel15.Location = new System.Drawing.Point(6, 14);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(273, 32);
-            this.panel15.TabIndex = 3;
+            this.panel15.TabIndex = 0;
             // 
             // cbSortNV
             // 
@@ -211,7 +211,7 @@
             this.panel4.Location = new System.Drawing.Point(656, 64);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(427, 487);
-            this.panel4.TabIndex = 2;
+            this.panel4.TabIndex = 3;
             // 
             // btnCreateAccount
             // 
@@ -219,7 +219,7 @@
             this.btnCreateAccount.Location = new System.Drawing.Point(150, 8);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(132, 35);
-            this.btnCreateAccount.TabIndex = 9;
+            this.btnCreateAccount.TabIndex = 0;
             this.btnCreateAccount.Text = "Tạo tài khoản";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
@@ -230,7 +230,7 @@
             this.btnResetPassword.Location = new System.Drawing.Point(288, 8);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(132, 35);
-            this.btnResetPassword.TabIndex = 10;
+            this.btnResetPassword.TabIndex = 1;
             this.btnResetPassword.Text = "Khôi phục mật khẩu";
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
@@ -241,7 +241,7 @@
             this.btnClearNV.Location = new System.Drawing.Point(359, 433);
             this.btnClearNV.Name = "btnClearNV";
             this.btnClearNV.Size = new System.Drawing.Size(64, 35);
-            this.btnClearNV.TabIndex = 14;
+            this.btnClearNV.TabIndex = 13;
             this.btnClearNV.Text = "Clear";
             this.btnClearNV.UseVisualStyleBackColor = true;
             this.btnClearNV.Click += new System.EventHandler(this.btnClearNV_Click);
@@ -252,7 +252,7 @@
             this.btnDeleteNV.Location = new System.Drawing.Point(291, 433);
             this.btnDeleteNV.Name = "btnDeleteNV";
             this.btnDeleteNV.Size = new System.Drawing.Size(62, 35);
-            this.btnDeleteNV.TabIndex = 13;
+            this.btnDeleteNV.TabIndex = 12;
             this.btnDeleteNV.Text = "Xóa";
             this.btnDeleteNV.UseVisualStyleBackColor = true;
             this.btnDeleteNV.Click += new System.EventHandler(this.btnDeleteNV_Click);
@@ -263,7 +263,7 @@
             this.btnAddNV.Location = new System.Drawing.Point(151, 433);
             this.btnAddNV.Name = "btnAddNV";
             this.btnAddNV.Size = new System.Drawing.Size(60, 35);
-            this.btnAddNV.TabIndex = 11;
+            this.btnAddNV.TabIndex = 10;
             this.btnAddNV.Text = "Thêm";
             this.btnAddNV.UseVisualStyleBackColor = true;
             this.btnAddNV.Click += new System.EventHandler(this.btnAddNV_Click);
@@ -274,7 +274,7 @@
             this.btnUpdateNV.Location = new System.Drawing.Point(217, 433);
             this.btnUpdateNV.Name = "btnUpdateNV";
             this.btnUpdateNV.Size = new System.Drawing.Size(68, 35);
-            this.btnUpdateNV.TabIndex = 12;
+            this.btnUpdateNV.TabIndex = 11;
             this.btnUpdateNV.Text = "Cập nhật";
             this.btnUpdateNV.UseVisualStyleBackColor = true;
             this.btnUpdateNV.Click += new System.EventHandler(this.btnUpdateNV_Click);
@@ -286,7 +286,7 @@
             this.panel17.Location = new System.Drawing.Point(3, 371);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(420, 41);
-            this.panel17.TabIndex = 8;
+            this.panel17.TabIndex = 9;
             // 
             // txbNote
             // 
@@ -313,7 +313,7 @@
             this.panel16.Location = new System.Drawing.Point(3, 325);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(420, 40);
-            this.panel16.TabIndex = 7;
+            this.panel16.TabIndex = 8;
             // 
             // cbPosition
             // 
@@ -342,7 +342,7 @@
             this.panel12.Location = new System.Drawing.Point(3, 279);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(420, 40);
-            this.panel12.TabIndex = 6;
+            this.panel12.TabIndex = 7;
             // 
             // txbAddress
             // 
@@ -369,7 +369,7 @@
             this.panel10.Location = new System.Drawing.Point(3, 233);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(420, 40);
-            this.panel10.TabIndex = 5;
+            this.panel10.TabIndex = 6;
             // 
             // txbCMND
             // 
@@ -398,7 +398,7 @@
             this.panel9.Location = new System.Drawing.Point(3, 187);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(420, 40);
-            this.panel9.TabIndex = 4;
+            this.panel9.TabIndex = 5;
             // 
             // txbPhone
             // 
@@ -427,7 +427,7 @@
             this.panel8.Location = new System.Drawing.Point(3, 141);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(420, 40);
-            this.panel8.TabIndex = 3;
+            this.panel8.TabIndex = 4;
             // 
             // dtpBirthday
             // 
@@ -456,7 +456,7 @@
             this.panel7.Location = new System.Drawing.Point(3, 95);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(420, 40);
-            this.panel7.TabIndex = 2;
+            this.panel7.TabIndex = 3;
             // 
             // cbGender
             // 
@@ -488,7 +488,7 @@
             this.panel6.Location = new System.Drawing.Point(3, 49);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(420, 40);
-            this.panel6.TabIndex = 1;
+            this.panel6.TabIndex = 2;
             // 
             // txbName
             // 
@@ -516,7 +516,7 @@
             this.panel3.Location = new System.Drawing.Point(656, 14);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(427, 32);
-            this.panel3.TabIndex = 0;
+            this.panel3.TabIndex = 1;
             // 
             // cbSearchNV
             // 
@@ -575,7 +575,7 @@
             this.dgvStaff.RowHeadersWidth = 51;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStaff.Size = new System.Drawing.Size(629, 487);
-            this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.TabIndex = 2;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             this.dgvStaff.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvStaff_DataBindingComplete);
             // 
@@ -586,9 +586,9 @@
             this.tabPage2.Controls.Add(this.panel13);
             this.tabPage2.Controls.Add(this.panel11);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(1102, 568);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Chức vụ";
@@ -601,7 +601,7 @@
             this.panel5.Location = new System.Drawing.Point(8, 21);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(273, 32);
-            this.panel5.TabIndex = 32;
+            this.panel5.TabIndex = 0;
             // 
             // cbSortCV
             // 
@@ -639,7 +639,7 @@
             this.dgvChucVu.RowHeadersWidth = 51;
             this.dgvChucVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChucVu.Size = new System.Drawing.Size(632, 493);
-            this.dgvChucVu.TabIndex = 31;
+            this.dgvChucVu.TabIndex = 2;
             this.dgvChucVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChucVu_CellClick);
             this.dgvChucVu.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvChucVu_DataBindingComplete);
             // 
@@ -696,7 +696,7 @@
             this.panel11.Location = new System.Drawing.Point(643, 70);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(456, 495);
-            this.panel11.TabIndex = 0;
+            this.panel11.TabIndex = 3;
             // 
             // panel23
             // 

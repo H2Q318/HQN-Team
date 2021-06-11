@@ -90,7 +90,7 @@
             this.panel19.Location = new System.Drawing.Point(13, 297);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(340, 34);
-            this.panel19.TabIndex = 13;
+            this.panel19.TabIndex = 6;
             // 
             // label4
             // 
@@ -125,7 +125,7 @@
             this.panel4.Location = new System.Drawing.Point(13, 57);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(340, 34);
-            this.panel4.TabIndex = 7;
+            this.panel4.TabIndex = 0;
             // 
             // label5
             // 
@@ -173,7 +173,7 @@
             this.panel5.Location = new System.Drawing.Point(13, 257);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(340, 34);
-            this.panel5.TabIndex = 12;
+            this.panel5.TabIndex = 5;
             // 
             // lbNationality
             // 
@@ -210,7 +210,7 @@
             this.panel16.Location = new System.Drawing.Point(13, 217);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(340, 34);
-            this.panel16.TabIndex = 11;
+            this.panel16.TabIndex = 4;
             // 
             // lbPhoneNum
             // 
@@ -247,7 +247,7 @@
             this.panel15.Location = new System.Drawing.Point(13, 177);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(340, 34);
-            this.panel15.TabIndex = 10;
+            this.panel15.TabIndex = 3;
             // 
             // lbCMND
             // 
@@ -284,7 +284,7 @@
             this.panel14.Location = new System.Drawing.Point(13, 137);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(340, 34);
-            this.panel14.TabIndex = 9;
+            this.panel14.TabIndex = 2;
             // 
             // txbGender
             // 
@@ -321,7 +321,7 @@
             this.panel13.Location = new System.Drawing.Point(13, 97);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(340, 34);
-            this.panel13.TabIndex = 8;
+            this.panel13.TabIndex = 1;
             // 
             // lbNameCustomer
             // 

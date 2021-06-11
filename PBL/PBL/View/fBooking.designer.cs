@@ -110,7 +110,7 @@
             this.dgvBooking.RowHeadersWidth = 51;
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBooking.Size = new System.Drawing.Size(1086, 233);
-            this.dgvBooking.TabIndex = 20;
+            this.dgvBooking.TabIndex = 3;
             this.dgvBooking.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBooking_CellClick);
             this.dgvBooking.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvBooking_DataBindingComplete);
             // 
@@ -124,7 +124,7 @@
             this.panel18.Location = new System.Drawing.Point(12, 363);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(1086, 62);
-            this.panel18.TabIndex = 19;
+            this.panel18.TabIndex = 2;
             // 
             // lbSearch
             // 
@@ -143,7 +143,7 @@
             this.btnSearch.Location = new System.Drawing.Point(988, 18);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(83, 23);
-            this.btnSearch.TabIndex = 19;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -181,7 +181,7 @@
             this.panel3.Location = new System.Drawing.Point(668, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(430, 345);
-            this.panel3.TabIndex = 18;
+            this.panel3.TabIndex = 1;
             // 
             // btXoaKH
             // 
@@ -189,7 +189,7 @@
             this.btXoaKH.Location = new System.Drawing.Point(232, 6);
             this.btXoaKH.Name = "btXoaKH";
             this.btXoaKH.Size = new System.Drawing.Size(94, 28);
-            this.btXoaKH.TabIndex = 15;
+            this.btXoaKH.TabIndex = 1;
             this.btXoaKH.Text = "Xoá khỏi book";
             this.btXoaKH.UseVisualStyleBackColor = true;
             this.btXoaKH.Click += new System.EventHandler(this.btXoaKH_Click);
@@ -200,7 +200,7 @@
             this.btnDetail.Location = new System.Drawing.Point(332, 6);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(94, 28);
-            this.btnDetail.TabIndex = 14;
+            this.btnDetail.TabIndex = 12;
             this.btnDetail.Text = "Xem chi tiết";
             this.btnDetail.UseVisualStyleBackColor = true;
             this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
@@ -217,7 +217,7 @@
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhachHang.Size = new System.Drawing.Size(422, 300);
-            this.dgvKhachHang.TabIndex = 12;
+            this.dgvKhachHang.TabIndex = 0;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
             this.dgvKhachHang.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvKhachHang_DataBindingComplete);
             // 
@@ -252,7 +252,7 @@
             this.panel6.Location = new System.Drawing.Point(12, 12);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(650, 345);
-            this.panel6.TabIndex = 17;
+            this.panel6.TabIndex = 0;
             // 
             // btnReset
             // 
@@ -291,7 +291,7 @@
             this.panel20.Location = new System.Drawing.Point(333, 103);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(298, 34);
-            this.panel20.TabIndex = 7;
+            this.panel20.TabIndex = 6;
             // 
             // dtpNgayDen
             // 
@@ -320,7 +320,7 @@
             this.panel17.Location = new System.Drawing.Point(333, 143);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(298, 34);
-            this.panel17.TabIndex = 6;
+            this.panel17.TabIndex = 7;
             // 
             // dtpNgayDi
             // 
@@ -349,7 +349,7 @@
             this.panel7.Location = new System.Drawing.Point(16, 103);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(301, 34);
-            this.panel7.TabIndex = 3;
+            this.panel7.TabIndex = 1;
             // 
             // label3
             // 
@@ -377,7 +377,7 @@
             this.panel2.Location = new System.Drawing.Point(16, 63);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 34);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 0;
             // 
             // label1
             // 
@@ -444,7 +444,7 @@
             this.panel12.Location = new System.Drawing.Point(333, 263);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(298, 34);
-            this.panel12.TabIndex = 7;
+            this.panel12.TabIndex = 10;
             // 
             // lbTotalCost
             // 
@@ -473,7 +473,7 @@
             this.panel10.Location = new System.Drawing.Point(333, 223);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(298, 34);
-            this.panel10.TabIndex = 5;
+            this.panel10.TabIndex = 9;
             // 
             // dtpCheckOut
             // 
@@ -502,7 +502,7 @@
             this.panel9.Location = new System.Drawing.Point(333, 183);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(298, 34);
-            this.panel9.TabIndex = 4;
+            this.panel9.TabIndex = 8;
             // 
             // dtpCheckIn
             // 
@@ -531,7 +531,7 @@
             this.panel8.Location = new System.Drawing.Point(16, 223);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(301, 34);
-            this.panel8.TabIndex = 3;
+            this.panel8.TabIndex = 4;
             // 
             // lbCost
             // 
@@ -559,7 +559,7 @@
             this.panel22.Location = new System.Drawing.Point(16, 183);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(301, 34);
-            this.panel22.TabIndex = 1;
+            this.panel22.TabIndex = 3;
             // 
             // txbLoaiPhong
             // 
@@ -587,7 +587,7 @@
             this.panel23.Location = new System.Drawing.Point(16, 143);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(301, 34);
-            this.panel23.TabIndex = 0;
+            this.panel23.TabIndex = 2;
             // 
             // lbID
             // 

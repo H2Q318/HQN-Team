@@ -292,7 +292,7 @@ namespace PBL
             this.flpRom.Margin = new System.Windows.Forms.Padding(2);
             this.flpRom.Name = "flpRom";
             this.flpRom.Size = new System.Drawing.Size(661, 572);
-            this.flpRom.TabIndex = 6;
+            this.flpRom.TabIndex = 0;
             // 
             // panel6
             // 
@@ -317,7 +317,7 @@ namespace PBL
             this.tbMain.Name = "tbMain";
             this.tbMain.SelectedIndex = 0;
             this.tbMain.Size = new System.Drawing.Size(464, 572);
-            this.tbMain.TabIndex = 0;
+            this.tbMain.TabIndex = 1;
             // 
             // tpKhachHang
             // 
@@ -351,7 +351,7 @@ namespace PBL
             this.txbKHSdt.MaxLength = 10;
             this.txbKHSdt.Name = "txbKHSdt";
             this.txbKHSdt.Size = new System.Drawing.Size(175, 20);
-            this.txbKHSdt.TabIndex = 17;
+            this.txbKHSdt.TabIndex = 4;
             this.txbKHSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // btnResetKh
@@ -360,7 +360,7 @@ namespace PBL
             this.btnResetKh.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetKh.Name = "btnResetKh";
             this.btnResetKh.Size = new System.Drawing.Size(92, 31);
-            this.btnResetKh.TabIndex = 16;
+            this.btnResetKh.TabIndex = 8;
             this.btnResetKh.Text = "Reset";
             this.btnResetKh.UseVisualStyleBackColor = true;
             // 
@@ -370,7 +370,7 @@ namespace PBL
             this.btnThemKh.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemKh.Name = "btnThemKh";
             this.btnThemKh.Size = new System.Drawing.Size(93, 31);
-            this.btnThemKh.TabIndex = 15;
+            this.btnThemKh.TabIndex = 7;
             this.btnThemKh.Text = "Thêm";
             this.btnThemKh.UseVisualStyleBackColor = true;
             this.btnThemKh.Click += new System.EventHandler(this.btnThemKh_Click);
@@ -444,7 +444,7 @@ namespace PBL
             this.ckbKHGioiTinh.Margin = new System.Windows.Forms.Padding(2);
             this.ckbKHGioiTinh.Name = "ckbKHGioiTinh";
             this.ckbKHGioiTinh.Size = new System.Drawing.Size(48, 17);
-            this.ckbKHGioiTinh.TabIndex = 5;
+            this.ckbKHGioiTinh.TabIndex = 1;
             this.ckbKHGioiTinh.Text = "Nam";
             this.ckbKHGioiTinh.UseVisualStyleBackColor = true;
             // 
@@ -455,7 +455,7 @@ namespace PBL
             this.txbKHCMND.MaxLength = 9;
             this.txbKHCMND.Name = "txbKHCMND";
             this.txbKHCMND.Size = new System.Drawing.Size(175, 20);
-            this.txbKHCMND.TabIndex = 4;
+            this.txbKHCMND.TabIndex = 5;
             this.txbKHCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // txbKHQuocTich
@@ -473,7 +473,7 @@ namespace PBL
             this.txbKHGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txbKHGhiChu.Name = "txbKHGhiChu";
             this.txbKHGhiChu.Size = new System.Drawing.Size(175, 20);
-            this.txbKHGhiChu.TabIndex = 2;
+            this.txbKHGhiChu.TabIndex = 6;
             // 
             // txbKHHoTen
             // 
@@ -507,7 +507,7 @@ namespace PBL
             this.dgvDPKhachHang.RowHeadersWidth = 51;
             this.dgvDPKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDPKhachHang.Size = new System.Drawing.Size(450, 201);
-            this.dgvDPKhachHang.TabIndex = 23;
+            this.dgvDPKhachHang.TabIndex = 2;
             this.dgvDPKhachHang.Click += new System.EventHandler(this.dgvDPKhachHang_Click);
             // 
             // panel1
@@ -529,7 +529,7 @@ namespace PBL
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 333);
-            this.panel1.TabIndex = 22;
+            this.panel1.TabIndex = 1;
             // 
             // label31
             // 
@@ -547,7 +547,7 @@ namespace PBL
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 34;
+            this.textBox1.TabIndex = 5;
             // 
             // btnDPReset
             // 
@@ -555,7 +555,7 @@ namespace PBL
             this.btnDPReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnDPReset.Name = "btnDPReset";
             this.btnDPReset.Size = new System.Drawing.Size(91, 28);
-            this.btnDPReset.TabIndex = 33;
+            this.btnDPReset.TabIndex = 7;
             this.btnDPReset.Text = "Reset";
             this.btnDPReset.UseVisualStyleBackColor = true;
             this.btnDPReset.Click += new System.EventHandler(this.btnDPReset_Click);
@@ -566,7 +566,7 @@ namespace PBL
             this.btnDatPhong.Margin = new System.Windows.Forms.Padding(2);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.Size = new System.Drawing.Size(91, 28);
-            this.btnDatPhong.TabIndex = 32;
+            this.btnDatPhong.TabIndex = 6;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.UseVisualStyleBackColor = true;
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
@@ -589,7 +589,7 @@ namespace PBL
             this.dtpDPNgayDi.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDPNgayDi.Name = "dtpDPNgayDi";
             this.dtpDPNgayDi.Size = new System.Drawing.Size(176, 20);
-            this.dtpDPNgayDi.TabIndex = 30;
+            this.dtpDPNgayDi.TabIndex = 4;
             this.dtpDPNgayDi.ValueChanged += new System.EventHandler(this.dtpDPNgayDi_ValueChanged);
             // 
             // label27
@@ -640,7 +640,7 @@ namespace PBL
             this.txbDPMaPhong.Name = "txbDPMaPhong";
             this.txbDPMaPhong.ReadOnly = true;
             this.txbDPMaPhong.Size = new System.Drawing.Size(175, 20);
-            this.txbDPMaPhong.TabIndex = 25;
+            this.txbDPMaPhong.TabIndex = 2;
             // 
             // txbDPMaNV
             // 
@@ -650,7 +650,7 @@ namespace PBL
             this.txbDPMaNV.Name = "txbDPMaNV";
             this.txbDPMaNV.ReadOnly = true;
             this.txbDPMaNV.Size = new System.Drawing.Size(175, 20);
-            this.txbDPMaNV.TabIndex = 24;
+            this.txbDPMaNV.TabIndex = 1;
             // 
             // txbDPMaKhach
             // 
@@ -660,7 +660,7 @@ namespace PBL
             this.txbDPMaKhach.Name = "txbDPMaKhach";
             this.txbDPMaKhach.ReadOnly = true;
             this.txbDPMaKhach.Size = new System.Drawing.Size(175, 20);
-            this.txbDPMaKhach.TabIndex = 23;
+            this.txbDPMaKhach.TabIndex = 0;
             // 
             // dtpDPNgayDen
             // 
@@ -670,7 +670,7 @@ namespace PBL
             this.dtpDPNgayDen.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDPNgayDen.Name = "dtpDPNgayDen";
             this.dtpDPNgayDen.Size = new System.Drawing.Size(176, 20);
-            this.dtpDPNgayDen.TabIndex = 22;
+            this.dtpDPNgayDen.TabIndex = 3;
             this.dtpDPNgayDen.ValueChanged += new System.EventHandler(this.dtpDPNgayDen_ValueChanged);
             // 
             // tpCheckin
@@ -699,7 +699,7 @@ namespace PBL
             this.dgvCIKhachHang.RowTemplate.Height = 24;
             this.dgvCIKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCIKhachHang.Size = new System.Drawing.Size(448, 242);
-            this.dgvCIKhachHang.TabIndex = 3;
+            this.dgvCIKhachHang.TabIndex = 1;
             this.dgvCIKhachHang.Click += new System.EventHandler(this.dgvCIKhachHang_Click);
             // 
             // panel2
@@ -720,7 +720,7 @@ namespace PBL
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(448, 292);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 0;
             // 
             // label24
             // 
@@ -738,7 +738,7 @@ namespace PBL
             this.txbCIGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txbCIGhiChu.Name = "txbCIGhiChu";
             this.txbCIGhiChu.Size = new System.Drawing.Size(176, 20);
-            this.txbCIGhiChu.TabIndex = 10;
+            this.txbCIGhiChu.TabIndex = 5;
             // 
             // btnCIReset
             // 
@@ -746,7 +746,7 @@ namespace PBL
             this.btnCIReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnCIReset.Name = "btnCIReset";
             this.btnCIReset.Size = new System.Drawing.Size(91, 28);
-            this.btnCIReset.TabIndex = 9;
+            this.btnCIReset.TabIndex = 7;
             this.btnCIReset.Text = "Reset";
             this.btnCIReset.UseVisualStyleBackColor = true;
             this.btnCIReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -757,7 +757,7 @@ namespace PBL
             this.btnCheckin.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckin.Name = "btnCheckin";
             this.btnCheckin.Size = new System.Drawing.Size(91, 28);
-            this.btnCheckin.TabIndex = 8;
+            this.btnCheckin.TabIndex = 6;
             this.btnCheckin.Text = "Checkin";
             this.btnCheckin.UseVisualStyleBackColor = true;
             this.btnCheckin.Click += new System.EventHandler(this.btnCheckin_Click);
@@ -840,7 +840,7 @@ namespace PBL
             this.dtbNgayDenThucTe.Margin = new System.Windows.Forms.Padding(2);
             this.dtbNgayDenThucTe.Name = "dtbNgayDenThucTe";
             this.dtbNgayDenThucTe.Size = new System.Drawing.Size(176, 20);
-            this.dtbNgayDenThucTe.TabIndex = 0;
+            this.dtbNgayDenThucTe.TabIndex = 4;
             // 
             // tpBillDichVu
             // 
@@ -870,7 +870,7 @@ namespace PBL
             this.lsvBillDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.lsvBillDichVu.Name = "lsvBillDichVu";
             this.lsvBillDichVu.Size = new System.Drawing.Size(447, 375);
-            this.lsvBillDichVu.TabIndex = 0;
+            this.lsvBillDichVu.TabIndex = 2;
             this.lsvBillDichVu.UseCompatibleStateImageBehavior = false;
             this.lsvBillDichVu.View = System.Windows.Forms.View.Details;
             // 
@@ -957,7 +957,7 @@ namespace PBL
             this.TxbRoom.Name = "TxbRoom";
             this.TxbRoom.ReadOnly = true;
             this.TxbRoom.Size = new System.Drawing.Size(57, 20);
-            this.TxbRoom.TabIndex = 7;
+            this.TxbRoom.TabIndex = 4;
             // 
             // label23
             // 
@@ -1074,7 +1074,7 @@ namespace PBL
             this.btnDetail.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(82, 32);
-            this.btnDetail.TabIndex = 20;
+            this.btnDetail.TabIndex = 12;
             this.btnDetail.Text = "Chi tiết";
             this.btnDetail.UseVisualStyleBackColor = true;
             this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
@@ -1097,7 +1097,7 @@ namespace PBL
             this.txbVatTu.Name = "txbVatTu";
             this.txbVatTu.ReadOnly = true;
             this.txbVatTu.Size = new System.Drawing.Size(170, 20);
-            this.txbVatTu.TabIndex = 18;
+            this.txbVatTu.TabIndex = 7;
             // 
             // label20
             // 
@@ -1117,7 +1117,7 @@ namespace PBL
             this.txbTotalRoom.Name = "txbTotalRoom";
             this.txbTotalRoom.ReadOnly = true;
             this.txbTotalRoom.Size = new System.Drawing.Size(170, 20);
-            this.txbTotalRoom.TabIndex = 16;
+            this.txbTotalRoom.TabIndex = 9;
             // 
             // label18
             // 
@@ -1147,7 +1147,7 @@ namespace PBL
             this.txbtotalcheckout.Name = "txbtotalcheckout";
             this.txbtotalcheckout.ReadOnly = true;
             this.txbtotalcheckout.Size = new System.Drawing.Size(170, 20);
-            this.txbtotalcheckout.TabIndex = 13;
+            this.txbtotalcheckout.TabIndex = 8;
             // 
             // txbGia
             // 
@@ -1157,7 +1157,7 @@ namespace PBL
             this.txbGia.Name = "txbGia";
             this.txbGia.ReadOnly = true;
             this.txbGia.Size = new System.Drawing.Size(170, 20);
-            this.txbGia.TabIndex = 12;
+            this.txbGia.TabIndex = 6;
             // 
             // label17
             // 
@@ -1177,7 +1177,7 @@ namespace PBL
             this.dtpNgayDi.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayDi.Name = "dtpNgayDi";
             this.dtpNgayDi.Size = new System.Drawing.Size(171, 20);
-            this.dtpNgayDi.TabIndex = 10;
+            this.dtpNgayDi.TabIndex = 5;
             this.dtpNgayDi.ValueChanged += new System.EventHandler(this.dtpNgayDi_ValueChanged);
             // 
             // btnCheckOutReset
@@ -1186,7 +1186,7 @@ namespace PBL
             this.btnCheckOutReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckOutReset.Name = "btnCheckOutReset";
             this.btnCheckOutReset.Size = new System.Drawing.Size(82, 32);
-            this.btnCheckOutReset.TabIndex = 9;
+            this.btnCheckOutReset.TabIndex = 11;
             this.btnCheckOutReset.Text = "Reset";
             this.btnCheckOutReset.UseVisualStyleBackColor = true;
             this.btnCheckOutReset.Click += new System.EventHandler(this.btnCheckOutReset_Click);
@@ -1197,7 +1197,7 @@ namespace PBL
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(82, 32);
-            this.btnCheckOut.TabIndex = 8;
+            this.btnCheckOut.TabIndex = 10;
             this.btnCheckOut.Text = "Checkout";
             this.btnCheckOut.UseVisualStyleBackColor = true;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
@@ -1281,7 +1281,7 @@ namespace PBL
             this.dtpNgayDenOut.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayDenOut.Name = "dtpNgayDenOut";
             this.dtpNgayDenOut.Size = new System.Drawing.Size(171, 20);
-            this.dtpNgayDenOut.TabIndex = 0;
+            this.dtpNgayDenOut.TabIndex = 4;
             // 
             // panel7
             // 

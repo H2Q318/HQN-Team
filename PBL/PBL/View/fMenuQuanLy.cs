@@ -1042,6 +1042,26 @@ namespace PBL
             }
         }
 
+        private void dgvKhachHang_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvKhachHang.Columns[e.ColumnIndex].Name == "GioiTinh")
+            {
+                if (e.Value != null)
+                {
+                    bool gender = Convert.ToBoolean(e.Value);
+                    if (gender)
+                    {
+                        e.Value = "Nam";
+                    }
+                    else
+                    {
+                        e.Value = "Nữ";
+                    }
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
         #endregion
         private void OnlyNumber(object sender, KeyPressEventArgs e)
         {
@@ -1051,5 +1071,6 @@ namespace PBL
         {
             e.Handled = (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8) && (!Char.IsWhiteSpace(e.KeyChar)));
         }
+
     }
 }

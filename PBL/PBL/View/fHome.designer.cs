@@ -508,6 +508,7 @@ namespace PBL
             this.dgvDPKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDPKhachHang.Size = new System.Drawing.Size(450, 201);
             this.dgvDPKhachHang.TabIndex = 2;
+            this.dgvDPKhachHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDPKhachHang_CellFormatting);
             this.dgvDPKhachHang.Click += new System.EventHandler(this.dgvDPKhachHang_Click);
             // 
             // panel1
@@ -700,6 +701,7 @@ namespace PBL
             this.dgvCIKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCIKhachHang.Size = new System.Drawing.Size(448, 242);
             this.dgvCIKhachHang.TabIndex = 1;
+            this.dgvCIKhachHang.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCIKhachHang_CellFormatting);
             this.dgvCIKhachHang.Click += new System.EventHandler(this.dgvCIKhachHang_Click);
             // 
             // panel2

@@ -433,5 +433,45 @@ namespace PBL
             btnDetail.Enabled = false;
         }
         #endregion
+
+        private void dgvDPKhachHang_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvDPKhachHang.Columns[e.ColumnIndex].Name == "GioiTinh")
+            {
+                if (e.Value != null)
+                {
+                    bool gender = Convert.ToBoolean(e.Value);
+                    if (gender)
+                    {
+                        e.Value = "Nam";
+                    }
+                    else
+                    {
+                        e.Value = "Nữ";
+                    }
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void dgvCIKhachHang_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvCIKhachHang.Columns[e.ColumnIndex].Name == "GioiTinh")
+            {
+                if (e.Value != null)
+                {
+                    bool gender = Convert.ToBoolean(e.Value);
+                    if (gender)
+                    {
+                        e.Value = "Nam";
+                    }
+                    else
+                    {
+                        e.Value = "Nữ";
+                    }
+                    e.FormattingApplied = true;
+                }
+            }
+        }
     }
 }

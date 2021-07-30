@@ -3,8 +3,6 @@ using PBL.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PBL.BLL
@@ -47,36 +45,51 @@ namespace PBL.BLL
         }
         public void AddKh(KHACHHANG s)
         {
-            try
+            if (CheckKHInfo(s) == true)
             {
-                QLKS db = new QLKS();
-                db.KHACHHANGs.Add(s);
-                db.SaveChanges();
+                try
+                {
+                    QLKS db = new QLKS();
+                    db.KHACHHANGs.Add(s);
+                    db.SaveChanges();
+                    MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin đầy đủ");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Vui lòng nhập thông tin đầy đủ");
+                MessageBox.Show("Vui lòng nhập đầy đủ số điện thoại và CMND hoặc để trống nếu không có !");
             }
+            
         }
-        public bool UpdateKh(KHACHHANG p)
-        {
-            try
-            {
-                QLKS db = new QLKS();
-                var kh = db.KHACHHANGs.Find(p.KhachHangID);
-                kh.Ten = p.Ten;
-                kh.SDT = p.SDT;
-                kh.QuocTich = p.QuocTich;
-                kh.GioiTinh = p.GioiTinh;
-                kh.GhiChu = p.GhiChu;
-                kh.CMND = p.CMND;
-                db.SaveChanges();
-                return true;
+        public void UpdateKh(KHACHHANG p)
+        {   
+            if (CheckKHInfo(p) == true)
+            {    
+                try
+                {
+                    QLKS db = new QLKS();
+                    var kh = db.KHACHHANGs.Find(p.KhachHangID);
+                    kh.Ten = p.Ten;
+                    kh.SDT = p.SDT;
+                    kh.QuocTich = p.QuocTich;
+                    kh.GioiTinh = p.GioiTinh;
+                    kh.GhiChu = p.GhiChu;
+                    kh.CMND = p.CMND;
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Vui lòng nhập thông tin đầy đủ");
+                }
             }
-            catch
+            else
             {
-                return false;
-            }
+                MessageBox.Show("Vui lòng nhập đầy đủ số điện thoại và CMND hoặc để trống nếu không có !");
+            }    
 
         }
         public List<KH_View> FindKhByName(string s)
@@ -139,6 +152,13 @@ namespace PBL.BLL
         private static int CompareName(KH_View x, KH_View y)
         {
             return x.Ten.CompareTo(y.Ten);
+        }
+        public bool CheckKHInfo(KHACHHANG kh)
+        {
+            return (
+                ((kh.SDT.Length == 0) || (kh.SDT.Length == 10)) 
+                && ((kh.CMND.Length == 0) || (kh.CMND.Length == 9))
+                );
         }
     }
 }

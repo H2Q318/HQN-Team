@@ -56,6 +56,7 @@ namespace PBL.View
             if (dgvHoaDon.SelectedRows.Count > 0)
             {
                 BLL_QLBill.Instance.DeleteHoaDon(GetListDGVHoaDonID());
+                ShowDGVHoaDon();
             }
             else
             {

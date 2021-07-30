@@ -267,7 +267,7 @@ namespace PBL
         }
         private void btnThemKh_Click(object sender, EventArgs e)
         {
-            if (txbKHHoTen.Text.Trim() != "" && txbKHQuocTich.Text.Trim() != "" && txbKHCMND.Text.Trim() != "" && txbKHSdt.Text.Trim() != "")
+            if ((txbKHHoTen.Text.Trim() != "") && (txbKHQuocTich.Text.Trim() != ""))
             {
                 KHACHHANG s = new KHACHHANG()
                 {
@@ -280,7 +280,6 @@ namespace PBL
                 };
                 BLL_QLKH.Instance.AddKh(s);
                 LoadDataGridView();
-                MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
 
                 ResetValuesKhachHang();
             }

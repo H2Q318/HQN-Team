@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL.BLL;
 using PBL.DAL;
@@ -28,12 +22,12 @@ namespace PBL
             GUIDichVu();
             GUIBillDV();
             GuiKhachHang();
-            Load();
+            LoadMenu();
         }
 
         #region Load
 
-        private void Load()
+        private void LoadMenu()
         {
             if (BLL_QLNV.Instance.GetQuyenHanByNhanVienID(NhanVienID) == 1)
             {

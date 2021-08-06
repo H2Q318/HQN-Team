@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PBL.DAL;
 using PBL.DTO;
 
@@ -47,6 +45,7 @@ namespace PBL.BLL
             return new QLKS().HOADONs.Find(hoadonid);
         }
         public List<BillDV_View> BillService(string hoadonid)
+            /* Trả về danh sách hoá đơn dịch vụ của một hoá đơn trong phần xem chi tiết hoá đơn */
         {
             return BLL_QLBillDV.Instance.GetListBillDV_View(BLL_QLBillDV.Instance.GetListBillDV(new QLKS().HOADONs.Find(hoadonid).BookID));
         }

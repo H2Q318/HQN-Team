@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PBL.BLL
@@ -34,7 +32,6 @@ namespace PBL.BLL
             if (s.Count == 0)
             {
                 return "-1";
-
             }
             else
             {
@@ -47,8 +44,8 @@ namespace PBL.BLL
             try
             {
                 QLKS db = new QLKS();
-                var t = db.BOOKs.Where(p => (p.PhongID == s.PhongID) && (p.NgayCheckIn_ThucTe != null) &&
-                (p.NgayCheckOut_ThucTe == null)).Select(p => p.BookID).ToList();
+                var t = db.BOOKs.Where(p => (p.PhongID == s.PhongID) && (p.NgayCheckIn_ThucTe != null) 
+                                    && (p.NgayCheckOut_ThucTe == null)).Select(p => p.BookID).ToList();
                 if (t.Count > 0)
                 {
                     db.BOOKs.Find(t[0]).KHACHHANGs.Add(db.KHACHHANGs.Find(s.KhachHangID));
@@ -56,7 +53,12 @@ namespace PBL.BLL
                     db.SaveChanges();
                     return;
                 }
-                var z = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null) && (p.KhachHangID == s.KhachHangID)).Select(p => p.BookID).ToList();
+                var z = db.BOOKs.Where(
+                                        p => p.PhongID == s.PhongID 
+                                        && (p.NgayCheckIn != null) 
+                                        && (p.NgayCheckIn_ThucTe == null) 
+                                        && (p.KhachHangID == s.KhachHangID)
+                                      ).Select(p => p.BookID).ToList();
                 if (z.Count > 0)
                 {
                     db.BOOKs.Find(z[0]).NgayCheckIn_ThucTe = s.NgayCheckIn_ThucTe;
@@ -64,7 +66,11 @@ namespace PBL.BLL
                 }
                 else
                 {
-                    var v = db.BOOKs.Where(p => p.PhongID == s.PhongID && (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null)).Select(p => p.NgayCheckIn).ToList();
+                    var v = db.BOOKs.Where(
+                                            p => p.PhongID == s.PhongID 
+                                            && (p.NgayCheckIn != null)
+                                            && (p.NgayCheckIn_ThucTe == null)
+                                          ).Select(p => p.NgayCheckIn).ToList();
                     if (v.Count > 0)
                     {
                         if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + v[0] + "\n Bạn có muốn tiếp tục Checkin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)

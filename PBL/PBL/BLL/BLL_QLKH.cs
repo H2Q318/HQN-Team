@@ -113,7 +113,15 @@ namespace PBL.BLL
         public List<KHACHHANG> KhachHangDP()
         {
             List<KHACHHANG> t = new List<KHACHHANG>();
-            t = new QLKS().BOOKs.Where(p => (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null)).ToList().Select(p => new KHACHHANG() { KhachHangID = p.KHACHHANG.KhachHangID, Ten = p.KHACHHANG.Ten, CMND = p.KHACHHANG.CMND, SDT = p.KHACHHANG.SDT }).ToList();
+            t = new QLKS().BOOKs.Where(p => (p.NgayCheckIn != null) && (p.NgayCheckIn_ThucTe == null))
+                                .ToList().Select(p => new KHACHHANG() 
+                                                { 
+                                                    KhachHangID = p.KHACHHANG.KhachHangID,
+                                                    Ten = p.KHACHHANG.Ten,
+                                                    CMND = p.KHACHHANG.CMND,
+                                                    SDT = p.KHACHHANG.SDT 
+                                                }
+                                                ).ToList();
             return t;
         }
         public void DeleteKh(List<string> l)

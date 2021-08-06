@@ -1,10 +1,7 @@
 ﻿using PBL.DAL;
 using PBL.DTO;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PBL
 {
@@ -34,7 +31,6 @@ namespace PBL
 
         public bool CheckLogin(string username, string password)
         {
-            QLKS db = new QLKS();
             foreach(DANGNHAP item in GetAllDangNhap())
             {
                 if (username.Equals(item.NhanVienID) && password.Equals(item.MatKhau) && item.TrangThai == false)

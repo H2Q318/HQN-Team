@@ -43,7 +43,7 @@ namespace PBL.BLL
                 GhiChu=p.GhiChu
             }).ToList();
         }
-        public void AddKh(KHACHHANG s)
+        public bool AddKh(KHACHHANG s)
         {
             if (CheckKHInfo(s) == true)
             {
@@ -53,6 +53,7 @@ namespace PBL.BLL
                     db.KHACHHANGs.Add(s);
                     db.SaveChanges();
                     MessageBox.Show("Đã thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
+                    return true;
                 }
                 catch
                 {
@@ -63,7 +64,7 @@ namespace PBL.BLL
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ số điện thoại và CMND hoặc để trống nếu không có !");
             }
-            
+            return false;
         }
         public void UpdateKh(KHACHHANG p)
         {   

@@ -278,10 +278,11 @@ namespace PBL
                     CMND = txbKHCMND.Text.Trim(),
                     SDT = txbKHSdt.Text.Trim(),
                 };
-                BLL_QLKH.Instance.AddKh(s);
-                LoadDataGridView();
-
-                ResetValuesKhachHang();
+                if (BLL_QLKH.Instance.AddKh(s))
+                {
+                    LoadDataGridView();
+                    ResetValuesKhachHang();
+                }
             }
             else
             {

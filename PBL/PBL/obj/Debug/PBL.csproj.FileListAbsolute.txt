@@ -138,7 +138,6 @@ D:\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.dll
 D:\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.dll
 D:\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.xml
 D:\HQN-Team\PBL\PBL\bin\Debug\EntityFramework.SqlServer.xml
-D:\HQN-Team\PBL\PBL\obj\Debug\PBL.csprojAssemblyReference.cache
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.fChiTietKhachHang.resources
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.View.fQLTaiKhoan.resources
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.fThongKe.resources
@@ -158,3 +157,4 @@ D:\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CoreCompileInputs.cache
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.exe
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.pdb
+D:\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.AssemblyReference.cache

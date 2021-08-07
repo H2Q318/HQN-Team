@@ -332,7 +332,7 @@ namespace PBL
             }
             catch
             {
-                MessageBox.Show("Vui long chon loai tim kiem!");
+                MessageBox.Show("Vui lòng chọn loại tìm kiếm!");
             }
         }
 

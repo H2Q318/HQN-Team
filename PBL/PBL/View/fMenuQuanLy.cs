@@ -572,23 +572,31 @@ namespace PBL
         {
             if (txbTenDV.TextLength != 0 && txbGiaDV.TextLength != 0)
             {
-                LOAIDICHVU dv = new LOAIDICHVU
+                try
                 {
-                    TenDichVu = txbTenDV.Text,
-                    DonGia = Convert.ToDecimal(txbGiaDV.Text),
-                    GioMo = TimeSpan.Parse(txbOpenDV.Text),
-                    GioDong = TimeSpan.Parse(txbCloseDV.Text)
-                };
-                if (BLL_QLDV.Instance.AddDichVu(dv))
-                {
-                    MessageBox.Show("Thêm dịch vụ thành công!");
-                    RefreshDV();
-                    RefreshGUIBillDichVu();
-                    Send();
+                    LOAIDICHVU dv = new LOAIDICHVU
+                    {
+                        TenDichVu = txbTenDV.Text,
+                        DonGia = Convert.ToDecimal(txbGiaDV.Text),
+                        GioMo = TimeSpan.Parse(txbOpenDV.Text),
+                        GioDong = TimeSpan.Parse(txbCloseDV.Text)
+                    };
+
+                    if (BLL_QLDV.Instance.AddDichVu(dv))
+                    {
+                        MessageBox.Show("Thêm dịch vụ thành công!");
+                        RefreshDV();
+                        RefreshGUIBillDichVu();
+                        Send();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm dịch vụ không thành công! Vui lòng kiểm tra lại thông tin");
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Thêm dịch vụ không thành công! Vui lòng kiểm tra lại thông tin");
+                    MessageBox.Show("Vui lòng kiểm tra thông tin nhập!");
                 }
             }
             else

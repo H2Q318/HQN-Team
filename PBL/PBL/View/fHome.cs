@@ -420,7 +420,7 @@ namespace PBL
         }
         private bool CheckNgayThang(DateTime x, DateTime y)
         {
-            return DateTime.Compare(x, y) > 0 ? true : false;
+            return x.Date > y.Date;
         }
         #endregion
         #region Disable Button

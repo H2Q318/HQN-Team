@@ -57,7 +57,11 @@ namespace PBL.View
 
         private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ShowDGVLog(dgvAccount.SelectedRows[0].Cells["NhanVienID"].Value.ToString());
+            try
+            {
+                ShowDGVLog(dgvAccount.SelectedRows[0].Cells["NhanVienID"].Value.ToString());
+            }
+            catch { }
         }
     }
 }

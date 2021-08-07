@@ -405,12 +405,13 @@ namespace PBL
             if (CheckNgayThang(dtpDPNgayDen.Value, dtpDPNgayDi.Value))
             {
                 MessageBox.Show("Ngày đi không hợp lệ");
-                dtpDPNgayDi.Value = DateTime.Now;
+                dtpDPNgayDi.Value = dtpDPNgayDen.Value;
             }
           
         }
         private void dtpDPNgayDen_ValueChanged(object sender, EventArgs e)
         {
+            dtpDPNgayDi.Value = dtpDPNgayDen.Value;
             if (CheckNgayThang(DateTime.Now, dtpDPNgayDen.Value))
             {
                 MessageBox.Show("Ngày đến không hợp lệ");

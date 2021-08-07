@@ -113,6 +113,7 @@ namespace PBL
                 {
                     MessageBox.Show("Xóa đơn đặt phòng thành công!");
                     RefreshBook();
+                    RefreshKhachHang();
                 }
                 else
                 {

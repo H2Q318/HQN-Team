@@ -70,10 +70,11 @@ namespace PBL.BLL
                                             p => p.PhongID == s.PhongID 
                                             && (p.NgayCheckIn != null)
                                             && (p.NgayCheckIn_ThucTe == null)
-                                          ).Select(p => p.NgayCheckIn).ToList();
+                                          ).ToList();
                     if (v.Count > 0)
                     {
-                        if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + v[0] + "\n Bạn có muốn tiếp tục Checkin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                        if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + v[0].NgayCheckIn
+                            +" tới \n"+ v[0].NgayCheckOut+ "\n Bạn có muốn tiếp tục Checkin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
                         {
                             db.BOOKs.Add(s);
                             db.SaveChanges();
@@ -97,8 +98,21 @@ namespace PBL.BLL
             try
             {
                 QLKS db = new QLKS();
-                db.BOOKs.Add(s);
-                db.SaveChanges();
+                var t = db.BOOKs.Where(p => (p.PhongID == s.PhongID) && (p.NgayCheckIn!=null)&&(p.NgayCheckIn_ThucTe==null)).Select(p=>p.BookID).ToList();
+                if(t.Count>0)
+                {
+                    var v = db.BOOKs.Find(t[0]);
+                    if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + v.NgayCheckIn + " tới \n" + v.NgayCheckOut + "\n Bạn có muốn tiếp tục đặt phòng", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                    {
+                        db.BOOKs.Add(s);
+                        db.SaveChanges();
+                    }
+                }
+                else
+                {
+                    db.BOOKs.Add(s);
+                    db.SaveChanges();
+                }
             }
             catch
             {

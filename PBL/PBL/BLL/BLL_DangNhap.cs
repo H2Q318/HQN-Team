@@ -29,24 +29,18 @@ namespace PBL
             return new QLKS().DANGNHAPs.ToList();
         }
 
-        public bool CheckLogin(string username, string password)
+        public bool isLogin(string username)
         {
-            foreach(DANGNHAP item in GetAllDangNhap())
-            {
-                if (username.Equals(item.NhanVienID) && password.Equals(item.MatKhau) && item.TrangThai == false)
-                {
-                    SetStatusAccount(item.NhanVienID, true);
-                    return true;
-                }
-            }
-            return false;
+            QLKS db = new QLKS();
+            var user = db.DANGNHAPs.Find(username);
+            return user.TrangThai;
         }
 
         public bool CheckPassword(string username, string password)
         {
             QLKS db = new QLKS();
-            var temp = db.DANGNHAPs.Find(username);
-            if (password.Equals(temp.MatKhau))
+            var user = db.DANGNHAPs.Find(username);
+            if (password.Equals(user.MatKhau))
             {
                 return true;
             }

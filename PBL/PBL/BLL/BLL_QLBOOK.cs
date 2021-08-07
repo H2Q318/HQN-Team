@@ -145,6 +145,8 @@ namespace PBL.BLL
             try
             {
                 QLKS db = new QLKS();
+                List<string> ListKhachHangID = Find(b).KHACHHANGs.Select(p => p.KhachHangID).ToList();
+                DeleteKhachHangFromBook(ListKhachHangID, b);
                 var book = db.BOOKs.Remove(db.BOOKs.Find(b));
                 db.SaveChanges();
                 return true;

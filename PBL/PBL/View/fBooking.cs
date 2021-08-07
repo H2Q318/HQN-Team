@@ -224,10 +224,16 @@ namespace PBL
         }
         private void btXoaKH_Click(object sender, EventArgs e)
         {
-            if (dgvKhachHang.SelectedRows.Count > 0)
+            int n = dgvKhachHang.Rows.Count - dgvKhachHang.SelectedRows.Count;
+            if (n > 0)
             {
                 BLL_QLBOOK.Instance.DeleteKhachHangFromBook(GetDGVKhachHangID(), txbBookID.Text.Trim());
                 ShowDGVKhachHang();
+            }
+            else if (n == 0)
+            {
+                MessageBox.Show("Cần ít nhất một khách hàng trong danh sách.\n" +
+                    "Nếu muốn xoá Book, vui lòng chọn nút xoá bên phần thông tin Book !");
             }
             else
             {

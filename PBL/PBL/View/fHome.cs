@@ -258,7 +258,7 @@ namespace PBL
                 NhanVienID = txbDPMaNV.Text,
                 PhongID = txbDPMaPhong.Text,
                 NgayCheckIn = dtpDPNgayDen.Value,
-                NgayCheckOut=dtpDPNgayDen.Value,
+                NgayCheckOut = dtpDPNgayDi.Value,
                 NgayDat = DateTime.Now
             };
             BLL_QLBOOK.Instance.AddDatPhong(s);

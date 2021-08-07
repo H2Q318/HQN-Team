@@ -21,17 +21,28 @@ namespace PBL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (BLL_DangNhap.Instance.CheckLogin(txbUserName.Text, txbPassword.Text))
+            if (BLL_DangNhap.Instance.CheckPassword(txbUserName.Text, txbPassword.Text))
             {
-                fHome f = new fHome(txbUserName.Text);
-                this.Hide();
-                f.ShowDialog();
-                BLL_DangNhap.Instance.SetStatusAccount(txbUserName.Text, false);
-                refreshLogin();
-                this.Show();
+                if (!BLL_DangNhap.Instance.isLogin(txbUserName.Text))
+                {
+                    fHome f = new fHome(txbUserName.Text);
+                    this.Hide();
+                    BLL_DangNhap.Instance.SetStatusAccount(txbUserName.Text, true);
+                    f.ShowDialog();
+                    BLL_DangNhap.Instance.SetStatusAccount(txbUserName.Text, false);
+                    refreshLogin();
+                    this.Show();
+                }
+                else
+                {
+                    lbTB.Text = "Tài khoản đã có người đăng nhập";
+                    lbTB.Visible = true;
+                    txbPassword.Clear();
+                }
             }
             else
             {
+                lbTB.Text = "Sai tài khoản hoặc mật khẩu";
                 lbTB.Visible = true;
                 txbPassword.Clear();
             }

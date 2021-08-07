@@ -28,6 +28,18 @@ namespace PBL
             return new QLKS().CHUCVUs.ToList();
         }
 
+        public CHUCVU GetChucVuByID(string id)
+        {
+            try
+            {
+                return new QLKS().CHUCVUs.Find(id);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public List<CHUCVU> GetListChucVu(string s)
         {
             List<CHUCVU> data = new List<CHUCVU>();

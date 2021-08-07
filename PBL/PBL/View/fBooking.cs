@@ -148,57 +148,57 @@ namespace PBL
         private void dgvBooking_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ShowDGVKhachHang();
-            DataGridViewRow data = dgvBooking.SelectedRows[0];
-            txbBookID.Text = data.Cells["BookID"].Value.ToString();
-            txbTenNhanVien.Text = data.Cells["TenNhanVien"].Value.ToString();
-            txbPhongID.Text = data.Cells["PhongID"].Value.ToString();
+            BOOK book = BLL_QLBOOK.Instance.Find(dgvBooking.SelectedRows[0].Cells["BookID"].Value.ToString());
+            txbBookID.Text = book.BookID;
+            txbTenNhanVien.Text = book.NHANVIEN.Ten;
+            txbPhongID.Text = book.PhongID;
            
             LOAIPHONG lp = BLL_QLLP.Instance.FindLoaiPhongByID(BLL_QLP.Instance.FindPhong(txbPhongID.Text).LoaiPhongID);
             txbLoaiPhong.Text = lp.TenLoaiPhong;
             txbGia.Text = lp.Gia.ToString();
-            dtpNgayDat.Value = (DateTime)data.Cells["NgayDat"].Value;
+            dtpNgayDat.Value = book.NgayDat;
 
-            if (data.Cells["NgayCheckIn"].Value != null)
+            if (book.NgayCheckIn != null)
             {
                 dtpNgayDen.CustomFormat = "dd/MM/yyyy";
-                dtpNgayDen.Value = (DateTime)data.Cells["NgayCheckIn"].Value;
+                dtpNgayDen.Value = (DateTime)book.NgayCheckIn;
             }
             else
             {
                 dtpNgayDen.CustomFormat = " ";
             }
 
-            if (data.Cells["NgayCheckOut"].Value != null)
+            if (book.NgayCheckOut != null)
             {
                 dtpNgayDi.CustomFormat = "dd/MM/yyyy";
-                dtpNgayDi.Value = (DateTime)data.Cells["NgayCheckOut"].Value;
+                dtpNgayDi.Value = (DateTime)book.NgayCheckOut;
             }
             else
             {
                 dtpNgayDi.CustomFormat = " ";
             }
 
-            if (data.Cells["NgayCheckIn_ThucTe"].Value != null)
+            if (book.NgayCheckIn_ThucTe != null)
             {
                 dtpCheckIn.CustomFormat = "dd/MM/yyyy hh:mm tt";
-                dtpCheckIn.Value = (DateTime)data.Cells["NgayCheckIn_ThucTe"].Value;
+                dtpCheckIn.Value = (DateTime)book.NgayCheckIn_ThucTe;
             }
             else
             {
                 dtpCheckIn.CustomFormat = " ";
             }
 
-            if (data.Cells["NgayCheckOut_ThucTe"].Value != null)
+            if (book.NgayCheckOut_ThucTe != null)
             {
                 dtpCheckOut.CustomFormat = "dd/MM/yyyy hh:mm tt";
-                dtpCheckOut.Value = (DateTime)data.Cells["NgayCheckOut_ThucTe"].Value;
+                dtpCheckOut.Value = (DateTime)book.NgayCheckOut_ThucTe;
             }
             else
             {
                 dtpCheckOut.CustomFormat = " ";
             }
 
-            txbThanhToan.Text = data.Cells["ThanhToan"].Value.ToString();
+            txbThanhToan.Text = book.ThanhToan.ToString();
         }   
 
         private void dgvBooking_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

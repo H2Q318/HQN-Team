@@ -99,7 +99,7 @@ namespace PBL.BLL
             {
                 QLKS db = new QLKS();
                 var t = db.BOOKs.Where(p => (p.PhongID == s.PhongID) && (p.NgayCheckIn!=null)&&(p.NgayCheckIn_ThucTe==null)).Select(p=>p.BookID).ToList();
-                if(t.Count>0)
+                if(t.Count > 0)
                 {
                     var v = db.BOOKs.Find(t[0]);
                     if (MessageBox.Show("Bạn có lịch đặt phòng vào lúc \n " + v.NgayCheckIn + " tới \n" + v.NgayCheckOut + "\n Bạn có muốn tiếp tục đặt phòng", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
@@ -181,15 +181,20 @@ namespace PBL.BLL
             }
             return data;
         }
-        public void DeleteKhachHangFromBook(List<string> l, string bookid)
+        public bool DeleteKhachHangFromBook(List<string> l, string bookid)
         {
             QLKS db = new QLKS();
             BOOK b = db.BOOKs.Find(bookid);
+            if (l.Contains(b.KhachHangID))
+            {
+                return false;
+            }
             foreach(string s in l)
             {
                 db.KHACHHANGs.Find(s).BOOKs1.Remove(b);
             }
             db.SaveChanges();
+            return true;
         }
         public List<Book_View> SearchBook(string s, string a)
         {

@@ -228,12 +228,15 @@ namespace PBL
             int n = dgvKhachHang.Rows.Count - dgvKhachHang.SelectedRows.Count;
             if (n > 0)
             {
-                BLL_QLBOOK.Instance.DeleteKhachHangFromBook(GetDGVKhachHangID(), txbBookID.Text.Trim());
+                if (!BLL_QLBOOK.Instance.DeleteKhachHangFromBook(GetDGVKhachHangID(), txbBookID.Text.Trim()))
+                {
+                    MessageBox.Show("Không thể xoá khách hàng đặt Book này ra khỏi danh sách !");
+                }
                 ShowDGVKhachHang();
             }
             else if (n == 0)
             {
-                MessageBox.Show("Cần ít nhất một khách hàng trong danh sách.\n" +
+                MessageBox.Show("Không thể xoá khách hàng này ra khỏi danh sách.\n" +
                     "Nếu muốn xoá Book, vui lòng chọn nút xoá bên phần thông tin Book !");
             }
             else

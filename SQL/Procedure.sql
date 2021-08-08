@@ -527,6 +527,9 @@ as
 	declare @tienvattu decimal = 0
 	declare @tongtien decimal = 0
 	declare @gia decimal = 0
+	declare @phongid char(3)
+
+	select @phongid = phongid from BOOK where BookID = @bookid
 
 	select @gia = gia from loaiphong where loaiphongid =
 							(select loaiphongid from PHONG where phongid =
@@ -554,6 +557,19 @@ as
 	set ThanhToan = @tongtien
 	where BookID = @bookid
 
+	/* Phần thêm các bản ghi các vật dụng hư vào bảng HOADONVATDUNGPHONG */
+
+	insert into HOADONVATDUNGPHONG
+	select @bookid,
+		   @phongid,
+		   TenVatDung,
+		   (SoLuongBanDau - SoLuongHienTai),
+		   DonGia
+	from VATDUNGPHONG inner join LOAIVATDUNG
+	on VATDUNGPHONG.VatDungID = LOAIVATDUNG.VatDungID
+	where PhongID = @phongid and TrangThaiVatDungID = N'Khách làm hư'
+
+	/* Thêm hoá đơn mới */
 	exec sp_Ins_HoaDon @bookid,
 						@today,
 						@tienphong,
@@ -562,3 +578,4 @@ as
 						@tongtien,
 						null
 go
+

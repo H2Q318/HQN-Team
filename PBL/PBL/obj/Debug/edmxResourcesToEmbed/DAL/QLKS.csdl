@@ -35,6 +35,7 @@
     <NavigationProperty Name="HOADONs" Relationship="Self.fk_hoadon_bookid" FromRole="BOOK" ToRole="HOADON" />
     <NavigationProperty Name="HOADON_DUNG_DICHVU" Relationship="Self.fk_hoadon_dung_dichvu_bookid" FromRole="BOOK" ToRole="HOADON_DUNG_DICHVU" />
     <NavigationProperty Name="KHACHHANGs" Relationship="Self.KHACHHANG_BOOK" FromRole="BOOK" ToRole="KHACHHANG" />
+    <NavigationProperty Name="HOADONVATDUNGPHONGs" Relationship="DHP_04Model.fk_hoadonvatdungphong_bookid" FromRole="BOOK" ToRole="HOADONVATDUNGPHONG" />
   </EntityType>
   <EntityType Name="CHUCVU">
     <Key>
@@ -158,6 +159,7 @@
     <NavigationProperty Name="BOOKs" Relationship="Self.fk_book_phongid" FromRole="PHONG" ToRole="BOOK" />
     <NavigationProperty Name="LOAIPHONG" Relationship="Self.fk_phong_loaiphongid" FromRole="PHONG" ToRole="LOAIPHONG" />
     <NavigationProperty Name="VATDUNGPHONGs" Relationship="Self.fk_vatdungphong_phongid" FromRole="PHONG" ToRole="VATDUNGPHONG" />
+    <NavigationProperty Name="HOADONVATDUNGPHONGs" Relationship="DHP_04Model.fk_hoadonvatdungphong_phongid" FromRole="PHONG" ToRole="HOADONVATDUNGPHONG" />
   </EntityType>
   <EntityType Name="TRANGTHAIVATDUNG">
     <Key>
@@ -432,9 +434,6 @@
     <FunctionImport Name="func_XemChiTietHoaDon_DichVu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_DichVu_Result)">
       <Parameter Name="hoadonid" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="func_XemChiTietHoaDon_VatTu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_VatTu_Result)">
-      <Parameter Name="hoadonid" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="sp_Cal_HoaDon">
       <Parameter Name="bookid" Mode="In" Type="String" />
     </FunctionImport>
@@ -443,6 +442,281 @@
       <End Role="NHANVIEN" EntitySet="NHANVIENs" />
       <End Role="LICHSUDANGNHAP" EntitySet="LICHSUDANGNHAPs" />
     </AssociationSet>
+    <EntitySet Name="HOADONVATDUNGPHONGs" EntityType="DHP_04Model.HOADONVATDUNGPHONG" />
+    <AssociationSet Name="fk_hoadonvatdungphong_bookid" Association="DHP_04Model.fk_hoadonvatdungphong_bookid">
+      <End Role="BOOK" EntitySet="BOOKs" />
+      <End Role="HOADONVATDUNGPHONG" EntitySet="HOADONVATDUNGPHONGs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hoadonvatdungphong_phongid" Association="DHP_04Model.fk_hoadonvatdungphong_phongid">
+      <End Role="PHONG" EntitySet="PHONGs" />
+      <End Role="HOADONVATDUNGPHONG" EntitySet="HOADONVATDUNGPHONGs" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_Book">
+      <Parameter Name="bookid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_ChucVu">
+      <Parameter Name="cvid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_DangNhap">
+      <Parameter Name="nvid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_HoaDon">
+      <Parameter Name="hdid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_HoaDon_Dung_DichVu">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_KhachHang">
+      <Parameter Name="khid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_KhachHang_Book">
+      <Parameter Name="khid" Mode="In" Type="String" />
+      <Parameter Name="bookid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_LoaiDichVu">
+      <Parameter Name="dvid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_LoaiPhong">
+      <Parameter Name="lpid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_LoaiVatDung">
+      <Parameter Name="vdid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_NhanVien">
+      <Parameter Name="nvid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_Phong">
+      <Parameter Name="pid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_TrangThaiVatDung">
+      <Parameter Name="ttvdid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Del_VatDungPhong">
+      <Parameter Name="pid" Mode="In" Type="String" />
+      <Parameter Name="vdid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DHP_04Model.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DHP_04Model.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_Book">
+      <Parameter Name="phongid" Mode="In" Type="String" />
+      <Parameter Name="khid" Mode="In" Type="String" />
+      <Parameter Name="nvid" Mode="In" Type="String" />
+      <Parameter Name="ngaydat" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaycheckin" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaycheckout" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaycheckint_tt" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaycheckout_tt" Mode="In" Type="DateTime" />
+      <Parameter Name="thanhtoan" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_ChucVu">
+      <Parameter Name="tencv" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+      <Parameter Name="quyenhan" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_DangNhap" ReturnType="Collection(Boolean)">
+      <Parameter Name="nvid" Mode="In" Type="String" />
+      <Parameter Name="mk" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_HoaDon">
+      <Parameter Name="bookid" Mode="In" Type="String" />
+      <Parameter Name="ngaytt" Mode="In" Type="DateTime" />
+      <Parameter Name="tienphong" Mode="In" Type="Decimal" />
+      <Parameter Name="tiendichvu" Mode="In" Type="Decimal" />
+      <Parameter Name="tienvattu" Mode="In" Type="Decimal" />
+      <Parameter Name="tongtien" Mode="In" Type="Decimal" />
+      <Parameter Name="ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_HoaDon_Dung_DichVu">
+      <Parameter Name="bookid" Mode="In" Type="String" />
+      <Parameter Name="nvid" Mode="In" Type="String" />
+      <Parameter Name="dvid" Mode="In" Type="String" />
+      <Parameter Name="ngay" Mode="In" Type="DateTime" />
+      <Parameter Name="sl" Mode="In" Type="Int32" />
+      <Parameter Name="thanhtien" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_KhachHang">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="cmnd" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="quoctich" Mode="In" Type="String" />
+      <Parameter Name="ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_KhachHang_Book">
+      <Parameter Name="khid" Mode="In" Type="String" />
+      <Parameter Name="bookid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_LoaiDichVu">
+      <Parameter Name="tendv" Mode="In" Type="String" />
+      <Parameter Name="dongia" Mode="In" Type="Decimal" />
+      <Parameter Name="giomo" Mode="In" Type="Time" />
+      <Parameter Name="giodong" Mode="In" Type="Time" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_LoaiPhong">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Decimal" />
+      <Parameter Name="songuoi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_LoaiVatDung">
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="dongia" Mode="In" Type="Decimal" />
+      <Parameter Name="thietbicd" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_NhanVien">
+      <Parameter Name="cvid" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="ngaysinh" Mode="In" Type="DateTime" />
+      <Parameter Name="cmnd" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_Phong">
+      <Parameter Name="phongid" Mode="In" Type="String" />
+      <Parameter Name="lp" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_TrangThaiVatDung">
+      <Parameter Name="ttvdid" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Ins_VatDungPhong">
+      <Parameter Name="pid" Mode="In" Type="String" />
+      <Parameter Name="vdid" Mode="In" Type="String" />
+      <Parameter Name="slbd" Mode="In" Type="Int32" />
+      <Parameter Name="slht" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_Book">
+      <Parameter Name="bookid" Mode="In" Type="String" />
+      <Parameter Name="phongid" Mode="In" Type="String" />
+      <Parameter Name="khid" Mode="In" Type="String" />
+      <Parameter Name="nvid" Mode="In" Type="String" />
+      <Parameter Name="ngaydat" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaycheckin" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaycheckout" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaycheckint_tt" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaycheckout_tt" Mode="In" Type="DateTime" />
+      <Parameter Name="thanhtoan" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_ChucVu">
+      <Parameter Name="cvid" Mode="In" Type="String" />
+      <Parameter Name="tencv" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+      <Parameter Name="quyenhan" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_DangNhap">
+      <Parameter Name="nvid" Mode="In" Type="String" />
+      <Parameter Name="mk" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_HoaDon">
+      <Parameter Name="hdid" Mode="In" Type="String" />
+      <Parameter Name="bookid" Mode="In" Type="String" />
+      <Parameter Name="ngaytt" Mode="In" Type="DateTime" />
+      <Parameter Name="tienphong" Mode="In" Type="Decimal" />
+      <Parameter Name="tiendichvu" Mode="In" Type="Decimal" />
+      <Parameter Name="tienvattu" Mode="In" Type="Decimal" />
+      <Parameter Name="tongtien" Mode="In" Type="Decimal" />
+      <Parameter Name="ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_HoaDon_Dung_DichVu">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="bookid" Mode="In" Type="String" />
+      <Parameter Name="nvid" Mode="In" Type="String" />
+      <Parameter Name="dvid" Mode="In" Type="String" />
+      <Parameter Name="ngay" Mode="In" Type="DateTime" />
+      <Parameter Name="sl" Mode="In" Type="Int32" />
+      <Parameter Name="thanhtien" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_KhachHang">
+      <Parameter Name="khid" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="cmnd" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="quoctich" Mode="In" Type="String" />
+      <Parameter Name="ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_LoaiDichVu">
+      <Parameter Name="dvid" Mode="In" Type="String" />
+      <Parameter Name="tendv" Mode="In" Type="String" />
+      <Parameter Name="dongia" Mode="In" Type="Decimal" />
+      <Parameter Name="giomo" Mode="In" Type="Time" />
+      <Parameter Name="giodong" Mode="In" Type="Time" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_LoaiPhong">
+      <Parameter Name="lpid" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gia" Mode="In" Type="Decimal" />
+      <Parameter Name="songuoi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_LoaiVatDung">
+      <Parameter Name="vdid" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="dongia" Mode="In" Type="Decimal" />
+      <Parameter Name="thietbicd" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_NhanVien">
+      <Parameter Name="nvid" Mode="In" Type="String" />
+      <Parameter Name="cvid" Mode="In" Type="String" />
+      <Parameter Name="ten" Mode="In" Type="String" />
+      <Parameter Name="gt" Mode="In" Type="Boolean" />
+      <Parameter Name="ngaysinh" Mode="In" Type="DateTime" />
+      <Parameter Name="cmnd" Mode="In" Type="String" />
+      <Parameter Name="sdt" Mode="In" Type="String" />
+      <Parameter Name="diachi" Mode="In" Type="String" />
+      <Parameter Name="ghichu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_Phong">
+      <Parameter Name="pid" Mode="In" Type="String" />
+      <Parameter Name="lp" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_TrangThaiVatDung">
+      <Parameter Name="ttvdid" Mode="In" Type="String" />
+      <Parameter Name="mota" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_Up_VatDungPhong">
+      <Parameter Name="pid" Mode="In" Type="String" />
+      <Parameter Name="vdid" Mode="In" Type="String" />
+      <Parameter Name="slbd" Mode="In" Type="Int32" />
+      <Parameter Name="slht" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="func_XemChiTietHoaDon_VatTu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_VatTu_Result1)">
+      <Parameter Name="hoadonid" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="LICHSUDANGNHAP">
     <Key>
@@ -467,4 +741,58 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="HOADONVATDUNGPHONG">
+    <Key>
+      <PropertyRef Name="BookID" />
+      <PropertyRef Name="PhongID" />
+      <PropertyRef Name="TenVatDung" />
+    </Key>
+    <Property Name="BookID" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="PhongID" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="TenVatDung" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuongHu" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="DonGia" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="BOOK" Relationship="DHP_04Model.fk_hoadonvatdungphong_bookid" FromRole="HOADONVATDUNGPHONG" ToRole="BOOK" />
+    <NavigationProperty Name="PHONG" Relationship="DHP_04Model.fk_hoadonvatdungphong_phongid" FromRole="HOADONVATDUNGPHONG" ToRole="PHONG" />
+  </EntityType>
+  <Association Name="fk_hoadonvatdungphong_bookid">
+    <End Type="DHP_04Model.BOOK" Role="BOOK" Multiplicity="1" />
+    <End Type="DHP_04Model.HOADONVATDUNGPHONG" Role="HOADONVATDUNGPHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BOOK">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="HOADONVATDUNGPHONG">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hoadonvatdungphong_phongid">
+    <End Type="DHP_04Model.PHONG" Role="PHONG" Multiplicity="1" />
+    <End Type="DHP_04Model.HOADONVATDUNGPHONG" Role="HOADONVATDUNGPHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHONG">
+        <PropertyRef Name="PhongID" />
+      </Principal>
+      <Dependent Role="HOADONVATDUNGPHONG">
+        <PropertyRef Name="PhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="func_XemChiTietHoaDon_VatTu_Result1">
+    <Property Type="String" Name="TenVatDung" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="SoLuongHu" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="DonGia" Nullable="false" Precision="18" Scale="0" />
+  </ComplexType>
 </Schema>

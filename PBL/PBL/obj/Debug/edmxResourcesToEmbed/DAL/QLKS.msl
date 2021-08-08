@@ -171,16 +171,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionName="DHP_04Model.Store.func_XemChiTietHoaDon_VatTu" FunctionImportName="func_XemChiTietHoaDon_VatTu">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DHP_04Model.func_XemChiTietHoaDon_VatTu_Result">
-          <ScalarProperty Name="VatDungID" ColumnName="VatDungID" />
-          <ScalarProperty Name="tenvatdung" ColumnName="tenvatdung" />
-          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
-          <ScalarProperty Name="SoLuongHu" ColumnName="SoLuongHu" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_Cal_HoaDon" FunctionName="DHP_04Model.Store.sp_Cal_HoaDon" />
     <EntitySetMapping Name="LICHSUDANGNHAPs">
       <EntityTypeMapping TypeName="DHP_04Model.LICHSUDANGNHAP">
@@ -191,5 +181,90 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="HOADONVATDUNGPHONGs">
+      <EntityTypeMapping TypeName="DHP_04Model.HOADONVATDUNGPHONG">
+        <MappingFragment StoreEntitySet="HOADONVATDUNGPHONG">
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="SoLuongHu" ColumnName="SoLuongHu" />
+          <ScalarProperty Name="TenVatDung" ColumnName="TenVatDung" />
+          <ScalarProperty Name="PhongID" ColumnName="PhongID" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DHP_04Model.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DHP_04Model.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_Del_Book" FunctionName="DHP_04Model.Store.sp_Del_Book" />
+    <FunctionImportMapping FunctionImportName="sp_Del_ChucVu" FunctionName="DHP_04Model.Store.sp_Del_ChucVu" />
+    <FunctionImportMapping FunctionImportName="sp_Del_DangNhap" FunctionName="DHP_04Model.Store.sp_Del_DangNhap" />
+    <FunctionImportMapping FunctionImportName="sp_Del_HoaDon" FunctionName="DHP_04Model.Store.sp_Del_HoaDon" />
+    <FunctionImportMapping FunctionImportName="sp_Del_HoaDon_Dung_DichVu" FunctionName="DHP_04Model.Store.sp_Del_HoaDon_Dung_DichVu" />
+    <FunctionImportMapping FunctionImportName="sp_Del_KhachHang" FunctionName="DHP_04Model.Store.sp_Del_KhachHang" />
+    <FunctionImportMapping FunctionImportName="sp_Del_KhachHang_Book" FunctionName="DHP_04Model.Store.sp_Del_KhachHang_Book" />
+    <FunctionImportMapping FunctionImportName="sp_Del_LoaiDichVu" FunctionName="DHP_04Model.Store.sp_Del_LoaiDichVu" />
+    <FunctionImportMapping FunctionImportName="sp_Del_LoaiPhong" FunctionName="DHP_04Model.Store.sp_Del_LoaiPhong" />
+    <FunctionImportMapping FunctionImportName="sp_Del_LoaiVatDung" FunctionName="DHP_04Model.Store.sp_Del_LoaiVatDung" />
+    <FunctionImportMapping FunctionImportName="sp_Del_NhanVien" FunctionName="DHP_04Model.Store.sp_Del_NhanVien" />
+    <FunctionImportMapping FunctionImportName="sp_Del_Phong" FunctionName="DHP_04Model.Store.sp_Del_Phong" />
+    <FunctionImportMapping FunctionImportName="sp_Del_TrangThaiVatDung" FunctionName="DHP_04Model.Store.sp_Del_TrangThaiVatDung" />
+    <FunctionImportMapping FunctionImportName="sp_Del_VatDungPhong" FunctionName="DHP_04Model.Store.sp_Del_VatDungPhong" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DHP_04Model.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DHP_04Model.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHP_04Model.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DHP_04Model.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHP_04Model.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Ins_Book" FunctionName="DHP_04Model.Store.sp_Ins_Book" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_ChucVu" FunctionName="DHP_04Model.Store.sp_Ins_ChucVu" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_DangNhap" FunctionName="DHP_04Model.Store.sp_Ins_DangNhap" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_HoaDon" FunctionName="DHP_04Model.Store.sp_Ins_HoaDon" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_HoaDon_Dung_DichVu" FunctionName="DHP_04Model.Store.sp_Ins_HoaDon_Dung_DichVu" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_KhachHang" FunctionName="DHP_04Model.Store.sp_Ins_KhachHang" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_KhachHang_Book" FunctionName="DHP_04Model.Store.sp_Ins_KhachHang_Book" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_LoaiDichVu" FunctionName="DHP_04Model.Store.sp_Ins_LoaiDichVu" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_LoaiPhong" FunctionName="DHP_04Model.Store.sp_Ins_LoaiPhong" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_LoaiVatDung" FunctionName="DHP_04Model.Store.sp_Ins_LoaiVatDung" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_NhanVien" FunctionName="DHP_04Model.Store.sp_Ins_NhanVien" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_Phong" FunctionName="DHP_04Model.Store.sp_Ins_Phong" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_TrangThaiVatDung" FunctionName="DHP_04Model.Store.sp_Ins_TrangThaiVatDung" />
+    <FunctionImportMapping FunctionImportName="sp_Ins_VatDungPhong" FunctionName="DHP_04Model.Store.sp_Ins_VatDungPhong" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DHP_04Model.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_Up_Book" FunctionName="DHP_04Model.Store.sp_Up_Book" />
+    <FunctionImportMapping FunctionImportName="sp_Up_ChucVu" FunctionName="DHP_04Model.Store.sp_Up_ChucVu" />
+    <FunctionImportMapping FunctionImportName="sp_Up_DangNhap" FunctionName="DHP_04Model.Store.sp_Up_DangNhap" />
+    <FunctionImportMapping FunctionImportName="sp_Up_HoaDon" FunctionName="DHP_04Model.Store.sp_Up_HoaDon" />
+    <FunctionImportMapping FunctionImportName="sp_Up_HoaDon_Dung_DichVu" FunctionName="DHP_04Model.Store.sp_Up_HoaDon_Dung_DichVu" />
+    <FunctionImportMapping FunctionImportName="sp_Up_KhachHang" FunctionName="DHP_04Model.Store.sp_Up_KhachHang" />
+    <FunctionImportMapping FunctionImportName="sp_Up_LoaiDichVu" FunctionName="DHP_04Model.Store.sp_Up_LoaiDichVu" />
+    <FunctionImportMapping FunctionImportName="sp_Up_LoaiPhong" FunctionName="DHP_04Model.Store.sp_Up_LoaiPhong" />
+    <FunctionImportMapping FunctionImportName="sp_Up_LoaiVatDung" FunctionName="DHP_04Model.Store.sp_Up_LoaiVatDung" />
+    <FunctionImportMapping FunctionImportName="sp_Up_NhanVien" FunctionName="DHP_04Model.Store.sp_Up_NhanVien" />
+    <FunctionImportMapping FunctionImportName="sp_Up_Phong" FunctionName="DHP_04Model.Store.sp_Up_Phong" />
+    <FunctionImportMapping FunctionImportName="sp_Up_TrangThaiVatDung" FunctionName="DHP_04Model.Store.sp_Up_TrangThaiVatDung" />
+    <FunctionImportMapping FunctionImportName="sp_Up_VatDungPhong" FunctionName="DHP_04Model.Store.sp_Up_VatDungPhong" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DHP_04Model.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="func_XemChiTietHoaDon_VatTu" FunctionName="DHP_04Model.Store.func_XemChiTietHoaDon_VatTu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHP_04Model.func_XemChiTietHoaDon_VatTu_Result1">
+          <ScalarProperty Name="TenVatDung" ColumnName="TenVatDung" />
+          <ScalarProperty Name="SoLuongHu" ColumnName="SoLuongHu" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

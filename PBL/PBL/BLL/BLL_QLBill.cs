@@ -49,7 +49,7 @@ namespace PBL.BLL
         {
             return BLL_QLBillDV.Instance.GetListBillDV_View(BLL_QLBillDV.Instance.GetListBillDV(new QLKS().HOADONs.Find(hoadonid).BookID));
         }
-        public IQueryable<func_XemChiTietHoaDon_VatTu_Result> BillRoomSupplies(string hoadonid)
+        public IQueryable<func_XemChiTietHoaDon_VatTu_Result1> BillRoomSupplies(string hoadonid)
         {
             return new QLKS().func_XemChiTietHoaDon_VatTu(hoadonid);
         }

@@ -288,3 +288,16 @@ create table LICHSUDANGNHAP
 	constraint fk_lichsudangnhap_nhanvienid foreign key (NhanVienID) references nhanvien(nhanvienid)
 )
 go
+
+create table HOADONVATDUNGPHONG
+(
+	BookID nvarchar(12) not null,
+	PhongID char(3) not null,
+	TenVatDung nvarchar(50) not null,
+	SoLuongHu Decimal not null,
+	DonGia Decimal not null,
+	constraint pk_hoadonvatdungphong_phongid_tenvatdung primary key (bookid, phongid, tenvatdung),
+	constraint fk_hoadonvatdungphong_bookid foreign key (bookid) references BOOK,
+	constraint fk_hoadonvatdungphong_phongid foreign key (phongid) references PHONG
+)
+go

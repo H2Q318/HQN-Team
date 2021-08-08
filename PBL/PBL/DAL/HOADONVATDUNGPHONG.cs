@@ -10,12 +10,17 @@
 namespace PBL.DAL
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class func_XemChiTietHoaDon_VatTu_Result
+    public partial class HOADONVATDUNGPHONG
     {
-        public string VatDungID { get; set; }
-        public string tenvatdung { get; set; }
+        public string BookID { get; set; }
+        public string PhongID { get; set; }
+        public string TenVatDung { get; set; }
+        public decimal SoLuongHu { get; set; }
         public decimal DonGia { get; set; }
-        public Nullable<int> SoLuongHu { get; set; }
+    
+        public virtual BOOK BOOK { get; set; }
+        public virtual PHONG PHONG { get; set; }
     }
 }

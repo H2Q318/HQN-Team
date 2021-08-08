@@ -27,6 +27,7 @@ namespace PBL
                     {
                         BLL_DangNhap.Instance.UpdatePassword(IDNhanVien, txbNewPassword.Text);
                         MessageBox.Show("Đổi mật khẩu thành công!");
+                        this.Close();
                     }
                     else
                     {

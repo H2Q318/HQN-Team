@@ -52,7 +52,7 @@
       <PropertyRef Name="NhanVienID" />
     </Key>
     <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TrangThai" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_dangnhap_nhanvienid" FromRole="DANGNHAP" ToRole="NHANVIEN" />
   </EntityType>

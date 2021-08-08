@@ -11,10 +11,11 @@ namespace PBL.DAL
 {
     using System;
     
-    public partial class func_XemChiTietHoaDon_VatTu_Result1
+    public partial class func_XemChiTietHoaDon_VatTu_Result
     {
-        public string TenVatDung { get; set; }
-        public decimal SoLuongHu { get; set; }
+        public string VatDungID { get; set; }
+        public string tenvatdung { get; set; }
         public decimal DonGia { get; set; }
+        public Nullable<int> SoLuongHu { get; set; }
     }
 }

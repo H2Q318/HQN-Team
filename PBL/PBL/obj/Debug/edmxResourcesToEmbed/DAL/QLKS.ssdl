@@ -29,7 +29,7 @@
       <PropertyRef Name="NhanVienID" />
     </Key>
     <Property Name="NhanVienID" Type="nvarchar" MaxLength="11" Nullable="false" />
-    <Property Name="MatKhau" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MatKhau" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TrangThai" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="HOADON">
@@ -272,7 +272,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_hoadonvatdungphong_bookid">
-    <End Role="BOOK" Type="Self.BOOK" Multiplicity="1" />
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="HOADONVATDUNGPHONG" Type="Self.HOADONVATDUNGPHONG" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="BOOK">

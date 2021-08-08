@@ -34,7 +34,7 @@
             <PropertyRef Name="NhanVienID" />
           </Key>
           <Property Name="NhanVienID" Type="nvarchar" MaxLength="11" Nullable="false" />
-          <Property Name="MatKhau" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MatKhau" Type="nvarchar(max)" Nullable="false" />
           <Property Name="TrangThai" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="HOADON">
@@ -277,7 +277,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_hoadonvatdungphong_bookid">
-          <End Role="BOOK" Type="Self.BOOK" Multiplicity="1" />
+          <End Role="BOOK" Type="Self.BOOK" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="HOADONVATDUNGPHONG" Type="Self.HOADONVATDUNGPHONG" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BOOK">
@@ -849,7 +851,7 @@
             <PropertyRef Name="NhanVienID" />
           </Key>
           <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MatKhau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TrangThai" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_dangnhap_nhanvienid" FromRole="DANGNHAP" ToRole="NHANVIEN" />
         </EntityType>
@@ -1512,7 +1514,7 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="func_XemChiTietHoaDon_VatTu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_VatTu_Result1)">
-            <Parameter Name="hoadonid" Mode="In" Type="String" />
+          <Parameter Name="hoadonid" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="LICHSUDANGNHAP">

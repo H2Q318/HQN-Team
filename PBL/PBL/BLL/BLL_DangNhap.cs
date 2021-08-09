@@ -2,6 +2,8 @@
 using PBL.DTO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace PBL
 {
@@ -23,6 +25,19 @@ namespace PBL
 
         private BLL_DangNhap() { }
 
+        private string getStringEncoded(string input)
+        {
+            MD5 md = MD5.Create();
+            byte[] inputString = Encoding.ASCII.GetBytes(input);
+            byte[] hash = md.ComputeHash(inputString);
+            StringBuilder stringAfter = new StringBuilder();
+
+            for (int i = 0; i < hash.Length; i++)
+            {
+                stringAfter.Append(hash[i].ToString("X"));
+            }
+            return stringAfter.ToString();
+        }
 
         public List<DANGNHAP> GetAllDangNhap()
         {
@@ -38,9 +53,11 @@ namespace PBL
 
         public bool CheckPassword(string username, string password)
         {
+            if (password == "") return true;
             QLKS db = new QLKS();
-            var temp = db.DANGNHAPs.Find(username);
-            if (password.Equals(temp.MatKhau))
+            string passwordEncoded = getStringEncoded(password);
+            var user = db.DANGNHAPs.Find(username);
+            if (passwordEncoded.Equals(user.MatKhau))
             {
                 return true;
             }
@@ -64,10 +81,11 @@ namespace PBL
             try
             {
                 QLKS db = new QLKS();
+                string passwordEncoded = getStringEncoded(password);
                 DANGNHAP dn = new DANGNHAP
                 {
                     NhanVienID = username,
-                    MatKhau = password,
+                    MatKhau = passwordEncoded,
                     TrangThai = false
                 };
                 db.DANGNHAPs.Add(dn);
@@ -85,8 +103,9 @@ namespace PBL
             try
             {
                 QLKS db = new QLKS();
+                string passwordEncoded = getStringEncoded(password);
                 var nhanVienAccount = db.DANGNHAPs.Find(username);
-                nhanVienAccount.MatKhau = password;
+                nhanVienAccount.MatKhau = passwordEncoded;
                 db.SaveChanges();
                 return true;
             }

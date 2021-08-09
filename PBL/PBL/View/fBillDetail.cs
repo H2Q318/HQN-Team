@@ -37,24 +37,27 @@ namespace PBL
         private void ShowDGVRoomSupplie()
         {
             dgvRoomSupplies.DataSource = BLL_QLBill.Instance.BillRoomSupplies(HoaDonID);
-            dgvRoomSupplies.Columns["VatDungID"].Visible = false;
-            dgvRoomSupplies.Columns["tenvatdung"].HeaderText = "Tên vật dụng";
+            dgvRoomSupplies.Columns["TenVatDung"].HeaderText = "Tên vật dụng";
             dgvRoomSupplies.Columns["DonGia"].HeaderText = "Đơn giá";
             dgvRoomSupplies.Columns["SoLuongHu"].HeaderText = "Số lượng hư";
         }
         private void ShowDGVService()
         {
             dgvService.DataSource = BLL_QLBill.Instance.BillService(HoaDonID);
-            dgvService.Columns["BookID"].Visible = false;
-            dgvService.Columns["TenNhanVien"].HeaderText = "Tên nhân viên";
             dgvService.Columns["TenDichVu"].HeaderText = "Tên dịch vụ";
-            dgvService.Columns["Ngay"].HeaderText = "Ngày";
-            dgvService.Columns["SoLuong"].HeaderText = "Số lượng";
-            dgvService.Columns["ThanhTien"].HeaderText = "Thành tiền";
+            dgvService.Columns["DonGia"].HeaderText = "Đơn giá";
+            dgvService.Columns["TongSoLuong"].HeaderText = "Số lượng";
+            dgvService.Columns["TongThanhTien"].HeaderText = "Thành tiền";
         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

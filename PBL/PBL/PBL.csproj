@@ -67,7 +67,19 @@
     <Compile Include="BLL\BLL_QLDV.cs" />
     <Compile Include="BLL\BLL_QLBOOK.cs" />
     <Compile Include="BLL\BLL_QLKH.cs" />
+    <Compile Include="DAL\func_XemChiTietHoaDon_DichVu_Result.cs">
+      <DependentUpon>QLKS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\HOADONVATDUNGPHONG.cs">
+      <DependentUpon>QLKS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\LICHSUDANGNHAP.cs">
+      <DependentUpon>QLKS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QLKS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\sp_helpdiagrams_Result.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\Account_View.cs" />
@@ -83,10 +95,7 @@
     <Compile Include="DAL\DANGNHAP.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\func_XemChiTietHoaDon_DichVu_Result.cs">
-      <DependentUpon>QLKS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\func_XemChiTietHoaDon_VatTu_Result.cs">
+    <Compile Include="DAL\func_XemChiTietHoaDon_VatTu_Result1.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\HOADON.cs">
@@ -255,6 +264,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\fBooking.resx">
       <DependentUpon>fBooking.cs</DependentUpon>
@@ -301,6 +311,7 @@
       <DependentUpon>QLKS.edmx</DependentUpon>
       <LastGenOutput>QLKS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\loading.gif" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

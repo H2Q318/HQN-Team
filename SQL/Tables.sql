@@ -89,7 +89,7 @@ go
 create table DANGNHAP
 (
 	NhanVienID nvarchar(11) not null, 
-	MatKhau nvarchar(20) not null,
+	MatKhau nvarchar(MAX) not null,
 	TrangThai bit not null,
 	constraint pk_dangnhap primary key (nhanvienid),
 	constraint fk_dangnhap_nhanvienid foreign key (nhanvienid) references nhanvien(nhanvienid)
@@ -196,7 +196,6 @@ create table BOOK
 	NgayCheckOut datetime null,
 	NgayCheckIn_ThucTe datetime null,
 	NgayCheckOut_ThucTe datetime null,
-	TrangThaiBookID nvarchar(50) null,
 	ThanhToan decimal null,
 	constraint pk_book primary key (bookid),
 	constraint fk_book_phongid foreign key (phongid) references phong(phongid)
@@ -206,9 +205,6 @@ create table BOOK
 	on delete cascade
 	on update cascade,
 	constraint fk_book_nhanvienid foreign key (nhanvienid) references nhanvien(nhanvienid)
-	on delete cascade
-	on update cascade,
-	constraint fk_book_trangthaibookid foreign key (TrangThaiBookID) references trangthaibook(TrangThaiBookID)
 	on delete cascade
 	on update cascade
 )
@@ -286,5 +282,19 @@ create table LICHSUDANGNHAP
 	ThoiGian datetime not null,
 	constraint pk_lichsudangnhap_nhanvienid_trangthai_thoigian primary key (nhanvienid, trangthai, thoigian),
 	constraint fk_lichsudangnhap_nhanvienid foreign key (NhanVienID) references nhanvien(nhanvienid)
+)
+go
+
+create table HOADONVATDUNGPHONG
+(
+	BookID nvarchar(12) not null,
+	PhongID char(3) not null,
+	TenVatDung nvarchar(50) not null,
+	SoLuongHu Decimal not null,
+	DonGia Decimal not null,
+	constraint pk_hoadonvatdungphong_phongid_tenvatdung primary key (bookid, phongid, tenvatdung),
+	constraint fk_hoadonvatdungphong_bookid foreign key (bookid) references BOOK
+	on delete cascade,
+	constraint fk_hoadonvatdungphong_phongid foreign key (phongid) references PHONG
 )
 go

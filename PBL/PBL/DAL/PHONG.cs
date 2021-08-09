@@ -19,6 +19,7 @@ namespace PBL.DAL
         {
             this.BOOKs = new HashSet<BOOK>();
             this.VATDUNGPHONGs = new HashSet<VATDUNGPHONG>();
+            this.HOADONVATDUNGPHONGs = new HashSet<HOADONVATDUNGPHONG>();
         }
     
         public string PhongID { get; set; }
@@ -30,5 +31,7 @@ namespace PBL.DAL
         public virtual LOAIPHONG LOAIPHONG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VATDUNGPHONG> VATDUNGPHONGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADONVATDUNGPHONG> HOADONVATDUNGPHONGs { get; set; }
     }
 }

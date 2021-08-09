@@ -162,12 +162,13 @@ namespace PBL
             dgvChucVu.DataSource = BLL_QLCV.Instance.GetListChucVu(txbSearchCV.Text);
         }
 
-        //click row tren datagridview se hien thi len cac textbox va combobox
+        //click tren datagridview se hien thi len cac textbox va combobox
         private void dgvChucVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbChucVu.Text = dgvChucVu.SelectedRows[0].Cells["TenChucVu"].Value.ToString();
-            txbMota.Text = dgvChucVu.SelectedRows[0].Cells["MoTa"].Value.ToString();
-            txbQuyenHan.Text = dgvChucVu.SelectedRows[0].Cells["QuyenHan"].Value.ToString();
+            CHUCVU chucVu = BLL_QLCV.Instance.GetChucVuByID(dgvChucVu.SelectedRows[0].Cells["ChucVuID"].Value.ToString());
+            txbChucVu.Text = chucVu.TenChucVu;
+            txbMota.Text = chucVu.MoTa;
+            txbQuyenHan.Text = chucVu.QuyenHan.ToString();
         }
 
         //sap xep chuc vu
@@ -339,15 +340,15 @@ namespace PBL
         //click row tren datagridview se hien thi len cac textbox va combobox
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow selectedrow = dgvStaff.SelectedRows[0];
-            txbName.Text = selectedrow.Cells["Ten"].Value.ToString();
-            cbGender.SelectedIndex = ((bool)selectedrow.Cells["GioiTinh"].Value) ? 0 : 1;
-            dtpBirthday.Value = (DateTime)selectedrow.Cells["NgaySinh"].Value;
-            txbPhone.Text = selectedrow.Cells["SDT"].Value.ToString();
-            txbCMND.Text = selectedrow.Cells["CMND"].Value.ToString();
-            txbAddress.Text = selectedrow.Cells["DiaChi"].Value.ToString();
-            cbPosition.Text = selectedrow.Cells["TenChucVu"].Value.ToString();
-            txbNote.Text = selectedrow.Cells["GhiChu"].Value.ToString();
+            NHANVIEN nhanVien = BLL_QLNV.Instance.GetNhanVienByID(dgvStaff.SelectedRows[0].Cells["NhanVienID"].Value.ToString());
+            txbName.Text = nhanVien.Ten;
+            cbGender.SelectedIndex = (bool)nhanVien.GioiTinh.Value ? 0 : 1;
+            dtpBirthday.Value = (DateTime)nhanVien.NgaySinh;
+            txbPhone.Text = nhanVien.SDT;
+            txbCMND.Text = nhanVien.CMND;
+            txbAddress.Text = nhanVien.DiaChi;
+            cbPosition.Text = nhanVien.CHUCVU.TenChucVu;
+            txbNote.Text = nhanVien.GhiChu;
         }
 
         private void btnClearNV_Click(object sender, EventArgs e)
@@ -434,6 +435,5 @@ namespace PBL
                 e.Handled = true;
             }
         }
-
     }
 }

@@ -11,11 +11,9 @@ namespace PBL.DAL
 {
     using System;
     
-    public partial class func_XemChiTietHoaDon_DichVu_Result
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public string TenDichVu { get; set; }
-        public decimal DonGia { get; set; }
-        public Nullable<int> TongSoLuong { get; set; }
-        public Nullable<decimal> TongThanhTien { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

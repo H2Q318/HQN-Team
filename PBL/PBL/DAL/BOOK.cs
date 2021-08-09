@@ -20,6 +20,7 @@ namespace PBL.DAL
             this.HOADONs = new HashSet<HOADON>();
             this.HOADON_DUNG_DICHVU = new HashSet<HOADON_DUNG_DICHVU>();
             this.KHACHHANGs = new HashSet<KHACHHANG>();
+            this.HOADONVATDUNGPHONGs = new HashSet<HOADONVATDUNGPHONG>();
         }
     
         public string BookID { get; set; }
@@ -42,5 +43,7 @@ namespace PBL.DAL
         public virtual ICollection<HOADON_DUNG_DICHVU> HOADON_DUNG_DICHVU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KHACHHANG> KHACHHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADONVATDUNGPHONG> HOADONVATDUNGPHONGs { get; set; }
     }
 }

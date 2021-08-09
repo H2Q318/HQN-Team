@@ -157,4 +157,4 @@ D:\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CoreCompileInputs.cache
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.exe
 D:\HQN-Team\PBL\PBL\obj\Debug\PBL.pdb
-D:\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.AssemblyReference.cache
+D:\HQN-Team\PBL\PBL\obj\Debug\PBL.csprojAssemblyReference.cache

@@ -68,18 +68,22 @@ namespace PBL
         private void LoadRoom() 
         { 
             List<PHONG> listRoom = BLL_QLP.Instance.GetListPhong();
-            flpRom.Controls.Clear(); 
+            flpRom.Controls.Clear();
+            List<string> t = BLL_QLBOOK.Instance.CheckDatPhong();
             foreach (PHONG item in listRoom) 
             { 
                 Button btn = new Button() { Width = 100, Height = 100 };
                 string s= (!item.TrangThai) ?"Có người":"Trống";
                 btn.Text = item.PhongID + Environment.NewLine + s;
+                if (t.IndexOf(item.PhongID) != -1 && item.TrangThai)
+                {
+                    btn.BackColor = Color.Yellow;
+                    btn.Text = item.PhongID + Environment.NewLine + "Đã đặt";
+                }
+                else
+                    btn.BackColor = item.TrangThai ? Color.Aqua : Color.Red;
                 btn.Click += btn_Click;
-                btn.Tag = item;
-                if(item.TrangThai) 
-                    btn.BackColor = Color.Aqua; 
-                else 
-                    btn.BackColor = Color.Red; 
+                btn.Tag = item;  
                 flpRom.Controls.Add(btn); 
             } 
         }
@@ -161,6 +165,7 @@ namespace PBL
         private void itemDatPhong_Click(object sender, EventArgs e)
         {
             fBooking f = new fBooking();
+            f.d += new fBooking.Mydel(LoadRoom);
             f.ShowDialog();
         }
         private void ItemNhanVien_Click(object sender, EventArgs e)
@@ -473,6 +478,16 @@ namespace PBL
                     e.FormattingApplied = true;
                 }
             }
+        }
+
+        private void txtSeachDP_TextChanged(object sender, EventArgs e)
+        {
+            dgvDPKhachHang.DataSource = BLL_QLKH.Instance.FindKhByName(txtSeachDP.Text);
+        }
+
+        private void txtSeachCk_TextChanged(object sender, EventArgs e)
+        {
+            dgvCIKhachHang.DataSource = BLL_QLKH.Instance.FindKhByName(txtSeachCk.Text);
         }
     }
 }

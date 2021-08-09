@@ -25,7 +25,7 @@ namespace PBL
 
         private BLL_DangNhap() { }
 
-        public string getStringEncoded(string input)
+        private string getStringEncoded(string input)
         {
             MD5 md = MD5.Create();
             byte[] inputString = Encoding.ASCII.GetBytes(input);

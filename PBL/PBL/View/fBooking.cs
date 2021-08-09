@@ -16,7 +16,8 @@ namespace PBL
             InitializeComponent();
             GUI();
         }
-
+        public delegate void Mydel();
+        public Mydel d { get; set; }
         private void GUI()
         {
             ShowDgvBooking();
@@ -114,6 +115,7 @@ namespace PBL
                     MessageBox.Show("Xóa đơn đặt phòng thành công!");
                     RefreshBook();
                     RefreshKhachHang();
+                    d();
                 }
                 else
                 {

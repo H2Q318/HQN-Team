@@ -39,6 +39,11 @@ namespace PBL.BLL
             }
 
         }
+        public List<string> CheckDatPhong()
+        {
+            return new QLKS().BOOKs.Where(p =>p.NgayCheckIn != null && p.NgayCheckIn_ThucTe == null).Select(p=>p.PhongID).ToList();
+                   
+        }
         public void AddBook(BOOK s)
         {
             try

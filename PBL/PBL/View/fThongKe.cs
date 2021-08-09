@@ -14,7 +14,7 @@ namespace PBL
 
         private void SetGUI()
         {
-            cbType.SelectedIndex = 12;
+            cbType.SelectedIndex = 0;
         }
         private void fillChart(int month)
         {
@@ -44,7 +44,14 @@ namespace PBL
 
         private void cbType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            const string titleChart = "Biểu đồ thống kê doanh thu";
+            chartRevenue.Titles[0].Text = titleChart + " " + cbType.SelectedItem.ToString().ToLower();
             fillChart(cbType.SelectedIndex);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            chartRevenue.Printing.PrintPreview();
         }
     }
 }

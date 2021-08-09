@@ -51,9 +51,15 @@ namespace PBL
             dgvService.Columns["SoLuong"].HeaderText = "Số lượng";
             dgvService.Columns["ThanhTien"].HeaderText = "Thành tiền";
         }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -81,7 +81,7 @@ namespace PBL
                     btn.Text = item.PhongID + Environment.NewLine + "Đã đặt";
                 }
                 else
-                    btn.BackColor = item.TrangThai ? Color.Aqua : Color.Red;
+                btn.BackColor = item.TrangThai ? Color.Aqua : Color.Red;
                 btn.Click += btn_Click;
                 btn.Tag = item;  
                 flpRom.Controls.Add(btn); 

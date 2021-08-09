@@ -44,12 +44,13 @@ namespace PBL.BLL
         {
             return new QLKS().HOADONs.Find(hoadonid);
         }
-        public List<BillDV_View> BillService(string hoadonid)
+        public IQueryable<func_XemChiTietHoaDon_DichVu_Result> BillService(string hoadonid)
             /* Trả về danh sách hoá đơn dịch vụ của một hoá đơn trong phần xem chi tiết hoá đơn */
         {
-            return BLL_QLBillDV.Instance.GetListBillDV_View(BLL_QLBillDV.Instance.GetListBillDV(new QLKS().HOADONs.Find(hoadonid).BookID));
+            return new QLKS().func_XemChiTietHoaDon_DichVu(hoadonid);
         }
         public IQueryable<func_XemChiTietHoaDon_VatTu_Result1> BillRoomSupplies(string hoadonid)
+        /* Trả về danh sách hoá đơn vật tư của một hoá đơn trong phần xem chi tiết hoá đơn */
         {
             return new QLKS().func_XemChiTietHoaDon_VatTu(hoadonid);
         }

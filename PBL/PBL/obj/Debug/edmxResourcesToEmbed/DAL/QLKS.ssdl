@@ -411,13 +411,10 @@
     <ReturnType>
       <CollectionType>
         <RowType>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="BookID" Type="nvarchar" MaxLength="12" Nullable="false" />
-          <Property Name="NhanVienID" Type="nvarchar" MaxLength="11" Nullable="false" />
-          <Property Name="DichVuID" Type="nvarchar" MaxLength="5" Nullable="false" />
-          <Property Name="Ngay" Type="datetime" Nullable="false" />
-          <Property Name="SoLuong" Type="int" Nullable="false" />
-          <Property Name="ThanhTien" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TenDichVu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DonGia" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="TongSoLuong" Type="int" />
+          <Property Name="TongThanhTien" Type="decimal" Precision="38" Scale="0" />
         </RowType>
       </CollectionType>
     </ReturnType>

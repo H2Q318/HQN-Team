@@ -416,13 +416,10 @@
           <ReturnType>
             <CollectionType>
               <RowType>
-                <Property Name="ID" Type="int" Nullable="false" />
-                <Property Name="BookID" Type="nvarchar" MaxLength="12" Nullable="false" />
-                <Property Name="NhanVienID" Type="nvarchar" MaxLength="11" Nullable="false" />
-                <Property Name="DichVuID" Type="nvarchar" MaxLength="5" Nullable="false" />
-                <Property Name="Ngay" Type="datetime" Nullable="false" />
-                <Property Name="SoLuong" Type="int" Nullable="false" />
-                <Property Name="ThanhTien" Type="decimal" Precision="18" Scale="0" />
+                <Property Name="TenDichVu" Type="nvarchar" MaxLength="50" Nullable="false" />
+                <Property Name="DonGia" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+                <Property Name="TongSoLuong" Type="int" />
+                <Property Name="TongThanhTien" Type="decimal" Precision="38" Scale="0" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -799,21 +796,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DHP_04Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <ComplexType Name="func_XemChiTietHoaDon_DichVu_Result">
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DichVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ngay" Type="DateTime" Nullable="false" />
-          <Property Name="SoLuong" Type="Int32" Nullable="false" />
-          <Property Name="ThanhTien" Type="Decimal" Precision="18" Scale="0" />
-        </ComplexType>
-        <ComplexType Name="func_XemChiTietHoaDon_VatTu_Result">
-          <Property Name="VatDungID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="tenvatdung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="SoLuongHu" Type="Int32" />
-        </ComplexType>
         <EntityType Name="BOOK">
           <Key>
             <PropertyRef Name="BookID" />
@@ -1230,9 +1212,6 @@
             <End Role="BOOK" EntitySet="BOOKs" />
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
           </AssociationSet>
-          <FunctionImport Name="func_XemChiTietHoaDon_DichVu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_DichVu_Result)">
-          <Parameter Name="hoadonid" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="sp_Cal_HoaDon">
           <Parameter Name="bookid" Mode="In" Type="String" />
           </FunctionImport>
@@ -1516,6 +1495,9 @@
           <FunctionImport Name="func_XemChiTietHoaDon_VatTu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_VatTu_Result1)">
           <Parameter Name="hoadonid" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="func_XemChiTietHoaDon_DichVu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_DichVu_Result)">
+            <Parameter Name="hoadonid" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="LICHSUDANGNHAP">
           <Key>
@@ -1593,6 +1575,12 @@
           <Property Type="String" Name="TenVatDung" Nullable="false" MaxLength="50" />
           <Property Type="Decimal" Name="SoLuongHu" Nullable="false" Precision="18" Scale="0" />
           <Property Type="Decimal" Name="DonGia" Nullable="false" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="func_XemChiTietHoaDon_DichVu_Result">
+          <Property Type="String" Name="TenDichVu" Nullable="false" MaxLength="50" />
+          <Property Type="Decimal" Name="DonGia" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="TongSoLuong" Nullable="true" />
+          <Property Type="Decimal" Name="TongThanhTien" Nullable="true" Precision="38" Scale="0" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1757,19 +1745,6 @@
               <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
             </EndProperty>
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionName="DHP_04Model.Store.func_XemChiTietHoaDon_DichVu" FunctionImportName="func_XemChiTietHoaDon_DichVu">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DHP_04Model.func_XemChiTietHoaDon_DichVu_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="BookID" ColumnName="BookID" />
-                <ScalarProperty Name="NhanVienID" ColumnName="NhanVienID" />
-                <ScalarProperty Name="DichVuID" ColumnName="DichVuID" />
-                <ScalarProperty Name="Ngay" ColumnName="Ngay" />
-                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Cal_HoaDon" FunctionName="DHP_04Model.Store.sp_Cal_HoaDon" />
           <EntitySetMapping Name="LICHSUDANGNHAPs">
             <EntityTypeMapping TypeName="DHP_04Model.LICHSUDANGNHAP">
@@ -1862,6 +1837,16 @@
                 <ScalarProperty Name="TenVatDung" ColumnName="TenVatDung" />
                 <ScalarProperty Name="SoLuongHu" ColumnName="SoLuongHu" />
                 <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="func_XemChiTietHoaDon_DichVu" FunctionName="DHP_04Model.Store.func_XemChiTietHoaDon_DichVu">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DHP_04Model.func_XemChiTietHoaDon_DichVu_Result">
+                <ScalarProperty Name="TenDichVu" ColumnName="TenDichVu" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="TongSoLuong" ColumnName="TongSoLuong" />
+                <ScalarProperty Name="TongThanhTien" ColumnName="TongThanhTien" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

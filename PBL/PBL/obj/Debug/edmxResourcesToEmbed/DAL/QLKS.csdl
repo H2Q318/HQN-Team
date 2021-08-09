@@ -1,20 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DHP_04Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <ComplexType Name="func_XemChiTietHoaDon_DichVu_Result">
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="BookID" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="NhanVienID" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DichVuID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Ngay" Type="DateTime" Nullable="false" />
-    <Property Name="SoLuong" Type="Int32" Nullable="false" />
-    <Property Name="ThanhTien" Type="Decimal" Precision="18" Scale="0" />
-  </ComplexType>
-  <ComplexType Name="func_XemChiTietHoaDon_VatTu_Result">
-    <Property Name="VatDungID" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="tenvatdung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DonGia" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="SoLuongHu" Type="Int32" />
-  </ComplexType>
   <EntityType Name="BOOK">
     <Key>
       <PropertyRef Name="BookID" />
@@ -431,9 +416,6 @@
       <End Role="BOOK" EntitySet="BOOKs" />
       <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
     </AssociationSet>
-    <FunctionImport Name="func_XemChiTietHoaDon_DichVu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_DichVu_Result)">
-      <Parameter Name="hoadonid" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="sp_Cal_HoaDon">
       <Parameter Name="bookid" Mode="In" Type="String" />
     </FunctionImport>
@@ -717,6 +699,9 @@
     <FunctionImport Name="func_XemChiTietHoaDon_VatTu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_VatTu_Result1)">
       <Parameter Name="hoadonid" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="func_XemChiTietHoaDon_DichVu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_DichVu_Result)">
+      <Parameter Name="hoadonid" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="LICHSUDANGNHAP">
     <Key>
@@ -794,5 +779,11 @@
     <Property Type="String" Name="TenVatDung" Nullable="false" MaxLength="50" />
     <Property Type="Decimal" Name="SoLuongHu" Nullable="false" Precision="18" Scale="0" />
     <Property Type="Decimal" Name="DonGia" Nullable="false" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="func_XemChiTietHoaDon_DichVu_Result">
+    <Property Type="String" Name="TenDichVu" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="DonGia" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="TongSoLuong" Nullable="true" />
+    <Property Type="Decimal" Name="TongThanhTien" Nullable="true" Precision="38" Scale="0" />
   </ComplexType>
 </Schema>

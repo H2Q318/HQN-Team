@@ -13,12 +13,9 @@ namespace PBL.DAL
     
     public partial class func_XemChiTietHoaDon_DichVu_Result
     {
-        public int ID { get; set; }
-        public string BookID { get; set; }
-        public string NhanVienID { get; set; }
-        public string DichVuID { get; set; }
-        public System.DateTime Ngay { get; set; }
-        public int SoLuong { get; set; }
-        public Nullable<decimal> ThanhTien { get; set; }
+        public string TenDichVu { get; set; }
+        public decimal DonGia { get; set; }
+        public Nullable<int> TongSoLuong { get; set; }
+        public Nullable<decimal> TongThanhTien { get; set; }
     }
 }

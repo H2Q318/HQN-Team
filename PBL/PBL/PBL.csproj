@@ -67,7 +67,7 @@
     <Compile Include="BLL\BLL_QLDV.cs" />
     <Compile Include="BLL\BLL_QLBOOK.cs" />
     <Compile Include="BLL\BLL_QLKH.cs" />
-    <Compile Include="DAL\func_XemChiTietHoaDon_VatTu_Result.cs">
+    <Compile Include="DAL\func_XemChiTietHoaDon_DichVu_Result.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\HOADONVATDUNGPHONG.cs">
@@ -93,9 +93,6 @@
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DANGNHAP.cs">
-      <DependentUpon>QLKS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\func_XemChiTietHoaDon_DichVu_Result.cs">
       <DependentUpon>QLKS.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\func_XemChiTietHoaDon_VatTu_Result1.cs">

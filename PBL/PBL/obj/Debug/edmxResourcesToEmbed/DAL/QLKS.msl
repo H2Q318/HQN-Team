@@ -158,19 +158,6 @@
         <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
       </EndProperty>
     </AssociationSetMapping>
-    <FunctionImportMapping FunctionName="DHP_04Model.Store.func_XemChiTietHoaDon_DichVu" FunctionImportName="func_XemChiTietHoaDon_DichVu">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DHP_04Model.func_XemChiTietHoaDon_DichVu_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="BookID" ColumnName="BookID" />
-          <ScalarProperty Name="NhanVienID" ColumnName="NhanVienID" />
-          <ScalarProperty Name="DichVuID" ColumnName="DichVuID" />
-          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_Cal_HoaDon" FunctionName="DHP_04Model.Store.sp_Cal_HoaDon" />
     <EntitySetMapping Name="LICHSUDANGNHAPs">
       <EntityTypeMapping TypeName="DHP_04Model.LICHSUDANGNHAP">
@@ -263,6 +250,16 @@
           <ScalarProperty Name="TenVatDung" ColumnName="TenVatDung" />
           <ScalarProperty Name="SoLuongHu" ColumnName="SoLuongHu" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="func_XemChiTietHoaDon_DichVu" FunctionName="DHP_04Model.Store.func_XemChiTietHoaDon_DichVu">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DHP_04Model.func_XemChiTietHoaDon_DichVu_Result">
+          <ScalarProperty Name="TenDichVu" ColumnName="TenDichVu" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="TongSoLuong" ColumnName="TongSoLuong" />
+          <ScalarProperty Name="TongThanhTien" ColumnName="TongThanhTien" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

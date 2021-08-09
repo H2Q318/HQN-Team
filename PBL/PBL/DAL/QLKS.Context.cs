@@ -43,16 +43,6 @@ namespace PBL.DAL
         public virtual DbSet<LICHSUDANGNHAP> LICHSUDANGNHAPs { get; set; }
         public virtual DbSet<HOADONVATDUNGPHONG> HOADONVATDUNGPHONGs { get; set; }
     
-        [DbFunction("QLKS", "func_XemChiTietHoaDon_DichVu")]
-        public virtual IQueryable<func_XemChiTietHoaDon_DichVu_Result> func_XemChiTietHoaDon_DichVu(string hoadonid)
-        {
-            var hoadonidParameter = hoadonid != null ?
-                new ObjectParameter("hoadonid", hoadonid) :
-                new ObjectParameter("hoadonid", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<func_XemChiTietHoaDon_DichVu_Result>("[QLKS].[func_XemChiTietHoaDon_DichVu](@hoadonid)", hoadonidParameter);
-        }
-    
         public virtual int sp_Cal_HoaDon(string bookid)
         {
             var bookidParameter = bookid != null ?
@@ -982,6 +972,16 @@ namespace PBL.DAL
                 new ObjectParameter("hoadonid", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<func_XemChiTietHoaDon_VatTu_Result1>("[QLKS].[func_XemChiTietHoaDon_VatTu](@hoadonid)", hoadonidParameter);
+        }
+    
+        [DbFunction("QLKS", "func_XemChiTietHoaDon_DichVu")]
+        public virtual IQueryable<func_XemChiTietHoaDon_DichVu_Result> func_XemChiTietHoaDon_DichVu(string hoadonid)
+        {
+            var hoadonidParameter = hoadonid != null ?
+                new ObjectParameter("hoadonid", hoadonid) :
+                new ObjectParameter("hoadonid", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<func_XemChiTietHoaDon_DichVu_Result>("[QLKS].[func_XemChiTietHoaDon_DichVu](@hoadonid)", hoadonidParameter);
         }
     }
 }

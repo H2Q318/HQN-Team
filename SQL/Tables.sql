@@ -89,7 +89,7 @@ go
 create table DANGNHAP
 (
 	NhanVienID nvarchar(11) not null, 
-	MatKhau nvarchar(20) not null,
+	MatKhau nvarchar(MAX) not null,
 	TrangThai bit not null,
 	constraint pk_dangnhap primary key (nhanvienid),
 	constraint fk_dangnhap_nhanvienid foreign key (nhanvienid) references nhanvien(nhanvienid)

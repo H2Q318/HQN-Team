@@ -10,7 +10,7 @@
         <EntityTypeShape EntityType="DHP_04Model.DANGNHAP" Width="1.5" PointX="1.875" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.HOADON" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.HOADON_DUNG_DICHVU" Width="1.5" PointX="10.5" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DHP_04Model.KHACHHANG" Width="1.5" PointX="7.625" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DHP_04Model.KHACHHANG" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.LOAIDICHVU" Width="1.5" PointX="8.25" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.LOAIPHONG" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="DHP_04Model.LOAIVATDUNG" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />

@@ -175,8 +175,12 @@ namespace PBL
         public int GetQuyenHanByNhanVienID(string nhanvienid)
         {
             QLKS db = new QLKS();
-            int data = Convert.ToInt32(db.NHANVIENs.Find(nhanvienid).CHUCVU.QuyenHan);
-            return data;
+            var nhanVien = db.NHANVIENs.Find(nhanvienid);
+            if (nhanVien != null)
+            {
+                return Convert.ToInt32(nhanVien.CHUCVU.QuyenHan);
+            }
+            return -1;
         }
     }
 }

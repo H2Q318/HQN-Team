@@ -21,7 +21,11 @@ namespace PBL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (BLL_DangNhap.Instance.CheckPassword(txbUserName.Text, txbPassword.Text))
+            if (txbUserName.Text == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập tài khoản và mật khẩu");
+            }
+            else if (BLL_DangNhap.Instance.CheckPassword(txbUserName.Text, txbPassword.Text))
             {
                 if (!BLL_DangNhap.Instance.isLogin(txbUserName.Text))
                 {

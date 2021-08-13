@@ -48,12 +48,15 @@ namespace PBL
         {
             QLKS db = new QLKS();
             var user = db.DANGNHAPs.Find(username);
-            return user.TrangThai;
+            if (user != null)
+            {
+                return user.TrangThai;
+            }
+            return false;
         }
 
         public bool CheckPassword(string username, string password)
         {
-            if (password == "") return true;
             QLKS db = new QLKS();
             string passwordEncoded = getStringEncoded(password);
             var user = db.DANGNHAPs.Find(username);
@@ -70,8 +73,11 @@ namespace PBL
             {
                 QLKS db = new QLKS();
                 var user = db.DANGNHAPs.Find(username);
-                user.TrangThai = status;
-                db.SaveChanges();
+                if (user != null)
+                {
+                    user.TrangThai = status;
+                    db.SaveChanges();
+                }
             }
             catch { }
         }

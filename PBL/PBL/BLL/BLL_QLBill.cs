@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using Microsoft.Reporting.WinForms;
 using PBL.DAL;
@@ -129,7 +128,7 @@ namespace PBL.BLL
         {
             HOADON hoadon = FindHoaDon(hoadonid);
             BOOK book = BLL_QLBOOK.Instance.Find(hoadon.BookID);
-            int songayo = ((TimeSpan)(book.NgayCheckIn_ThucTe - book.NgayCheckOut_ThucTe)).Days;
+            int songayo = ((TimeSpan)(book.NgayCheckOut_ThucTe - book.NgayCheckIn_ThucTe)).Days + 1;
             List<ReportParameter> data = new List<ReportParameter> 
             {
                 new ReportParameter("pTenKhachSan", tenks),

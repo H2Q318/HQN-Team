@@ -535,9 +535,9 @@ as
 							(select loaiphongid from PHONG where phongid =
 							(select phongid from BOOK where BookID = @bookid))
 
-	select @tienphong = datediff(day,
+	select @tienphong = (datediff(day,
 						(select ngaycheckin_thucte from BOOK where BookID = @bookid), 
-						(select ngaycheckout_thucte from BOOK where BookID = @bookid)) * @gia
+						(select ngaycheckout_thucte from BOOK where BookID = @bookid)) + 1) * @gia
 	
 	select @tiendichvu = sum(thanhtien) from HOADON_DUNG_DICHVU where BookID = @bookid
 

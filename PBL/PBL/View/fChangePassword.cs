@@ -19,29 +19,26 @@ namespace PBL
 
         private void btnUpdatePassword_Click(object sender, EventArgs e)
         {
-            if (txbOldPassword.TextLength != 0 && txbNewPassword.TextLength != 0 && txbNewPasswordAgain.TextLength != 0)
+            if (txbOldPassword.Text == string.Empty || txbNewPassword.Text == string.Empty || txbNewPasswordAgain.Text == string.Empty)
             {
-                if (txbNewPassword.Text.Equals(txbNewPasswordAgain.Text))
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+            }
+            else if (txbNewPassword.Text.Equals(txbNewPasswordAgain.Text))
+            {
+                if (BLL_DangNhap.Instance.CheckPassword(IDNhanVien, txbOldPassword.Text))
                 {
-                    if (BLL_DangNhap.Instance.CheckPassword(IDNhanVien, txbOldPassword.Text))
-                    {
-                        BLL_DangNhap.Instance.UpdatePassword(IDNhanVien, txbNewPassword.Text);
-                        MessageBox.Show("Đổi mật khẩu thành công!");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đổi mật khẩu không thành công! Vui lòng kiểm tra lại");
-                    }
+                    BLL_DangNhap.Instance.UpdatePassword(IDNhanVien, txbNewPassword.Text);
+                    MessageBox.Show("Đổi mật khẩu thành công!");
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu không khớp! Vui lòng kiểm tra lại");
+                    MessageBox.Show("Đổi mật khẩu không thành công! Vui lòng kiểm tra lại");
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
+                MessageBox.Show("Mật khẩu không khớp! Vui lòng kiểm tra lại");
             }
         }
         #endregion

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using PBL.BLL;
 using PBL.DAL;
+using PBL.View;
 
 namespace PBL
 {
@@ -57,7 +58,8 @@ namespace PBL
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            
+            Print f = new Print(HoaDonID);
+            f.ShowDialog();
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using Microsoft.Reporting.WinForms;
 using PBL.DAL;
-using PBL.DTO;
 
 namespace PBL.BLL
 {
@@ -122,6 +123,34 @@ namespace PBL.BLL
                     }
                 } 
             }
+            return data;
+        }
+        public List<ReportParameter> GetListReportParameters(string hoadonid, string tenks, string diachi, string tongdai, string website)
+        {
+            HOADON hoadon = FindHoaDon(hoadonid);
+            BOOK book = BLL_QLBOOK.Instance.Find(hoadon.BookID);
+            int songayo = ((TimeSpan)(book.NgayCheckIn_ThucTe - book.NgayCheckOut_ThucTe)).Days;
+            List<ReportParameter> data = new List<ReportParameter> 
+            {
+                new ReportParameter("pTenKhachSan", tenks),
+                new ReportParameter("pDiaChi", diachi),
+                new ReportParameter("pTongDai", tongdai),
+                new ReportParameter("pWebsite", website),
+                new ReportParameter("pTenKhachHang", book.KHACHHANG.Ten),
+                new ReportParameter("pGioiTinh", (bool)book.KHACHHANG.GioiTinh ? "Nam" : "Nữ"),
+                new ReportParameter("pCMND", book.KHACHHANG.CMND),
+                new ReportParameter("pSDT", book.KHACHHANG.SDT),
+                new ReportParameter("pMaHoaDon", hoadonid),
+                new ReportParameter("pPhong", book.PhongID),
+                new ReportParameter("pNgayCheckin", book.NgayCheckIn_ThucTe.ToString()),
+                new ReportParameter("pNgayCheckout", book.NgayCheckOut_ThucTe.ToString()),
+                new ReportParameter("pTongTienDichVu", hoadon.TienDichVu.ToString()),
+                new ReportParameter("pTongTienPhong", hoadon.TienPhong.ToString()),
+                new ReportParameter("pTongTienVatTu", hoadon.TienVatTu.ToString()),
+                new ReportParameter("pGiaPhong", book.PHONG.LOAIPHONG.Gia.ToString()),
+                new ReportParameter("pSoNgayO", songayo != 0 ? songayo.ToString() : "1"),
+                new ReportParameter("pTongTien", hoadon.TongTien.ToString())
+            };
             return data;
         }
     }

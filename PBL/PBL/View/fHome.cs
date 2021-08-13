@@ -257,18 +257,44 @@ namespace PBL
         }
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-            BOOK s = new BOOK()
+            if (BLL_QLBOOK.Instance.CheckNgayDat(IDPhong, dtpDPNgayDen.Value, dtpDPNgayDi.Value))
             {
-                KhachHangID = txbDPMaKhach.Text,
-                NhanVienID = txbDPMaNV.Text,
-                PhongID = txbDPMaPhong.Text,
-                NgayCheckIn = dtpDPNgayDen.Value,
-                NgayCheckOut = dtpDPNgayDi.Value,
-                NgayDat = DateTime.Now
-            };
-            BLL_QLBOOK.Instance.AddDatPhong(s);
-            LoadRoom();
-            ResetDatPhong();
+                if (string.IsNullOrWhiteSpace(txbDPMaPhong.Text))
+                {
+                    errorProvider1.SetError(txbDPMaPhong, "Vui lòng chọn phòng");
+                    return;
+                }
+                if(txbDPMaKhach.Text.Length==0)
+                {
+                    errorProvider1.SetError(txbDPMaKhach, "Vui lòng chọn khách hàng");
+                    return;
+                }    
+                BOOK s = new BOOK()
+                {
+                    KhachHangID = txbDPMaKhach.Text,
+                    NhanVienID = txbDPMaNV.Text,
+                    PhongID = txbDPMaPhong.Text,
+                    NgayCheckIn = dtpDPNgayDen.Value,
+                    NgayCheckOut = dtpDPNgayDi.Value,
+                    NgayDat = DateTime.Now
+                };
+               if( BLL_QLBOOK.Instance.AddDatPhong(s))
+                {
+                    MessageBox.Show("Đặt phòng không thành công");
+
+                }    else
+                {
+                    MessageBox.Show("Đặt phòng thành công");
+                }    
+                LoadRoom();
+                ResetDatPhong();
+                errorProvider1.SetError(txbDPMaPhong, "");
+                errorProvider1.SetError(txbDPMaKhach, "");
+            }
+            else
+            {
+                MessageBox.Show("Đã có người đặt thời gian trên");
+            }    
         }
         private void btnThemKh_Click(object sender, EventArgs e)
         {
@@ -304,7 +330,14 @@ namespace PBL
                 NgayCheckIn_ThucTe = dtbNgayDenThucTe.Value,
                 NgayDat = DateTime.Now
             };
-            BLL_QLBOOK.Instance.AddBook(s);
+           if( BLL_QLBOOK.Instance.AddBook(s))
+           {
+                MessageBox.Show("Checkin không thành công");
+            }   
+           else
+           {
+                MessageBox.Show("Checkin thành công");
+            }    
             LoadRoom();
             ResetCheckin();
         }
@@ -488,6 +521,6 @@ namespace PBL
         private void txtSeachCk_TextChanged(object sender, EventArgs e)
         {
             dgvCIKhachHang.DataSource = BLL_QLKH.Instance.FindKhByName(txtSeachCk.Text);
-        }
+        }  
     }
 }

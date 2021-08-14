@@ -368,3 +368,4 @@ C:\Users\vuxua\HQN-Team\PBL\PBL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms
 C:\Users\vuxua\HQN-Team\PBL\PBL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\vuxua\HQN-Team\PBL\PBL\obj\Debug\PBL.View.HotelInfoSetting.resources
 C:\Users\vuxua\HQN-Team\PBL\PBL\obj\Debug\PBL.View.Print.resources
+C:\Users\ACER\OneDrive\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.View.HotelInfoSetting.resources

@@ -58,10 +58,10 @@ namespace PBL
         public bool CheckPassword(string username, string password)
         {
             QLKS db = new QLKS();
-            string passwordEncoded = getStringEncoded(password);
             var user = db.DANGNHAPs.Find(username);
             if (user != null)
             {
+                string passwordEncoded = getStringEncoded(password);
                 if (passwordEncoded.Equals(user.MatKhau))
                 {
                     return true;

@@ -32,6 +32,17 @@ namespace PBL
             txbMaNvOut.Text = IDNhanVien;
             switch(BLL_QLNV.Instance.GetQuyenHanByNhanVienID(IDNhanVien))
             {
+                case 0:
+                    itemNhanVienVaChucVu.Enabled = true;
+                    itemVatTu.Enabled = true;
+                    itemQLTaiKhoan.Enabled = true;
+                    menuItemThongKe.Enabled = true;
+                    itemMenuChinh.Enabled = true;
+                    itemBook.Enabled = true;
+                    ItemHoaDon.Enabled = true;
+                    itemQLTaiKhoan.Enabled = true;
+                    EnableButton();
+                    break;
                 case 1:
                     itemNhanVienVaChucVu.Enabled = false;
                     itemVatTu.Enabled = false;
@@ -149,6 +160,7 @@ namespace PBL
         {
             fStaffManager f = new fStaffManager();
             f.ShowDialog();
+            HomeLoad();
         }
         private void itemMenuChinh_Click(object sender, EventArgs e)
         {
@@ -156,37 +168,44 @@ namespace PBL
             f.Send += new fMenuQuanLy.Delegate_fHome(LoadDataGridView);
             f.Send += new fMenuQuanLy.Delegate_fHome(LoadMenudv);
             f.ShowDialog();
+            HomeLoad();
         }
         private void itemVatTu_Click(object sender, EventArgs e)
         {
             fManageSupplies f = new fManageSupplies();
             f.ShowDialog();
+            HomeLoad();
         }
         private void itemDatPhong_Click(object sender, EventArgs e)
         {
             fBooking f = new fBooking();
             f.d += new fBooking.Mydel(LoadRoom);
             f.ShowDialog();
+            HomeLoad();
         }
         private void ItemNhanVien_Click(object sender, EventArgs e)
         {
             fAccount f = new fAccount(IDNhanVien);
             f.ShowDialog();
+            HomeLoad();
         }
         private void ItemThongKe_Click(object sender, EventArgs e)
         {
             fThongKe f = new fThongKe();
             f.ShowDialog();
+            HomeLoad();
         }
         private void ItemHoaDon_Click(object sender, EventArgs e)
         {
             fHoaDon f = new fHoaDon(IDNhanVien);
             f.ShowDialog();
+            HomeLoad();
         }
         private void ItemTaiKhoan_Click(object sender, EventArgs e)
         {
             fQLTaiKhoan f = new fQLTaiKhoan();
             f.ShowDialog();
+            HomeLoad();
         }
         #endregion
         #region Reset
@@ -461,6 +480,17 @@ namespace PBL
             return x.Date > y.Date;
         }
         #endregion
+        #region Enable Button
+        private void EnableButton()
+        {
+            btnThemKh.Enabled = true;
+            btnDatPhong.Enabled = true;
+            btnCheckin.Enabled = true;
+            btnThemDv.Enabled = true;
+            btnCheckOut.Enabled = true;
+            btnDetail.Enabled = true;
+        }
+        #endregion
         #region Disable Button
         private void DisableButton()
         {
@@ -521,6 +551,6 @@ namespace PBL
         private void txtSeachCk_TextChanged(object sender, EventArgs e)
         {
             dgvCIKhachHang.DataSource = BLL_QLKH.Instance.FindKhByName(txtSeachCk.Text);
-        }  
+        }
     }
 }

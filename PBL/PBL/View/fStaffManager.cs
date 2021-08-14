@@ -26,7 +26,7 @@ namespace PBL
             cbPosition.SelectedIndex = 0;
             cbSortCV.SelectedIndex = 0;
             cbSearchCV.SelectedIndex = 0;
-
+            cbQuyenHan.SelectedIndex = 0;
         }
         private void RefreshGUINhanVien()
         {
@@ -46,7 +46,7 @@ namespace PBL
             txbSearchCV.Clear();
             txbChucVu.Clear();
             txbMota.Clear();
-            txbQuyenHan.Clear();
+            cbQuyenHan.SelectedIndex = 0;
             ShowDgvChucVu();
         }
 
@@ -65,13 +65,13 @@ namespace PBL
         //Them chuc vu
         private void btnAddCV_Click(object sender, EventArgs e)
         {
-            if (txbChucVu.TextLength != 0 && txbQuyenHan.TextLength != 0)
+            if (txbChucVu.TextLength != 0)
             {
                 CHUCVU cv = new CHUCVU
                 {
                     TenChucVu = txbChucVu.Text,
                     MoTa = txbMota.Text,
-                    QuyenHan = Convert.ToInt32(txbQuyenHan.Text)
+                    QuyenHan = Convert.ToInt32(cbQuyenHan.SelectedItem.ToString())
                 };
                 if (BLL_QLCV.Instance.AddChucVu(cv))
                 {
@@ -95,14 +95,14 @@ namespace PBL
         {
             try
             {
-                if (txbChucVu.TextLength != 0 && txbQuyenHan.TextLength != 0)
+                if (txbChucVu.TextLength != 0)
                 {
                     CHUCVU cv = new CHUCVU
                     {
                         ChucVuID = dgvChucVu.SelectedRows[0].Cells["ChucVuID"].Value.ToString(),
                         TenChucVu = txbChucVu.Text,
                         MoTa = txbMota.Text,
-                        QuyenHan = Convert.ToInt32(txbQuyenHan.Text)
+                        QuyenHan = Convert.ToInt32(cbQuyenHan.SelectedItem.ToString())
                     };
                     if (BLL_QLCV.Instance.UpdateChucVu(cv))
                     {
@@ -168,7 +168,7 @@ namespace PBL
             CHUCVU chucVu = BLL_QLCV.Instance.GetChucVuByID(dgvChucVu.SelectedRows[0].Cells["ChucVuID"].Value.ToString());
             txbChucVu.Text = chucVu.TenChucVu;
             txbMota.Text = chucVu.MoTa;
-            txbQuyenHan.Text = chucVu.QuyenHan.ToString();
+            cbQuyenHan.Text = chucVu.QuyenHan.ToString();
         }
 
         //sap xep chuc vu

@@ -1945,8 +1945,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>16.94801cm</Top>
-            <Left>9.69112cm</Left>
+            <Top>16.24217cm</Top>
+            <Left>9.66449cm</Left>
             <Height>0.6cm</Height>
             <Width>2.3095cm</Width>
             <ZIndex>38</ZIndex>
@@ -1981,8 +1981,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>16.91273cm</Top>
-            <Left>1.75191cm</Left>
+            <Top>16.20689cm</Top>
+            <Left>1.72528cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>39</ZIndex>
@@ -2015,8 +2015,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox56</rd:DefaultName>
-            <Top>17.61857cm</Top>
-            <Left>1.75191cm</Left>
+            <Top>16.91273cm</Top>
+            <Left>1.72528cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>40</ZIndex>
@@ -2049,8 +2049,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox56</rd:DefaultName>
-            <Top>17.61857cm</Top>
-            <Left>9.69112cm</Left>
+            <Top>16.91273cm</Top>
+            <Left>9.66449cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>41</ZIndex>
@@ -2170,7 +2170,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>8.27in</Height>
+        <Height>8.3in</Height>
         <Style />
       </Body>
       <Width>5.83in</Width>
@@ -2221,10 +2221,14 @@
     </ReportParameter>
     <ReportParameter Name="pCMND">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="pSDT">
       <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="pMaHoaDon">

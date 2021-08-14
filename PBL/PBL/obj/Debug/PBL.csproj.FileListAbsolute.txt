@@ -246,3 +246,4 @@ C:\Users\vuxua\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CoreCompileInputs.cache
 C:\Users\vuxua\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete
 C:\Users\vuxua\HQN-Team\PBL\PBL\obj\Debug\PBL.exe
 C:\Users\vuxua\HQN-Team\PBL\PBL\obj\Debug\PBL.pdb
+D:\COSMOS\STUDY\Sophomore\HKII\PBL3\HQN-Team\PBL\PBL\obj\Debug\PBL.View.HotelInfoSetting.resources

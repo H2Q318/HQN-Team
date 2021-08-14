@@ -158,6 +158,7 @@ namespace PBL
 
         private void dgvBooking_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             ShowDGVKhachHang();
 
             BOOK book = BLL_QLBOOK.Instance.Find(dgvBooking.SelectedRows[0].Cells["BookID"].Value.ToString());
@@ -227,6 +228,7 @@ namespace PBL
 
         private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             btXoaKH.Enabled = true;
             btnDetail.Enabled = true;
         }

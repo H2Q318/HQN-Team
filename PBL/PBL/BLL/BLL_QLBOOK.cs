@@ -177,6 +177,7 @@ namespace PBL.BLL
         {
                 QLKS db = new QLKS();
                 db.BOOKs.Find(IDBook).NgayCheckOut_ThucTe = t;
+                db.SaveChanges();
                 db.sp_Cal_HoaDon(IDBook);
                 db.SaveChanges();
                 var s = db.HOADONs.Where(p => p.BookID == IDBook).First();

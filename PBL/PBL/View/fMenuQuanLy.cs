@@ -199,6 +199,7 @@ namespace PBL
         }
         private void dgvPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             PHONG p = BLL_QLP.Instance.FindPhong(dgvPhong.SelectedRows[0].Cells["PhongID"].Value.ToString());
             txbMaPhong.Text = p.PhongID;
             cbTenLoaiPhong.SelectedIndex = cbTenLoaiPhongIndexOf(p.LoaiPhongID);
@@ -352,6 +353,7 @@ namespace PBL
 
         private void dgvLoaiPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             LOAIPHONG lp = BLL_QLLP.Instance.FindLoaiPhong(dgvLoaiPhong.SelectedRows[0].Cells["TenLoaiPhong"].Value.ToString());
             txbGiaLP.Text = lp.Gia.ToString();
             txbTenLoaiPhong.Text = lp.TenLoaiPhong;
@@ -512,6 +514,7 @@ namespace PBL
 
         private void dgvVatTu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             LOAIVATDUNG lvd = BLL_QLVD.Instance.FindLoaiVatDung(dgvLoaiVatDung.SelectedRows[0].Cells["TenVatDung"].Value.ToString());
             txbTenVt.Text = lvd.TenVatDung;
             checkBoxTBCoDinh.Checked = (bool)lvd.ThietBiCoDinh;
@@ -699,6 +702,7 @@ namespace PBL
 
         private void dgvDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             txbTenDV.Text = dgvDichVu.SelectedRows[0].Cells["TenDichVu"].Value.ToString();
             txbGiaDV.Text = dgvDichVu.SelectedRows[0].Cells["DonGia"].Value.ToString();
             txbOpenDV.Text = dgvDichVu.SelectedRows[0].Cells["GioMo"].Value.ToString();
@@ -875,6 +879,7 @@ namespace PBL
         }
         private void dgvBillDV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             HOADON_DUNG_DICHVU p = BLL_QLBillDV.Instance.FindBillDV(Convert.ToInt32(dgvBillDV.SelectedRows[0].Cells["ID"].Value.ToString()));
             txbMaBill.Text = p.ID.ToString();
             txbMaBook.Text = p.BookID;

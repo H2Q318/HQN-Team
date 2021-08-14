@@ -159,6 +159,7 @@ namespace PBL
         }
         private void dgvVatDungPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex == -1) return;
             VATDUNGPHONG vdp = BLL_QLVDP.Instance.FindVatDungPhong(new DTO.Keys
             {
                 key1 = dgvVatDungPhong.SelectedRows[0].Cells["Phong"].Value.ToString(),

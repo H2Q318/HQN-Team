@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBooking));
             this.dgvBooking = new System.Windows.Forms.DataGridView();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.lbSort = new System.Windows.Forms.Label();
+            this.cbbSortBook = new System.Windows.Forms.ComboBox();
             this.lbLocBook = new System.Windows.Forms.Label();
             this.cbbFilterBook = new System.Windows.Forms.ComboBox();
             this.lbSearch = new System.Windows.Forms.Label();
@@ -80,8 +82,6 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.lbID = new System.Windows.Forms.Label();
             this.txbPhongID = new System.Windows.Forms.TextBox();
-            this.lbSort = new System.Windows.Forms.Label();
-            this.cbbSortBook = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -135,6 +135,38 @@
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(1447, 76);
             this.panel18.TabIndex = 2;
+            // 
+            // lbSort
+            // 
+            this.lbSort.AutoSize = true;
+            this.lbSort.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSort.Location = new System.Drawing.Point(359, 26);
+            this.lbSort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSort.Name = "lbSort";
+            this.lbSort.Size = new System.Drawing.Size(57, 24);
+            this.lbSort.TabIndex = 25;
+            this.lbSort.Text = "Sort:";
+            // 
+            // cbbSortBook
+            // 
+            this.cbbSortBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSortBook.FormattingEnabled = true;
+            this.cbbSortBook.Items.AddRange(new object[] {
+            "Theo mã Book",
+            "Theo phòng",
+            "Theo tên khách hàng",
+            "Theo tên nhân viên",
+            "Theo ngày đặt",
+            "Theo ngày checkin",
+            "Theo ngày checkout",
+            "Theo ngày checkin thực tế",
+            "Theo ngày checkout thực tế",
+            "Theo thanh toán"});
+            this.cbbSortBook.Location = new System.Drawing.Point(423, 26);
+            this.cbbSortBook.Name = "cbbSortBook";
+            this.cbbSortBook.Size = new System.Drawing.Size(197, 24);
+            this.cbbSortBook.TabIndex = 24;
+            this.cbbSortBook.DropDownClosed += new System.EventHandler(this.cbbSortBook_DropDownClosed);
             // 
             // lbLocBook
             // 
@@ -690,38 +722,6 @@
             this.txbPhongID.ReadOnly = true;
             this.txbPhongID.Size = new System.Drawing.Size(233, 26);
             this.txbPhongID.TabIndex = 0;
-            // 
-            // lbSort
-            // 
-            this.lbSort.AutoSize = true;
-            this.lbSort.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSort.Location = new System.Drawing.Point(359, 26);
-            this.lbSort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbSort.Name = "lbSort";
-            this.lbSort.Size = new System.Drawing.Size(57, 24);
-            this.lbSort.TabIndex = 25;
-            this.lbSort.Text = "Sort:";
-            // 
-            // cbbSortBook
-            // 
-            this.cbbSortBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbSortBook.FormattingEnabled = true;
-            this.cbbSortBook.Items.AddRange(new object[] {
-            "Theo mã Book",
-            "Theo phòng",
-            "Theo tên khách hàng",
-            "Theo tên nhân viên",
-            "Theo ngày đặt",
-            "Theo ngày checkin",
-            "Theo ngày checkout",
-            "Theo ngày checkin thực tế",
-            "Theo ngày checkout thực tế",
-            "Theo thanh toán"});
-            this.cbbSortBook.Location = new System.Drawing.Point(423, 26);
-            this.cbbSortBook.Name = "cbbSortBook";
-            this.cbbSortBook.Size = new System.Drawing.Size(197, 24);
-            this.cbbSortBook.TabIndex = 24;
-            this.cbbSortBook.DropDownClosed += new System.EventHandler(this.cbbSortBook_DropDownClosed);
             // 
             // fBooking
             // 

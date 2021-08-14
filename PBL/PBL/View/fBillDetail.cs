@@ -59,7 +59,7 @@ namespace PBL
         private void btnPrint_Click(object sender, EventArgs e)
         {
             Print f = new Print(HoaDonID);
-            f.Show();
+            f.ShowDialog();
         }
     }
 }

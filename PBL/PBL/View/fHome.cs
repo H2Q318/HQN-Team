@@ -380,6 +380,8 @@ namespace PBL
             }    
             LoadRoom();
             ResetCheckin();
+            errorProvider1.SetError(txbCIMaKhach, "");
+            errorProvider1.SetError(txbCIMaPhong, "");
         }
         private void btnDPReset_Click(object sender, EventArgs e)
         {

@@ -175,7 +175,7 @@ namespace PBL
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(1505, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1505, 30);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -189,7 +189,7 @@ namespace PBL
             this.ItemHoaDon,
             this.itemQLTaiKhoan});
             this.menuItemMenu.Name = "menuItemMenu";
-            this.menuItemMenu.Size = new System.Drawing.Size(73, 24);
+            this.menuItemMenu.Size = new System.Drawing.Size(73, 26);
             this.menuItemMenu.Text = "Quản lý";
             // 
             // itemMenuChinh
@@ -241,7 +241,7 @@ namespace PBL
             this.itemDoiMatKhau,
             this.itemDangXuat});
             this.menuItemNhanVien.Name = "menuItemNhanVien";
-            this.menuItemNhanVien.Size = new System.Drawing.Size(91, 24);
+            this.menuItemNhanVien.Size = new System.Drawing.Size(91, 26);
             this.menuItemNhanVien.Text = "Nhân Viên";
             // 
             // itemTaiKhoan
@@ -269,7 +269,7 @@ namespace PBL
             // menuItemThongKe
             // 
             this.menuItemThongKe.Name = "menuItemThongKe";
-            this.menuItemThongKe.Size = new System.Drawing.Size(86, 24);
+            this.menuItemThongKe.Size = new System.Drawing.Size(86, 26);
             this.menuItemThongKe.Text = "Thống Kê";
             this.menuItemThongKe.Click += new System.EventHandler(this.ItemThongKe_Click);
             // 
@@ -298,7 +298,7 @@ namespace PBL
             this.flpRom.Location = new System.Drawing.Point(0, 0);
             this.flpRom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpRom.Name = "flpRom";
-            this.flpRom.Size = new System.Drawing.Size(881, 706);
+            this.flpRom.Size = new System.Drawing.Size(881, 704);
             this.flpRom.TabIndex = 0;
             // 
             // panel6
@@ -308,7 +308,7 @@ namespace PBL
             this.panel6.Location = new System.Drawing.Point(886, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(619, 706);
+            this.panel6.Size = new System.Drawing.Size(619, 704);
             this.panel6.TabIndex = 7;
             // 
             // tbMain
@@ -323,7 +323,7 @@ namespace PBL
             this.tbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMain.Name = "tbMain";
             this.tbMain.SelectedIndex = 0;
-            this.tbMain.Size = new System.Drawing.Size(619, 706);
+            this.tbMain.Size = new System.Drawing.Size(619, 704);
             this.tbMain.TabIndex = 1;
             // 
             // tpKhachHang
@@ -346,7 +346,7 @@ namespace PBL
             this.tpKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpKhachHang.Name = "tpKhachHang";
             this.tpKhachHang.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpKhachHang.Size = new System.Drawing.Size(611, 677);
+            this.tpKhachHang.Size = new System.Drawing.Size(611, 675);
             this.tpKhachHang.TabIndex = 0;
             this.tpKhachHang.Text = "Khách hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
@@ -514,7 +514,7 @@ namespace PBL
             this.tpBooking.Margin = new System.Windows.Forms.Padding(4);
             this.tpBooking.Name = "tpBooking";
             this.tpBooking.Padding = new System.Windows.Forms.Padding(4);
-            this.tpBooking.Size = new System.Drawing.Size(611, 675);
+            this.tpBooking.Size = new System.Drawing.Size(611, 677);
             this.tpBooking.TabIndex = 4;
             this.tpBooking.Text = "Đặt phòng";
             this.tpBooking.UseVisualStyleBackColor = true;
@@ -887,7 +887,7 @@ namespace PBL
             this.tpBillDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpBillDichVu.Name = "tpBillDichVu";
             this.tpBillDichVu.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpBillDichVu.Size = new System.Drawing.Size(611, 675);
+            this.tpBillDichVu.Size = new System.Drawing.Size(611, 677);
             this.tpBillDichVu.TabIndex = 2;
             this.tpBillDichVu.Text = "Bill Dịch Vụ";
             this.tpBillDichVu.UseVisualStyleBackColor = true;
@@ -1066,7 +1066,7 @@ namespace PBL
             this.tpCheckOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpCheckOut.Name = "tpCheckOut";
             this.tpCheckOut.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpCheckOut.Size = new System.Drawing.Size(611, 675);
+            this.tpCheckOut.Size = new System.Drawing.Size(611, 677);
             this.tpCheckOut.TabIndex = 3;
             this.tpCheckOut.Text = "CheckOut";
             this.tpCheckOut.UseVisualStyleBackColor = true;
@@ -1311,10 +1311,10 @@ namespace PBL
             this.panel7.Controls.Add(this.panel6);
             this.panel7.Controls.Add(this.flpRom);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 28);
+            this.panel7.Location = new System.Drawing.Point(0, 30);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1505, 706);
+            this.panel7.Size = new System.Drawing.Size(1505, 704);
             this.panel7.TabIndex = 8;
             // 
             // errorProvider1

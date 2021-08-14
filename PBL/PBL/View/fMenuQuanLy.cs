@@ -987,25 +987,32 @@ namespace PBL
         }
         private void btnThemKh_Click(object sender, EventArgs e)
         {
-            if(txbMaKhach.Text.Length>0)
+            if (txbMaKhach.Text.Length > 0)
             {
                 MessageBox.Show("Vui lòng reset lại giá trị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }    
-            KHACHHANG s = new KHACHHANG()
-            {
+            }
+            if ((txbHoTen.Text.Trim()!="")&&(txbDienThoai.Text.Trim()!="")&&(txbCMND.Text.Trim()!=""))
+            {    
+                KHACHHANG s = new KHACHHANG()
+                {
 
-                KhachHangID = txbMaKhach.Text,
-                Ten = txbHoTen.Text,
-                GioiTinh = rdbMale.Checked ? true : false,
-                CMND =txbCMND.Text,
-                SDT = txbDienThoai.Text,
-                QuocTich = txbQuocTich.Text,
-                GhiChu = txbGhiChu.Text
-            };
+                    KhachHangID = txbMaKhach.Text,
+                    Ten = txbHoTen.Text,
+                    GioiTinh = rdbMale.Checked ? true : false,
+                    CMND = txbCMND.Text,
+                    SDT = txbDienThoai.Text,
+                    QuocTich = txbQuocTich.Text,
+                    GhiChu = txbGhiChu.Text
+                };
             BLL_QLKH.Instance.AddKh(s);
             ShowDgvKh();
             Send();
+        }
+        else
+        {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
         }
 
         private void btnSuaKh_Click(object sender, EventArgs e)
@@ -1071,6 +1078,8 @@ namespace PBL
         private void btnResetSkh_Click(object sender, EventArgs e)
         {
             txbSeachkh.Text = "";
+            ShowDgvKh();
+
         }
         private List<string> GetListKh()
         {

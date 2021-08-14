@@ -241,19 +241,30 @@ namespace PBL
             txbCIGhiChu.Text = "";
             txbCIMaKhach.Text = "";
             txbCIMaPhong.Text = "";
-            dtbNgayDenThucTe.Value = DateTime.Now;
         }
 
         #endregion
         #region dgv
-        private void dgvCIKhachHang_Click(object sender, EventArgs e)
+        private void dgvCIKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbCIMaKhach.Text = dgvCIKhachHang.CurrentRow.Cells["KhachHangID"].Value.ToString();
+            try
+            {
+                txbCIMaKhach.Text = dgvCIKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString();
+            }
+            catch
+            { }
         }
-        private void dgvDPKhachHang_Click(object sender, EventArgs e)
+
+        private void dgvDPKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txbDPMaKhach.Text = dgvDPKhachHang.CurrentRow.Cells["KhachHangID"].Value.ToString();
+            try
+            {
+                txbDPMaKhach.Text = dgvDPKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString();
+            }
+            catch
+            { }
         }
+
         #endregion
         #region Button
         void btn_Click(object sender, EventArgs e)
@@ -317,7 +328,7 @@ namespace PBL
         }
         private void btnThemKh_Click(object sender, EventArgs e)
         {
-            if ((txbKHHoTen.Text.Trim() != "") && (txbKHQuocTich.Text.Trim() != ""))
+            if ((txbKHHoTen.Text.Trim() != "") && (txbKHCMND.Text.Trim() != "")&&(txbKHSdt.Text.Trim()!=""))
             {
                 KHACHHANG s = new KHACHHANG()
                 {
@@ -341,12 +352,22 @@ namespace PBL
         }
         private void btnCheckin_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txbCIMaKhach.Text))
+            {
+                errorProvider1.SetError(txbCIMaKhach, "Vui lòng chọn khách cần checkin");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txbCIMaPhong.Text))
+            {
+                errorProvider1.SetError(txbCIMaPhong, "Vui lòng chọn phòng cần checkin");
+                return;
+            }
             BOOK s = new BOOK()
             {
                 KhachHangID = txbCIMaKhach.Text,
                 NhanVienID = txbCIMaNV.Text,
                 PhongID = txbCIMaPhong.Text,
-                NgayCheckIn_ThucTe = dtbNgayDenThucTe.Value,
+                NgayCheckIn_ThucTe = DateTime.Now,
                 NgayDat = DateTime.Now
             };
            if( BLL_QLBOOK.Instance.AddBook(s))
@@ -550,5 +571,7 @@ namespace PBL
         {
             dgvCIKhachHang.DataSource = BLL_QLKH.Instance.FindKhByName(txtSeachCk.Text);
         }
+
+
     }
 }

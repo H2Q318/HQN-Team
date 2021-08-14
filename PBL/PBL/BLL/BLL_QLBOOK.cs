@@ -67,10 +67,16 @@ namespace PBL.BLL
                 {
                     if (db.PHONGs.Find(s.PhongID).LOAIPHONG.SoNguoi > db.BOOKs.Find(t[0]).KHACHHANGs.Count)
                     {
-                        db.BOOKs.Find(t[0]).KHACHHANGs.Add(db.KHACHHANGs.Find(s.KhachHangID));
-                        //db.KHACHHANGs.Find(s.KhachHangID).BOOKs1.Add(db.BOOKs.Find(t[0])); //cách 2
-                        db.SaveChanges();
-                        return false;
+                        if (MessageBox.Show("Checkin vào phòng của khách hàng \n "+ db.BOOKs.Find(t[0]).KHACHHANG.Ten + "\n Bạn có muốn tiếp tục Checkin", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                        {
+                            db.BOOKs.Find(t[0]).KHACHHANGs.Add(db.KHACHHANGs.Find(s.KhachHangID));
+                            //db.KHACHHANGs.Find(s.KhachHangID).BOOKs1.Add(db.BOOKs.Find(t[0])); //cách 2
+                            db.SaveChanges();
+                            return false;
+                        }else
+                        {
+                            return true;
+                        }    
                     }
                     else
                     {

@@ -65,10 +65,17 @@ namespace PBL.BLL
                                     && (p.NgayCheckOut_ThucTe == null)).Select(p => p.BookID).ToList();
                 if (t.Count > 0)
                 {
-                    db.BOOKs.Find(t[0]).KHACHHANGs.Add(db.KHACHHANGs.Find(s.KhachHangID));
-                   //db.KHACHHANGs.Find(s.KhachHangID).BOOKs1.Add(db.BOOKs.Find(t[0])); //cách 2
-                    db.SaveChanges();
-                    return false;
+                    if (db.PHONGs.Find(s.PhongID).LOAIPHONG.SoNguoi > db.BOOKs.Find(t[0]).KHACHHANGs.Count)
+                    {
+                        db.BOOKs.Find(t[0]).KHACHHANGs.Add(db.KHACHHANGs.Find(s.KhachHangID));
+                        //db.KHACHHANGs.Find(s.KhachHangID).BOOKs1.Add(db.BOOKs.Find(t[0])); //cách 2
+                        db.SaveChanges();
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }    
                 }
                 var z = db.BOOKs.Where(
                                         p => p.PhongID == s.PhongID 

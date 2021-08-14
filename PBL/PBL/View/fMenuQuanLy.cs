@@ -987,12 +987,17 @@ namespace PBL
         }
         private void btnThemKh_Click(object sender, EventArgs e)
         {
+            if(txbMaKhach.Text.Length>0)
+            {
+                MessageBox.Show("Vui lòng reset lại giá trị", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
             KHACHHANG s = new KHACHHANG()
             {
 
                 KhachHangID = txbMaKhach.Text,
                 Ten = txbHoTen.Text,
-                GioiTinh =cbGioiTinh.Checked,
+                GioiTinh = rdbMale.Checked ? true : false,
                 CMND =txbCMND.Text,
                 SDT = txbDienThoai.Text,
                 QuocTich = txbQuocTich.Text,
@@ -1005,12 +1010,17 @@ namespace PBL
 
         private void btnSuaKh_Click(object sender, EventArgs e)
         {
+            if (txbMaKhach.Text.Length==0)
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             KHACHHANG s = new KHACHHANG()
             {
 
                 KhachHangID = txbMaKhach.Text,
                 Ten = txbHoTen.Text,
-                GioiTinh = cbGioiTinh.Checked,
+                GioiTinh = rdbMale.Checked ? true : false,
                 CMND = txbCMND.Text,
                 SDT = txbDienThoai.Text,
                 QuocTich = txbQuocTich.Text,
@@ -1023,12 +1033,15 @@ namespace PBL
 
         private void BtnXoaKh_Click(object sender, EventArgs e)
         {
-
             if (dgvKhachHang.SelectedRows.Count > 0)
             {
-                BLL_QLKH.Instance.DeleteKh(GetListKh());
-                ShowDgvKh();
-                Send();
+                if (MessageBox.Show("Xác nhận xóa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+                {
+                    BLL_QLKH.Instance.DeleteKh(GetListKh());
+                    ShowDgvKh();
+                    ResetKh();
+                    Send();
+                }
             }
             else
             {
@@ -1038,15 +1051,18 @@ namespace PBL
 
         private void btnResetKh_Click(object sender, EventArgs e)
         {
+            ResetKh();
+        }
+        private void ResetKh()
+        {
             txbMaKhach.Text = "";
             txbHoTen.Text = "";
-            cbGioiTinh.Checked=true;
-            txbCMND.Text="";
-            txbDienThoai.Text="";
-            txbQuocTich.Text="";
-            txbGhiChu.Text="";
+            rdbMale.Checked = true;
+            txbCMND.Text = "";
+            txbDienThoai.Text = "";
+            txbQuocTich.Text = "";
+            txbGhiChu.Text = "";
         }
-
         private void btnSearchKh_Click(object sender, EventArgs e)
         {
             dgvKhachHang.DataSource = BLL_QLKH.Instance.FindKhByName(txbSeachkh.Text);
@@ -1072,7 +1088,8 @@ namespace PBL
                 KHACHHANG p = BLL_QLKH.Instance.FindKh(dgvKhachHang.SelectedRows[0].Cells["KhachHangID"].Value.ToString());
                 txbMaKhach.Text = p.KhachHangID;
                 txbHoTen.Text = p.Ten;
-                cbGioiTinh.Checked = (bool)p.GioiTinh;
+                rdbMale.Checked=(bool)p.GioiTinh? true:false;
+                rdbFemale.Checked = (bool)p.GioiTinh ? false : true;
                 txbCMND.Text = p.CMND;
                 txbDienThoai.Text = p.SDT;
                 txbQuocTich.Text = p.QuocTich;
@@ -1125,6 +1142,5 @@ namespace PBL
         {
             e.Handled = (!Char.IsLetter(e.KeyChar) && (e.KeyChar != 8) && (!Char.IsWhiteSpace(e.KeyChar)));
         }
-
     }
 }

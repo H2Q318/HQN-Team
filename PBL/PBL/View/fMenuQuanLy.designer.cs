@@ -178,7 +178,6 @@
             this.txbDienThoai = new System.Windows.Forms.TextBox();
             this.txbGhiChu = new System.Windows.Forms.TextBox();
             this.txbQuocTich = new System.Windows.Forms.TextBox();
-            this.cbGioiTinh = new System.Windows.Forms.CheckBox();
             this.txbHoTen = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbCMND = new System.Windows.Forms.TextBox();
@@ -191,6 +190,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.rdbFemale = new System.Windows.Forms.RadioButton();
+            this.rdbMale = new System.Windows.Forms.RadioButton();
             this.tpLoaiVatDung.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel25.SuspendLayout();
@@ -240,6 +242,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel13.SuspendLayout();
             this.tabcontrol.SuspendLayout();
+            this.panel35.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpLoaiVatDung
@@ -333,7 +336,7 @@
             this.panel34.Controls.Add(this.btnSortLoaiVD);
             this.panel34.Controls.Add(this.cbSortLoaiVD);
             this.panel34.Location = new System.Drawing.Point(4, 377);
-            this.panel34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel34.Margin = new System.Windows.Forms.Padding(4);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(353, 41);
             this.panel34.TabIndex = 20;
@@ -353,7 +356,7 @@
             // 
             this.cbSortLoaiVD.FormattingEnabled = true;
             this.cbSortLoaiVD.Location = new System.Drawing.Point(4, 9);
-            this.cbSortLoaiVD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortLoaiVD.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortLoaiVD.Name = "cbSortLoaiVD";
             this.cbSortLoaiVD.Size = new System.Drawing.Size(239, 24);
             this.cbSortLoaiVD.TabIndex = 0;
@@ -415,7 +418,7 @@
             this.dgvLoaiVatDung.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvLoaiVatDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiVatDung.Location = new System.Drawing.Point(5, 4);
-            this.dgvLoaiVatDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLoaiVatDung.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiVatDung.Name = "dgvLoaiVatDung";
             this.dgvLoaiVatDung.ReadOnly = true;
             this.dgvLoaiVatDung.RowHeadersVisible = false;
@@ -585,7 +588,7 @@
             this.panel33.Controls.Add(this.btnSortLP);
             this.panel33.Controls.Add(this.cbSortLP);
             this.panel33.Location = new System.Drawing.Point(4, 377);
-            this.panel33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel33.Margin = new System.Windows.Forms.Padding(4);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(353, 41);
             this.panel33.TabIndex = 20;
@@ -605,7 +608,7 @@
             // 
             this.cbSortLP.FormattingEnabled = true;
             this.cbSortLP.Location = new System.Drawing.Point(4, 9);
-            this.cbSortLP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortLP.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortLP.Name = "cbSortLP";
             this.cbSortLP.Size = new System.Drawing.Size(239, 24);
             this.cbSortLP.TabIndex = 0;
@@ -667,7 +670,7 @@
             this.dgvLoaiPhong.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvLoaiPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiPhong.Location = new System.Drawing.Point(4, 4);
-            this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLoaiPhong.Name = "dgvLoaiPhong";
             this.dgvLoaiPhong.ReadOnly = true;
             this.dgvLoaiPhong.RowHeadersVisible = false;
@@ -840,7 +843,7 @@
             this.panel32.Controls.Add(this.btnSortBillDV);
             this.panel32.Controls.Add(this.cbSortBillDV);
             this.panel32.Location = new System.Drawing.Point(5, 378);
-            this.panel32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel32.Margin = new System.Windows.Forms.Padding(4);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(353, 41);
             this.panel32.TabIndex = 20;
@@ -860,7 +863,7 @@
             // 
             this.cbSortBillDV.FormattingEnabled = true;
             this.cbSortBillDV.Location = new System.Drawing.Point(4, 9);
-            this.cbSortBillDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortBillDV.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortBillDV.Name = "cbSortBillDV";
             this.cbSortBillDV.Size = new System.Drawing.Size(239, 24);
             this.cbSortBillDV.TabIndex = 0;
@@ -922,7 +925,7 @@
             this.dgvBillDV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvBillDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBillDV.Location = new System.Drawing.Point(4, 4);
-            this.dgvBillDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvBillDV.Margin = new System.Windows.Forms.Padding(4);
             this.dgvBillDV.Name = "dgvBillDV";
             this.dgvBillDV.ReadOnly = true;
             this.dgvBillDV.RowHeadersVisible = false;
@@ -1171,7 +1174,7 @@
             this.panel31.Controls.Add(this.btnSortDV);
             this.panel31.Controls.Add(this.cbSortDV);
             this.panel31.Location = new System.Drawing.Point(4, 377);
-            this.panel31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel31.Margin = new System.Windows.Forms.Padding(4);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(353, 41);
             this.panel31.TabIndex = 20;
@@ -1194,7 +1197,7 @@
             "Theo tên dịch vụ",
             "Theo giá"});
             this.cbSortDV.Location = new System.Drawing.Point(4, 9);
-            this.cbSortDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortDV.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortDV.Name = "cbSortDV";
             this.cbSortDV.Size = new System.Drawing.Size(239, 24);
             this.cbSortDV.TabIndex = 0;
@@ -1254,7 +1257,7 @@
             this.dgvDichVu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.Location = new System.Drawing.Point(3, 2);
-            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.ReadOnly = true;
             this.dgvDichVu.RowHeadersVisible = false;
@@ -1283,7 +1286,7 @@
             this.panel20.Controls.Add(this.txbCloseDV);
             this.panel20.Controls.Add(this.label24);
             this.panel20.Location = new System.Drawing.Point(408, 64);
-            this.panel20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(308, 34);
             this.panel20.TabIndex = 3;
@@ -1291,7 +1294,7 @@
             // txbCloseDV
             // 
             this.txbCloseDV.Location = new System.Drawing.Point(131, 5);
-            this.txbCloseDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCloseDV.Margin = new System.Windows.Forms.Padding(4);
             this.txbCloseDV.Mask = "00:00";
             this.txbCloseDV.Name = "txbCloseDV";
             this.txbCloseDV.Size = new System.Drawing.Size(160, 22);
@@ -1312,7 +1315,7 @@
             this.panel19.Controls.Add(this.txbOpenDV);
             this.panel19.Controls.Add(this.label18);
             this.panel19.Location = new System.Drawing.Point(4, 64);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(308, 34);
             this.panel19.TabIndex = 2;
@@ -1320,7 +1323,7 @@
             // txbOpenDV
             // 
             this.txbOpenDV.Location = new System.Drawing.Point(131, 5);
-            this.txbOpenDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbOpenDV.Margin = new System.Windows.Forms.Padding(4);
             this.txbOpenDV.Mask = "00:00";
             this.txbOpenDV.Name = "txbOpenDV";
             this.txbOpenDV.Size = new System.Drawing.Size(160, 22);
@@ -1341,7 +1344,7 @@
             this.panel18.Controls.Add(this.txbGiaDV);
             this.panel18.Controls.Add(this.label9);
             this.panel18.Location = new System.Drawing.Point(408, 12);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(308, 34);
             this.panel18.TabIndex = 1;
@@ -1369,7 +1372,7 @@
             this.panel17.Controls.Add(this.txbTenDV);
             this.panel17.Controls.Add(this.label23);
             this.panel17.Location = new System.Drawing.Point(4, 12);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(308, 34);
             this.panel17.TabIndex = 0;
@@ -1425,7 +1428,7 @@
             this.panel30.Controls.Add(this.btnSortPhong);
             this.panel30.Controls.Add(this.cbSortPhong);
             this.panel30.Location = new System.Drawing.Point(3, 377);
-            this.panel30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel30.Margin = new System.Windows.Forms.Padding(4);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(353, 41);
             this.panel30.TabIndex = 20;
@@ -1445,7 +1448,7 @@
             // 
             this.cbSortPhong.FormattingEnabled = true;
             this.cbSortPhong.Location = new System.Drawing.Point(4, 9);
-            this.cbSortPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortPhong.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortPhong.Name = "cbSortPhong";
             this.cbSortPhong.Size = new System.Drawing.Size(239, 24);
             this.cbSortPhong.TabIndex = 0;
@@ -1564,7 +1567,7 @@
             this.dgvPhong.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhong.Location = new System.Drawing.Point(3, 2);
-            this.dgvPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPhong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.ReadOnly = true;
             this.dgvPhong.RowHeadersVisible = false;
@@ -1694,7 +1697,7 @@
             this.panel29.Controls.Add(this.btnSortKH);
             this.panel29.Controls.Add(this.cbSortKH);
             this.panel29.Location = new System.Drawing.Point(4, 377);
-            this.panel29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel29.Margin = new System.Windows.Forms.Padding(4);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(353, 41);
             this.panel29.TabIndex = 3;
@@ -1714,7 +1717,7 @@
             // 
             this.cbSortKH.FormattingEnabled = true;
             this.cbSortKH.Location = new System.Drawing.Point(4, 9);
-            this.cbSortKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSortKH.Margin = new System.Windows.Forms.Padding(4);
             this.cbSortKH.Name = "cbSortKH";
             this.cbSortKH.Size = new System.Drawing.Size(239, 24);
             this.cbSortKH.TabIndex = 0;
@@ -1831,7 +1834,7 @@
             this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Location = new System.Drawing.Point(4, 4);
-            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.ReadOnly = true;
             this.dgvKhachHang.RowHeadersVisible = false;
@@ -1845,10 +1848,10 @@
             // panel13
             // 
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.panel35);
             this.panel13.Controls.Add(this.txbDienThoai);
             this.panel13.Controls.Add(this.txbGhiChu);
             this.panel13.Controls.Add(this.txbQuocTich);
-            this.panel13.Controls.Add(this.cbGioiTinh);
             this.panel13.Controls.Add(this.txbHoTen);
             this.panel13.Controls.Add(this.label4);
             this.panel13.Controls.Add(this.txbCMND);
@@ -1891,19 +1894,6 @@
             this.txbQuocTich.Size = new System.Drawing.Size(132, 22);
             this.txbQuocTich.TabIndex = 4;
             this.txbQuocTich.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyCharacter);
-            // 
-            // cbGioiTinh
-            // 
-            this.cbGioiTinh.AutoSize = true;
-            this.cbGioiTinh.Checked = true;
-            this.cbGioiTinh.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbGioiTinh.Location = new System.Drawing.Point(355, 20);
-            this.cbGioiTinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbGioiTinh.Name = "cbGioiTinh";
-            this.cbGioiTinh.Size = new System.Drawing.Size(59, 21);
-            this.cbGioiTinh.TabIndex = 2;
-            this.cbGioiTinh.Text = "Nam";
-            this.cbGioiTinh.UseVisualStyleBackColor = true;
             // 
             // txbHoTen
             // 
@@ -2012,13 +2002,44 @@
             this.tabcontrol.Size = new System.Drawing.Size(1315, 581);
             this.tabcontrol.TabIndex = 1;
             // 
+            // panel35
+            // 
+            this.panel35.Controls.Add(this.rdbFemale);
+            this.panel35.Controls.Add(this.rdbMale);
+            this.panel35.Location = new System.Drawing.Point(355, 11);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(134, 38);
+            this.panel35.TabIndex = 16;
+            // 
+            // rdbFemale
+            // 
+            this.rdbFemale.AutoSize = true;
+            this.rdbFemale.Location = new System.Drawing.Point(78, 8);
+            this.rdbFemale.Name = "rdbFemale";
+            this.rdbFemale.Size = new System.Drawing.Size(47, 21);
+            this.rdbFemale.TabIndex = 1;
+            this.rdbFemale.Text = "Nữ";
+            this.rdbFemale.UseVisualStyleBackColor = true;
+            // 
+            // rdbMale
+            // 
+            this.rdbMale.AutoSize = true;
+            this.rdbMale.Checked = true;
+            this.rdbMale.Location = new System.Drawing.Point(4, 8);
+            this.rdbMale.Name = "rdbMale";
+            this.rdbMale.Size = new System.Drawing.Size(58, 21);
+            this.rdbMale.TabIndex = 0;
+            this.rdbMale.TabStop = true;
+            this.rdbMale.Text = "Nam";
+            this.rdbMale.UseVisualStyleBackColor = true;
+            // 
             // fMenuQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 581);
             this.Controls.Add(this.tabcontrol);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fMenuQuanLy";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -2088,6 +2109,8 @@
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.tabcontrol.ResumeLayout(false);
+            this.panel35.ResumeLayout(false);
+            this.panel35.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2181,7 +2204,6 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.TextBox txbGhiChu;
         private System.Windows.Forms.TextBox txbQuocTich;
-        private System.Windows.Forms.CheckBox cbGioiTinh;
         private System.Windows.Forms.TextBox txbHoTen;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txbCMND;
@@ -2257,5 +2279,8 @@
         private System.Windows.Forms.TextBox txbTongBill;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txbDienThoai;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.RadioButton rdbFemale;
+        private System.Windows.Forms.RadioButton rdbMale;
     }
 }

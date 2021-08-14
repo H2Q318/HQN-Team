@@ -60,7 +60,6 @@ namespace PBL
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ckbKHGioiTinh = new System.Windows.Forms.CheckBox();
             this.txbKHCMND = new System.Windows.Forms.TextBox();
             this.txbKHQuocTich = new System.Windows.Forms.TextBox();
             this.txbKHGhiChu = new System.Windows.Forms.TextBox();
@@ -145,6 +144,9 @@ namespace PBL
             this.dtpNgayDenOut = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.rdbMale = new System.Windows.Forms.RadioButton();
+            this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.menuStrip2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tbMain.SuspendLayout();
@@ -162,6 +164,7 @@ namespace PBL
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -327,6 +330,7 @@ namespace PBL
             // 
             // tpKhachHang
             // 
+            this.tpKhachHang.Controls.Add(this.panel3);
             this.tpKhachHang.Controls.Add(this.txbKHSdt);
             this.tpKhachHang.Controls.Add(this.btnResetKh);
             this.tpKhachHang.Controls.Add(this.btnThemKh);
@@ -336,7 +340,6 @@ namespace PBL
             this.tpKhachHang.Controls.Add(this.label4);
             this.tpKhachHang.Controls.Add(this.label2);
             this.tpKhachHang.Controls.Add(this.label1);
-            this.tpKhachHang.Controls.Add(this.ckbKHGioiTinh);
             this.tpKhachHang.Controls.Add(this.txbKHCMND);
             this.tpKhachHang.Controls.Add(this.txbKHQuocTich);
             this.tpKhachHang.Controls.Add(this.txbKHGhiChu);
@@ -345,7 +348,7 @@ namespace PBL
             this.tpKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpKhachHang.Name = "tpKhachHang";
             this.tpKhachHang.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpKhachHang.Size = new System.Drawing.Size(611, 677);
+            this.tpKhachHang.Size = new System.Drawing.Size(611, 675);
             this.tpKhachHang.TabIndex = 0;
             this.tpKhachHang.Text = "Khách hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
@@ -435,19 +438,6 @@ namespace PBL
             this.label1.TabIndex = 7;
             this.label1.Text = "Họ tên";
             // 
-            // ckbKHGioiTinh
-            // 
-            this.ckbKHGioiTinh.AutoSize = true;
-            this.ckbKHGioiTinh.Checked = true;
-            this.ckbKHGioiTinh.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbKHGioiTinh.Location = new System.Drawing.Point(239, 153);
-            this.ckbKHGioiTinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ckbKHGioiTinh.Name = "ckbKHGioiTinh";
-            this.ckbKHGioiTinh.Size = new System.Drawing.Size(59, 21);
-            this.ckbKHGioiTinh.TabIndex = 1;
-            this.ckbKHGioiTinh.Text = "Nam";
-            this.ckbKHGioiTinh.UseVisualStyleBackColor = true;
-            // 
             // txbKHCMND
             // 
             this.txbKHCMND.Location = new System.Drawing.Point(239, 364);
@@ -492,7 +482,7 @@ namespace PBL
             this.tpBooking.Margin = new System.Windows.Forms.Padding(4);
             this.tpBooking.Name = "tpBooking";
             this.tpBooking.Padding = new System.Windows.Forms.Padding(4);
-            this.tpBooking.Size = new System.Drawing.Size(611, 675);
+            this.tpBooking.Size = new System.Drawing.Size(611, 677);
             this.tpBooking.TabIndex = 4;
             this.tpBooking.Text = "Đặt phòng";
             this.tpBooking.UseVisualStyleBackColor = true;
@@ -592,6 +582,7 @@ namespace PBL
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.UseVisualStyleBackColor = true;
             this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1317,6 +1308,37 @@ namespace PBL
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rdbFemale);
+            this.panel3.Controls.Add(this.rdbMale);
+            this.panel3.Location = new System.Drawing.Point(235, 146);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(140, 38);
+            this.panel3.TabIndex = 15;
+            // 
+            // rdbMale
+            // 
+            this.rdbMale.AutoSize = true;
+            this.rdbMale.Checked = true;
+            this.rdbMale.Location = new System.Drawing.Point(4, 8);
+            this.rdbMale.Name = "rdbMale";
+            this.rdbMale.Size = new System.Drawing.Size(58, 21);
+            this.rdbMale.TabIndex = 0;
+            this.rdbMale.TabStop = true;
+            this.rdbMale.Text = "Nam";
+            this.rdbMale.UseVisualStyleBackColor = true;
+            // 
+            // rdbFemale
+            // 
+            this.rdbFemale.AutoSize = true;
+            this.rdbFemale.Location = new System.Drawing.Point(78, 8);
+            this.rdbFemale.Name = "rdbFemale";
+            this.rdbFemale.Size = new System.Drawing.Size(47, 21);
+            this.rdbFemale.TabIndex = 1;
+            this.rdbFemale.Text = "Nữ";
+            this.rdbFemale.UseVisualStyleBackColor = true;
+            // 
             // fHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1353,6 +1375,8 @@ namespace PBL
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1386,7 +1410,6 @@ namespace PBL
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox ckbKHGioiTinh;
         private System.Windows.Forms.TextBox txbKHCMND;
         private System.Windows.Forms.TextBox txbKHQuocTich;
         private System.Windows.Forms.TextBox txbKHGhiChu;
@@ -1473,5 +1496,8 @@ namespace PBL
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton rdbFemale;
+        private System.Windows.Forms.RadioButton rdbMale;
     }
 }

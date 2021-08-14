@@ -280,7 +280,7 @@ namespace PBL
                 };
                if( BLL_QLBOOK.Instance.AddDatPhong(s))
                 {
-                    MessageBox.Show("Đặt phòng không thành công");
+                    MessageBox.Show("Đặt phòng không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }    else
                 {
@@ -303,7 +303,7 @@ namespace PBL
                 KHACHHANG s = new KHACHHANG()
                 {
                     Ten = txbKHHoTen.Text.Trim(),
-                    GioiTinh = ckbKHGioiTinh.Checked,
+                    GioiTinh = rdbMale.Checked?true:false,
                     GhiChu = txbKHGhiChu.Text.Trim(),
                     QuocTich = txbKHQuocTich.Text.Trim(),
                     CMND = txbKHCMND.Text.Trim(),
@@ -332,7 +332,7 @@ namespace PBL
             };
            if( BLL_QLBOOK.Instance.AddBook(s))
            {
-                MessageBox.Show("Checkin không thành công");
+                MessageBox.Show("Checkin không thành công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }   
            else
            {

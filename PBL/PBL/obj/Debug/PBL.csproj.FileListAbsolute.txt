@@ -129,7 +129,6 @@ C:\Users\ACER\OneDrive\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.Co
 C:\Users\ACER\OneDrive\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.CopyComplete
 C:\Users\ACER\OneDrive\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.exe
 C:\Users\ACER\OneDrive\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.pdb
-C:\Users\ACER\OneDrive\Documents\GitHub\HQN-Team\PBL\PBL\obj\Debug\PBL.csproj.AssemblyReference.cache
 D:\HQN-Team\PBL\PBL\bin\Debug\PBL.exe.config
 D:\HQN-Team\PBL\PBL\bin\Debug\PBL.exe
 D:\HQN-Team\PBL\PBL\bin\Debug\PBL.pdb

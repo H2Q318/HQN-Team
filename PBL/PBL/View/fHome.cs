@@ -458,13 +458,11 @@ namespace PBL
         }
         private void dtpDPNgayDi_ValueChanged(object sender, EventArgs e)
         {
-
             if (CheckNgayThang(dtpDPNgayDen.Value, dtpDPNgayDi.Value))
             {
                 MessageBox.Show("Ngày đi không hợp lệ");
                 dtpDPNgayDi.Value = dtpDPNgayDen.Value;
             }
-          
         }
         private void dtpDPNgayDen_ValueChanged(object sender, EventArgs e)
         {

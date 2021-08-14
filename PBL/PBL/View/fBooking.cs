@@ -83,14 +83,31 @@ namespace PBL
         {
             try
             {
+                DateTime? ngayDen;
+                DateTime? ngayDi;
+                DateTime? checkIn;
+                DateTime? checkOut;
+
+                if (" ".Equals(dtpNgayDen.CustomFormat)) ngayDen = null;
+                else ngayDen = dtpNgayDen.Value;
+
+                if (" ".Equals(dtpNgayDi.CustomFormat)) ngayDi = null;
+                else ngayDi = dtpNgayDi.Value;
+
+                if (" ".Equals(dtpCheckIn.CustomFormat)) checkIn = null;
+                else checkIn = dtpCheckIn.Value;
+
+                if (" ".Equals(dtpCheckOut.CustomFormat)) checkOut = null;
+                else checkOut = dtpCheckOut.Value;
+
                 BOOK b = new BOOK
                 {
                     BookID = dgvBooking.SelectedRows[0].Cells["BookID"].Value.ToString(),
                     NgayDat = (DateTime)dtpNgayDat.Value,
-                    NgayCheckIn = (DateTime)dtpNgayDen.Value,
-                    NgayCheckOut = (DateTime)dtpNgayDi.Value,
-                    NgayCheckIn_ThucTe = (DateTime)dtpCheckIn.Value,
-                    NgayCheckOut_ThucTe = (DateTime)dtpCheckOut.Value
+                    NgayCheckIn = ngayDen,
+                    NgayCheckOut = ngayDi,
+                    NgayCheckIn_ThucTe = checkIn,
+                    NgayCheckOut_ThucTe = checkOut
                 };
                 if (BLL_QLBOOK.Instance.UpdateDatPhong(b))
                 {
@@ -300,9 +317,65 @@ namespace PBL
             }
             return data;
         }
+
         private void cbbSortBook_DropDownClosed(object sender, EventArgs e)
         {
             dgvBooking.DataSource = BLL_QLBOOK.Instance.Sort(cbbSortBook.SelectedItem.ToString(), GetAllBookID());
         }
+        #region So sánh ngày đặt, ngày đến, ngày đi, checkin và checkout
+        private void checkNgayDen()
+        {
+            if (DateTime.Compare(dtpNgayDen.Value, dtpNgayDat.Value) < 0)
+            {
+                dtpNgayDen.Value = dtpNgayDat.Value;
+            }
+        }
+        private void checkNgayDi()
+        {
+            if (DateTime.Compare(dtpNgayDi.Value, dtpNgayDen.Value) < 0)
+            {
+                dtpNgayDi.Value = dtpNgayDen.Value;
+            }
+        }
+        private void checkNgayCheckIn()
+        {
+            if (DateTime.Compare(dtpCheckIn.Value, dtpNgayDen.Value) < 0)
+            {
+                dtpCheckIn.Value = dtpNgayDen.Value;
+            }
+        }
+        private void checkNgayCheckOut()
+        {
+            if (DateTime.Compare(dtpCheckOut.Value, dtpCheckIn.Value) < 0)
+            {
+                dtpCheckOut.Value = dtpCheckIn.Value;
+            }
+        }
+        private void dtpNgayDen_ValueChanged(object sender, EventArgs e)
+        {
+            checkNgayDen();
+            checkNgayDi();
+            checkNgayCheckIn();
+            checkNgayCheckOut();
+        }
+
+        private void dtpNgayDi_ValueChanged(object sender, EventArgs e)
+        {
+            checkNgayDi();
+            checkNgayCheckIn();
+            checkNgayCheckOut();
+        }
+
+        private void dtpCheckIn_ValueChanged(object sender, EventArgs e)
+        {
+            checkNgayCheckIn();
+            checkNgayCheckOut();
+        }
+
+        private void dtpCheckOut_ValueChanged(object sender, EventArgs e)
+        {
+            checkNgayCheckOut();
+        }
+        #endregion
     }
 }

@@ -87,7 +87,7 @@
             this.btnClearCV = new System.Windows.Forms.Button();
             this.btnUpdateCV = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.txbQuyenHan = new System.Windows.Forms.TextBox();
+            this.cbQuyenHan = new System.Windows.Forms.ComboBox();
             this.label = new System.Windows.Forms.Label();
             this.btnDeleteCV = new System.Windows.Forms.Button();
             this.btnAddCV = new System.Windows.Forms.Button();
@@ -749,21 +749,28 @@
             // 
             // panel19
             // 
-            this.panel19.Controls.Add(this.txbQuyenHan);
+            this.panel19.Controls.Add(this.cbQuyenHan);
             this.panel19.Controls.Add(this.label);
             this.panel19.Location = new System.Drawing.Point(34, 295);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(382, 28);
             this.panel19.TabIndex = 2;
             // 
-            // txbQuyenHan
+            // cbQuyenHan
             // 
-            this.txbQuyenHan.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbQuyenHan.Location = new System.Drawing.Point(115, 3);
-            this.txbQuyenHan.Name = "txbQuyenHan";
-            this.txbQuyenHan.Size = new System.Drawing.Size(242, 22);
-            this.txbQuyenHan.TabIndex = 1;
-            this.txbQuyenHan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.JustNumberKeyPress);
+            this.cbQuyenHan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuyenHan.FormattingEnabled = true;
+            this.cbQuyenHan.Items.AddRange(new object[] {
+            "-1",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbQuyenHan.Location = new System.Drawing.Point(112, 3);
+            this.cbQuyenHan.Name = "cbQuyenHan";
+            this.cbQuyenHan.Size = new System.Drawing.Size(245, 21);
+            this.cbQuyenHan.TabIndex = 1;
             // 
             // label
             // 
@@ -809,9 +816,9 @@
             // txbMota
             // 
             this.txbMota.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbMota.Location = new System.Drawing.Point(115, 3);
+            this.txbMota.Location = new System.Drawing.Point(112, 3);
             this.txbMota.Name = "txbMota";
-            this.txbMota.Size = new System.Drawing.Size(242, 22);
+            this.txbMota.Size = new System.Drawing.Size(245, 22);
             this.txbMota.TabIndex = 1;
             // 
             // label5
@@ -925,7 +932,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAddCV;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.TextBox txbQuyenHan;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Button btnUpdateCV;
         private System.Windows.Forms.Panel panel11;
@@ -943,5 +949,6 @@
         private System.Windows.Forms.TextBox txbCMND;
         private System.Windows.Forms.TextBox txbPhone;
         private System.Windows.Forms.Button btnCreateAccount;
+        private System.Windows.Forms.ComboBox cbQuyenHan;
     }
 }

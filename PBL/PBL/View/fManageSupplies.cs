@@ -29,9 +29,6 @@ namespace PBL
             {
                 cbTrangThai.Items.Add(i.TrangThaiVatDungID);
             }
-            cbPhongID.SelectedIndex = 0;
-            cbTenVatTu.SelectedIndex = 0;
-            cbTrangThai.SelectedIndex = 0;
             ShowDGVVatDungPhong(null);
         }
         private void ShowDGVVatDungPhong(string s)
@@ -59,7 +56,19 @@ namespace PBL
         }
         private void btnThemVt_Click(object sender, EventArgs e)
         {
-            if (BLL_QLVDP.Instance.FindVatDungPhong(new DTO.Keys
+            if (cbTenVatTu.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn loại vật dụng !");
+            }   
+            else if (cbPhongID.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn phòng !");
+            }
+            else if (cbTrangThai.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái vật dụng !");
+            }
+            else if (BLL_QLVDP.Instance.FindVatDungPhong(new DTO.Keys
             {
                 key1 = cbPhongID.SelectedItem.ToString(),
                 key2 = ((CBBItem)cbTenVatTu.SelectedItem).Value
@@ -91,7 +100,19 @@ namespace PBL
 
         private void BtnSuaVt_Click(object sender, EventArgs e)
         {
-            if (BLL_QLVDP.Instance.FindVatDungPhong(new DTO.Keys
+            if (cbTenVatTu.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn loại vật dụng !");
+            }
+            else if (cbPhongID.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn phòng !");
+            }
+            else if (cbTrangThai.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn trạng thái vật dụng !");
+            }
+            else if (BLL_QLVDP.Instance.FindVatDungPhong(new DTO.Keys
             {
                 key1 = cbPhongID.SelectedItem.ToString(),
                 key2 = ((CBBItem)cbTenVatTu.SelectedItem).Value
@@ -123,15 +144,22 @@ namespace PBL
 
         private void BtnXoaVt_Click(object sender, EventArgs e)
         {
-            BLL_QLVDP.Instance.DeleteVatDungPhong(GetListVatDungPhongID());
-            ShowDGVVatDungPhong(null);
+            if (dgvVatDungPhong.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn ít nhất một hàng để xoá !");
+            }
+            else
+            {
+                BLL_QLVDP.Instance.DeleteVatDungPhong(GetListVatDungPhongID());
+                ShowDGVVatDungPhong(null);
+            }
         }
 
         private void btnResetVt_Click(object sender, EventArgs e)
         {
-            cbPhongID.SelectedIndex = 0;
-            cbTenVatTu.SelectedIndex = 0;
-            cbTrangThai.SelectedIndex = 0;
+            cbPhongID.SelectedIndex = -1;
+            cbTenVatTu.SelectedIndex = -1;
+            cbTrangThai.SelectedIndex = -1;
             nUDSLBanDau.Value = 0;
             nUDSLHienTai.Value = 0;
         }
@@ -171,6 +199,11 @@ namespace PBL
             nUDSLHienTai.Value = vdp.SoLuongHienTai;
             cbTrangThai.SelectedIndex = cbTrangThai.Items.IndexOf(vdp.TrangThaiVatDungID);
         }
+        private void txbSeachPhong_TextChanged(object sender, EventArgs e)
+        {
+            BtnSeachPhong.PerformClick();
+        }
         #endregion
+
     }
 }

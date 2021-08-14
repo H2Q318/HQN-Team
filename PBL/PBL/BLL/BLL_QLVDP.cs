@@ -29,7 +29,7 @@ namespace PBL.BLL
             {
                 return new QLKS().VATDUNGPHONGs.ToList();
             }
-            return new QLKS().VATDUNGPHONGs.Where(vdp => vdp.PhongID == s).ToList();
+            return new QLKS().VATDUNGPHONGs.Where(vdp => vdp.PhongID.Contains(s)).ToList();
         }
         public List<VatDungPhong_View> GetListVatDungPhong_View(List<VATDUNGPHONG> l)
         {

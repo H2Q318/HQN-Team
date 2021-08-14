@@ -22,13 +22,13 @@ namespace PBL
         }
         private BLL_QLP() { }
 
-        public List<PHONG> GetListPhong(string s=null)
+        public List<PHONG> GetListPhong(string s = null)
         {
             if (s == null)
             {
                 return new QLKS().PHONGs.ToList();
             }
-            return new QLKS().PHONGs.Where(p => p.PhongID == s).ToList();
+            return new QLKS().PHONGs.Where(p => p.PhongID.Contains(s)).ToList();
         }
         public List<Phong_View> GetListPhong_View(List<PHONG> l)
         {
@@ -61,13 +61,21 @@ namespace PBL
         {
             return new QLKS().PHONGs.Find(s);
         }
-        public void DeletePhong(List <string>  l)
+        public bool DeletePhong(List <string>  l)
         {
-            QLKS db = new QLKS();
-            foreach(string s in l)
+            try
             {
-                db.PHONGs.Remove(db.PHONGs.Find(s));
-                db.SaveChanges();
+                QLKS db = new QLKS();
+                foreach(string s in l)
+                {
+                    db.PHONGs.Remove(db.PHONGs.Find(s));
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
         public List<PHONG> Sort(string s, List<string> l)

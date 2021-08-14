@@ -28,7 +28,7 @@ namespace PBL.BLL
             {
                 return new QLKS().HOADON_DUNG_DICHVU.ToList();
             }
-            return new QLKS().HOADON_DUNG_DICHVU.Where(p => p.BookID.Contains(s)).ToList();
+            return new QLKS().HOADON_DUNG_DICHVU.Where(p => p.BookID.ToLower().Contains(s)).ToList();
         }
         public HOADON_DUNG_DICHVU FindBillDV(int s)
         {

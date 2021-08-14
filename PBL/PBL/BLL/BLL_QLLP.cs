@@ -24,7 +24,7 @@ namespace PBL.BLL
         {
             if (s != null)
             {
-                return new QLKS().LOAIPHONGs.Where(lp => lp.TenLoaiPhong == s).ToList();
+                return new QLKS().LOAIPHONGs.Where(lp => lp.TenLoaiPhong.ToLower().Contains(s)).ToList();
             }
             return new QLKS().LOAIPHONGs.ToList();
         }
@@ -46,13 +46,21 @@ namespace PBL.BLL
             return new QLKS().LOAIPHONGs.Find(id);
         }
 
-        public void DeleteLoaiPhong(List<string> l)
+        public bool DeleteLoaiPhong(List<string> l)
         {
-            QLKS db = new QLKS();
-            foreach(string s in l)
+            try
             {
-                db.LOAIPHONGs.Remove(db.LOAIPHONGs.Find(s));
-                db.SaveChanges();
+                QLKS db = new QLKS();
+                foreach(string s in l)
+                {
+                    db.LOAIPHONGs.Remove(db.LOAIPHONGs.Find(s));
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
         public void AddLoaiPhong(LOAIPHONG lp)

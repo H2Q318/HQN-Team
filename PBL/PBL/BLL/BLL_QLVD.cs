@@ -25,7 +25,7 @@ namespace PBL.BLL
         {
             if (s != null)
             {
-                return new QLKS().LOAIVATDUNGs.Where(lvd => lvd.TenVatDung == s).ToList();
+                return new QLKS().LOAIVATDUNGs.Where(lvd => lvd.TenVatDung.ToLower().Contains(s)).ToList();
             }
             return new QLKS().LOAIVATDUNGs.ToList();
         }
@@ -56,13 +56,21 @@ namespace PBL.BLL
             lvd1.ThietBiCoDinh = lvd.ThietBiCoDinh;
             db.SaveChanges();
         }
-        public void DeleteLoaiVatDung(List<string> l)
+        public bool DeleteLoaiVatDung(List<string> l)
         {
-            QLKS db = new QLKS();
-            foreach(string s in l)
+            try
             {
-                db.LOAIVATDUNGs.Remove(db.LOAIVATDUNGs.Find(s));
-                db.SaveChanges();
+                QLKS db = new QLKS();
+                foreach(string s in l)
+                {
+                    db.LOAIVATDUNGs.Remove(db.LOAIVATDUNGs.Find(s));
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
         public List<LOAIVATDUNG>  Sort(string s, List<string> l)

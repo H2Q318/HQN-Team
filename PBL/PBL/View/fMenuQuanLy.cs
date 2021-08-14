@@ -63,8 +63,8 @@ namespace PBL
                 "Tên loại phòng",
                 "Trạng thái"
             });
-            cbTenLoaiPhong.SelectedIndex = 0;
             ShowDGVPhong(null);
+            rbtAvailable.Checked = true;
         }
         private void ShowDGVPhong(string s = null)
         {
@@ -95,6 +95,10 @@ namespace PBL
                 {
                     MessageBox.Show("Mã phòng không được để trống !");
                 }
+                else if (cbTenLoaiPhong.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Vui lòng chọn loại phòng !");
+                }
                 else
                 {
                     try
@@ -123,7 +127,11 @@ namespace PBL
 
         private void btnSuaPh_Click(object sender, EventArgs e)
         {
-            if (BLL_QLP.Instance.FindPhong(txbMaPhong.Text.Trim()) != null)
+            if (cbTenLoaiPhong.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn loại phòng !");
+            }
+            else if (BLL_QLP.Instance.FindPhong(txbMaPhong.Text.Trim()) != null)
             {
                 try
                 {
@@ -151,8 +159,15 @@ namespace PBL
         {
             if (dgvPhong.SelectedRows.Count > 0)
             {
-                BLL_QLP.Instance.DeletePhong(GetListPhongID());
-                ShowDGVPhong(null);
+                if(BLL_QLP.Instance.DeletePhong(GetListPhongID()) == true)
+                {
+                    ShowDGVPhong(null);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xoá phòng này!\n" +
+                        "Có người đang dùng hoặc có Book liên quan đến phòng này !");
+                }
             }
             else
             {
@@ -163,7 +178,7 @@ namespace PBL
         private void btnResetPh_Click(object sender, EventArgs e)
         {
             txbMaPhong.Clear();
-            cbTenLoaiPhong.SelectedIndex = 0;
+            cbTenLoaiPhong.SelectedIndex = -1;
         }
 
         private void btnSearchP_Click(object sender, EventArgs e)
@@ -234,7 +249,10 @@ namespace PBL
                 MessageBox.Show("Bạn chưa chọn mục để sắp xếp !");
             }
         }
-
+        private void txbSeachP_TextChanged(object sender, EventArgs e)
+        {
+            btnSearchP.PerformClick();
+        }
         #endregion
 
         #region Quản lý loại phòng
@@ -323,9 +341,18 @@ namespace PBL
         {
             if (dgvLoaiPhong.SelectedRows.Count > 0)
             {
-                BLL_QLLP.Instance.DeleteLoaiPhong(GetListLoaiPhongID());
-                ShowDGVLoaiPhong();
-                RefreshGUIPhong();
+
+                if(BLL_QLLP.Instance.DeleteLoaiPhong(GetListLoaiPhongID()) == true)
+                {
+                    ShowDGVLoaiPhong();
+                    RefreshGUIPhong();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể xoá loại phòng này !\n" +
+                        " Có phòng đang dùng loại phòng này !\n" +
+                        " Vui lòng sửa loại phòng sau đó thử lại !");
+                }
             }
             else
             {
@@ -390,7 +417,10 @@ namespace PBL
                 MessageBox.Show("Bạn chưa chọn mục để sắp xếp !");
             }
         }
-
+        private void txbSeachLp_TextChanged(object sender, EventArgs e)
+        {
+            btnSearchLP.PerformClick();
+        }
         #endregion
 
         #region Quản lý loại vật dụng
@@ -490,8 +520,16 @@ namespace PBL
 
         private void btnXoaVT_Click(object sender, EventArgs e)
         {
-            BLL_QLVD.Instance.DeleteLoaiVatDung(GetListVatDungID());
-            ShowDGVLoaiVatDung(null);
+            if (BLL_QLVD.Instance.DeleteLoaiVatDung(GetListVatDungID()) == true) 
+            {
+                ShowDGVLoaiVatDung(null);
+            }
+            else
+            {
+                MessageBox.Show("Không thể xoá loại vật tư này,\n" +
+                    " loại vật tư này đang được dùng trong phần quản lý vật tư phòng,\n" +
+                    " vui lòng xoá dữ liệu liên quan bên phần quản lý vật tư phòng trước !");
+            }
         }
 
         private void btnResetVT_Click(object sender, EventArgs e)
@@ -541,6 +579,10 @@ namespace PBL
             {
                 MessageBox.Show("Bạn chưa chọn mục để sắp xếp !");
             }
+        }
+        private void txbSeachVD_TextChanged(object sender, EventArgs e)
+        {
+            BtnSearchVT.PerformClick();
         }
         #endregion
 
@@ -659,7 +701,8 @@ namespace PBL
                 }
                 else
                 {
-                    MessageBox.Show("Dịch vụ không thể xóa! Vui lòng kiểm tra lại");
+                    MessageBox.Show("Dịch vụ không thể xóa !\n" +
+                        "Vui lòng kiểm tra lại !");
                 }
             }
             catch
@@ -918,6 +961,10 @@ namespace PBL
             {
                 MessageBox.Show("Vui lòng chọn một mục để sắp xếp !");
             }
+        }
+        private void txbSeachBill_TextChanged(object sender, EventArgs e)
+        {
+            btnSearchBill.PerformClick();
         }
         #endregion
 

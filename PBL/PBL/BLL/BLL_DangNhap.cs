@@ -60,9 +60,12 @@ namespace PBL
             QLKS db = new QLKS();
             string passwordEncoded = getStringEncoded(password);
             var user = db.DANGNHAPs.Find(username);
-            if (passwordEncoded.Equals(user.MatKhau))
+            if (user != null)
             {
-                return true;
+                if (passwordEncoded.Equals(user.MatKhau))
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -106,19 +109,16 @@ namespace PBL
 
         public bool UpdatePassword(string username, string password = "1")
         {
-            try
+            QLKS db = new QLKS();
+            string passwordEncoded = getStringEncoded(password);
+            var user = db.DANGNHAPs.Find(username);
+            if (user != null)
             {
-                QLKS db = new QLKS();
-                string passwordEncoded = getStringEncoded(password);
-                var nhanVienAccount = db.DANGNHAPs.Find(username);
-                nhanVienAccount.MatKhau = passwordEncoded;
+                user.MatKhau = passwordEncoded;
                 db.SaveChanges();
                 return true;
             }
-            catch
-            {
-                return false;
-            }
+            return false;
         }
         public List<Account_View> GetListAccount_View()
         {

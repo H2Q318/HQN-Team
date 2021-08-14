@@ -1496,7 +1496,7 @@
           <Parameter Name="hoadonid" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="func_XemChiTietHoaDon_DichVu" IsComposable="true" ReturnType="Collection(DHP_04Model.func_XemChiTietHoaDon_DichVu_Result)">
-            <Parameter Name="hoadonid" Mode="In" Type="String" />
+          <Parameter Name="hoadonid" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="LICHSUDANGNHAP">

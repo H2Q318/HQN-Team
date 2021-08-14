@@ -52,6 +52,18 @@ as
 		where PHONG.PhongID = inserted.PhongID
 go
 
+create trigger trg_Book_Del
+on BOOK
+for delete
+as
+	if (select ngaycheckin_thucte from deleted) is not null
+		update PHONG
+		set TrangThai = 1
+		from PHONG inner join deleted
+		on PHONG.PhongID = deleted.PhongID
+		where PHONG.PhongID = deleted.PhongID
+go
+
 /*Trigger cập nhật cho bảng HOADON_DUNG_DICHVU tự tính tổng tiền*/
 create trigger trg_HoaDon_Dung_DichVu_Ins
 on hoadon_dung_dichvu

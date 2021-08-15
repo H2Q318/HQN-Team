@@ -21,7 +21,7 @@ namespace PBL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txbUserName.Text == string.Empty)
+            if (txbUserName.Text == string.Empty || txbPassword.Text == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập tài khoản và mật khẩu");
             }

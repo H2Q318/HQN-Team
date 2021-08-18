@@ -1,6 +1,6 @@
 ﻿/*Trigger cập nhật cho bảng phòng khi bảng book thay đổi dữ liệu 
-
-và tự thêm mã khách hàng của khách hàng đại diện trong book vào bảng khách hàng - book khi mới tạo book*/
+  Tự thêm mã khách hàng của khách hàng đại diện trong book vào bảng khách hàng - book khi mới tạo book
+  Tự đổi trạng thái phòng khi xoá book */
 create trigger trg_Book_Ins
 on BOOK
 for insert
